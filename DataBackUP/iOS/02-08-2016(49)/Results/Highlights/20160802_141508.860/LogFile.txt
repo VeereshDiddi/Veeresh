@@ -1,0 +1,17 @@
+﻿2016-08-02 14:15:08.862 +0530	START		Running Highlights.script
+2016-08-02 14:15:08.931 +0530	connect		iPhone:(null)	2	on_highlights	Highlights.script
+2016-08-02 14:15:08.933 +0530	presshomebutton			3	on_highlights	Highlights.script
+2016-08-02 14:15:19.539 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	10	on_highlights	Highlights.script
+2016-08-02 14:15:19.707 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	11	on_highlights	Highlights.script
+2016-08-02 14:15:25.757 +0530	imagefound	GSXAPP	found at (244, 467)	13	on_highlights	Highlights.script
+2016-08-02 14:15:31.884 +0530	click	GSXAPP	at (244, 467)	16	on_highlights	Highlights.script
+2016-08-02 14:15:35.840 +0530	waitfor	Menu	found at (55, 83)	21	on_highlights	Highlights.script
+2016-08-02 14:15:36.250 +0530	click	Menu	at (55, 83)	24	on_highlights	Highlights.script
+2016-08-02 14:15:42.889 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(181,229), ImageRectangle:(118,216,245,243), Language:"English", text:"Highlights", TextPlatform:"Generic OCR")	found at (181, 229)	29	on_highlights	Highlights.script
+2016-08-02 14:15:48.654 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(181,229), ImageRectangle:(118,216,245,243), Language:"English", Text:"Highlights", TextPlatform:"Generic OCR")	at (181, 229)	41	on_highlights	Highlights.script
+2016-08-02 14:15:49.247 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(181,229), ImageRectangle:(118,216,245,243), Language:"English", Text:"Highlights", TextPlatform:"Generic OCR")	found at (181, 229)	44	on_highlights	Highlights.script
+2016-08-02 14:15:49.929 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(375,85), ImageRectangle:(303,71,447,100), Language:"English", text:"Highlights", TextPlatform:"Generic OCR")	found at (375, 85)	46	on_highlights	Highlights.script
+2016-08-02 14:15:49.931 +0530	LogSuccess		Highlights is displayed	47	on_highlights	Highlights.script
+2016-08-02 14:15:50.213 +0530	capturescreen	Highlights_Pass_iOS.png		53	on_highlights	Highlights.script
+2016-08-02 14:15:50.444 +0530	EndTestCase		(Duration:"41.58035", Errors:"0", Exceptions:"0", StartTime:"2016-08-02 14:15:08 +0530", Successes:"1", TestCase:"Highlights.script", Warnings:"0")
+2016-08-02 14:15:50.465 +0530	SUCCESS		Execution Time 0:00:41 Highlights.script

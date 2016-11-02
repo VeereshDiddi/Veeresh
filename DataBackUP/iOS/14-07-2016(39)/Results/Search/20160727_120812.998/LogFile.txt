@@ -1,0 +1,17 @@
+﻿2016-07-27 12:08:13.000 +0530	START		Running Search.script
+2016-07-27 12:08:13.063 +0530	connect		iPhone:(null)	1	on_search	Search.script
+2016-07-27 12:08:13.064 +0530	presshomebutton			6	on_search	Search.script
+2016-07-27 12:08:13.448 +0530	imagefound	GSXAPP	found at (244, 467)	13	on_search	Search.script
+2016-07-27 12:08:30.126 +0530	click	GSXAPP	at (244, 467)	20	on_search	Search.script
+2016-07-27 12:08:34.250 +0530	waitfor	Menu	found at (55, 83)	23	on_search	Search.script
+2016-07-27 12:08:35.549 +0530	click	Menu	at (55, 83)	26	on_search	Search.script
+2016-07-27 12:08:42.287 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,309), ImageRectangle:(117,295,239,323), Language:"English", text:"Speakers", TextPlatform:"Generic OCR")	found at (178, 309)	29	on_search	Search.script
+2016-07-27 12:08:49.053 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,309), ImageRectangle:(117,295,239,323), Language:"English", Text:"Speakers", TextPlatform:"Generic OCR")	at (178, 309)	37	on_search	Search.script
+2016-07-27 12:08:50.144 +0530	click	SearchButton	at (588, 84)	39	on_search	Search.script
+2016-07-27 12:08:51.004 +0530	typetext		Niki Acosta[return]	41	on_search	Search.script
+2016-07-27 12:08:54.106 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(144,169), ImageRectangle:(76,159,212,180), Language:"English", Text:"Niki Acosta", TextPlatform:"Generic OCR")	found at (144, 169)	42	on_search	Search.script
+2016-07-27 12:08:55.665 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(144,169), ImageRectangle:(76,159,212,180), Language:"English", text:"Niki Acosta", TextPlatform:"Generic OCR")	found at (144, 169)	45	on_search	Search.script
+2016-07-27 12:08:55.667 +0530	LogSuccess		Niki Acosta speaker is displayed	46	on_search	Search.script
+2016-07-27 12:08:56.934 +0530	capturescreen	Niki Acosta speaker_Pass_iOS.png		52	on_search	Search.script
+2016-07-27 12:08:57.298 +0530	EndTestCase		(Duration:"44.296953", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 12:08:13 +0530", Successes:"1", TestCase:"Search.script", Warnings:"0")
+2016-07-27 12:08:57.316 +0530	SUCCESS		Execution Time 0:00:44 Search.script

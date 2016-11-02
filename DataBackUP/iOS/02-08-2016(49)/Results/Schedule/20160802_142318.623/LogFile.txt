@@ -1,0 +1,17 @@
+﻿2016-08-02 14:23:18.624 +0530	START		Running Schedule.script
+2016-08-02 14:23:18.693 +0530	connect		iPhone:(null)	2	on_schedule	Schedule.script
+2016-08-02 14:23:18.695 +0530	presshomebutton			3	on_schedule	Schedule.script
+2016-08-02 14:23:29.343 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	10	on_schedule	Schedule.script
+2016-08-02 14:23:29.513 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	11	on_schedule	Schedule.script
+2016-08-02 14:23:35.656 +0530	imagefound	GSXAPP	found at (244, 467)	13	on_schedule	Schedule.script
+2016-08-02 14:23:41.869 +0530	click	GSXAPP	at (244, 467)	17	on_schedule	Schedule.script
+2016-08-02 14:23:45.975 +0530	waitfor	Menu	found at (55, 83)	22	on_schedule	Schedule.script
+2016-08-02 14:23:47.213 +0530	click	Menu	at (55, 83)	25	on_schedule	Schedule.script
+2016-08-02 14:23:54.442 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,386), ImageRectangle:(117,375,240,398), Language:"English", text:"Schedule", TextPlatform:"Generic OCR")	found at (178, 386)	30	on_schedule	Schedule.script
+2016-08-02 14:24:01.371 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,386), ImageRectangle:(117,375,240,398), Language:"English", Text:"Schedule", TextPlatform:"Generic OCR")	at (178, 386)	41	on_schedule	Schedule.script
+2016-08-02 14:24:02.530 +0530	waitfor	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,386), ImageRectangle:(117,375,240,398), Language:"English", Text:"Schedule", TextPlatform:"Generic OCR")	found at (178, 386)	44	on_schedule	Schedule.script
+2016-08-02 14:24:03.987 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,83), ImageRectangle:(252,71,387,95), Language:"English", text:"Schedule", TextPlatform:"Generic OCR")	found at (319, 83)	46	on_schedule	Schedule.script
+2016-08-02 14:24:03.989 +0530	LogSuccess		Schedule is displayed	47	on_schedule	Schedule.script
+2016-08-02 14:24:05.200 +0530	capturescreen	Schedule_Pass_iOS.png		53	on_schedule	Schedule.script
+2016-08-02 14:24:05.450 +0530	EndTestCase		(Duration:"46.824517", Errors:"0", Exceptions:"0", StartTime:"2016-08-02 14:23:18 +0530", Successes:"1", TestCase:"Schedule.script", Warnings:"0")
+2016-08-02 14:24:05.468 +0530	SUCCESS		Execution Time 0:00:46 Schedule.script

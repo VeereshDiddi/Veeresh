@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<runHistory script="Attendees">
+ <run>
+  <RunDate>2016-07-27 11:33:55.417 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>57.115022</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20160727_113355.417/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+</runHistory>

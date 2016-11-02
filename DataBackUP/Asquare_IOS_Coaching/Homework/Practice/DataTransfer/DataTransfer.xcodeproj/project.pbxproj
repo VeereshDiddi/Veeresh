@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		529AE3831D2539E20072BDD5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 529AE3821D2539E20072BDD5 /* main.m */; };
+		529AE3861D2539E20072BDD5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 529AE3851D2539E20072BDD5 /* AppDelegate.m */; };
+		529AE3891D2539E20072BDD5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529AE3881D2539E20072BDD5 /* ViewController.m */; };
+		529AE38C1D2539E20072BDD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529AE38A1D2539E20072BDD5 /* Main.storyboard */; };
+		529AE38F1D2539E20072BDD5 /* DataTransfer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 529AE38D1D2539E20072BDD5 /* DataTransfer.xcdatamodeld */; };
+		529AE3911D2539E20072BDD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 529AE3901D2539E20072BDD5 /* Assets.xcassets */; };
+		529AE3941D2539E20072BDD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529AE3921D2539E20072BDD5 /* LaunchScreen.storyboard */; };
+		529AE39F1D2539E20072BDD5 /* DataTransferTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 529AE39E1D2539E20072BDD5 /* DataTransferTests.m */; };
+		529AE3AB1D2558BB0072BDD5 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529AE3AA1D2558BB0072BDD5 /* DetailsViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		529AE39B1D2539E20072BDD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 529AE3761D2539E20072BDD5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 529AE37D1D2539E20072BDD5;
+			remoteInfo = DataTransfer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		529AE37E1D2539E20072BDD5 /* DataTransfer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataTransfer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		529AE3821D2539E20072BDD5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		529AE3841D2539E20072BDD5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		529AE3851D2539E20072BDD5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		529AE3871D2539E20072BDD5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		529AE3881D2539E20072BDD5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		529AE38B1D2539E20072BDD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		529AE38E1D2539E20072BDD5 /* DataTransfer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataTransfer.xcdatamodel; sourceTree = "<group>"; };
+		529AE3901D2539E20072BDD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		529AE3931D2539E20072BDD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		529AE3951D2539E20072BDD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		529AE39A1D2539E20072BDD5 /* DataTransferTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTransferTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		529AE39E1D2539E20072BDD5 /* DataTransferTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataTransferTests.m; sourceTree = "<group>"; };
+		529AE3A01D2539E20072BDD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		529AE3A91D2558BB0072BDD5 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailsViewController.h; path = ../DetailsViewController.h; sourceTree = "<group>"; };
+		529AE3AA1D2558BB0072BDD5 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailsViewController.m; path = ../DetailsViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		529AE37B1D2539E20072BDD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		529AE3971D2539E20072BDD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		529AE3751D2539E20072BDD5 = {
+			isa = PBXGroup;
+			children = (
+				529AE3801D2539E20072BDD5 /* DataTransfer */,
+				529AE39D1D2539E20072BDD5 /* DataTransferTests */,
+				529AE37F1D2539E20072BDD5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		529AE37F1D2539E20072BDD5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				529AE37E1D2539E20072BDD5 /* DataTransfer.app */,
+				529AE39A1D2539E20072BDD5 /* DataTransferTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		529AE3801D2539E20072BDD5 /* DataTransfer */ = {
+			isa = PBXGroup;
+			children = (
+				529AE3841D2539E20072BDD5 /* AppDelegate.h */,
+				529AE3851D2539E20072BDD5 /* AppDelegate.m */,
+				529AE3871D2539E20072BDD5 /* ViewController.h */,
+				529AE3881D2539E20072BDD5 /* ViewController.m */,
+				529AE3A91D2558BB0072BDD5 /* DetailsViewController.h */,
+				529AE3AA1D2558BB0072BDD5 /* DetailsViewController.m */,
+				529AE38A1D2539E20072BDD5 /* Main.storyboard */,
+				529AE3901D2539E20072BDD5 /* Assets.xcassets */,
+				529AE3921D2539E20072BDD5 /* LaunchScreen.storyboard */,
+				529AE3951D2539E20072BDD5 /* Info.plist */,
+				529AE38D1D2539E20072BDD5 /* DataTransfer.xcdatamodeld */,
+				529AE3811D2539E20072BDD5 /* Supporting Files */,
+			);
+			path = DataTransfer;
+			sourceTree = "<group>";
+		};
+		529AE3811D2539E20072BDD5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				529AE3821D2539E20072BDD5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		529AE39D1D2539E20072BDD5 /* DataTransferTests */ = {
+			isa = PBXGroup;
+			children = (
+				529AE39E1D2539E20072BDD5 /* DataTransferTests.m */,
+				529AE3A01D2539E20072BDD5 /* Info.plist */,
+			);
+			path = DataTransferTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		529AE37D1D2539E20072BDD5 /* DataTransfer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 529AE3A31D2539E20072BDD5 /* Build configuration list for PBXNativeTarget "DataTransfer" */;
+			buildPhases = (
+				529AE37A1D2539E20072BDD5 /* Sources */,
+				529AE37B1D2539E20072BDD5 /* Frameworks */,
+				529AE37C1D2539E20072BDD5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DataTransfer;
+			productName = DataTransfer;
+			productReference = 529AE37E1D2539E20072BDD5 /* DataTransfer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		529AE3991D2539E20072BDD5 /* DataTransferTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 529AE3A61D2539E20072BDD5 /* Build configuration list for PBXNativeTarget "DataTransferTests" */;
+			buildPhases = (
+				529AE3961D2539E20072BDD5 /* Sources */,
+				529AE3971D2539E20072BDD5 /* Frameworks */,
+				529AE3981D2539E20072BDD5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				529AE39C1D2539E20072BDD5 /* PBXTargetDependency */,
+			);
+			name = DataTransferTests;
+			productName = DataTransferTests;
+			productReference = 529AE39A1D2539E20072BDD5 /* DataTransferTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		529AE3761D2539E20072BDD5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "MacBook Pro";
+				TargetAttributes = {
+					529AE37D1D2539E20072BDD5 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					529AE3991D2539E20072BDD5 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 529AE37D1D2539E20072BDD5;
+					};
+				};
+			};
+			buildConfigurationList = 529AE3791D2539E20072BDD5 /* Build configuration list for PBXProject "DataTransfer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 529AE3751D2539E20072BDD5;
+			productRefGroup = 529AE37F1D2539E20072BDD5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				529AE37D1D2539E20072BDD5 /* DataTransfer */,
+				529AE3991D2539E20072BDD5 /* DataTransferTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		529AE37C1D2539E20072BDD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				529AE3941D2539E20072BDD5 /* LaunchScreen.storyboard in Resources */,
+				529AE3911D2539E20072BDD5 /* Assets.xcassets in Resources */,
+				529AE38C1D2539E20072BDD5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		529AE3981D2539E20072BDD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		529AE37A1D2539E20072BDD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				529AE38F1D2539E20072BDD5 /* DataTransfer.xcdatamodeld in Sources */,
+				529AE3AB1D2558BB0072BDD5 /* DetailsViewController.m in Sources */,
+				529AE3891D2539E20072BDD5 /* ViewController.m in Sources */,
+				529AE3861D2539E20072BDD5 /* AppDelegate.m in Sources */,
+				529AE3831D2539E20072BDD5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		529AE3961D2539E20072BDD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				529AE39F1D2539E20072BDD5 /* DataTransferTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		529AE39C1D2539E20072BDD5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 529AE37D1D2539E20072BDD5 /* DataTransfer */;
+			targetProxy = 529AE39B1D2539E20072BDD5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		529AE38A1D2539E20072BDD5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				529AE38B1D2539E20072BDD5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		529AE3921D2539E20072BDD5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				529AE3931D2539E20072BDD5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		529AE3A11D2539E20072BDD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		529AE3A21D2539E20072BDD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		529AE3A41D2539E20072BDD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DataTransfer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideabytes.DataTransfer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		529AE3A51D2539E20072BDD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DataTransfer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideabytes.DataTransfer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		529AE3A71D2539E20072BDD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DataTransferTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideabytes.DataTransferTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DataTransfer.app/DataTransfer";
+			};
+			name = Debug;
+		};
+		529AE3A81D2539E20072BDD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DataTransferTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideabytes.DataTransferTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DataTransfer.app/DataTransfer";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		529AE3791D2539E20072BDD5 /* Build configuration list for PBXProject "DataTransfer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				529AE3A11D2539E20072BDD5 /* Debug */,
+				529AE3A21D2539E20072BDD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		529AE3A31D2539E20072BDD5 /* Build configuration list for PBXNativeTarget "DataTransfer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				529AE3A41D2539E20072BDD5 /* Debug */,
+				529AE3A51D2539E20072BDD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		529AE3A61D2539E20072BDD5 /* Build configuration list for PBXNativeTarget "DataTransferTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				529AE3A71D2539E20072BDD5 /* Debug */,
+				529AE3A81D2539E20072BDD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		529AE38D1D2539E20072BDD5 /* DataTransfer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				529AE38E1D2539E20072BDD5 /* DataTransfer.xcdatamodel */,
+			);
+			currentVersion = 529AE38E1D2539E20072BDD5 /* DataTransfer.xcdatamodel */;
+			path = DataTransfer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 529AE3761D2539E20072BDD5 /* Project object */;
+}

@@ -1,0 +1,17 @@
+﻿2016-07-27 12:41:55.571 +0530	START		Running Activities List.script
+2016-07-27 12:41:55.644 +0530	connect		iPhone:(null)	2	on_activities_list	Activities List.script
+2016-07-27 12:41:55.646 +0530	presshomebutton			6	on_activities_list	Activities List.script
+2016-07-27 12:42:01.438 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	13	on_activities_list	Activities List.script
+2016-07-27 12:42:01.597 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	14	on_activities_list	Activities List.script
+2016-07-27 12:42:07.775 +0530	imagefound	GSXAPP	found at (244, 467)	16	on_activities_list	Activities List.script
+2016-07-27 12:42:14.013 +0530	click	GSXAPP	at (244, 467)	20	on_activities_list	Activities List.script
+2016-07-27 12:42:16.903 +0530	waitfor	Menu	found at (55, 83)	25	on_activities_list	Activities List.script
+2016-07-27 12:42:18.196 +0530	click	Menu	at (55, 83)	28	on_activities_list	Activities List.script
+2016-07-27 12:42:25.701 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(203,1067), ImageRectangle:(116,1056,290,1078), Language:"English", text:"Activities List", TextPlatform:"Generic OCR")	found at (203, 1067)	33	on_activities_list	Activities List.script
+2016-07-27 12:42:33.587 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(203,1067), ImageRectangle:(116,1056,290,1078), Language:"English", Text:"Activities List", TextPlatform:"Generic OCR")	at (203, 1067)	45	on_activities_list	Activities List.script
+2016-07-27 12:42:34.905 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(203,1067), ImageRectangle:(116,1056,290,1078), Language:"English", Text:"Activities List", TextPlatform:"Generic OCR")	found at (203, 1067)	48	on_activities_list	Activities List.script
+2016-07-27 12:42:36.258 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,83), ImageRectangle:(222,71,417,95), Language:"English", text:"Activities List", TextPlatform:"Generic OCR")	found at (319, 83)	50	on_activities_list	Activities List.script
+2016-07-27 12:42:36.260 +0530	LogSuccess		Activities List is displayed	51	on_activities_list	Activities List.script
+2016-07-27 12:42:37.533 +0530	capturescreen	Activities_List_Pass_iOS.png		57	on_activities_list	Activities List.script
+2016-07-27 12:42:37.896 +0530	EndTestCase		(Duration:"42.324032", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 12:41:55 +0530", Successes:"1", TestCase:"Activities List.script", Warnings:"0")
+2016-07-27 12:42:37.913 +0530	SUCCESS		Execution Time 0:00:42 Activities List.script

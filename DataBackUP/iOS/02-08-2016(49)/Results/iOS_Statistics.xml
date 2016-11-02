@@ -1,0 +1,235 @@
+﻿<?xml version="1.0"?>
+<statistics>
+ <script name="Special Activities">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>5</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-25 18:45:07 +0530</FirstRun>
+  <LastRun>2016-07-28 13:35:28 +0530</LastRun>
+  <TotalTimeOnSuccess>267.757578</TotalTimeOnSuccess>
+ </script>
+ <script name="GSX Experience">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>5</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-26 10:01:52 +0530</FirstRun>
+  <LastRun>2016-07-28 13:13:32 +0530</LastRun>
+  <TotalTimeOnSuccess>385.613039</TotalTimeOnSuccess>
+ </script>
+ <script name="Validating adding Sessions">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>10</NumberOfRuns>
+  <NumberOfFails>7</NumberOfFails>
+  <FirstRun>2016-07-26 11:33:29 +0530</FirstRun>
+  <LastRun>2016-07-28 15:29:42 +0530</LastRun>
+  <TotalTimeOnSuccess>238.743878</TotalTimeOnSuccess>
+ </script>
+ <script name="Schedule">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>8</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-25 16:28:16 +0530</FirstRun>
+  <LastRun>2016-08-02 14:23:18 +0530</LastRun>
+  <TotalTimeOnSuccess>348.405569</TotalTimeOnSuccess>
+ </script>
+ <script name="Getting Around">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>6</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-26 09:59:35 +0530</FirstRun>
+  <LastRun>2016-08-02 11:56:36 +0530</LastRun>
+  <TotalTimeOnSuccess>420.745071</TotalTimeOnSuccess>
+ </script>
+ <script name="Wellness">
+  <LastStatus>Failure</LastStatus>
+  <NumberOfRuns>3</NumberOfRuns>
+  <NumberOfFails>2</NumberOfFails>
+  <FirstRun>2016-07-26 10:37:08 +0530</FirstRun>
+  <LastRun>2016-07-27 14:39:20 +0530</LastRun>
+  <TotalTimeOnSuccess>76.337191</TotalTimeOnSuccess>
+ </script>
+ <script name="Maps">
+  <LastStatus>Failure</LastStatus>
+  <NumberOfRuns>2</NumberOfRuns>
+  <NumberOfFails>2</NumberOfFails>
+  <FirstRun>2016-07-26 10:04:40 +0530</FirstRun>
+  <LastRun>2016-07-27 12:34:33 +0530</LastRun>
+  <TotalTimeOnSuccess>0.000000</TotalTimeOnSuccess>
+ </script>
+ <script name="My Profile">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>1</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-08-02 15:16:26 +0530</FirstRun>
+  <LastRun>2016-08-02 15:16:26 +0530</LastRun>
+  <TotalTimeOnSuccess>58.140214</TotalTimeOnSuccess>
+ </script>
+ <script name="Overview">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>6</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-25 16:29:22 +0530</FirstRun>
+  <LastRun>2016-08-02 15:19:51 +0530</LastRun>
+  <TotalTimeOnSuccess>240.127143</TotalTimeOnSuccess>
+ </script>
+ <script name="Week-at-a-glance">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>1</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-08-02 14:17:09 +0530</FirstRun>
+  <LastRun>2016-08-02 14:17:09 +0530</LastRun>
+  <TotalTimeOnSuccess>45.011584</TotalTimeOnSuccess>
+ </script>
+ <script name="My Notification">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>6</NumberOfRuns>
+  <NumberOfFails>1</NumberOfFails>
+  <FirstRun>2016-07-25 16:42:33 +0530</FirstRun>
+  <LastRun>2016-08-02 15:18:28 +0530</LastRun>
+  <TotalTimeOnSuccess>243.028260</TotalTimeOnSuccess>
+ </script>
+ <script name="FAQ">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>8</NumberOfRuns>
+  <NumberOfFails>1</NumberOfFails>
+  <FirstRun>2016-07-25 18:43:19 +0530</FirstRun>
+  <LastRun>2016-08-02 11:54:54 +0530</LastRun>
+  <TotalTimeOnSuccess>539.938188</TotalTimeOnSuccess>
+ </script>
+ <script name="Social">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>6</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-26 10:28:26 +0530</FirstRun>
+  <LastRun>2016-08-02 15:22:07 +0530</LastRun>
+  <TotalTimeOnSuccess>318.933091</TotalTimeOnSuccess>
+ </script>
+ <script name="Activities List">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>9</NumberOfRuns>
+  <NumberOfFails>2</NumberOfFails>
+  <FirstRun>2016-07-25 16:50:07 +0530</FirstRun>
+  <LastRun>2016-08-02 11:42:08 +0530</LastRun>
+  <TotalTimeOnSuccess>378.833963</TotalTimeOnSuccess>
+ </script>
+ <script name="Conversations">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>6</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-26 09:53:40 +0530</FirstRun>
+  <LastRun>2016-08-02 11:52:26 +0530</LastRun>
+  <TotalTimeOnSuccess>404.251320</TotalTimeOnSuccess>
+ </script>
+ <script name="Filters_Category">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>3</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-26 14:38:48 +0530</FirstRun>
+  <LastRun>2016-07-26 15:33:02 +0530</LastRun>
+  <TotalTimeOnSuccess>178.763947</TotalTimeOnSuccess>
+ </script>
+ <script name="Login">
+  <LastStatus>Failure</LastStatus>
+  <NumberOfRuns>4</NumberOfRuns>
+  <NumberOfFails>4</NumberOfFails>
+  <FirstRun>2016-07-27 14:24:48 +0530</FirstRun>
+  <LastRun>2016-08-02 11:28:33 +0530</LastRun>
+  <TotalTimeOnSuccess>0.000000</TotalTimeOnSuccess>
+ </script>
+ <script name="Highlights">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>9</NumberOfRuns>
+  <NumberOfFails>3</NumberOfFails>
+  <FirstRun>2016-07-22 15:54:03 +0530</FirstRun>
+  <LastRun>2016-08-02 14:15:08 +0530</LastRun>
+  <TotalTimeOnSuccess>201.399175</TotalTimeOnSuccess>
+ </script>
+ <script name="My Surveys">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>6</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-25 16:38:48 +0530</FirstRun>
+  <LastRun>2016-08-02 15:09:19 +0530</LastRun>
+  <TotalTimeOnSuccess>261.094926</TotalTimeOnSuccess>
+ </script>
+ <script name="Speakers">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>6</NumberOfRuns>
+  <NumberOfFails>1</NumberOfFails>
+  <FirstRun>2016-07-25 16:17:40 +0530</FirstRun>
+  <LastRun>2016-07-28 13:34:10 +0530</LastRun>
+  <TotalTimeOnSuccess>214.136323</TotalTimeOnSuccess>
+ </script>
+ <script name="Experiment">
+  <LastStatus>Failure</LastStatus>
+  <NumberOfRuns>7</NumberOfRuns>
+  <NumberOfFails>2</NumberOfFails>
+  <FirstRun>2016-07-26 16:04:10 +0530</FirstRun>
+  <LastRun>2016-08-01 15:47:36 +0530</LastRun>
+  <TotalTimeOnSuccess>781.817942</TotalTimeOnSuccess>
+ </script>
+ <script name="Dev Net">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>7</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-25 16:53:16 +0530</FirstRun>
+  <LastRun>2016-08-02 11:53:39 +0530</LastRun>
+  <TotalTimeOnSuccess>488.103877</TotalTimeOnSuccess>
+ </script>
+ <script name="Arrival">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>8</NumberOfRuns>
+  <NumberOfFails>1</NumberOfFails>
+  <FirstRun>2016-07-26 09:48:25 +0530</FirstRun>
+  <LastRun>2016-08-02 15:25:36 +0530</LastRun>
+  <TotalTimeOnSuccess>494.964094</TotalTimeOnSuccess>
+ </script>
+ <script name="My Agenda">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>6</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-26 10:10:18 +0530</FirstRun>
+  <LastRun>2016-08-02 14:26:59 +0530</LastRun>
+  <TotalTimeOnSuccess>279.927258</TotalTimeOnSuccess>
+ </script>
+ <script name="My Recommendations">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>6</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-25 16:36:22 +0530</FirstRun>
+  <LastRun>2016-08-02 15:07:13 +0530</LastRun>
+  <TotalTimeOnSuccess>275.817529</TotalTimeOnSuccess>
+ </script>
+ <script name="About this app">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>17</NumberOfRuns>
+  <NumberOfFails>4</NumberOfFails>
+  <FirstRun>2016-07-25 12:41:26 +0530</FirstRun>
+  <LastRun>2016-08-02 11:33:11 +0530</LastRun>
+  <TotalTimeOnSuccess>1119.582651</TotalTimeOnSuccess>
+ </script>
+ <script name="Attendees">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>8</NumberOfRuns>
+  <NumberOfFails>1</NumberOfFails>
+  <FirstRun>2016-07-26 09:51:44 +0530</FirstRun>
+  <LastRun>2016-08-02 15:23:30 +0530</LastRun>
+  <TotalTimeOnSuccess>485.906741</TotalTimeOnSuccess>
+ </script>
+ <script name="Validating adding speakers">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>8</NumberOfRuns>
+  <NumberOfFails>2</NumberOfFails>
+  <FirstRun>2016-07-26 10:57:49 +0530</FirstRun>
+  <LastRun>2016-07-28 13:38:46 +0530</LastRun>
+  <TotalTimeOnSuccess>438.173062</TotalTimeOnSuccess>
+ </script>
+ <script name="Search">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>4</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-26 12:50:03 +0530</FirstRun>
+  <LastRun>2016-07-28 13:31:37 +0530</LastRun>
+  <TotalTimeOnSuccess>176.424989</TotalTimeOnSuccess>
+ </script>
+</statistics>

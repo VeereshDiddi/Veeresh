@@ -1,0 +1,39 @@
+﻿<?xml version="1.0"?>
+<runHistory script="Schedule">
+ <run>
+  <RunDate>2016-08-02 14:18:38.737 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>45.193889</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20160802_141838.737/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2016-08-02 14:20:08.080 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>47.309349</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20160802_142008.080/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2016-08-02 14:23:18.623 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>46.826557</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20160802_142318.623/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+</runHistory>

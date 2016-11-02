@@ -1,0 +1,18 @@
+﻿2016-07-27 11:24:35.603 +0530	START		Running About this app.script
+2016-07-27 11:24:35.666 +0530	connect		iPhone:(null)	1	on_about_this_app	About this app.script
+2016-07-27 11:24:35.668 +0530	presshomebutton			5	on_about_this_app	About this app.script
+2016-07-27 11:24:41.013 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	13	on_about_this_app	About this app.script
+2016-07-27 11:24:41.186 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	14	on_about_this_app	About this app.script
+2016-07-27 11:24:47.423 +0530	imagefound	GSXAPP	found at (244, 467)	16	on_about_this_app	About this app.script
+2016-07-27 11:24:53.777 +0530	click	GSXAPP	at (244, 467)	20	on_about_this_app	About this app.script
+2016-07-27 11:24:57.149 +0530	waitfor	Menu	found at (55, 83)	24	on_about_this_app	About this app.script
+2016-07-27 11:24:57.458 +0530	click	Menu	at (55, 83)	27	on_about_this_app	About this app.script
+2016-07-27 11:25:11.059 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"About this App", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"About this App") within 5.00 seconds	32	on_about_this_app	About this app.script
+2016-07-27 11:25:11.269 +0530	swipeup		Swiped up from (86, 991) to (86, 341)	35	on_about_this_app	About this app.script
+2016-07-27 11:25:15.353 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(214,1097), ImageRectangle:(116,1084,313,1111), Language:"English", text:"About this App", TextPlatform:"Generic OCR")	found at (214, 1097)	40	on_about_this_app	About this app.script
+2016-07-27 11:25:22.262 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(214,1097), ImageRectangle:(116,1084,313,1111), Language:"English", Text:"About this App", TextPlatform:"Generic OCR")	at (214, 1097)	43	on_about_this_app	About this app.script
+2016-07-27 11:25:28.663 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,86), ImageRectangle:(209,72,429,100), Language:"English", text:"About this App", TextPlatform:"Generic OCR")	found at (319, 86)	47	on_about_this_app	About this app.script
+2016-07-27 11:25:28.665 +0530	LogSuccess		About this App page is displayed	48	on_about_this_app	About this app.script
+2016-07-27 11:25:29.944 +0530	capturescreen	About_this_app_Pass_iOS.png		54	on_about_this_app	About this app.script
+2016-07-27 11:25:30.246 +0530	EndTestCase		(Duration:"54.641234", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 11:24:35 +0530", Successes:"1", TestCase:"About this app.script", Warnings:"0")
+2016-07-27 11:25:30.261 +0530	SUCCESS		Execution Time 0:00:54 About this app.script

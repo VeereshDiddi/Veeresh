@@ -1,0 +1,27 @@
+﻿2016-08-02 14:26:59.214 +0530	START		Running My Agenda.script
+2016-08-02 14:26:59.289 +0530	connect		iPhone:(null)	2	on_my_agenda	My Agenda.script
+2016-08-02 14:26:59.291 +0530	presshomebutton			3	on_my_agenda	My Agenda.script
+2016-08-02 14:27:09.798 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	10	on_my_agenda	My Agenda.script
+2016-08-02 14:27:09.962 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	11	on_my_agenda	My Agenda.script
+2016-08-02 14:27:16.127 +0530	imagefound	GSXAPP	found at (244, 467)	13	on_my_agenda	My Agenda.script
+2016-08-02 14:27:22.321 +0530	click	GSXAPP	at (244, 467)	17	on_my_agenda	My Agenda.script
+2016-08-02 14:27:26.600 +0530	waitfor	Menu	found at (55, 83)	22	on_my_agenda	My Agenda.script
+2016-08-02 14:27:27.895 +0530	click	Menu	at (55, 83)	25	on_my_agenda	My Agenda.script
+2016-08-02 14:27:35.661 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(192,529), ImageRectangle:(118,516,266,543), Language:"English", text:"My Agenda", TextPlatform:"Generic OCR")	found at (192, 529)	30	on_my_agenda	My Agenda.script
+2016-08-02 14:27:43.495 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(192,529), ImageRectangle:(118,516,266,543), Language:"English", Text:"My Agenda", TextPlatform:"Generic OCR")	at (192, 529)	41	on_my_agenda	My Agenda.script
+2016-08-02 14:27:45.008 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(192,530), ImageRectangle:(118,516,267,544), Language:"English", Text:"My Agenda", TextPlatform:"Generic OCR")	found at (192, 530)	44	on_my_agenda	My Agenda.script
+2016-08-02 14:27:46.609 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,86), ImageRectangle:(237,72,402,101), Language:"English", text:"My Agenda", TextPlatform:"Generic OCR")	found at (319, 86)	46	on_my_agenda	My Agenda.script
+2016-08-02 14:27:46.611 +0530	LogSuccess		My Agenda is displayed	47	on_my_agenda	My Agenda.script
+2016-08-02 14:27:47.836 +0530	capturescreen	My Agenda_Pass_iOS.png		53	on_my_agenda	My Agenda.script
+2016-08-02 14:27:50.802 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(102,171), ImageRectangle:(41,160,163,182), Language:"English", Text:"Sessions", TextPlatform:"Generic OCR")	found at (102, 171)	68	on_my_agenda	My Agenda.script
+2016-08-02 14:27:53.784 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(102,171), ImageRectangle:(41,160,163,182), Language:"English", text:"Sessions", TextPlatform:"Generic OCR")	found at (102, 171)	70	on_my_agenda	My Agenda.script
+2016-08-02 14:27:53.786 +0530	LogSuccess		Sessions is displayed	71	on_my_agenda	My Agenda.script
+2016-08-02 14:27:55.010 +0530	capturescreen	Sessions_Pass_iOS.png		77	on_my_agenda	My Agenda.script
+2016-08-02 14:27:57.954 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(310,173), ImageRectangle:(246,160,374,187), Language:"English", text:"Speakers", TextPlatform:"Generic OCR")	found at (310, 173)	93	on_my_agenda	My Agenda.script
+2016-08-02 14:27:57.956 +0530	LogSuccess		Speakers is displayed	94	on_my_agenda	My Agenda.script
+2016-08-02 14:27:59.176 +0530	capturescreen	Speakers_Pass_iOS.png		100	on_my_agenda	My Agenda.script
+2016-08-02 14:28:02.244 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(526,171), ImageRectangle:(456,160,597,182), Language:"English", text:"Attendees", TextPlatform:"Generic OCR")	found at (526, 171)	116	on_my_agenda	My Agenda.script
+2016-08-02 14:28:02.246 +0530	LogSuccess		Attendees is displayed	117	on_my_agenda	My Agenda.script
+2016-08-02 14:28:03.465 +0530	capturescreen	Attendees_Pass_iOS.png		123	on_my_agenda	My Agenda.script
+2016-08-02 14:28:03.712 +0530	EndTestCase		(Duration:"64.495691", Errors:"0", Exceptions:"0", StartTime:"2016-08-02 14:26:59 +0530", Successes:"4", TestCase:"My Agenda.script", Warnings:"0")
+2016-08-02 14:28:03.728 +0530	SUCCESS		Execution Time 0:01:04 My Agenda.script

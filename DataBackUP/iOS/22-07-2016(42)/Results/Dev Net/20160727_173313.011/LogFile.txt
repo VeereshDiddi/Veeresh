@@ -1,0 +1,41 @@
+﻿2016-07-27 17:33:13.013 +0530	START		Running Dev Net.script
+2016-07-27 17:33:13.078 +0530	connect		Android:(null)	2	on_dev_net	Dev Net.script
+2016-07-27 17:33:13.080 +0530	presshomebutton			3	on_dev_net	Dev Net.script
+2016-07-27 17:33:14.470 +0530	click	Home Menu	at (534, 1651)	6	on_dev_net	Dev Net.script
+2016-07-27 17:33:19.534 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	10	on_dev_net	Dev Net.script
+2016-07-27 17:33:19.662 +0530	swipeleft		Swiped left from (547, 370) to (108, 370)	11	on_dev_net	Dev Net.script
+2016-07-27 17:33:25.888 +0530	imagefound	GSXAPP	found at (413, 927)	13	on_dev_net	Dev Net.script
+2016-07-27 17:33:32.252 +0530	click	GSXAPP	at (413, 927)	17	on_dev_net	Dev Net.script
+2016-07-27 17:33:36.327 +0530	waitfor	Menu	found at (82, 160)	22	on_dev_net	Dev Net.script
+2016-07-27 17:33:37.159 +0530	click	Menu	at (82, 160)	25	on_dev_net	Dev Net.script
+2016-07-27 17:33:56.870 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Dev Net", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Dev Net") within 5.00 seconds	30	on_dev_net	Dev Net.script
+2016-07-27 17:33:56.871 +0530	set		SWIPESPEED = 8	32	on_dev_net	Dev Net.script
+2016-07-27 17:33:57.466 +0530	swipeup		Swiped up from (86, 991) to (86, 576)	33	on_dev_net	Dev Net.script
+2016-07-27 17:34:22.337 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Dev Net", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Dev Net") within 5.00 seconds	37	on_dev_net	Dev Net.script
+2016-07-27 17:34:22.338 +0530	set		SWIPESPEED = 8	32	on_dev_net	Dev Net.script
+2016-07-27 17:34:22.932 +0530	swipeup		Swiped up from (86, 991) to (86, 576)	33	on_dev_net	Dev Net.script
+2016-07-27 17:34:24.852 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(219,1762), ImageRectangle:(152,1749,287,1775), Language:"English", text:"Dev Net", TextPlatform:"Generic OCR")	found at (219, 1762)	37	on_dev_net	Dev Net.script
+2016-07-27 17:34:34.454 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(220,1477), ImageRectangle:(153,1463,287,1491), Language:"English", Text:"Dev Net", TextPlatform:"Generic OCR")	at (220, 1477)	41	on_dev_net	Dev Net.script
+2016-07-27 17:34:37.219 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(110,1362), ImageRectangle:(44,1350,177,1374), Language:"English", Text:"Dev Net", TextPlatform:"Generic OCR")	found at (110, 1362)	44	on_dev_net	Dev Net.script
+2016-07-27 17:34:45.565 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(293,159), ImageRectangle:(185,137,402,181), Language:"English", text:"Dev Net", TextPlatform:"Generic OCR")	found at (293, 159)	46	on_dev_net	Dev Net.script
+2016-07-27 17:34:45.566 +0530	LogSuccess		Dev Net is displayed	47	on_dev_net	Dev Net.script
+2016-07-27 17:34:45.882 +0530	capturescreen	Dev_Net_Pass_Android.png		49	on_dev_net	Dev Net.script
+2016-07-27 17:34:45.893 +0530	connect		iPhone:(null)	2	on_dev_net	Dev Net.script
+2016-07-27 17:34:45.895 +0530	presshomebutton			3	on_dev_net	Dev Net.script
+2016-07-27 17:34:51.814 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	10	on_dev_net	Dev Net.script
+2016-07-27 17:34:52.512 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	11	on_dev_net	Dev Net.script
+2016-07-27 17:34:58.636 +0530	imagefound	GSXAPP	found at (244, 467)	13	on_dev_net	Dev Net.script
+2016-07-27 17:35:04.884 +0530	click	GSXAPP	at (244, 467)	17	on_dev_net	Dev Net.script
+2016-07-27 17:35:07.448 +0530	waitfor	Menu	found at (55, 83)	22	on_dev_net	Dev Net.script
+2016-07-27 17:35:07.697 +0530	click	Menu	at (55, 83)	25	on_dev_net	Dev Net.script
+2016-07-27 17:35:22.732 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Dev Net", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Dev Net") within 5.00 seconds	30	on_dev_net	Dev Net.script
+2016-07-27 17:35:22.734 +0530	set		SWIPESPEED = 8	32	on_dev_net	Dev Net.script
+2016-07-27 17:35:23.671 +0530	swipeup		Swiped up from (86, 991) to (86, 341)	33	on_dev_net	Dev Net.script
+2016-07-27 17:35:29.888 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(170,248), ImageRectangle:(118,237,223,259), Language:"English", text:"Dev Net", TextPlatform:"Generic OCR")	found at (170, 248)	37	on_dev_net	Dev Net.script
+2016-07-27 17:35:37.318 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(170,248), ImageRectangle:(118,237,223,259), Language:"English", Text:"Dev Net", TextPlatform:"Generic OCR")	at (170, 248)	41	on_dev_net	Dev Net.script
+2016-07-27 17:35:38.042 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(74,177), ImageRectangle:(22,168,126,186), Language:"English", Text:"Dev Net", TextPlatform:"Generic OCR")	found at (74, 177)	44	on_dev_net	Dev Net.script
+2016-07-27 17:35:38.414 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(320,83), ImageRectangle:(263,71,378,95), Language:"English", text:"Dev Net", TextPlatform:"Generic OCR")	found at (320, 83)	46	on_dev_net	Dev Net.script
+2016-07-27 17:35:38.416 +0530	LogSuccess		Dev Net is displayed	47	on_dev_net	Dev Net.script
+2016-07-27 17:35:38.794 +0530	capturescreen	Arrival_Pass_iOS.png		53	on_dev_net	Dev Net.script
+2016-07-27 17:35:39.385 +0530	EndTestCase		(Duration:"146.370834", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 17:33:13 +0530", Successes:"2", TestCase:"Dev Net.script", Warnings:"0")
+2016-07-27 17:35:39.404 +0530	SUCCESS		Execution Time 0:02:26 Dev Net.script

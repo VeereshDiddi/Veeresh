@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE2048E31D63A102004678E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2048E21D63A102004678E0 /* main.m */; };
+		AE2048E61D63A102004678E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2048E51D63A102004678E0 /* AppDelegate.m */; };
+		AE2048E91D63A102004678E0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2048E81D63A102004678E0 /* ViewController.m */; };
+		AE2048EC1D63A102004678E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE2048EA1D63A102004678E0 /* Main.storyboard */; };
+		AE2048EE1D63A102004678E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE2048ED1D63A102004678E0 /* Assets.xcassets */; };
+		AE2048F11D63A102004678E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE2048EF1D63A102004678E0 /* LaunchScreen.storyboard */; };
+		AE2048FC1D63A103004678E0 /* QezyPlayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2048FB1D63A103004678E0 /* QezyPlayTests.m */; };
+		AE2049071D63A103004678E0 /* QezyPlayUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2049061D63A103004678E0 /* QezyPlayUITests.m */; };
+		AE2049151D63A230004678E0 /* Splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = AE2049141D63A230004678E0 /* Splashscreen.png */; };
+		AE2049171D63A957004678E0 /* backnv.png in Resources */ = {isa = PBXBuildFile; fileRef = AE2049161D63A957004678E0 /* backnv.png */; };
+		AE20491A1D63AEFD004678E0 /* SignUp.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2049191D63AEFD004678E0 /* SignUp.m */; };
+		AE20491E1D63B291004678E0 /* ForgetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = AE20491D1D63B291004678E0 /* ForgetPassword.m */; };
+		AE723F431D6CBC6200A6797C /* home-active-hdpi.png in Resources */ = {isa = PBXBuildFile; fileRef = AE723F421D6CBC6200A6797C /* home-active-hdpi.png */; };
+		AE723F451D6CBCBD00A6797C /* favourites-active-hdpi.png in Resources */ = {isa = PBXBuildFile; fileRef = AE723F441D6CBCBD00A6797C /* favourites-active-hdpi.png */; };
+		AE723F4A1D6CCC5600A6797C /* BBC.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE723F491D6CCC5600A6797C /* BBC.jpg */; };
+		AE723F4C1D6CCC6F00A6797C /* AppleTV.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE723F4B1D6CCC6F00A6797C /* AppleTV.jpg */; };
+		AE723F4E1D6CCC7900A6797C /* Discovery.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE723F4D1D6CCC7900A6797C /* Discovery.jpg */; };
+		AE723F511D6CD23E00A6797C /* Favorites.m in Sources */ = {isa = PBXBuildFile; fileRef = AE723F501D6CD23E00A6797C /* Favorites.m */; };
+		AE7CE0ED1D6DA9D7001C63CE /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7CE0EC1D6DA9D7001C63CE /* Home.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE2048F81D63A103004678E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE2048D61D63A102004678E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE2048DD1D63A102004678E0;
+			remoteInfo = QezyPlay;
+		};
+		AE2049031D63A103004678E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE2048D61D63A102004678E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE2048DD1D63A102004678E0;
+			remoteInfo = QezyPlay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AE2048DE1D63A102004678E0 /* QezyPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QezyPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE2048E21D63A102004678E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AE2048E41D63A102004678E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AE2048E51D63A102004678E0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AE2048E71D63A102004678E0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AE2048E81D63A102004678E0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AE2048EB1D63A102004678E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AE2048ED1D63A102004678E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE2048F01D63A102004678E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AE2048F21D63A102004678E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE2048F71D63A103004678E0 /* QezyPlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QezyPlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE2048FB1D63A103004678E0 /* QezyPlayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QezyPlayTests.m; sourceTree = "<group>"; };
+		AE2048FD1D63A103004678E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE2049021D63A103004678E0 /* QezyPlayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QezyPlayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE2049061D63A103004678E0 /* QezyPlayUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QezyPlayUITests.m; sourceTree = "<group>"; };
+		AE2049081D63A103004678E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE2049141D63A230004678E0 /* Splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Splashscreen.png; path = QezyPlay/Splashscreen.png; sourceTree = "<group>"; };
+		AE2049161D63A957004678E0 /* backnv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backnv.png; path = QezyPlay/backnv.png; sourceTree = "<group>"; };
+		AE2049181D63AEE7004678E0 /* SignUp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUp.h; sourceTree = "<group>"; };
+		AE2049191D63AEFD004678E0 /* SignUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUp.m; sourceTree = "<group>"; };
+		AE20491C1D63B27D004678E0 /* ForgetPassword.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPassword.h; sourceTree = "<group>"; };
+		AE20491D1D63B291004678E0 /* ForgetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPassword.m; sourceTree = "<group>"; };
+		AE723F421D6CBC6200A6797C /* home-active-hdpi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-active-hdpi.png"; sourceTree = "<group>"; };
+		AE723F441D6CBCBD00A6797C /* favourites-active-hdpi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favourites-active-hdpi.png"; sourceTree = "<group>"; };
+		AE723F491D6CCC5600A6797C /* BBC.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BBC.jpg; sourceTree = "<group>"; };
+		AE723F4B1D6CCC6F00A6797C /* AppleTV.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AppleTV.jpg; sourceTree = "<group>"; };
+		AE723F4D1D6CCC7900A6797C /* Discovery.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Discovery.jpg; sourceTree = "<group>"; };
+		AE723F4F1D6CD22900A6797C /* Favorites.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Favorites.h; sourceTree = "<group>"; };
+		AE723F501D6CD23E00A6797C /* Favorites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Favorites.m; sourceTree = "<group>"; };
+		AE7CE0EB1D6DA9D7001C63CE /* Home.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home.h; sourceTree = "<group>"; };
+		AE7CE0EC1D6DA9D7001C63CE /* Home.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE2048DB1D63A102004678E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE2048F41D63A103004678E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE2048FF1D63A103004678E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE2048D51D63A102004678E0 = {
+			isa = PBXGroup;
+			children = (
+				AE723F4B1D6CCC6F00A6797C /* AppleTV.jpg */,
+				AE723F491D6CCC5600A6797C /* BBC.jpg */,
+				AE723F4D1D6CCC7900A6797C /* Discovery.jpg */,
+				AE723F421D6CBC6200A6797C /* home-active-hdpi.png */,
+				AE723F441D6CBCBD00A6797C /* favourites-active-hdpi.png */,
+				AE2049161D63A957004678E0 /* backnv.png */,
+				AE2049141D63A230004678E0 /* Splashscreen.png */,
+				AE2048E01D63A102004678E0 /* QezyPlay */,
+				AE2048FA1D63A103004678E0 /* QezyPlayTests */,
+				AE2049051D63A103004678E0 /* QezyPlayUITests */,
+				AE2048DF1D63A102004678E0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE2048DF1D63A102004678E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE2048DE1D63A102004678E0 /* QezyPlay.app */,
+				AE2048F71D63A103004678E0 /* QezyPlayTests.xctest */,
+				AE2049021D63A103004678E0 /* QezyPlayUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE2048E01D63A102004678E0 /* QezyPlay */ = {
+			isa = PBXGroup;
+			children = (
+				AE20491B1D63AF0A004678E0 /* userManagement */,
+				AE2048E41D63A102004678E0 /* AppDelegate.h */,
+				AE7CE0EB1D6DA9D7001C63CE /* Home.h */,
+				AE7CE0EC1D6DA9D7001C63CE /* Home.m */,
+				AE723F4F1D6CD22900A6797C /* Favorites.h */,
+				AE723F501D6CD23E00A6797C /* Favorites.m */,
+				AE2048E51D63A102004678E0 /* AppDelegate.m */,
+				AE2048E71D63A102004678E0 /* ViewController.h */,
+				AE2048E81D63A102004678E0 /* ViewController.m */,
+				AE2048EA1D63A102004678E0 /* Main.storyboard */,
+				AE2048ED1D63A102004678E0 /* Assets.xcassets */,
+				AE2048EF1D63A102004678E0 /* LaunchScreen.storyboard */,
+				AE2048F21D63A102004678E0 /* Info.plist */,
+				AE2048E11D63A102004678E0 /* Supporting Files */,
+			);
+			path = QezyPlay;
+			sourceTree = "<group>";
+		};
+		AE2048E11D63A102004678E0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE2048E21D63A102004678E0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AE2048FA1D63A103004678E0 /* QezyPlayTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE2048FB1D63A103004678E0 /* QezyPlayTests.m */,
+				AE2048FD1D63A103004678E0 /* Info.plist */,
+			);
+			path = QezyPlayTests;
+			sourceTree = "<group>";
+		};
+		AE2049051D63A103004678E0 /* QezyPlayUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AE2049061D63A103004678E0 /* QezyPlayUITests.m */,
+				AE2049081D63A103004678E0 /* Info.plist */,
+			);
+			path = QezyPlayUITests;
+			sourceTree = "<group>";
+		};
+		AE20491B1D63AF0A004678E0 /* userManagement */ = {
+			isa = PBXGroup;
+			children = (
+				AE2049191D63AEFD004678E0 /* SignUp.m */,
+				AE2049181D63AEE7004678E0 /* SignUp.h */,
+				AE20491C1D63B27D004678E0 /* ForgetPassword.h */,
+				AE20491D1D63B291004678E0 /* ForgetPassword.m */,
+			);
+			name = userManagement;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE2048DD1D63A102004678E0 /* QezyPlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE20490B1D63A103004678E0 /* Build configuration list for PBXNativeTarget "QezyPlay" */;
+			buildPhases = (
+				AE2048DA1D63A102004678E0 /* Sources */,
+				AE2048DB1D63A102004678E0 /* Frameworks */,
+				AE2048DC1D63A102004678E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QezyPlay;
+			productName = QezyPlay;
+			productReference = AE2048DE1D63A102004678E0 /* QezyPlay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AE2048F61D63A103004678E0 /* QezyPlayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE20490E1D63A103004678E0 /* Build configuration list for PBXNativeTarget "QezyPlayTests" */;
+			buildPhases = (
+				AE2048F31D63A103004678E0 /* Sources */,
+				AE2048F41D63A103004678E0 /* Frameworks */,
+				AE2048F51D63A103004678E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE2048F91D63A103004678E0 /* PBXTargetDependency */,
+			);
+			name = QezyPlayTests;
+			productName = QezyPlayTests;
+			productReference = AE2048F71D63A103004678E0 /* QezyPlayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AE2049011D63A103004678E0 /* QezyPlayUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE2049111D63A103004678E0 /* Build configuration list for PBXNativeTarget "QezyPlayUITests" */;
+			buildPhases = (
+				AE2048FE1D63A103004678E0 /* Sources */,
+				AE2048FF1D63A103004678E0 /* Frameworks */,
+				AE2049001D63A103004678E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE2049041D63A103004678E0 /* PBXTargetDependency */,
+			);
+			name = QezyPlayUITests;
+			productName = QezyPlayUITests;
+			productReference = AE2049021D63A103004678E0 /* QezyPlayUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE2048D61D63A102004678E0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = ideabytes;
+				TargetAttributes = {
+					AE2048DD1D63A102004678E0 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					AE2048F61D63A103004678E0 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = AE2048DD1D63A102004678E0;
+					};
+					AE2049011D63A103004678E0 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = AE2048DD1D63A102004678E0;
+					};
+				};
+			};
+			buildConfigurationList = AE2048D91D63A102004678E0 /* Build configuration list for PBXProject "QezyPlay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AE2048D51D63A102004678E0;
+			productRefGroup = AE2048DF1D63A102004678E0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE2048DD1D63A102004678E0 /* QezyPlay */,
+				AE2048F61D63A103004678E0 /* QezyPlayTests */,
+				AE2049011D63A103004678E0 /* QezyPlayUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE2048DC1D63A102004678E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE2049171D63A957004678E0 /* backnv.png in Resources */,
+				AE723F431D6CBC6200A6797C /* home-active-hdpi.png in Resources */,
+				AE2049151D63A230004678E0 /* Splashscreen.png in Resources */,
+				AE2048F11D63A102004678E0 /* LaunchScreen.storyboard in Resources */,
+				AE2048EE1D63A102004678E0 /* Assets.xcassets in Resources */,
+				AE723F451D6CBCBD00A6797C /* favourites-active-hdpi.png in Resources */,
+				AE2048EC1D63A102004678E0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE2048F51D63A103004678E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE2049001D63A103004678E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE723F4C1D6CCC6F00A6797C /* AppleTV.jpg in Resources */,
+				AE723F4A1D6CCC5600A6797C /* BBC.jpg in Resources */,
+				AE723F4E1D6CCC7900A6797C /* Discovery.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE2048DA1D63A102004678E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE2048E91D63A102004678E0 /* ViewController.m in Sources */,
+				AE723F511D6CD23E00A6797C /* Favorites.m in Sources */,
+				AE20491A1D63AEFD004678E0 /* SignUp.m in Sources */,
+				AE2048E61D63A102004678E0 /* AppDelegate.m in Sources */,
+				AE7CE0ED1D6DA9D7001C63CE /* Home.m in Sources */,
+				AE20491E1D63B291004678E0 /* ForgetPassword.m in Sources */,
+				AE2048E31D63A102004678E0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE2048F31D63A103004678E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE2048FC1D63A103004678E0 /* QezyPlayTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE2048FE1D63A103004678E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE2049071D63A103004678E0 /* QezyPlayUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE2048F91D63A103004678E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE2048DD1D63A102004678E0 /* QezyPlay */;
+			targetProxy = AE2048F81D63A103004678E0 /* PBXContainerItemProxy */;
+		};
+		AE2049041D63A103004678E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE2048DD1D63A102004678E0 /* QezyPlay */;
+			targetProxy = AE2049031D63A103004678E0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AE2048EA1D63A102004678E0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE2048EB1D63A102004678E0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AE2048EF1D63A102004678E0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE2048F01D63A102004678E0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AE2049091D63A103004678E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AE20490A1D63A103004678E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE20490C1D63A103004678E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = QezyPlay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideabytes.QezyPlay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AE20490D1D63A103004678E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = QezyPlay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideabytes.QezyPlay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AE20490F1D63A103004678E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = QezyPlayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideabytes.QezyPlayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QezyPlay.app/QezyPlay";
+			};
+			name = Debug;
+		};
+		AE2049101D63A103004678E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = QezyPlayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideabytes.QezyPlayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QezyPlay.app/QezyPlay";
+			};
+			name = Release;
+		};
+		AE2049121D63A103004678E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = QezyPlayUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideabytes.QezyPlayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = QezyPlay;
+			};
+			name = Debug;
+		};
+		AE2049131D63A103004678E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = QezyPlayUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideabytes.QezyPlayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = QezyPlay;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE2048D91D63A102004678E0 /* Build configuration list for PBXProject "QezyPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE2049091D63A103004678E0 /* Debug */,
+				AE20490A1D63A103004678E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE20490B1D63A103004678E0 /* Build configuration list for PBXNativeTarget "QezyPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE20490C1D63A103004678E0 /* Debug */,
+				AE20490D1D63A103004678E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE20490E1D63A103004678E0 /* Build configuration list for PBXNativeTarget "QezyPlayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE20490F1D63A103004678E0 /* Debug */,
+				AE2049101D63A103004678E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE2049111D63A103004678E0 /* Build configuration list for PBXNativeTarget "QezyPlayUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE2049121D63A103004678E0 /* Debug */,
+				AE2049131D63A103004678E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE2048D61D63A102004678E0 /* Project object */;
+}

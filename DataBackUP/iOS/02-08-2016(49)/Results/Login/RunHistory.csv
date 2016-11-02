@@ -1,0 +1,4 @@
+﻿Date Run,Status,Time,# of Errors,# of Warnings,# of Exceptions,Log File,Return Value,Error Message,# of Successes
+2016-08-02 11:26:21.805 +0530,"Failure",0:00:00,1,0,0,"20160802_112621.805/LogFile.txt","","Connection Failed -- Unable to connect to Server:C6902 (BH902XJA09) on port:5900\nADB error: device not found",0
+2016-08-02 11:27:09.019 +0530,"Failure",0:00:20,1,0,1,"20160802_112709.019/LogFile.txt","","File Not Found -- imagefound Error - Could Not Open Image: Login",0
+2016-08-02 11:28:33.712 +0530,"Failure",0:00:46,1,0,0,"20160802_112833.712/LogFile.txt","","Script Error -- Number of Errors logged: 1",0

@@ -1,0 +1,19 @@
+﻿2016-07-27 14:11:39.291 +0530	START		Running Social.script
+2016-07-27 14:11:39.357 +0530	connect		iPhone:(null)	2	on_social	Social.script
+2016-07-27 14:11:39.359 +0530	presshomebutton			6	on_social	Social.script
+2016-07-27 14:11:44.870 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	13	on_social	Social.script
+2016-07-27 14:11:45.037 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	14	on_social	Social.script
+2016-07-27 14:11:51.178 +0530	imagefound	GSXAPP	found at (244, 467)	16	on_social	Social.script
+2016-07-27 14:11:57.425 +0530	click	GSXAPP	at (244, 467)	21	on_social	Social.script
+2016-07-27 14:11:59.863 +0530	waitfor	Menu	found at (55, 83)	26	on_social	Social.script
+2016-07-27 14:12:01.104 +0530	click	Menu	at (55, 83)	29	on_social	Social.script
+2016-07-27 14:12:08.743 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(155,456), ImageRectangle:(117,445,194,468), Language:"English", text:"Social", TextPlatform:"Generic OCR")	found at (155, 456)	34	on_social	Social.script
+2016-07-27 14:12:16.494 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(155,456), ImageRectangle:(117,445,194,468), Language:"English", Text:"Social", TextPlatform:"Generic OCR")	at (155, 456)	45	on_social	Social.script
+2016-07-27 14:12:17.963 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(155,456), ImageRectangle:(117,445,194,468), Language:"English", Text:"Social", TextPlatform:"Generic OCR")	found at (155, 456)	48	on_social	Social.script
+2016-07-27 14:12:19.533 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,83), ImageRectangle:(276,71,362,95), Language:"English", text:"Social", TextPlatform:"Generic OCR")	found at (319, 83)	51	on_social	Social.script
+2016-07-27 14:12:19.535 +0530	LogSuccess		Social is displayed	52	on_social	Social.script
+2016-07-27 14:12:20.780 +0530	capturescreen	Social_Pass_iOS.png		58	on_social	Social.script
+2016-07-27 14:12:20.781 +0530	killapp		Srinivas reddy`s iPhone : GSX FY 17	75	on_social	Social.script
+2016-07-27 14:12:21.481 +0530	killapp		Srinivas reddy`s iPhone : GSX FY 17	76	on_social	Social.script
+2016-07-27 14:12:21.936 +0530	EndTestCase		(Duration:"42.644038", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 14:11:39 +0530", Successes:"1", TestCase:"Social.script", Warnings:"0")
+2016-07-27 14:12:21.949 +0530	SUCCESS		Execution Time 0:00:42 Social.script

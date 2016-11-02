@@ -1,0 +1,18 @@
+﻿2016-07-27 11:33:55.419 +0530	START		Running Attendees.script
+2016-07-27 11:33:55.483 +0530	connect		iPhone:(null)	2	on_attendees	Attendees.script
+2016-07-27 11:33:55.484 +0530	presshomebutton			6	on_attendees	Attendees.script
+2016-07-27 11:33:55.760 +0530	imagefound	GSXAPP	found at (244, 467)	13	on_attendees	Attendees.script
+2016-07-27 11:34:16.218 +0530	click	GSXAPP	at (244, 467)	20	on_attendees	Attendees.script
+2016-07-27 11:34:19.288 +0530	waitfor	Menu	found at (55, 83)	25	on_attendees	Attendees.script
+2016-07-27 11:34:19.762 +0530	click	Menu	at (55, 83)	28	on_attendees	Attendees.script
+2016-07-27 11:34:33.538 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Attendees", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Attendees") within 5.00 seconds	33	on_attendees	Attendees.script
+2016-07-27 11:34:33.539 +0530	set		SWIPESPEED = 8	35	on_attendees	Attendees.script
+2016-07-27 11:34:34.533 +0530	swipeup		Swiped up from (86, 991) to (86, 341)	36	on_attendees	Attendees.script
+2016-07-27 11:34:40.822 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(184,565), ImageRectangle:(116,554,252,576), Language:"English", text:"Attendees", TextPlatform:"Generic OCR")	found at (184, 565)	40	on_attendees	Attendees.script
+2016-07-27 11:34:48.231 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(184,565), ImageRectangle:(116,554,252,576), Language:"English", Text:"Attendees", TextPlatform:"Generic OCR")	at (184, 565)	44	on_attendees	Attendees.script
+2016-07-27 11:34:49.619 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(184,565), ImageRectangle:(116,554,252,576), Language:"English", Text:"Attendees", TextPlatform:"Generic OCR")	found at (184, 565)	47	on_attendees	Attendees.script
+2016-07-27 11:34:50.987 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,83), ImageRectangle:(244,72,394,95), Language:"English", text:"Attendees", TextPlatform:"Generic OCR")	found at (319, 83)	49	on_attendees	Attendees.script
+2016-07-27 11:34:50.989 +0530	LogSuccess		Attendees is displayed	50	on_attendees	Attendees.script
+2016-07-27 11:34:52.256 +0530	capturescreen	Attendees_Pass_iOS.png		56	on_attendees	Attendees.script
+2016-07-27 11:34:52.533 +0530	EndTestCase		(Duration:"57.113041", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 11:33:55 +0530", Successes:"1", TestCase:"Attendees.script", Warnings:"0")
+2016-07-27 11:34:52.548 +0530	SUCCESS		Execution Time 0:00:57 Attendees.script

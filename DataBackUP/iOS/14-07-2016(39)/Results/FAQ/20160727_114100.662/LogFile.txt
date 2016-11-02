@@ -1,0 +1,20 @@
+﻿2016-07-27 11:41:00.663 +0530	START		Running FAQ.script
+2016-07-27 11:41:00.725 +0530	connect		iPhone:(null)	2	on_faq	FAQ.script
+2016-07-27 11:41:00.727 +0530	presshomebutton			6	on_faq	FAQ.script
+2016-07-27 11:41:06.197 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	13	on_faq	FAQ.script
+2016-07-27 11:41:06.359 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	14	on_faq	FAQ.script
+2016-07-27 11:41:12.568 +0530	imagefound	GSXAPP	found at (244, 467)	16	on_faq	FAQ.script
+2016-07-27 11:41:18.848 +0530	click	GSXAPP	at (244, 467)	21	on_faq	FAQ.script
+2016-07-27 11:41:21.544 +0530	waitfor	Menu	found at (55, 83)	26	on_faq	FAQ.script
+2016-07-27 11:41:21.795 +0530	click	Menu	at (55, 83)	29	on_faq	FAQ.script
+2016-07-27 11:41:37.678 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"FAQ", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"FAQ") within 5.00 seconds	34	on_faq	FAQ.script
+2016-07-27 11:41:37.679 +0530	set		SWIPESPEED = 8	36	on_faq	FAQ.script
+2016-07-27 11:41:38.671 +0530	swipeup		Swiped up from (86, 991) to (86, 341)	37	on_faq	FAQ.script
+2016-07-27 11:41:46.124 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(144,1101), ImageRectangle:(118,1088,171,1114), Language:"English", text:"FAQ", TextPlatform:"Generic OCR")	found at (144, 1101)	41	on_faq	FAQ.script
+2016-07-27 11:41:53.745 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(144,1101), ImageRectangle:(118,1088,171,1114), Language:"English", Text:"FAQ", TextPlatform:"Generic OCR")	at (144, 1101)	45	on_faq	FAQ.script
+2016-07-27 11:41:55.062 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(144,1101), ImageRectangle:(118,1088,171,1114), Language:"English", Text:"FAQ", TextPlatform:"Generic OCR")	found at (144, 1101)	48	on_faq	FAQ.script
+2016-07-27 11:42:02.580 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(320,84), ImageRectangle:(291,71,349,98), Language:"English", text:"FAQ", TextPlatform:"Generic OCR")	found at (320, 84)	52	on_faq	FAQ.script
+2016-07-27 11:42:02.582 +0530	LogSuccess		FAQ is displayed	53	on_faq	FAQ.script
+2016-07-27 11:42:03.863 +0530	capturescreen	FAQ_Pass_iOS.png		59	on_faq	FAQ.script
+2016-07-27 11:42:04.162 +0530	EndTestCase		(Duration:"63.497012", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 11:41:00 +0530", Successes:"1", TestCase:"FAQ.script", Warnings:"0")
+2016-07-27 11:42:04.178 +0530	SUCCESS		Execution Time 0:01:03 FAQ.script

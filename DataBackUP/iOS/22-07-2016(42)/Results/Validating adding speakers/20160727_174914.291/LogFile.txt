@@ -1,0 +1,24 @@
+﻿2016-07-27 17:49:14.292 +0530	START		Running Validating adding speakers.script
+2016-07-27 17:49:14.368 +0530	connect		iPhone:(null)	2	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:49:14.370 +0530	presshomebutton			3	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:49:20.139 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	10	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:49:20.302 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	11	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:49:26.409 +0530	imagefound	GSXAPP	found at (244, 467)	13	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:49:32.633 +0530	click	GSXAPP	at (244, 467)	18	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:49:37.477 +0530	waitfor	Menu	found at (55, 83)	21	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:49:38.723 +0530	click	Menu	at (55, 83)	24	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:49:46.506 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,309), ImageRectangle:(117,295,240,323), Language:"English", text:"Speakers", TextPlatform:"Generic OCR")	found at (178, 309)	27	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:49:54.350 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,309), ImageRectangle:(117,295,240,323), Language:"English", Text:"Speakers", TextPlatform:"Generic OCR")	at (178, 309)	35	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:49:55.574 +0530	click	Add Button	at (47, 195)	37	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:50:03.272 +0530	readtext		(191,160,352,189)
+2016-07-27 17:50:03.273 +0530	Log		Niki Acosta	44	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:50:04.494 +0530	click	Menu	at (55, 83)	47	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:50:06.634 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(192,529), ImageRectangle:(118,516,266,543), Language:"English", Text:"My Agenda", TextPlatform:"Generic OCR")	at (192, 529)	49	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:50:07.574 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,309), ImageRectangle:(117,295,240,323), Language:"English", Text:"Speakers", TextPlatform:"Generic OCR")	found at (178, 309)	50	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:50:08.701 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(310,173), ImageRectangle:(246,160,374,187), Language:"English", Text:"Speakers", TextPlatform:"Generic OCR")	at (310, 173)	53	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:50:16.382 +0530	readtext		(189,304,356,332)
+2016-07-27 17:50:16.383 +0530	Log		Niki Acosta	59	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:50:19.391 +0530	LogSuccess		Valid speaker added to My Agenda	64	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:50:20.574 +0530	capturescreen	Valid speaker added_Pass_iOS.png		70	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:50:21.166 +0530	EndTestCase		(Duration:"66.871735", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 17:49:14 +0530", Successes:"1", TestCase:"Validating adding speakers.script", Warnings:"0")
+2016-07-27 17:50:21.184 +0530	SUCCESS		Execution Time 0:01:06 Validating adding speakers.script

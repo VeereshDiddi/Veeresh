@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<runHistory script="My Agenda">
+ <run>
+  <RunDate>2016-08-02 14:26:59.212 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>64.498309</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>4</Successes>
+  <LogFile>20160802_142659.212/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+</runHistory>

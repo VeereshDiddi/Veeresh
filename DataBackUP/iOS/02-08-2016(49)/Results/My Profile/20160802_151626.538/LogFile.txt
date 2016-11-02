@@ -1,0 +1,20 @@
+﻿2016-08-02 15:16:26.539 +0530	START		Running My Profile.script
+2016-08-02 15:16:26.611 +0530	connect		iPhone:(null)	3	on_my_profile	My Profile.script
+2016-08-02 15:16:26.613 +0530	presshomebutton			4	on_my_profile	My Profile.script
+2016-08-02 15:16:37.312 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	12	on_my_profile	My Profile.script
+2016-08-02 15:16:37.481 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	13	on_my_profile	My Profile.script
+2016-08-02 15:16:43.699 +0530	imagefound	GSXAPP	found at (244, 467)	15	on_my_profile	My Profile.script
+2016-08-02 15:16:50.015 +0530	click	GSXAPP	at (244, 467)	19	on_my_profile	My Profile.script
+2016-08-02 15:16:54.184 +0530	waitfor	Menu	found at (55, 83)	24	on_my_profile	My Profile.script
+2016-08-02 15:16:54.799 +0530	click	Menu	at (55, 83)	27	on_my_profile	My Profile.script
+2016-08-02 15:17:00.960 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(233,769), ImageRectangle:(118,756,348,783), Language:"English", text:"Ideabytes Testing", TextPlatform:"Generic OCR")	found at (233, 769)	32	on_my_profile	My Profile.script
+2016-08-02 15:17:08.793 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(233,646), ImageRectangle:(118,633,348,660), Language:"English", Text:"Ideabytes Testing", TextPlatform:"Generic OCR")	at (233, 646)	43	on_my_profile	My Profile.script
+2016-08-02 15:17:13.916 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,85), ImageRectangle:(248,71,391,100), Language:"English", Text:"My Profile", TextPlatform:"Generic OCR")	found at (319, 85)	46	on_my_profile	My Profile.script
+2016-08-02 15:17:15.300 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,85), ImageRectangle:(248,71,391,100), Language:"English", text:"My Profile", TextPlatform:"Generic OCR")	found at (319, 85)	50	on_my_profile	My Profile.script
+2016-08-02 15:17:15.302 +0530	LogSuccess		My Profile page is displayed	51	on_my_profile	My Profile.script
+2016-08-02 15:17:16.610 +0530	capturescreen	My Profile_Pass_iOS.png		57	on_my_profile	My Profile.script
+2016-08-02 15:17:23.076 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(265,434), ImageRectangle:(121,418,409,450), Language:"English", text:"Ideabytes Testing", TextPlatform:"Generic OCR")	found at (265, 434)	74	on_my_profile	My Profile.script
+2016-08-02 15:17:23.077 +0530	LogSuccess		Ideabytes Testing Profile Name is displayed	75	on_my_profile	My Profile.script
+2016-08-02 15:17:24.410 +0530	capturescreen	Ideabytes Testing profile_Pass_iOS.png		81	on_my_profile	My Profile.script
+2016-08-02 15:17:24.679 +0530	EndTestCase		(Duration:"58.137764", Errors:"0", Exceptions:"0", StartTime:"2016-08-02 15:16:26 +0530", Successes:"2", TestCase:"My Profile.script", Warnings:"0")
+2016-08-02 15:17:24.695 +0530	SUCCESS		Execution Time 0:00:58 My Profile.script

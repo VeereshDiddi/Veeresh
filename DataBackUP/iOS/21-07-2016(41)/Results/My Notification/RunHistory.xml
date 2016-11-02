@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<runHistory script="My Notification">
+ <run>
+  <RunDate>2016-07-27 13:05:56.795 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>45.593043</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20160727_130556.795/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+</runHistory>

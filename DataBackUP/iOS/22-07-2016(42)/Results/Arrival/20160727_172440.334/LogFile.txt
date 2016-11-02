@@ -1,0 +1,41 @@
+﻿2016-07-27 17:24:40.335 +0530	START		Running Arrival.script
+2016-07-27 17:24:40.402 +0530	connect		Android:(null)	2	on_arrival	Arrival.script
+2016-07-27 17:24:40.404 +0530	presshomebutton			3	on_arrival	Arrival.script
+2016-07-27 17:24:41.833 +0530	click	Home Menu	at (534, 1651)	6	on_arrival	Arrival.script
+2016-07-27 17:24:47.485 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	10	on_arrival	Arrival.script
+2016-07-27 17:24:47.614 +0530	swipeleft		Swiped left from (547, 370) to (108, 370)	11	on_arrival	Arrival.script
+2016-07-27 17:24:53.887 +0530	imagefound	GSXAPP	found at (413, 927)	13	on_arrival	Arrival.script
+2016-07-27 17:25:00.220 +0530	click	GSXAPP	at (413, 927)	17	on_arrival	Arrival.script
+2016-07-27 17:25:05.111 +0530	waitfor	Menu	found at (82, 160)	22	on_arrival	Arrival.script
+2016-07-27 17:25:06.527 +0530	click	Menu	at (82, 160)	25	on_arrival	Arrival.script
+2016-07-27 17:25:26.256 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Arrival", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Arrival") within 5.00 seconds	30	on_arrival	Arrival.script
+2016-07-27 17:25:26.257 +0530	set		SWIPESPEED = 8	32	on_arrival	Arrival.script
+2016-07-27 17:25:26.845 +0530	swipeup		Swiped up from (86, 991) to (86, 576)	33	on_arrival	Arrival.script
+2016-07-27 17:25:40.105 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Arrival", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Arrival") within 5.00 seconds	37	on_arrival	Arrival.script
+2016-07-27 17:25:40.106 +0530	set		SWIPESPEED = 8	32	on_arrival	Arrival.script
+2016-07-27 17:25:40.705 +0530	swipeup		Swiped up from (86, 991) to (86, 576)	33	on_arrival	Arrival.script
+2016-07-27 17:25:45.143 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(201,1300), ImageRectangle:(150,1286,253,1314), Language:"English", text:"Arrival", TextPlatform:"Generic OCR")	found at (201, 1300)	37	on_arrival	Arrival.script
+2016-07-27 17:25:56.073 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(201,1130), ImageRectangle:(150,1116,253,1144), Language:"English", Text:"Arrival", TextPlatform:"Generic OCR")	at (201, 1130)	41	on_arrival	Arrival.script
+2016-07-27 17:26:00.493 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(201,1130), ImageRectangle:(150,1116,253,1144), Language:"English", Text:"Arrival", TextPlatform:"Generic OCR")	found at (201, 1130)	44	on_arrival	Arrival.script
+2016-07-27 17:26:09.047 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(266,159), ImageRectangle:(180,137,352,181), Language:"English", text:"Arrival", TextPlatform:"Generic OCR")	found at (266, 159)	46	on_arrival	Arrival.script
+2016-07-27 17:26:09.048 +0530	LogSuccess		Arrival is displayed	47	on_arrival	Arrival.script
+2016-07-27 17:26:09.873 +0530	capturescreen	Arrival_Pass_Android.png		49	on_arrival	Arrival.script
+2016-07-27 17:26:09.882 +0530	connect		iPhone:(null)	2	on_arrival	Arrival.script
+2016-07-27 17:26:09.884 +0530	presshomebutton			3	on_arrival	Arrival.script
+2016-07-27 17:26:15.165 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	10	on_arrival	Arrival.script
+2016-07-27 17:26:15.856 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	11	on_arrival	Arrival.script
+2016-07-27 17:26:22.007 +0530	imagefound	GSXAPP	found at (244, 467)	13	on_arrival	Arrival.script
+2016-07-27 17:26:28.223 +0530	click	GSXAPP	at (244, 467)	17	on_arrival	Arrival.script
+2016-07-27 17:26:32.213 +0530	waitfor	Menu	found at (55, 83)	22	on_arrival	Arrival.script
+2016-07-27 17:26:33.447 +0530	click	Menu	at (55, 83)	25	on_arrival	Arrival.script
+2016-07-27 17:26:47.485 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Arrival", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Arrival") within 5.00 seconds	30	on_arrival	Arrival.script
+2016-07-27 17:26:47.487 +0530	set		SWIPESPEED = 8	32	on_arrival	Arrival.script
+2016-07-27 17:26:48.404 +0530	swipeup		Swiped up from (86, 991) to (86, 341)	33	on_arrival	Arrival.script
+2016-07-27 17:26:56.388 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(156,671), ImageRectangle:(116,660,196,682), Language:"English", text:"Arrival", TextPlatform:"Generic OCR")	found at (156, 671)	37	on_arrival	Arrival.script
+2016-07-27 17:27:04.294 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(156,671), ImageRectangle:(116,660,196,682), Language:"English", Text:"Arrival", TextPlatform:"Generic OCR")	at (156, 671)	41	on_arrival	Arrival.script
+2016-07-27 17:27:05.779 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(156,671), ImageRectangle:(116,660,196,682), Language:"English", Text:"Arrival", TextPlatform:"Generic OCR")	found at (156, 671)	44	on_arrival	Arrival.script
+2016-07-27 17:27:06.098 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(318,83), ImageRectangle:(273,71,363,95), Language:"English", text:"Arrival", TextPlatform:"Generic OCR")	found at (318, 83)	46	on_arrival	Arrival.script
+2016-07-27 17:27:06.099 +0530	LogSuccess		Arrival is displayed	47	on_arrival	Arrival.script
+2016-07-27 17:27:06.419 +0530	capturescreen	Arrival_Pass_iOS.png		53	on_arrival	Arrival.script
+2016-07-27 17:27:06.980 +0530	EndTestCase		(Duration:"146.642989", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 17:24:40 +0530", Successes:"2", TestCase:"Arrival.script", Warnings:"0")
+2016-07-27 17:27:06.995 +0530	SUCCESS		Execution Time 0:02:26 Arrival.script

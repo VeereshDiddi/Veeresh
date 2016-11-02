@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<testsuites>
+ <testsuite name="My Agenda.script" package="iOS.suite" timestamp="2016-08-02 14:26:59.212 +0530"
+ tests="1" successes="4" errors="0" time="64.498309">
+  <properties>
+   <property name="RunDate" value="2016-08-02 14:26:59.212 +0530"/>
+   <property name="Status" value="Success"/>
+  </properties>
+  <testcase name="My Agenda.script" assertions="4" successes="4" errors="0" time="64.495691">
+  </testcase>
+ </testsuite>
+</testsuites>

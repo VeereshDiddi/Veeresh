@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE32253E1B2AD89500ECEA8C /* libm.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE32253D1B2AD89500ECEA8C /* libm.dylib */; };
+		AE417B711B54E3DA005264CA /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = AE417B6E1B54E3DA005264CA /* SimplePing.m */; };
+		AE417B721B54E3DA005264CA /* SimplePingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE417B701B54E3DA005264CA /* SimplePingHelper.m */; };
+		AE521C131B4D2FA2009504B8 /* Launch_667x375.png in Resources */ = {isa = PBXBuildFile; fileRef = AE521C0F1B4D2FA2009504B8 /* Launch_667x375.png */; };
+		AE521C141B4D2FA2009504B8 /* Launch_667x375@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE521C101B4D2FA2009504B8 /* Launch_667x375@2x.png */; };
+		AE521C151B4D2FA2009504B8 /* Launch_736x414.png in Resources */ = {isa = PBXBuildFile; fileRef = AE521C111B4D2FA2009504B8 /* Launch_736x414.png */; };
+		AE521C161B4D2FA2009504B8 /* Launch_736x414@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE521C121B4D2FA2009504B8 /* Launch_736x414@3x.png */; };
+		AE5A5CB21B298BB0009D84CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5A5CB11B298BB0009D84CF /* main.m */; };
+		AE5A5CB51B298BB0009D84CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5A5CB41B298BB0009D84CF /* AppDelegate.m */; };
+		AE5A5CB81B298BB0009D84CF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5A5CB71B298BB0009D84CF /* ViewController.m */; };
+		AE5A5CBB1B298BB0009D84CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE5A5CB91B298BB0009D84CF /* Main.storyboard */; };
+		AE5A5CBD1B298BB0009D84CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE5A5CBC1B298BB0009D84CF /* Images.xcassets */; };
+		AE5A5CC01B298BB0009D84CF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5A5CBE1B298BB0009D84CF /* LaunchScreen.xib */; };
+		AE5A5CCC1B298BB0009D84CF /* Metro_TVTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5A5CCB1B298BB0009D84CF /* Metro_TVTests.m */; };
+		AE5A5CD71B29A0D2009D84CF /* Lanch@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5A5CD51B29A0D2009D84CF /* Lanch@1x.png */; };
+		AE5A5CD81B29A0D2009D84CF /* Lanch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5A5CD61B29A0D2009D84CF /* Lanch@2x.png */; };
+		AE5A5CDB1B29B099009D84CF /* include in Resources */ = {isa = PBXBuildFile; fileRef = AE5A5CD91B29B099009D84CF /* include */; };
+		AE5A5CDE1B29B253009D84CF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A5CDD1B29B253009D84CF /* CFNetwork.framework */; };
+		AE5A5CE01B29B260009D84CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A5CDF1B29B260009D84CF /* UIKit.framework */; };
+		AE5A5CE21B29B270009D84CF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A5CE11B29B270009D84CF /* libz.dylib */; };
+		AE5A5CE41B29B28A009D84CF /* libpthread.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A5CE31B29B28A009D84CF /* libpthread.dylib */; };
+		AE5A5CE71B29B29A009D84CF /* MediaAccessibility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A5CE51B29B29A009D84CF /* MediaAccessibility.framework */; };
+		AE5A5CE81B29B29A009D84CF /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A5CE61B29B29A009D84CF /* MediaPlayer.framework */; };
+		AE5A5CEA1B29B2A2009D84CF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A5CE91B29B2A2009D84CF /* CoreLocation.framework */; };
+		AE5A5CEC1B29B2AD009D84CF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A5CEB1B29B2AD009D84CF /* SystemConfiguration.framework */; };
+		AE5A5CEE1B29B2B7009D84CF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A5CED1B29B2B7009D84CF /* AVFoundation.framework */; };
+		AE5A5CF01B29B2C1009D84CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A5CEF1B29B2C1009D84CF /* CoreGraphics.framework */; };
+		AE5A5CF21B29B2D1009D84CF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A5CF11B29B2D1009D84CF /* MobileCoreServices.framework */; };
+		AE5A5CF41B29B2E7009D84CF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A5CF31B29B2E7009D84CF /* Security.framework */; };
+		AE5A5CF71B29B2FC009D84CF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5A5CF61B29B2FC009D84CF /* Reachability.m */; };
+		AE5A5CFA1B29C245009D84CF /* Launch_480X320@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5A5CF81B29C245009D84CF /* Launch_480X320@1x.png */; };
+		AE5A5CFB1B29C245009D84CF /* Launch_480X320@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5A5CF91B29C245009D84CF /* Launch_480X320@2x.png */; };
+		AE5A5CFE1B29C266009D84CF /* Launch_568X320@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5A5CFC1B29C266009D84CF /* Launch_568X320@1x.png */; };
+		AE5A5CFF1B29C266009D84CF /* Launch_568X320@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5A5CFD1B29C266009D84CF /* Launch_568X320@2x.png */; };
+		AE5A5D021B29C27B009D84CF /* Launch_1024@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5A5D001B29C27B009D84CF /* Launch_1024@1x.png */; };
+		AE5A5D031B29C27B009D84CF /* Launch_1024@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5A5D011B29C27B009D84CF /* Launch_1024@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE5A5CC61B298BB0009D84CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5A5CA41B298BB0009D84CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE5A5CAB1B298BB0009D84CF;
+			remoteInfo = "Metro-TV";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AE32253D1B2AD89500ECEA8C /* libm.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libm.dylib; path = usr/lib/libm.dylib; sourceTree = SDKROOT; };
+		AE417B6D1B54E3DA005264CA /* SimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
+		AE417B6E1B54E3DA005264CA /* SimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
+		AE417B6F1B54E3DA005264CA /* SimplePingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePingHelper.h; sourceTree = "<group>"; };
+		AE417B701B54E3DA005264CA /* SimplePingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePingHelper.m; sourceTree = "<group>"; };
+		AE521C0F1B4D2FA2009504B8 /* Launch_667x375.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch_667x375.png; sourceTree = "<group>"; };
+		AE521C101B4D2FA2009504B8 /* Launch_667x375@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch_667x375@2x.png"; sourceTree = "<group>"; };
+		AE521C111B4D2FA2009504B8 /* Launch_736x414.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch_736x414.png; sourceTree = "<group>"; };
+		AE521C121B4D2FA2009504B8 /* Launch_736x414@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch_736x414@3x.png"; sourceTree = "<group>"; };
+		AE5A5CAC1B298BB0009D84CF /* Metro-TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Metro-TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE5A5CB01B298BB0009D84CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE5A5CB11B298BB0009D84CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AE5A5CB31B298BB0009D84CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AE5A5CB41B298BB0009D84CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AE5A5CB61B298BB0009D84CF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AE5A5CB71B298BB0009D84CF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AE5A5CBA1B298BB0009D84CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AE5A5CBC1B298BB0009D84CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AE5A5CBF1B298BB0009D84CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		AE5A5CC51B298BB0009D84CF /* Metro-TVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Metro-TVTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE5A5CCA1B298BB0009D84CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE5A5CCB1B298BB0009D84CF /* Metro_TVTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Metro_TVTests.m; sourceTree = "<group>"; };
+		AE5A5CD51B29A0D2009D84CF /* Lanch@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lanch@1x.png"; sourceTree = "<group>"; };
+		AE5A5CD61B29A0D2009D84CF /* Lanch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lanch@2x.png"; sourceTree = "<group>"; };
+		AE5A5CD91B29B099009D84CF /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; path = include; sourceTree = "<group>"; };
+		AE5A5CDD1B29B253009D84CF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		AE5A5CDF1B29B260009D84CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AE5A5CE11B29B270009D84CF /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		AE5A5CE31B29B28A009D84CF /* libpthread.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpthread.dylib; path = usr/lib/libpthread.dylib; sourceTree = SDKROOT; };
+		AE5A5CE51B29B29A009D84CF /* MediaAccessibility.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaAccessibility.framework; path = System/Library/Frameworks/MediaAccessibility.framework; sourceTree = SDKROOT; };
+		AE5A5CE61B29B29A009D84CF /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		AE5A5CE91B29B2A2009D84CF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AE5A5CEB1B29B2AD009D84CF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AE5A5CED1B29B2B7009D84CF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		AE5A5CEF1B29B2C1009D84CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AE5A5CF11B29B2D1009D84CF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		AE5A5CF31B29B2E7009D84CF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		AE5A5CF51B29B2FC009D84CF /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		AE5A5CF61B29B2FC009D84CF /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		AE5A5CF81B29C245009D84CF /* Launch_480X320@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch_480X320@1x.png"; sourceTree = "<group>"; };
+		AE5A5CF91B29C245009D84CF /* Launch_480X320@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch_480X320@2x.png"; sourceTree = "<group>"; };
+		AE5A5CFC1B29C266009D84CF /* Launch_568X320@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch_568X320@1x.png"; sourceTree = "<group>"; };
+		AE5A5CFD1B29C266009D84CF /* Launch_568X320@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch_568X320@2x.png"; sourceTree = "<group>"; };
+		AE5A5D001B29C27B009D84CF /* Launch_1024@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch_1024@1x.png"; sourceTree = "<group>"; };
+		AE5A5D011B29C27B009D84CF /* Launch_1024@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch_1024@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE5A5CA91B298BB0009D84CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE32253E1B2AD89500ECEA8C /* libm.dylib in Frameworks */,
+				AE5A5CF41B29B2E7009D84CF /* Security.framework in Frameworks */,
+				AE5A5CF21B29B2D1009D84CF /* MobileCoreServices.framework in Frameworks */,
+				AE5A5CF01B29B2C1009D84CF /* CoreGraphics.framework in Frameworks */,
+				AE5A5CEE1B29B2B7009D84CF /* AVFoundation.framework in Frameworks */,
+				AE5A5CEC1B29B2AD009D84CF /* SystemConfiguration.framework in Frameworks */,
+				AE5A5CEA1B29B2A2009D84CF /* CoreLocation.framework in Frameworks */,
+				AE5A5CE71B29B29A009D84CF /* MediaAccessibility.framework in Frameworks */,
+				AE5A5CE81B29B29A009D84CF /* MediaPlayer.framework in Frameworks */,
+				AE5A5CE41B29B28A009D84CF /* libpthread.dylib in Frameworks */,
+				AE5A5CE21B29B270009D84CF /* libz.dylib in Frameworks */,
+				AE5A5CE01B29B260009D84CF /* UIKit.framework in Frameworks */,
+				AE5A5CDE1B29B253009D84CF /* CFNetwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE5A5CC21B298BB0009D84CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE417B731B550655005264CA /* Utilitys */ = {
+			isa = PBXGroup;
+			children = (
+				AE5A5CF51B29B2FC009D84CF /* Reachability.h */,
+				AE5A5CF61B29B2FC009D84CF /* Reachability.m */,
+				AE417B6D1B54E3DA005264CA /* SimplePing.h */,
+				AE417B6E1B54E3DA005264CA /* SimplePing.m */,
+				AE417B6F1B54E3DA005264CA /* SimplePingHelper.h */,
+				AE417B701B54E3DA005264CA /* SimplePingHelper.m */,
+			);
+			name = Utilitys;
+			sourceTree = "<group>";
+		};
+		AE521C0D1B4CE445009504B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE32253D1B2AD89500ECEA8C /* libm.dylib */,
+				AE5A5CF31B29B2E7009D84CF /* Security.framework */,
+				AE5A5CF11B29B2D1009D84CF /* MobileCoreServices.framework */,
+				AE5A5CEF1B29B2C1009D84CF /* CoreGraphics.framework */,
+				AE5A5CED1B29B2B7009D84CF /* AVFoundation.framework */,
+				AE5A5CEB1B29B2AD009D84CF /* SystemConfiguration.framework */,
+				AE5A5CE91B29B2A2009D84CF /* CoreLocation.framework */,
+				AE5A5CE51B29B29A009D84CF /* MediaAccessibility.framework */,
+				AE5A5CE61B29B29A009D84CF /* MediaPlayer.framework */,
+				AE5A5CE31B29B28A009D84CF /* libpthread.dylib */,
+				AE5A5CE11B29B270009D84CF /* libz.dylib */,
+				AE5A5CDF1B29B260009D84CF /* UIKit.framework */,
+				AE5A5CDD1B29B253009D84CF /* CFNetwork.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE521C0E1B4CE475009504B8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				AE5A5CF81B29C245009D84CF /* Launch_480X320@1x.png */,
+				AE5A5CF91B29C245009D84CF /* Launch_480X320@2x.png */,
+				AE5A5CFC1B29C266009D84CF /* Launch_568X320@1x.png */,
+				AE5A5CFD1B29C266009D84CF /* Launch_568X320@2x.png */,
+				AE521C0F1B4D2FA2009504B8 /* Launch_667x375.png */,
+				AE521C101B4D2FA2009504B8 /* Launch_667x375@2x.png */,
+				AE521C111B4D2FA2009504B8 /* Launch_736x414.png */,
+				AE521C121B4D2FA2009504B8 /* Launch_736x414@3x.png */,
+				AE5A5D001B29C27B009D84CF /* Launch_1024@1x.png */,
+				AE5A5D011B29C27B009D84CF /* Launch_1024@2x.png */,
+				AE5A5CD51B29A0D2009D84CF /* Lanch@1x.png */,
+				AE5A5CD61B29A0D2009D84CF /* Lanch@2x.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		AE5A5CA31B298BB0009D84CF = {
+			isa = PBXGroup;
+			children = (
+				AE521C0D1B4CE445009504B8 /* Frameworks */,
+				AE5A5CAE1B298BB0009D84CF /* Metro-TV */,
+				AE5A5CC81B298BB0009D84CF /* Metro-TVTests */,
+				AE5A5CAD1B298BB0009D84CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE5A5CAD1B298BB0009D84CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE5A5CAC1B298BB0009D84CF /* Metro-TV.app */,
+				AE5A5CC51B298BB0009D84CF /* Metro-TVTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE5A5CAE1B298BB0009D84CF /* Metro-TV */ = {
+			isa = PBXGroup;
+			children = (
+				AE5A5CD91B29B099009D84CF /* include */,
+				AE5A5CB31B298BB0009D84CF /* AppDelegate.h */,
+				AE5A5CB41B298BB0009D84CF /* AppDelegate.m */,
+				AE5A5CB61B298BB0009D84CF /* ViewController.h */,
+				AE5A5CB71B298BB0009D84CF /* ViewController.m */,
+				AE417B731B550655005264CA /* Utilitys */,
+				AE5A5CB91B298BB0009D84CF /* Main.storyboard */,
+				AE5A5CBE1B298BB0009D84CF /* LaunchScreen.xib */,
+				AE5A5CBC1B298BB0009D84CF /* Images.xcassets */,
+				AE521C0E1B4CE475009504B8 /* Assets */,
+				AE5A5CAF1B298BB0009D84CF /* Supporting Files */,
+			);
+			path = "Metro-TV";
+			sourceTree = "<group>";
+		};
+		AE5A5CAF1B298BB0009D84CF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE5A5CB01B298BB0009D84CF /* Info.plist */,
+				AE5A5CB11B298BB0009D84CF /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AE5A5CC81B298BB0009D84CF /* Metro-TVTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE5A5CCB1B298BB0009D84CF /* Metro_TVTests.m */,
+				AE5A5CC91B298BB0009D84CF /* Supporting Files */,
+			);
+			path = "Metro-TVTests";
+			sourceTree = "<group>";
+		};
+		AE5A5CC91B298BB0009D84CF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE5A5CCA1B298BB0009D84CF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE5A5CAB1B298BB0009D84CF /* Metro-TV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE5A5CCF1B298BB0009D84CF /* Build configuration list for PBXNativeTarget "Metro-TV" */;
+			buildPhases = (
+				AE5A5CA81B298BB0009D84CF /* Sources */,
+				AE5A5CA91B298BB0009D84CF /* Frameworks */,
+				AE5A5CAA1B298BB0009D84CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Metro-TV";
+			productName = "Metro-TV";
+			productReference = AE5A5CAC1B298BB0009D84CF /* Metro-TV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AE5A5CC41B298BB0009D84CF /* Metro-TVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE5A5CD21B298BB0009D84CF /* Build configuration list for PBXNativeTarget "Metro-TVTests" */;
+			buildPhases = (
+				AE5A5CC11B298BB0009D84CF /* Sources */,
+				AE5A5CC21B298BB0009D84CF /* Frameworks */,
+				AE5A5CC31B298BB0009D84CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE5A5CC71B298BB0009D84CF /* PBXTargetDependency */,
+			);
+			name = "Metro-TVTests";
+			productName = "Metro-TVTests";
+			productReference = AE5A5CC51B298BB0009D84CF /* Metro-TVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE5A5CA41B298BB0009D84CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = IDEABYTES;
+				TargetAttributes = {
+					AE5A5CAB1B298BB0009D84CF = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = AL4N8K4CLM;
+					};
+					AE5A5CC41B298BB0009D84CF = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = AE5A5CAB1B298BB0009D84CF;
+					};
+				};
+			};
+			buildConfigurationList = AE5A5CA71B298BB0009D84CF /* Build configuration list for PBXProject "Metro-TV" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AE5A5CA31B298BB0009D84CF;
+			productRefGroup = AE5A5CAD1B298BB0009D84CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE5A5CAB1B298BB0009D84CF /* Metro-TV */,
+				AE5A5CC41B298BB0009D84CF /* Metro-TVTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE5A5CAA1B298BB0009D84CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE5A5CBB1B298BB0009D84CF /* Main.storyboard in Resources */,
+				AE5A5CFE1B29C266009D84CF /* Launch_568X320@1x.png in Resources */,
+				AE5A5CC01B298BB0009D84CF /* LaunchScreen.xib in Resources */,
+				AE521C141B4D2FA2009504B8 /* Launch_667x375@2x.png in Resources */,
+				AE5A5CFF1B29C266009D84CF /* Launch_568X320@2x.png in Resources */,
+				AE5A5CD81B29A0D2009D84CF /* Lanch@2x.png in Resources */,
+				AE521C131B4D2FA2009504B8 /* Launch_667x375.png in Resources */,
+				AE5A5D031B29C27B009D84CF /* Launch_1024@2x.png in Resources */,
+				AE521C161B4D2FA2009504B8 /* Launch_736x414@3x.png in Resources */,
+				AE5A5CDB1B29B099009D84CF /* include in Resources */,
+				AE5A5CFB1B29C245009D84CF /* Launch_480X320@2x.png in Resources */,
+				AE5A5CFA1B29C245009D84CF /* Launch_480X320@1x.png in Resources */,
+				AE5A5D021B29C27B009D84CF /* Launch_1024@1x.png in Resources */,
+				AE5A5CD71B29A0D2009D84CF /* Lanch@1x.png in Resources */,
+				AE5A5CBD1B298BB0009D84CF /* Images.xcassets in Resources */,
+				AE521C151B4D2FA2009504B8 /* Launch_736x414.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE5A5CC31B298BB0009D84CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE5A5CA81B298BB0009D84CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE5A5CB81B298BB0009D84CF /* ViewController.m in Sources */,
+				AE5A5CB51B298BB0009D84CF /* AppDelegate.m in Sources */,
+				AE5A5CF71B29B2FC009D84CF /* Reachability.m in Sources */,
+				AE417B711B54E3DA005264CA /* SimplePing.m in Sources */,
+				AE5A5CB21B298BB0009D84CF /* main.m in Sources */,
+				AE417B721B54E3DA005264CA /* SimplePingHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE5A5CC11B298BB0009D84CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE5A5CCC1B298BB0009D84CF /* Metro_TVTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE5A5CC71B298BB0009D84CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE5A5CAB1B298BB0009D84CF /* Metro-TV */;
+			targetProxy = AE5A5CC61B298BB0009D84CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AE5A5CB91B298BB0009D84CF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE5A5CBA1B298BB0009D84CF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AE5A5CBE1B298BB0009D84CF /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE5A5CBF1B298BB0009D84CF /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AE5A5CCD1B298BB0009D84CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AE5A5CCE1B298BB0009D84CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE5A5CD01B298BB0009D84CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "Metro-TV/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = ./lib;
+				OTHER_LDFLAGS = "-loctoiphone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = ./include;
+				VALID_ARCHS = "arm64 armv7 armv7s";
+				WARNING_CFLAGS = "";
+				WARNING_LDFLAGS = "";
+			};
+			name = Debug;
+		};
+		AE5A5CD11B298BB0009D84CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "Metro-TV/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = ./lib;
+				OTHER_LDFLAGS = "-loctoiphone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = ./include;
+				VALID_ARCHS = "arm64 armv7 armv7s";
+				WARNING_CFLAGS = "";
+				WARNING_LDFLAGS = "";
+			};
+			name = Release;
+		};
+		AE5A5CD31B298BB0009D84CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Metro-TVTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Metro-TV.app/Metro-TV";
+			};
+			name = Debug;
+		};
+		AE5A5CD41B298BB0009D84CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Metro-TVTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Metro-TV.app/Metro-TV";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE5A5CA71B298BB0009D84CF /* Build configuration list for PBXProject "Metro-TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE5A5CCD1B298BB0009D84CF /* Debug */,
+				AE5A5CCE1B298BB0009D84CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE5A5CCF1B298BB0009D84CF /* Build configuration list for PBXNativeTarget "Metro-TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE5A5CD01B298BB0009D84CF /* Debug */,
+				AE5A5CD11B298BB0009D84CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE5A5CD21B298BB0009D84CF /* Build configuration list for PBXNativeTarget "Metro-TVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE5A5CD31B298BB0009D84CF /* Debug */,
+				AE5A5CD41B298BB0009D84CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE5A5CA41B298BB0009D84CF /* Project object */;
+}

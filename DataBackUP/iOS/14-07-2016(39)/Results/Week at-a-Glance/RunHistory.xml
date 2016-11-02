@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<runHistory script="Week at-a-Glance">
+ <run>
+  <RunDate>2016-07-27 12:22:18.952 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>34.204590</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20160727_122218.952/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+</runHistory>

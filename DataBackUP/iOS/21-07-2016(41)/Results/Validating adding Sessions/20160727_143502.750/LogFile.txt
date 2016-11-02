@@ -1,0 +1,25 @@
+﻿2016-07-27 14:35:02.752 +0530	START		Running Validating adding Sessions.script
+2016-07-27 14:35:02.818 +0530	connect		iPhone:(null)	1	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:35:02.820 +0530	presshomebutton			5	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:35:08.242 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	12	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:35:08.409 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	13	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:35:14.544 +0530	imagefound	GSXAPP	found at (244, 467)	15	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:35:20.735 +0530	click	GSXAPP	at (244, 467)	18	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:35:23.806 +0530	waitfor	Menu	found at (55, 83)	23	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:35:24.104 +0530	click	Menu	at (55, 83)	26	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:35:30.294 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,386), ImageRectangle:(117,375,240,398), Language:"English", text:"Schedule", TextPlatform:"Generic OCR")	found at (178, 386)	29	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:35:36.813 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,386), ImageRectangle:(117,375,240,398), Language:"English", Text:"Schedule", TextPlatform:"Generic OCR")	at (178, 386)	39	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:35:37.937 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,386), ImageRectangle:(117,375,240,398), Language:"English", Text:"Schedule", TextPlatform:"Generic OCR")	found at (178, 386)	41	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:35:40.418 +0530	click	Add Button	at (47, 311)	44	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:35:52.418 +0530	waitfor	Remove Button	found at (47, 309)	46	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:35:54.799 +0530	readtext		(90,293,445,328)
+2016-07-27 14:35:54.800 +0530	Log		Monday Run Club at Aria	52	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:36:01.023 +0530	click	Menu	at (55, 83)	56	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:36:03.402 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(192,529), ImageRectangle:(118,516,266,543), Language:"English", Text:"My Agenda", TextPlatform:"Generic OCR")	at (192, 529)	58	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:36:09.494 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(102,171), ImageRectangle:(41,160,163,182), Language:"English", Text:"Sessions", TextPlatform:"Generic OCR")	found at (102, 171)	60	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:36:11.867 +0530	readtext		(88,346,446,382)
+2016-07-27 14:36:11.868 +0530	Log		Monday Run Club at Aria	66	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:36:14.873 +0530	LogSuccess		Valid session added to My Agenda	71	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:36:16.050 +0530	capturescreen	Valid seesion added_Pass_iOS.png		77	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 14:36:16.502 +0530	EndTestCase		(Duration:"73.749073", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 14:35:02 +0530", Successes:"1", TestCase:"Validating adding Sessions.script", Warnings:"0")
+2016-07-27 14:36:16.521 +0530	SUCCESS		Execution Time 0:01:13 Validating adding Sessions.script

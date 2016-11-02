@@ -1,0 +1,2 @@
+﻿Date Run,Status,Time,# of Errors,# of Warnings,# of Exceptions,Log File,Return Value,Error Message,# of Successes
+2016-07-27 12:16:29.808 +0530,"Failure",0:01:05,1,0,1,"20160727_121629.808/LogFile.txt","","Image Not Found -- click Error - No Image Found On Screen: ""Add Button""",0

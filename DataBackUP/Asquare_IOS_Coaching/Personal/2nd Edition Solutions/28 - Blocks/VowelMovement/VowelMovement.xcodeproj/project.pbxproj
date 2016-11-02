@@ -1,0 +1,258 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		520EA5581879F5170075B2EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520EA5571879F5170075B2EC /* Foundation.framework */; };
+		520EA55B1879F5170075B2EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 520EA55A1879F5170075B2EC /* main.m */; };
+		520EA55F1879F5170075B2EC /* VowelMovement.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 520EA55E1879F5170075B2EC /* VowelMovement.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		520EA5521879F5170075B2EC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				520EA55F1879F5170075B2EC /* VowelMovement.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		520EA5541879F5170075B2EC /* VowelMovement */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = VowelMovement; sourceTree = BUILT_PRODUCTS_DIR; };
+		520EA5571879F5170075B2EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		520EA55A1879F5170075B2EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		520EA55D1879F5170075B2EC /* VowelMovement-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VowelMovement-Prefix.pch"; sourceTree = "<group>"; };
+		520EA55E1879F5170075B2EC /* VowelMovement.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = VowelMovement.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		520EA5511879F5170075B2EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				520EA5581879F5170075B2EC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		520EA54B1879F5170075B2EC = {
+			isa = PBXGroup;
+			children = (
+				520EA5591879F5170075B2EC /* VowelMovement */,
+				520EA5561879F5170075B2EC /* Frameworks */,
+				520EA5551879F5170075B2EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		520EA5551879F5170075B2EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				520EA5541879F5170075B2EC /* VowelMovement */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		520EA5561879F5170075B2EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				520EA5571879F5170075B2EC /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		520EA5591879F5170075B2EC /* VowelMovement */ = {
+			isa = PBXGroup;
+			children = (
+				520EA55A1879F5170075B2EC /* main.m */,
+				520EA55E1879F5170075B2EC /* VowelMovement.1 */,
+				520EA55C1879F5170075B2EC /* Supporting Files */,
+			);
+			path = VowelMovement;
+			sourceTree = "<group>";
+		};
+		520EA55C1879F5170075B2EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				520EA55D1879F5170075B2EC /* VowelMovement-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		520EA5531879F5170075B2EC /* VowelMovement */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 520EA5621879F5170075B2EC /* Build configuration list for PBXNativeTarget "VowelMovement" */;
+			buildPhases = (
+				520EA5501879F5170075B2EC /* Sources */,
+				520EA5511879F5170075B2EC /* Frameworks */,
+				520EA5521879F5170075B2EC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VowelMovement;
+			productName = VowelMovement;
+			productReference = 520EA5541879F5170075B2EC /* VowelMovement */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		520EA54C1879F5170075B2EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = bignerdranch.com;
+			};
+			buildConfigurationList = 520EA54F1879F5170075B2EC /* Build configuration list for PBXProject "VowelMovement" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 520EA54B1879F5170075B2EC;
+			productRefGroup = 520EA5551879F5170075B2EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				520EA5531879F5170075B2EC /* VowelMovement */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		520EA5501879F5170075B2EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				520EA55B1879F5170075B2EC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		520EA5601879F5170075B2EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		520EA5611879F5170075B2EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		520EA5631879F5170075B2EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VowelMovement/VowelMovement-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		520EA5641879F5170075B2EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VowelMovement/VowelMovement-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		520EA54F1879F5170075B2EC /* Build configuration list for PBXProject "VowelMovement" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				520EA5601879F5170075B2EC /* Debug */,
+				520EA5611879F5170075B2EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		520EA5621879F5170075B2EC /* Build configuration list for PBXNativeTarget "VowelMovement" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				520EA5631879F5170075B2EC /* Debug */,
+				520EA5641879F5170075B2EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 520EA54C1879F5170075B2EC /* Project object */;
+}

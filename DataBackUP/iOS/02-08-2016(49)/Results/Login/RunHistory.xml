@@ -1,0 +1,40 @@
+﻿<?xml version="1.0"?>
+<runHistory script="Login">
+ <run>
+  <RunDate>2016-08-02 11:26:21.805 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.359601</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20160802_112621.805/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Connection Failed -- Unable to connect to Server:C6902 (BH902XJA09) on port:5900
+ADB error: device not found</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2016-08-02 11:27:09.019 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>20.123896</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20160802_112709.019/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>File Not Found -- imagefound Error - Could Not Open Image: Login</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2016-08-02 11:28:33.712 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>46.050697</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20160802_112833.712/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Script Error -- Number of Errors logged: 1</ErrorMessage>
+ </run>
+</runHistory>

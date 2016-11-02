@@ -1,0 +1,20 @@
+﻿2016-07-27 11:48:31.498 +0530	START		Running GSX Experience.script
+2016-07-27 11:48:31.562 +0530	connect		iPhone:(null)	2	on_gsx_experience	GSX Experience.script
+2016-07-27 11:48:31.563 +0530	presshomebutton			6	on_gsx_experience	GSX Experience.script
+2016-07-27 11:48:37.799 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	13	on_gsx_experience	GSX Experience.script
+2016-07-27 11:48:37.964 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	14	on_gsx_experience	GSX Experience.script
+2016-07-27 11:48:44.115 +0530	imagefound	GSXAPP	found at (244, 467)	16	on_gsx_experience	GSX Experience.script
+2016-07-27 11:48:50.387 +0530	click	GSXAPP	at (244, 467)	21	on_gsx_experience	GSX Experience.script
+2016-07-27 11:48:53.851 +0530	waitfor	Menu	found at (55, 83)	26	on_gsx_experience	GSX Experience.script
+2016-07-27 11:48:54.097 +0530	click	Menu	at (55, 83)	29	on_gsx_experience	GSX Experience.script
+2016-07-27 11:49:09.360 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"GSX Experience", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"GSX Experience") within 5.00 seconds	34	on_gsx_experience	GSX Experience.script
+2016-07-27 11:49:09.361 +0530	set		SWIPESPEED = 8	36	on_gsx_experience	GSX Experience.script
+2016-07-27 11:49:10.352 +0530	swipeup		Swiped up from (86, 991) to (86, 341)	37	on_gsx_experience	GSX Experience.script
+2016-07-27 11:49:16.795 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(224,928), ImageRectangle:(117,914,332,942), Language:"English", text:"GSX Experience", TextPlatform:"Generic OCR")	found at (224, 928)	41	on_gsx_experience	GSX Experience.script
+2016-07-27 11:49:24.322 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(224,928), ImageRectangle:(117,914,332,942), Language:"English", Text:"GSX Experience", TextPlatform:"Generic OCR")	at (224, 928)	45	on_gsx_experience	GSX Experience.script
+2016-07-27 11:49:25.769 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(224,928), ImageRectangle:(117,914,332,942), Language:"English", Text:"GSX Experience", TextPlatform:"Generic OCR")	found at (224, 928)	48	on_gsx_experience	GSX Experience.script
+2016-07-27 11:49:32.074 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,85), ImageRectangle:(201,71,437,100), Language:"English", text:"GSX Experience", TextPlatform:"Generic OCR")	found at (319, 85)	51	on_gsx_experience	GSX Experience.script
+2016-07-27 11:49:32.076 +0530	LogSuccess		GSX Experience is displayed	52	on_gsx_experience	GSX Experience.script
+2016-07-27 11:49:33.345 +0530	capturescreen	GSX Experience_Pass_iOS.png		58	on_gsx_experience	GSX Experience.script
+2016-07-27 11:49:33.652 +0530	EndTestCase		(Duration:"62.152403", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 11:48:31 +0530", Successes:"1", TestCase:"GSX Experience.script", Warnings:"0")
+2016-07-27 11:49:33.668 +0530	SUCCESS		Execution Time 0:01:02 GSX Experience.script

@@ -1,0 +1,19 @@
+﻿2016-08-02 11:28:33.713 +0530	START		Running Login.script
+2016-08-02 11:28:33.779 +0530	connect		iPhone:(null)	2	on_login	Login.script
+2016-08-02 11:28:33.781 +0530	presshomebutton			6	on_login	Login.script
+2016-08-02 11:28:33.782 +0530	Log		Running iOS App	14	on_login	Login.script
+2016-08-02 11:28:39.375 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	18	on_login	Login.script
+2016-08-02 11:28:39.537 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	20	on_login	Login.script
+2016-08-02 11:28:45.694 +0530	imagefound	GSXAPP	found at (244, 467)	22	on_login	Login.script
+2016-08-02 11:28:51.992 +0530	click	GSXAPP	at (244, 467)	26	on_login	Login.script
+2016-08-02 11:29:07.994 +0530	imagefound	Username	found at (111, 485)	28	on_login	Login.script
+2016-08-02 11:29:08.547 +0530	click	Username	at (111, 485)	30	on_login	Login.script
+2016-08-02 11:29:09.455 +0530	typetext		gsx_slxuser10043	32	on_login	Login.script
+2016-08-02 11:29:11.557 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(587,661), ImageRectangle:(552,650,623,672), Language:"English", Text:"Done", TextPlatform:"Generic OCR")	at (587, 661)	40	on_login	Login.script
+2016-08-02 11:29:12.681 +0530	click	Password	at (98, 628)	44	on_login	Login.script
+2016-08-02 11:29:13.538 +0530	typetext		passwd10043[return]	47	on_login	Login.script
+2016-08-02 11:29:19.397 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"FULL SPEED", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"FULL SPEED") within 5.00 seconds	49	on_login	Login.script
+2016-08-02 11:29:19.398 +0530	LogError		Login Failed	59	on_login	Login.script
+2016-08-02 11:29:19.558 +0530	capturescreen	Login_FailediOS.png		64	on_login	Login.script
+2016-08-02 11:29:19.764 +0530	EndTestCase		(Duration:"46.04887", Errors:"1", Exceptions:"0", StartTime:"2016-08-02 11:28:33 +0530", Successes:"0", TestCase:"Login.script", Warnings:"0")
+2016-08-02 11:29:19.830 +0530	FAILURE	Screen_Error.png	Script Error Number of Errors logged: 1 -- Execution Time 0:00:46 Login.script

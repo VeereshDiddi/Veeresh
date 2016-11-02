@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<runHistory script="GSX Experience">
+ <run>
+  <RunDate>2016-07-27 13:03:02.393 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>58.876721</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20160727_130302.393/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+</runHistory>

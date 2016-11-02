@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Thumbnail</key>
+	<array>
+		<string>pic.jpg</string>
+		<string>1.jpg</string>
+		<string>2.jpg</string>
+		<string>3.jpg</string>
+		<string>4.jpg</string>
+		<string>5.jpg</string>
+		<string>6.jpg</string>
+		<string>7.jpg</string>
+		<string>1.jpg</string>
+		<string>2.jpg</string>
+		<string>3.jpg</string>
+		<string>4.jpg</string>
+		<string>5.jpg</string>
+		<string>6.jpg</string>
+		<string>7.jpg</string>
+		<string>pic.jpg</string>
+	</array>
+	<key>prepTime</key>
+	<array/>
+	<key>item 0</key>
+	<string>30 min</string>
+	<key>item 10</key>
+	<string>20 min</string>
+	<key>item 13</key>
+	<string>1.5 hour</string>
+	<key>RecipeName</key>
+	<array/>
+	<key>Item 0</key>
+	<string>Egg Benedict</string>
+	<key>item 1</key>
+	<string>Mushroom Risotto</string>
+	<key>item 2</key>
+	<string>Full Breakfast</string>
+	<key>item 3</key>
+	<string>Hamburger</string>
+	<key>item 4</key>
+	<string>Ham and Egg Sandwich</string>
+	<key>item 5</key>
+	<string>Creme Berlee</string>
+	<key>item 6</key>
+	<string>White Chocolate Donut</string>
+	<key>item 7</key>
+	<string>Starbucks Coffee</string>
+	<key>item 8</key>
+	<string>Vegetable Curry</string>
+	<key>item 9</key>
+	<string>Instant Noodle  with Egg</string>
+	<key>item 10 </key>
+	<string>Noodle with BBQ Pork</string>
+	<key>item 11</key>
+	<string>Japanese Noodle with Pork</string>
+	<key>item 12</key>
+	<string>Green Tea</string>
+	<key>item 13 </key>
+	<string>Thai Shrimp Cake</string>
+	<key>item 14</key>
+	<string>Angry Birds Cake</string>
+	<key>item 15</key>
+	<string>Ham and Cheese Panini</string>
+</dict>
+</plist>

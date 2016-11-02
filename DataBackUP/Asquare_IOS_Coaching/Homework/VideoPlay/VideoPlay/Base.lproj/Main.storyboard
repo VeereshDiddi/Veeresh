@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="v7R-2C-Blb">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gq-Yx-REK">
+                                <rect key="frame" x="53" y="115" width="215" height="30"/>
+                                <state key="normal" title="Select and Play Video"/>
+                                <connections>
+                                    <segue destination="X9T-bu-4y1" kind="push" id="DOd-Rh-s6E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdJ-Hw-Dry">
+                                <rect key="frame" x="53" y="192" width="215" height="30"/>
+                                <state key="normal" title="Record and Save Video"/>
+                                <connections>
+                                    <segue destination="DCq-CX-Ndy" kind="push" id="aTb-y4-8bt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wp5-Iz-QD2">
+                                <rect key="frame" x="53" y="269" width="215" height="30"/>
+                                <state key="normal" title="Merge Video"/>
+                                <connections>
+                                    <segue destination="0gh-9h-8m4" kind="push" id="MQg-3V-iAB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Tma-jR-bTE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="694" y="343"/>
+        </scene>
+        <!--Merge Video View Controller-->
+        <scene sceneID="8or-75-att">
+            <objects>
+                <viewController title="Merge Video View Controller" id="0gh-9h-8m4" customClass="MergeVideoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xVJ-xQ-M4R"/>
+                        <viewControllerLayoutGuide type="bottom" id="inP-dA-1gl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mko-Cv-BZe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fbo-zG-4lZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hHG-iV-0j2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1137" y="746"/>
+        </scene>
+        <!--Play Video View Controller-->
+        <scene sceneID="22u-g7-wbq">
+            <objects>
+                <viewController title="Play Video View Controller" id="X9T-bu-4y1" customClass="PlayVideoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kjD-X9-EEX"/>
+                        <viewControllerLayoutGuide type="bottom" id="5jC-bK-uAU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HUb-0O-fIO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iln-9J-75u">
+                                <rect key="frame" x="114" y="166" width="84" height="30"/>
+                                <state key="normal" title="Play Video"/>
+                                <connections>
+                                    <action selector="playVideo:" destination="X9T-bu-4y1" eventType="touchUpInside" id="jGV-s5-Q5y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gPQ-Ua-IPo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jp6-MZ-Je3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1137" y="-25"/>
+        </scene>
+        <!--Record Video View Controller-->
+        <scene sceneID="yl8-Ql-dbx">
+            <objects>
+                <viewController title="Record Video View Controller" id="DCq-CX-Ndy" customClass="RecordVideoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pc0-Ai-b5A"/>
+                        <viewControllerLayoutGuide type="bottom" id="lF3-yd-x4d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="94o-aI-oku">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oEs-oU-zsF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z7F-Sc-zuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1606" y="343"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IUA-jm-bVR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v7R-2C-Blb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VWp-d2-qSI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1Xu-zI-fFu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aZk-wm-Clc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="162" y="343"/>
+        </scene>
+    </scenes>
+</document>

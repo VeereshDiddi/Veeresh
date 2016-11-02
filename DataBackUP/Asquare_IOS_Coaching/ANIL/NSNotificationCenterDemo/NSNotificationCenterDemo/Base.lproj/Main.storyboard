@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="U6l-re-WYT">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Sr-eq-ZRz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" id="c9r-D8-l8F">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c9r-D8-l8F" id="OTt-ar-0Dh">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="03H-Pl-QRq"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Fdi-9Q-J0h"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4Sr-eq-ZRz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PPS-XR-Y2f"/>
+                            <constraint firstItem="4Sr-eq-ZRz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="TrM-Wg-Xyr"/>
+                            <constraint firstItem="4Sr-eq-ZRz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uw8-4K-plF"/>
+                            <constraint firstItem="4Sr-eq-ZRz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="plQ-yA-fKI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="Xq8-qQ-HIx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="56U-Fc-aMf">
+                            <connections>
+                                <action selector="addBtnClicked:" destination="BYZ-38-t0r" id="FGN-Oa-9o0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tblView" destination="4Sr-eq-ZRz" id="y2x-43-hDh"/>
+                        <segue destination="feg-fq-pLa" kind="push" identifier="firstView" id="sld-U1-9D6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866.13333333333333" y="266.95999999999998"/>
+        </scene>
+        <!--Add-->
+        <scene sceneID="HTB-R9-G3X">
+            <objects>
+                <viewController id="feg-fq-pLa" customClass="FirstViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3fD-pC-cwZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="8VW-hD-NKj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CNT-Wn-yhj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qvp-Ru-OF2">
+                                <rect key="frame" x="80" y="99" width="160" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="feg-fq-pLa" id="6AJ-3I-b9Z"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L6d-Kf-Quv">
+                                <rect key="frame" x="80" y="149" width="160" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="feg-fq-pLa" id="zfW-bn-zfs"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter Mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AGQ-JC-7sw">
+                                <rect key="frame" x="80" y="199" width="160" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="feg-fq-pLa" id="Otq-9X-J99"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AGQ-JC-7sw" firstAttribute="width" secondItem="L6d-Kf-Quv" secondAttribute="width" id="0CQ-hR-GYL"/>
+                            <constraint firstItem="AGQ-JC-7sw" firstAttribute="centerX" secondItem="CNT-Wn-yhj" secondAttribute="centerX" id="1Iv-kf-Lsg"/>
+                            <constraint firstItem="AGQ-JC-7sw" firstAttribute="top" secondItem="L6d-Kf-Quv" secondAttribute="bottom" constant="20" id="3cb-ff-djl"/>
+                            <constraint firstItem="L6d-Kf-Quv" firstAttribute="top" secondItem="qvp-Ru-OF2" secondAttribute="bottom" constant="20" id="G4G-Cg-rQ9"/>
+                            <constraint firstItem="L6d-Kf-Quv" firstAttribute="centerX" secondItem="CNT-Wn-yhj" secondAttribute="centerX" id="IbI-vz-ITQ"/>
+                            <constraint firstItem="qvp-Ru-OF2" firstAttribute="width" secondItem="CNT-Wn-yhj" secondAttribute="width" multiplier="0.5" id="iOM-e6-nIM"/>
+                            <constraint firstItem="qvp-Ru-OF2" firstAttribute="top" secondItem="3fD-pC-cwZ" secondAttribute="bottom" constant="35" id="k3d-I4-uYJ"/>
+                            <constraint firstItem="qvp-Ru-OF2" firstAttribute="centerX" secondItem="CNT-Wn-yhj" secondAttribute="centerX" id="uY3-K2-jVd"/>
+                            <constraint firstItem="L6d-Kf-Quv" firstAttribute="width" secondItem="qvp-Ru-OF2" secondAttribute="width" id="zXi-zu-j2r"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add" id="M8o-rg-Ki2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Ar6-e0-KQL">
+                            <connections>
+                                <action selector="saveBtnClicked:" destination="feg-fq-pLa" id="AFV-MZ-ZMV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTF" destination="L6d-Kf-Quv" id="ccL-GH-jf8"/>
+                        <outlet property="mobileTF" destination="AGQ-JC-7sw" id="Uep-Q2-h0o"/>
+                        <outlet property="nameTF" destination="qvp-Ru-OF2" id="u0D-mj-05k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xGj-si-f8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1213.3333333333333" y="259.38666666666666"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="S8F-0v-g4X">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="U6l-re-WYT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eoI-Le-czl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2sF-rM-TKt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MHk-W0-TJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="487.46666666666664" y="273.58666666666664"/>
+        </scene>
+    </scenes>
+</document>

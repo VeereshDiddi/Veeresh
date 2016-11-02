@@ -1,0 +1,20 @@
+﻿2016-07-27 11:38:31.021 +0530	START		Running Dev Net.script
+2016-07-27 11:38:31.085 +0530	connect		iPhone:(null)	2	on_dev_net	Dev Net.script
+2016-07-27 11:38:31.087 +0530	presshomebutton			6	on_dev_net	Dev Net.script
+2016-07-27 11:38:36.431 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	13	on_dev_net	Dev Net.script
+2016-07-27 11:38:36.597 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	14	on_dev_net	Dev Net.script
+2016-07-27 11:38:42.794 +0530	imagefound	GSXAPP	found at (244, 467)	16	on_dev_net	Dev Net.script
+2016-07-27 11:38:49.087 +0530	click	GSXAPP	at (244, 467)	20	on_dev_net	Dev Net.script
+2016-07-27 11:38:53.149 +0530	waitfor	Menu	found at (55, 83)	25	on_dev_net	Dev Net.script
+2016-07-27 11:38:54.459 +0530	click	Menu	at (55, 83)	28	on_dev_net	Dev Net.script
+2016-07-27 11:39:08.558 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Dev Net", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Dev Net") within 5.00 seconds	33	on_dev_net	Dev Net.script
+2016-07-27 11:39:08.560 +0530	set		SWIPESPEED = 8	35	on_dev_net	Dev Net.script
+2016-07-27 11:39:09.561 +0530	swipeup		Swiped up from (86, 991) to (86, 341)	36	on_dev_net	Dev Net.script
+2016-07-27 11:39:15.627 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(170,258), ImageRectangle:(118,247,223,269), Language:"English", text:"Dev Net", TextPlatform:"Generic OCR")	found at (170, 258)	40	on_dev_net	Dev Net.script
+2016-07-27 11:39:23.337 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(170,258), ImageRectangle:(118,247,223,269), Language:"English", Text:"Dev Net", TextPlatform:"Generic OCR")	at (170, 258)	44	on_dev_net	Dev Net.script
+2016-07-27 11:39:24.828 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(74,187), ImageRectangle:(22,178,126,197), Language:"English", Text:"Dev Net", TextPlatform:"Generic OCR")	found at (74, 187)	47	on_dev_net	Dev Net.script
+2016-07-27 11:39:25.052 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(320,83), ImageRectangle:(263,71,378,95), Language:"English", text:"Dev Net", TextPlatform:"Generic OCR")	found at (320, 83)	49	on_dev_net	Dev Net.script
+2016-07-27 11:39:25.054 +0530	LogSuccess		Dev Net is displayed	50	on_dev_net	Dev Net.script
+2016-07-27 11:39:25.268 +0530	capturescreen	Arrival_Pass_iOS.png		56	on_dev_net	Dev Net.script
+2016-07-27 11:39:25.557 +0530	EndTestCase		(Duration:"54.533547", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 11:38:31 +0530", Successes:"1", TestCase:"Dev Net.script", Warnings:"0")
+2016-07-27 11:39:25.572 +0530	SUCCESS		Execution Time 0:00:54 Dev Net.script

@@ -1,0 +1,3 @@
+﻿Date Run,Status,Time,# of Errors,# of Warnings,# of Exceptions,Log File,Return Value,Error Message,# of Successes
+2016-07-27 16:36:48.038 +0530,"Failure",0:00:45,1,0,1,"20160727_163648.038/LogFile.txt","","Image Not Found -- waitfor Error - Unable To Find Any Image On Screen ""Menu"" within 5.00 seconds",0
+2016-07-27 16:52:35.439 +0530,"Success",0:02:10,0,0,0,"20160727_165235.439/LogFile.txt","","",2

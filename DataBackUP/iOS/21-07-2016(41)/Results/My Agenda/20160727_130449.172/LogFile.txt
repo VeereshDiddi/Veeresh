@@ -1,0 +1,21 @@
+﻿2016-07-27 13:04:49.173 +0530	START		Running My Agenda.script
+2016-07-27 13:04:49.242 +0530	connect		iPhone:(null)	2	on_my_agenda	My Agenda.script
+2016-07-27 13:04:49.244 +0530	presshomebutton			6	on_my_agenda	My Agenda.script
+2016-07-27 13:04:55.229 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	13	on_my_agenda	My Agenda.script
+2016-07-27 13:04:55.393 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	14	on_my_agenda	My Agenda.script
+2016-07-27 13:05:00.533 +0530	imagefound	GSXAPP	found at (244, 467)	16	on_my_agenda	My Agenda.script
+2016-07-27 13:05:06.783 +0530	click	GSXAPP	at (244, 467)	20	on_my_agenda	My Agenda.script
+2016-07-27 13:05:10.108 +0530	waitfor	Menu	found at (55, 83)	25	on_my_agenda	My Agenda.script
+2016-07-27 13:05:10.363 +0530	click	Menu	at (55, 83)	28	on_my_agenda	My Agenda.script
+2016-07-27 13:05:17.674 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(192,530), ImageRectangle:(118,516,266,544), Language:"English", text:"My Agenda", TextPlatform:"Generic OCR")	found at (192, 530)	33	on_my_agenda	My Agenda.script
+2016-07-27 13:05:25.001 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(192,530), ImageRectangle:(118,516,266,544), Language:"English", Text:"My Agenda", TextPlatform:"Generic OCR")	at (192, 530)	44	on_my_agenda	My Agenda.script
+2016-07-27 13:05:26.304 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(192,530), ImageRectangle:(118,516,266,544), Language:"English", Text:"My Agenda", TextPlatform:"Generic OCR")	found at (192, 530)	47	on_my_agenda	My Agenda.script
+2016-07-27 13:05:27.662 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,86), ImageRectangle:(237,72,402,101), Language:"English", text:"My Agenda", TextPlatform:"Generic OCR")	found at (319, 86)	49	on_my_agenda	My Agenda.script
+2016-07-27 13:05:27.664 +0530	LogSuccess		My Agenda is displayed	50	on_my_agenda	My Agenda.script
+2016-07-27 13:05:28.878 +0530	capturescreen	My Agenda_Pass_iOS.png		56	on_my_agenda	My Agenda.script
+2016-07-27 13:05:30.230 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(102,171), ImageRectangle:(41,160,163,182), Language:"English", Text:"Sessions", TextPlatform:"Generic OCR")	found at (102, 171)	71	on_my_agenda	My Agenda.script
+2016-07-27 13:05:31.581 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(102,171), ImageRectangle:(41,160,163,182), Language:"English", text:"Sessions", TextPlatform:"Generic OCR")	found at (102, 171)	73	on_my_agenda	My Agenda.script
+2016-07-27 13:05:31.583 +0530	LogSuccess		Sessions is displayed	74	on_my_agenda	My Agenda.script
+2016-07-27 13:05:32.806 +0530	capturescreen	Sessions_Pass_iOS.png		80	on_my_agenda	My Agenda.script
+2016-07-27 13:05:33.219 +0530	EndTestCase		(Duration:"44.044746", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 13:04:49 +0530", Successes:"2", TestCase:"My Agenda.script", Warnings:"0")
+2016-07-27 13:05:33.237 +0530	SUCCESS		Execution Time 0:00:44 My Agenda.script

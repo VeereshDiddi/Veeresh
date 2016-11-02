@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<runHistory script="Validating adding Sessions">
+ <run>
+  <RunDate>2016-07-27 12:16:29.808 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>65.933874</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20160727_121629.808/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Image Not Found -- click Error - No Image Found On Screen: &quot;Add Button&quot;</ErrorMessage>
+ </run>
+</runHistory>

@@ -1,0 +1,17 @@
+﻿2016-07-27 11:55:47.483 +0530	START		Running My Notification.script
+2016-07-27 11:55:47.548 +0530	connect		iPhone:(null)	2	on_my_notification	My Notification.script
+2016-07-27 11:55:47.550 +0530	presshomebutton			6	on_my_notification	My Notification.script
+2016-07-27 11:55:53.516 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	13	on_my_notification	My Notification.script
+2016-07-27 11:55:53.676 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	14	on_my_notification	My Notification.script
+2016-07-27 11:55:59.891 +0530	imagefound	GSXAPP	found at (244, 467)	16	on_my_notification	My Notification.script
+2016-07-27 11:56:06.182 +0530	click	GSXAPP	at (244, 467)	21	on_my_notification	My Notification.script
+2016-07-27 11:56:08.576 +0530	waitfor	Menu	found at (55, 83)	26	on_my_notification	My Notification.script
+2016-07-27 11:56:09.898 +0530	click	Menu	at (55, 83)	29	on_my_notification	My Notification.script
+2016-07-27 11:56:17.078 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(223,849), ImageRectangle:(118,835,329,863), Language:"English", text:"My Notifications", TextPlatform:"Generic OCR")	found at (223, 849)	34	on_my_notification	My Notification.script
+2016-07-27 11:56:24.384 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(216,849), ImageRectangle:(118,835,314,863), Language:"English", Text:"My Notification", TextPlatform:"Generic OCR")	at (216, 849)	45	on_my_notification	My Notification.script
+2016-07-27 11:56:28.815 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(295,83), ImageRectangle:(256,71,334,95), Language:"English", Text:"Inbox", TextPlatform:"Generic OCR")	found at (295, 83)	48	on_my_notification	My Notification.script
+2016-07-27 11:56:30.135 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(295,83), ImageRectangle:(256,71,334,95), Language:"English", text:"Inbox", TextPlatform:"Generic OCR")	found at (295, 83)	50	on_my_notification	My Notification.script
+2016-07-27 11:56:30.137 +0530	LogSuccess		Inbox is displayed	51	on_my_notification	My Notification.script
+2016-07-27 11:56:31.399 +0530	capturescreen	Inbox_Pass_iOS.png		57	on_my_notification	My Notification.script
+2016-07-27 11:56:31.756 +0530	EndTestCase		(Duration:"44.271298", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 11:55:47 +0530", Successes:"1", TestCase:"My Notification.script", Warnings:"0")
+2016-07-27 11:56:31.773 +0530	SUCCESS		Execution Time 0:00:44 My Notification.script

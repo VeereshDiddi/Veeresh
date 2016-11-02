@@ -1,0 +1,20 @@
+﻿2016-08-02 11:56:36.907 +0530	START		Running Getting Around.script
+2016-08-02 11:56:36.970 +0530	connect		iPhone:(null)	2	on_getting_around	Getting Around.script
+2016-08-02 11:56:36.972 +0530	presshomebutton			3	on_getting_around	Getting Around.script
+2016-08-02 11:56:47.962 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	10	on_getting_around	Getting Around.script
+2016-08-02 11:56:48.128 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	11	on_getting_around	Getting Around.script
+2016-08-02 11:56:54.023 +0530	imagefound	GSXAPP	found at (243, 467)	13	on_getting_around	Getting Around.script
+2016-08-02 11:57:00.000 +0530	click	GSXAPP	at (243, 467)	18	on_getting_around	Getting Around.script
+2016-08-02 11:57:03.155 +0530	waitfor	Menu	found at (55, 83)	23	on_getting_around	Getting Around.script
+2016-08-02 11:57:03.446 +0530	click	Menu	at (55, 83)	26	on_getting_around	Getting Around.script
+2016-08-02 11:57:15.344 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Getting Around", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Getting Around") within 5.00 seconds	31	on_getting_around	Getting Around.script
+2016-08-02 11:57:15.346 +0530	set		SWIPESPEED = 8	33	on_getting_around	Getting Around.script
+2016-08-02 11:57:16.303 +0530	swipeup		Swiped up from (86, 991) to (86, 341)	34	on_getting_around	Getting Around.script
+2016-08-02 11:57:20.554 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(217,849), ImageRectangle:(117,835,317,863), Language:"English", text:"Getting Around", TextPlatform:"Generic OCR")	found at (217, 849)	38	on_getting_around	Getting Around.script
+2016-08-02 11:57:27.498 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(217,849), ImageRectangle:(117,835,317,863), Language:"English", Text:"Getting Around", TextPlatform:"Generic OCR")	at (217, 849)	42	on_getting_around	Getting Around.script
+2016-08-02 11:57:29.378 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(217,849), ImageRectangle:(117,835,317,863), Language:"English", Text:"Getting Around", TextPlatform:"Generic OCR")	found at (217, 849)	45	on_getting_around	Getting Around.script
+2016-08-02 11:57:35.454 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,467), ImageRectangle:(133,441,506,493), Language:"English", text:"Getting Around", TextPlatform:"Generic OCR")	found at (319, 467)	50	on_getting_around	Getting Around.script
+2016-08-02 11:57:35.456 +0530	LogSuccess		Getting Around is displayed	51	on_getting_around	Getting Around.script
+2016-08-02 11:57:36.422 +0530	capturescreen	Getting Around_Pass_iOS.png		57	on_getting_around	Getting Around.script
+2016-08-02 11:57:36.661 +0530	EndTestCase		(Duration:"59.752846", Errors:"0", Exceptions:"0", StartTime:"2016-08-02 11:56:36 +0530", Successes:"1", TestCase:"Getting Around.script", Warnings:"0")
+2016-08-02 11:57:36.677 +0530	SUCCESS		Execution Time 0:00:59 Getting Around.script

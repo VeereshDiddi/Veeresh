@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8Wf-83-6sf">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="JEK-D3-JkL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JjQ-wZ-5mM">
+                            <connections>
+                                <action selector="addButtonClicked:" destination="BYZ-38-t0r" id="LbO-WI-e8b"/>
+                                <segue destination="wyL-fz-4XD" kind="push" identifier="firstView" id="wyf-iG-zCx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="694" y="343"/>
+        </scene>
+        <!--FirstView-->
+        <scene sceneID="FaZ-mV-88I">
+            <objects>
+                <viewController id="wyL-fz-4XD" customClass="FirstViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ozo-jb-n5Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="COA-N1-3Ez"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kkC-Ll-Vdu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scU-qi-eEg">
+                                <rect key="frame" x="111" y="318" width="98" height="30"/>
+                                <state key="normal" title="Add Button"/>
+                                <connections>
+                                    <action selector="addButtonForButton:" destination="wyL-fz-4XD" eventType="touchUpInside" id="2ls-RZ-S63"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fH6-Sp-zbd">
+                                <rect key="frame" x="111" y="205" width="98" height="30"/>
+                                <state key="normal" title="Add Label"/>
+                                <connections>
+                                    <action selector="addButtonForLabel:" destination="wyL-fz-4XD" eventType="touchUpInside" id="sZS-Zd-IR1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="FirstView" id="LIy-4X-9C4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EtB-1b-acL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1122" y="343"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZV3-cU-JLy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Wf-83-6sf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d3E-zj-hkx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="z42-SU-vbj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VSa-aF-5kt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="269" y="343"/>
+        </scene>
+    </scenes>
+</document>

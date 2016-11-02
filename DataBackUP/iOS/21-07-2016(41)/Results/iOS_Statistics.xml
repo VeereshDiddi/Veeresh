@@ -1,0 +1,219 @@
+﻿<?xml version="1.0"?>
+<statistics>
+ <script name="Special Activities">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>4</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-25 18:45:07 +0530</FirstRun>
+  <LastRun>2016-07-27 14:14:49 +0530</LastRun>
+  <TotalTimeOnSuccess>208.475408</TotalTimeOnSuccess>
+ </script>
+ <script name="GSX Experience">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>3</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-26 10:01:52 +0530</FirstRun>
+  <LastRun>2016-07-27 13:03:02 +0530</LastRun>
+  <TotalTimeOnSuccess>182.541061</TotalTimeOnSuccess>
+ </script>
+ <script name="Validating adding Sessions">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>5</NumberOfRuns>
+  <NumberOfFails>4</NumberOfFails>
+  <FirstRun>2016-07-26 11:33:29 +0530</FirstRun>
+  <LastRun>2016-07-27 14:35:02 +0530</LastRun>
+  <TotalTimeOnSuccess>73.751110</TotalTimeOnSuccess>
+ </script>
+ <script name="Schedule">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>4</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-25 16:28:16 +0530</FirstRun>
+  <LastRun>2016-07-27 14:04:10 +0530</LastRun>
+  <TotalTimeOnSuccess>164.868656</TotalTimeOnSuccess>
+ </script>
+ <script name="Getting Around">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>3</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-26 09:59:35 +0530</FirstRun>
+  <LastRun>2016-07-27 13:01:23 +0530</LastRun>
+  <TotalTimeOnSuccess>183.820393</TotalTimeOnSuccess>
+ </script>
+ <script name="Wellness">
+  <LastStatus>Failure</LastStatus>
+  <NumberOfRuns>3</NumberOfRuns>
+  <NumberOfFails>2</NumberOfFails>
+  <FirstRun>2016-07-26 10:37:08 +0530</FirstRun>
+  <LastRun>2016-07-27 14:39:20 +0530</LastRun>
+  <TotalTimeOnSuccess>76.337191</TotalTimeOnSuccess>
+ </script>
+ <script name="Maps">
+  <LastStatus>Failure</LastStatus>
+  <NumberOfRuns>2</NumberOfRuns>
+  <NumberOfFails>2</NumberOfFails>
+  <FirstRun>2016-07-26 10:04:40 +0530</FirstRun>
+  <LastRun>2016-07-27 12:34:33 +0530</LastRun>
+  <TotalTimeOnSuccess>0.000000</TotalTimeOnSuccess>
+ </script>
+ <script name="Overview">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>4</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-25 16:29:22 +0530</FirstRun>
+  <LastRun>2016-07-27 13:08:57 +0530</LastRun>
+  <TotalTimeOnSuccess>153.522791</TotalTimeOnSuccess>
+ </script>
+ <script name="My Notification">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>4</NumberOfRuns>
+  <NumberOfFails>1</NumberOfFails>
+  <FirstRun>2016-07-25 16:42:33 +0530</FirstRun>
+  <LastRun>2016-07-27 13:05:56 +0530</LastRun>
+  <TotalTimeOnSuccess>140.923017</TotalTimeOnSuccess>
+ </script>
+ <script name="FAQ">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>4</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-25 18:43:19 +0530</FirstRun>
+  <LastRun>2016-07-27 13:00:01 +0530</LastRun>
+  <TotalTimeOnSuccess>242.794300</TotalTimeOnSuccess>
+ </script>
+ <script name="Social">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>4</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-26 10:28:26 +0530</FirstRun>
+  <LastRun>2016-07-27 14:11:39 +0530</LastRun>
+  <TotalTimeOnSuccess>200.558535</TotalTimeOnSuccess>
+ </script>
+ <script name="Activities List">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>4</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-25 16:50:07 +0530</FirstRun>
+  <LastRun>2016-07-27 12:41:55 +0530</LastRun>
+  <TotalTimeOnSuccess>166.727135</TotalTimeOnSuccess>
+ </script>
+ <script name="Conversations">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>3</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-26 09:53:40 +0530</FirstRun>
+  <LastRun>2016-07-27 12:50:21 +0530</LastRun>
+  <TotalTimeOnSuccess>165.678659</TotalTimeOnSuccess>
+ </script>
+ <script name="Week at-a-Glance">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>7</NumberOfRuns>
+  <NumberOfFails>3</NumberOfFails>
+  <FirstRun>2016-07-22 15:54:03 +0530</FirstRun>
+  <LastRun>2016-07-27 14:38:16 +0530</LastRun>
+  <TotalTimeOnSuccess>113.504492</TotalTimeOnSuccess>
+ </script>
+ <script name="Filters_Category">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>3</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-26 14:38:48 +0530</FirstRun>
+  <LastRun>2016-07-26 15:33:02 +0530</LastRun>
+  <TotalTimeOnSuccess>178.763947</TotalTimeOnSuccess>
+ </script>
+ <script name="Login">
+  <LastStatus>Failure</LastStatus>
+  <NumberOfRuns>1</NumberOfRuns>
+  <NumberOfFails>1</NumberOfFails>
+  <FirstRun>2016-07-27 14:24:48 +0530</FirstRun>
+  <LastRun>2016-07-27 14:24:48 +0530</LastRun>
+  <TotalTimeOnSuccess>0.000000</TotalTimeOnSuccess>
+ </script>
+ <script name="My Surveys">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>4</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-25 16:38:48 +0530</FirstRun>
+  <LastRun>2016-07-27 13:07:58 +0530</LastRun>
+  <TotalTimeOnSuccess>167.301650</TotalTimeOnSuccess>
+ </script>
+ <script name="Speakers">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>5</NumberOfRuns>
+  <NumberOfFails>1</NumberOfFails>
+  <FirstRun>2016-07-25 16:17:40 +0530</FirstRun>
+  <LastRun>2016-07-27 14:13:45 +0530</LastRun>
+  <TotalTimeOnSuccess>166.990998</TotalTimeOnSuccess>
+ </script>
+ <script name="Experiment">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>3</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-26 16:04:10 +0530</FirstRun>
+  <LastRun>2016-07-26 16:32:57 +0530</LastRun>
+  <TotalTimeOnSuccess>650.651832</TotalTimeOnSuccess>
+ </script>
+ <script name="Dev Net">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>4</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-25 16:53:16 +0530</FirstRun>
+  <LastRun>2016-07-27 12:51:58 +0530</LastRun>
+  <TotalTimeOnSuccess>224.392020</TotalTimeOnSuccess>
+ </script>
+ <script name="Arrival">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>3</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-26 09:48:25 +0530</FirstRun>
+  <LastRun>2016-07-27 12:43:13 +0530</LastRun>
+  <TotalTimeOnSuccess>168.152179</TotalTimeOnSuccess>
+ </script>
+ <script name="My Agenda">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>4</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-26 10:10:18 +0530</FirstRun>
+  <LastRun>2016-07-27 13:04:49 +0530</LastRun>
+  <TotalTimeOnSuccess>166.688092</TotalTimeOnSuccess>
+ </script>
+ <script name="My Recommendations">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>4</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-25 16:36:22 +0530</FirstRun>
+  <LastRun>2016-07-27 13:06:59 +0530</LastRun>
+  <TotalTimeOnSuccess>171.670724</TotalTimeOnSuccess>
+ </script>
+ <script name="About this app">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>11</NumberOfRuns>
+  <NumberOfFails>3</NumberOfFails>
+  <FirstRun>2016-07-25 12:41:26 +0530</FirstRun>
+  <LastRun>2016-07-27 12:39:55 +0530</LastRun>
+  <TotalTimeOnSuccess>519.296671</TotalTimeOnSuccess>
+ </script>
+ <script name="Attendees">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>3</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-26 09:51:44 +0530</FirstRun>
+  <LastRun>2016-07-27 12:48:56 +0530</LastRun>
+  <TotalTimeOnSuccess>173.498063</TotalTimeOnSuccess>
+ </script>
+ <script name="Validating adding speakers">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>5</NumberOfRuns>
+  <NumberOfFails>1</NumberOfFails>
+  <FirstRun>2016-07-26 10:57:49 +0530</FirstRun>
+  <LastRun>2016-07-27 14:36:33 +0530</LastRun>
+  <TotalTimeOnSuccess>300.737378</TotalTimeOnSuccess>
+ </script>
+ <script name="Search">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>3</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2016-07-26 12:50:03 +0530</FirstRun>
+  <LastRun>2016-07-27 14:05:24 +0530</LastRun>
+  <TotalTimeOnSuccess>127.459123</TotalTimeOnSuccess>
+ </script>
+</statistics>

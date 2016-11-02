@@ -1,0 +1,27 @@
+﻿<?xml version="1.0"?>
+<runHistory script="Validating adding Sessions">
+ <run>
+  <RunDate>2016-07-27 14:19:45.113 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>60.446028</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20160727_141945.113/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Image Not Found -- waitfor Error - Unable To Find Any Image On Screen &quot;Remove Button&quot; within 5.00 seconds</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2016-07-27 14:35:02.750 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>73.751110</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20160727_143502.750/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+</runHistory>

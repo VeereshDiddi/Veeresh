@@ -1,0 +1,17 @@
+﻿2016-08-02 14:17:09.041 +0530	START		Running Week-at-a-glance.script
+2016-08-02 14:17:09.105 +0530	connect		iPhone:(null)	2	on_week_at_a_glance	Week-at-a-glance.script
+2016-08-02 14:17:09.107 +0530	presshomebutton			3	on_week_at_a_glance	Week-at-a-glance.script
+2016-08-02 14:17:19.565 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	10	on_week_at_a_glance	Week-at-a-glance.script
+2016-08-02 14:17:19.726 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	11	on_week_at_a_glance	Week-at-a-glance.script
+2016-08-02 14:17:25.786 +0530	imagefound	GSXAPP	found at (244, 467)	13	on_week_at_a_glance	Week-at-a-glance.script
+2016-08-02 14:17:31.926 +0530	click	GSXAPP	at (244, 467)	16	on_week_at_a_glance	Week-at-a-glance.script
+2016-08-02 14:17:36.212 +0530	waitfor	Menu	found at (55, 83)	21	on_week_at_a_glance	Week-at-a-glance.script
+2016-08-02 14:17:36.874 +0530	click	Menu	at (55, 83)	24	on_week_at_a_glance	Week-at-a-glance.script
+2016-08-02 14:17:44.178 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(238,309), ImageRectangle:(116,296,361,323), Language:"English", text:"Week at-a-Glance", TextPlatform:"Generic OCR")	found at (238, 309)	29	on_week_at_a_glance	Week-at-a-glance.script
+2016-08-02 14:17:51.599 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(238,309), ImageRectangle:(116,296,361,323), Language:"English", Text:"Week at-a-Glance", TextPlatform:"Generic OCR")	at (238, 309)	41	on_week_at_a_glance	Week-at-a-glance.script
+2016-08-02 14:17:53.194 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(238,309), ImageRectangle:(116,296,361,323), Language:"English", Text:"Week at-a-Glance", TextPlatform:"Generic OCR")	found at (238, 309)	44	on_week_at_a_glance	Week-at-a-glance.script
+2016-08-02 14:17:53.421 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,86), ImageRectangle:(185,72,454,100), Language:"English", text:"Week at-a-Glance", TextPlatform:"Generic OCR")	found at (319, 86)	46	on_week_at_a_glance	Week-at-a-glance.script
+2016-08-02 14:17:53.422 +0530	LogSuccess		Week at-a-Glance is displayed	47	on_week_at_a_glance	Week-at-a-glance.script
+2016-08-02 14:17:53.795 +0530	capturescreen	Week at-a-Glance_Pass_iOS.png		53	on_week_at_a_glance	Week-at-a-glance.script
+2016-08-02 14:17:54.053 +0530	EndTestCase		(Duration:"45.009519", Errors:"0", Exceptions:"0", StartTime:"2016-08-02 14:17:09 +0530", Successes:"1", TestCase:"Week-at-a-glance.script", Warnings:"0")
+2016-08-02 14:17:54.069 +0530	SUCCESS		Execution Time 0:00:45 Week-at-a-glance.script

@@ -1,0 +1,15 @@
+﻿2016-07-27 12:03:32.140 +0530	START		Running Overview.script
+2016-07-27 12:03:32.206 +0530	connect		iPhone:(null)	1	on_overview	Overview.script
+2016-07-27 12:03:32.208 +0530	presshomebutton			5	on_overview	Overview.script
+2016-07-27 12:03:33.275 +0530	imagefound	GSXAPP	found at (578, 467)	12	on_overview	Overview.script
+2016-07-27 12:03:53.769 +0530	click	GSXAPP	at (244, 467)	19	on_overview	Overview.script
+2016-07-27 12:03:56.235 +0530	waitfor	Menu	found at (55, 83)	24	on_overview	Overview.script
+2016-07-27 12:03:57.587 +0530	click	Menu	at (55, 83)	27	on_overview	Overview.script
+2016-07-27 12:04:04.535 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,986), ImageRectangle:(117,975,240,998), Language:"English", text:"Overview", TextPlatform:"Generic OCR")	found at (178, 986)	32	on_overview	Overview.script
+2016-07-27 12:04:11.699 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,986), ImageRectangle:(117,975,240,998), Language:"English", Text:"Overview", TextPlatform:"Generic OCR")	at (178, 986)	43	on_overview	Overview.script
+2016-07-27 12:04:13.026 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,986), ImageRectangle:(117,975,240,998), Language:"English", Text:"Overview", TextPlatform:"Generic OCR")	found at (178, 986)	46	on_overview	Overview.script
+2016-07-27 12:04:13.408 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(320,83), ImageRectangle:(252,71,388,95), Language:"English", text:"Overview", TextPlatform:"Generic OCR")	found at (320, 83)	49	on_overview	Overview.script
+2016-07-27 12:04:13.410 +0530	LogSuccess		Overview is displayed	50	on_overview	Overview.script
+2016-07-27 12:04:13.782 +0530	capturescreen	Overview_Pass_iOS.png		56	on_overview	Overview.script
+2016-07-27 12:04:14.141 +0530	EndTestCase		(Duration:"41.999038", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 12:03:32 +0530", Successes:"1", TestCase:"Overview.script", Warnings:"0")
+2016-07-27 12:04:14.158 +0530	SUCCESS		Execution Time 0:00:42 Overview.script

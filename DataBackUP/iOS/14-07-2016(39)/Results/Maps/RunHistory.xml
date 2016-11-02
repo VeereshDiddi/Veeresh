@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<runHistory script="Maps">
+ <run>
+  <RunDate>2016-07-27 12:34:33.291 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>123.283120</Duration>
+  <Errors>2</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>9</Successes>
+  <LogFile>20160727_123433.291/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Script Error -- Number of Errors logged: 2</ErrorMessage>
+ </run>
+</runHistory>

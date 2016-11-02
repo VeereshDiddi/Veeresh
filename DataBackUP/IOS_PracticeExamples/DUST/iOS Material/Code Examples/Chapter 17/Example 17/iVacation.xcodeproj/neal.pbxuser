@@ -1,0 +1,353 @@
+// !$*UTF8*$!
+{
+	086DB9B3101785FB00C37E59 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* iVacationAppDelegate.h */;
+		name = "iVacationAppDelegate.h: 5";
+		rLen = 0;
+		rLoc = 177;
+		rType = 0;
+		vrLen = 505;
+		vrLoc = 0;
+	};
+	086DB9B4101785FB00C37E59 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0878EAA70FFB9D4F0098AEBA /* Budget.h */;
+		name = "Budget.h: 5";
+		rLen = 0;
+		rLoc = 177;
+		rType = 0;
+		vrLen = 524;
+		vrLoc = 0;
+	};
+	0878EAA70FFB9D4F0098AEBA /* Budget.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {686, 305}}";
+			sepNavSelRange = "{177, 0}";
+			sepNavVisRange = "{0, 524}";
+			sepNavWindowFrame = "{{42, 251}, {745, 433}}";
+		};
+	};
+	0878EAA80FFB9D4F0098AEBA /* Budget.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {607, 546}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 679}";
+		};
+	};
+	0878EAA90FFB9D4F0098AEBA /* Transaction.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {626, 529}}";
+			sepNavSelRange = "{177, 0}";
+			sepNavVisRange = "{0, 720}";
+		};
+	};
+	0878EAAB0FFB9D4F0098AEBA /* CashTransaction.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {626, 529}}";
+			sepNavSelRange = "{177, 0}";
+			sepNavVisRange = "{0, 330}";
+		};
+	};
+	0878EAAD0FFB9D4F0098AEBA /* CreditCardTransaction.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {720, 182}}";
+			sepNavSelRange = "{177, 0}";
+			sepNavVisRange = "{0, 336}";
+		};
+	};
+	0878EAAF0FFB9D4F0098AEBA /* Destination.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {873, 312}}";
+			sepNavSelRange = "{177, 0}";
+			sepNavVisRange = "{0, 354}";
+		};
+	};
+	0878EAB00FFB9D4F0098AEBA /* Destination.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {880, 689}}";
+			sepNavSelRange = "{743, 0}";
+			sepNavVisRange = "{0, 1311}";
+		};
+	};
+	0878EAB10FFB9D4F0098AEBA /* ATMTransactionDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {720, 169}}";
+			sepNavSelRange = "{177, 0}";
+			sepNavVisRange = "{0, 281}";
+		};
+	};
+	0878EAB30FFB9D4F0098AEBA /* DestinationCategory.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {720, 157}}";
+			sepNavSelRange = "{177, 0}";
+			sepNavVisRange = "{0, 270}";
+		};
+	};
+	0878EAB40FFB9D4F0098AEBA /* DestinationCategory.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {626, 529}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 718}";
+		};
+	};
+	0878EBC20FFBDF9B0098AEBA /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* iVacation-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/neal/Desktop/Objective-C CD Final 3.2/Chapter 17/Example 17/iVacation-Info.plist";
+		rLen = 0;
+		rLoc = 4294967295;
+	};
+	088970930FF9739C0002DD04 /* iVacation */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = iVacation;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	088970A30FF973A50002DD04 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	088970A40FF973A50002DD04 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	088D63ED0FFFC18800CFAEDA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0878EAB00FFB9D4F0098AEBA /* Destination.m */;
+		name = "Destination.m: 21";
+		rLen = 0;
+		rLoc = 743;
+		rType = 0;
+		vrLen = 1311;
+		vrLoc = 0;
+	};
+	088E6087101B4BE40035AFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0878EAA80FFB9D4F0098AEBA /* Budget.m */;
+		name = "Budget.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 679;
+		vrLoc = 0;
+	};
+	088E6088101B4BE40035AFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 229;
+		vrLoc = 0;
+	};
+	088E6089101B4BE40035AFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* iVacationViewController.m */;
+		name = "iVacationViewController.m: 47";
+		rLen = 0;
+		rLoc = 1666;
+		rType = 0;
+		vrLen = 953;
+		vrLoc = 316;
+	};
+	088E608A101B4BE40035AFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* iVacationViewController.m */;
+		name = "iVacationViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1125;
+		vrLoc = 0;
+	};
+	08C1BE1C1016C3EF00136C3F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0878EAA90FFB9D4F0098AEBA /* Transaction.h */;
+		name = "Transaction.h: 5";
+		rLen = 0;
+		rLoc = 177;
+		rType = 0;
+		vrLen = 720;
+		vrLoc = 0;
+	};
+	08C1BE1D1016C3EF00136C3F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0878EAAB0FFB9D4F0098AEBA /* CashTransaction.h */;
+		name = "CashTransaction.h: 5";
+		rLen = 0;
+		rLoc = 177;
+		rType = 0;
+		vrLen = 330;
+		vrLoc = 0;
+	};
+	08C1BE201016C3EF00136C3F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* iVacationViewController.h */;
+		name = "iVacationViewController.h: 5";
+		rLen = 0;
+		rLoc = 177;
+		rType = 0;
+		vrLen = 465;
+		vrLoc = 0;
+	};
+	08C1BE221016C3EF00136C3F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* iVacationAppDelegate.m */;
+		name = "iVacationAppDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 642;
+		vrLoc = 0;
+	};
+	08C1BE231016C3EF00136C3F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0878EAB40FFB9D4F0098AEBA /* DestinationCategory.m */;
+		name = "DestinationCategory.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 718;
+		vrLoc = 0;
+	};
+	1D3623240D0F684500981E51 /* iVacationAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {626, 522}}";
+			sepNavSelRange = "{177, 0}";
+			sepNavVisRange = "{0, 505}";
+		};
+	};
+	1D3623250D0F684500981E51 /* iVacationAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {626, 529}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 642}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* iVacation */ = {
+		activeExec = 0;
+		executables = (
+			088970930FF9739C0002DD04 /* iVacation */,
+		);
+	};
+	28D7ACF60DDB3853001CB0EB /* iVacationViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {626, 529}}";
+			sepNavSelRange = "{177, 0}";
+			sepNavVisRange = "{0, 465}";
+		};
+	};
+	28D7ACF70DDB3853001CB0EB /* iVacationViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {719, 910}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1125}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 088970930FF9739C0002DD04 /* iVacation */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* iVacation */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* iVacation */,
+		);
+		codeSenseManager = 088970A40FF973A50002DD04 /* Code sense */;
+		executables = (
+			088970930FF9739C0002DD04 /* iVacation */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					364,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 270224121;
+			PBXWorkspaceStateSaveDate = 270224121;
+		};
+		perUserProjectItems = {
+			086DB9B3101785FB00C37E59 /* PBXTextBookmark */ = 086DB9B3101785FB00C37E59 /* PBXTextBookmark */;
+			086DB9B4101785FB00C37E59 /* PBXTextBookmark */ = 086DB9B4101785FB00C37E59 /* PBXTextBookmark */;
+			0878EBC20FFBDF9B0098AEBA /* PlistBookmark */ = 0878EBC20FFBDF9B0098AEBA /* PlistBookmark */;
+			088D63ED0FFFC18800CFAEDA /* PBXTextBookmark */ = 088D63ED0FFFC18800CFAEDA /* PBXTextBookmark */;
+			088E6087101B4BE40035AFDF /* PBXTextBookmark */ = 088E6087101B4BE40035AFDF /* PBXTextBookmark */;
+			088E6088101B4BE40035AFDF /* PBXTextBookmark */ = 088E6088101B4BE40035AFDF /* PBXTextBookmark */;
+			088E6089101B4BE40035AFDF /* PBXTextBookmark */ = 088E6089101B4BE40035AFDF /* PBXTextBookmark */;
+			088E608A101B4BE40035AFDF /* PBXTextBookmark */ = 088E608A101B4BE40035AFDF /* PBXTextBookmark */;
+			08C1BE1C1016C3EF00136C3F /* PBXTextBookmark */ = 08C1BE1C1016C3EF00136C3F /* PBXTextBookmark */;
+			08C1BE1D1016C3EF00136C3F /* PBXTextBookmark */ = 08C1BE1D1016C3EF00136C3F /* PBXTextBookmark */;
+			08C1BE201016C3EF00136C3F /* PBXTextBookmark */ = 08C1BE201016C3EF00136C3F /* PBXTextBookmark */;
+			08C1BE221016C3EF00136C3F /* PBXTextBookmark */ = 08C1BE221016C3EF00136C3F /* PBXTextBookmark */;
+			08C1BE231016C3EF00136C3F /* PBXTextBookmark */ = 08C1BE231016C3EF00136C3F /* PBXTextBookmark */;
+		};
+		sourceControlManager = 088970A30FF973A50002DD04 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {542, 354}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 229}";
+		};
+	};
+	32CA4F630368D1EE00C91783 /* iVacation_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {720, 180}}";
+			sepNavSelRange = "{156, 23}";
+			sepNavVisRange = "{0, 187}";
+		};
+	};
+}

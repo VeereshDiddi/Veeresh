@@ -1,0 +1,17 @@
+﻿2016-08-02 15:19:51.483 +0530	START		Running Overview.script
+2016-08-02 15:19:51.547 +0530	connect		iPhone:(null)	2	on_overview	Overview.script
+2016-08-02 15:19:51.549 +0530	presshomebutton			3	on_overview	Overview.script
+2016-08-02 15:20:02.160 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	10	on_overview	Overview.script
+2016-08-02 15:20:02.327 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	11	on_overview	Overview.script
+2016-08-02 15:20:08.585 +0530	imagefound	GSXAPP	found at (244, 467)	13	on_overview	Overview.script
+2016-08-02 15:20:14.905 +0530	click	GSXAPP	at (244, 467)	17	on_overview	Overview.script
+2016-08-02 15:20:17.512 +0530	waitfor	Menu	found at (55, 83)	22	on_overview	Overview.script
+2016-08-02 15:20:17.758 +0530	click	Menu	at (55, 83)	25	on_overview	Overview.script
+2016-08-02 15:20:24.077 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,986), ImageRectangle:(117,975,240,998), Language:"English", text:"Overview", TextPlatform:"Generic OCR")	found at (178, 986)	30	on_overview	Overview.script
+2016-08-02 15:20:31.418 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,986), ImageRectangle:(117,975,240,998), Language:"English", Text:"Overview", TextPlatform:"Generic OCR")	at (178, 986)	41	on_overview	Overview.script
+2016-08-02 15:20:32.846 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,986), ImageRectangle:(117,975,240,998), Language:"English", Text:"Overview", TextPlatform:"Generic OCR")	found at (178, 986)	44	on_overview	Overview.script
+2016-08-02 15:20:33.088 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(320,83), ImageRectangle:(252,71,388,95), Language:"English", text:"Overview", TextPlatform:"Generic OCR")	found at (320, 83)	47	on_overview	Overview.script
+2016-08-02 15:20:33.089 +0530	LogSuccess		Overview is displayed	48	on_overview	Overview.script
+2016-08-02 15:20:33.323 +0530	capturescreen	Overview_Pass_iOS.png		54	on_overview	Overview.script
+2016-08-02 15:20:33.617 +0530	EndTestCase		(Duration:"42.132187", Errors:"0", Exceptions:"0", StartTime:"2016-08-02 15:19:51 +0530", Successes:"1", TestCase:"Overview.script", Warnings:"0")
+2016-08-02 15:20:33.634 +0530	SUCCESS		Execution Time 0:00:42 Overview.script

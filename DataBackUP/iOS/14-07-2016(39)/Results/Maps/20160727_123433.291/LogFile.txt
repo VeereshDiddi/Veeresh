@@ -1,0 +1,71 @@
+﻿2016-07-27 12:34:33.293 +0530	START		Running Maps.script
+2016-07-27 12:34:33.385 +0530	connect		iPhone:(null)	2	on_maps	Maps.script
+2016-07-27 12:34:33.387 +0530	presshomebutton			6	on_maps	Maps.script
+2016-07-27 12:34:38.665 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	13	on_maps	Maps.script
+2016-07-27 12:34:38.829 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	14	on_maps	Maps.script
+2016-07-27 12:34:45.039 +0530	imagefound	GSXAPP	found at (244, 467)	16	on_maps	Maps.script
+2016-07-27 12:34:51.321 +0530	click	GSXAPP	at (244, 467)	20	on_maps	Maps.script
+2016-07-27 12:34:54.573 +0530	waitfor	Menu	found at (55, 83)	25	on_maps	Maps.script
+2016-07-27 12:34:54.876 +0530	click	Menu	at (55, 83)	28	on_maps	Maps.script
+2016-07-27 12:35:07.461 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Maps", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Maps") within 5.00 seconds	33	on_maps	Maps.script
+2016-07-27 12:35:07.462 +0530	set		SWIPESPEED = 8	35	on_maps	Maps.script
+2016-07-27 12:35:08.462 +0530	swipeup		Swiped up from (86, 991) to (86, 341)	36	on_maps	Maps.script
+2016-07-27 12:35:12.793 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(153,782), ImageRectangle:(118,769,188,796), Language:"English", text:"Maps", TextPlatform:"Generic OCR")	found at (153, 782)	40	on_maps	Maps.script
+2016-07-27 12:35:19.691 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(153,782), ImageRectangle:(118,769,188,796), Language:"English", Text:"Maps", TextPlatform:"Generic OCR")	at (153, 782)	44	on_maps	Maps.script
+2016-07-27 12:35:21.547 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(153,782), ImageRectangle:(118,769,188,796), Language:"English", Text:"Maps", TextPlatform:"Generic OCR")	found at (153, 782)	47	on_maps	Maps.script
+2016-07-27 12:35:22.898 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,86), ImageRectangle:(281,72,358,100), Language:"English", text:"Maps", TextPlatform:"Generic OCR")	found at (319, 86)	50	on_maps	Maps.script
+2016-07-27 12:35:22.900 +0530	LogSuccess		Maps page is displayed	51	on_maps	Maps.script
+2016-07-27 12:35:23.162 +0530	capturescreen	Maps page_Pass_iOS.png		57	on_maps	Maps.script
+2016-07-27 12:35:23.634 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(502,172), ImageRectangle:(459,161,545,183), Language:"English", Text:"Select", TextPlatform:"Generic OCR")	at (502, 172)	74	on_maps	Maps.script
+2016-07-27 12:35:25.128 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(218,265), ImageRectangle:(32,250,404,281), Language:"English", Text:"Mandalay Bay Overview", TextPlatform:"Generic OCR")	at (218, 265)	76	on_maps	Maps.script
+2016-07-27 12:35:25.986 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(218,265), ImageRectangle:(32,250,404,281), Language:"English", text:"Mandalay Bay Overview", TextPlatform:"Generic OCR")	found at (218, 265)	78	on_maps	Maps.script
+2016-07-27 12:35:25.988 +0530	LogSuccess		Mandalay Bay Overview page is displayed	79	on_maps	Maps.script
+2016-07-27 12:35:27.286 +0530	capturescreen	Mandalay Bay Overview page_Pass_iOS.png		85	on_maps	Maps.script
+2016-07-27 12:35:28.952 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(502,172), ImageRectangle:(459,161,545,183), Language:"English", Text:"Select", TextPlatform:"Generic OCR")	at (502, 172)	102	on_maps	Maps.script
+2016-07-27 12:35:30.138 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(283,350), ImageRectangle:(32,338,534,363), Language:"English", Text:"MGM Convention Center Level 1", TextPlatform:"Generic OCR")	found at (283, 350)	103	on_maps	Maps.script
+2016-07-27 12:35:30.819 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(283,350), ImageRectangle:(32,338,534,363), Language:"English", Text:"MGM Convention Center Level 1", TextPlatform:"Generic OCR")	at (283, 350)	105	on_maps	Maps.script
+2016-07-27 12:35:35.612 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(320,473), ImageRectangle:(241,469,400,477), Language:"English", text:"MGM Convention Center Level 1", TextPlatform:"Generic OCR")	found at (320, 473)	107	on_maps	Maps.script
+2016-07-27 12:35:35.614 +0530	LogSuccess		MGM Convention Center Level 1 page is displayed	108	on_maps	Maps.script
+2016-07-27 12:35:36.891 +0530	capturescreen	MGM Convention Center Level 1_Pass_iOS.png		114	on_maps	Maps.script
+2016-07-27 12:35:38.563 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(556,186), ImageRectangle:(513,175,599,197), Language:"English", Text:"Select", TextPlatform:"Generic OCR")	at (556, 186)	130	on_maps	Maps.script
+2016-07-27 12:35:40.234 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(285,438), ImageRectangle:(32,426,539,451), Language:"English", Text:"MGM Convention Center Level 2", TextPlatform:"Generic OCR")	at (285, 438)	131	on_maps	Maps.script
+2016-07-27 12:35:41.662 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(285,438), ImageRectangle:(32,426,539,451), Language:"English", text:"MGM Convention Center Level 2", TextPlatform:"Generic OCR")	found at (285, 438)	133	on_maps	Maps.script
+2016-07-27 12:35:41.664 +0530	LogSuccess		MGM Convention Center Level 2 page is displayed	134	on_maps	Maps.script
+2016-07-27 12:35:41.900 +0530	capturescreen	MGM Convention Center Level 2_Pass_iOS.png		140	on_maps	Maps.script
+2016-07-27 12:35:43.417 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(556,186), ImageRectangle:(513,175,599,197), Language:"English", Text:"Select", TextPlatform:"Generic OCR")	at (556, 186)	157	on_maps	Maps.script
+2016-07-27 12:35:44.944 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(285,526), ImageRectangle:(32,514,539,539), Language:"English", Text:"MGM Convention Center Level 3", TextPlatform:"Generic OCR")	at (285, 526)	158	on_maps	Maps.script
+2016-07-27 12:35:46.427 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(285,526), ImageRectangle:(32,514,539,539), Language:"English", text:"MGM Convention Center Level 3", TextPlatform:"Generic OCR")	found at (285, 526)	160	on_maps	Maps.script
+2016-07-27 12:35:46.428 +0530	LogSuccess		MGM Convention Center Level 3 page is displayed	161	on_maps	Maps.script
+2016-07-27 12:35:46.669 +0530	capturescreen	MGM Convention Center Level 3_Pass_iOS.png		167	on_maps	Maps.script
+2016-07-27 12:35:47.123 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(556,186), ImageRectangle:(513,175,599,197), Language:"English", Text:"Select", TextPlatform:"Generic OCR")	at (556, 186)	184	on_maps	Maps.script
+2016-07-27 12:35:48.720 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(311,614), ImageRectangle:(32,602,591,627), Language:"English", Text:"MGM Convention Center Level Ov...", TextPlatform:"Generic OCR")	at (311, 614)	185	on_maps	Maps.script
+2016-07-27 12:35:59.636 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"MGM Convention Center Level Overview", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"MGM Convention Center Level Overview") within 5.00 seconds	187	on_maps	Maps.script
+2016-07-27 12:35:59.638 +0530	LogError		MGM Convention Center Level Overview page is not displayed	199	on_maps	Maps.script
+2016-07-27 12:36:00.899 +0530	capturescreen	MGM Convention Center Level Overview_Failed_iOS.png		205	on_maps	Maps.script
+2016-07-27 12:36:02.638 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(556,186), ImageRectangle:(513,175,599,197), Language:"English", Text:"Select", TextPlatform:"Generic OCR")	at (556, 186)	211	on_maps	Maps.script
+2016-07-27 12:36:04.363 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(299,705), ImageRectangle:(32,690,567,721), Language:"English", Text:"Mandalay Bay Level 1 Lower Level", TextPlatform:"Generic OCR")	at (299, 705)	212	on_maps	Maps.script
+2016-07-27 12:36:16.887 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Mandalay Bay Level 1 Lower Level", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Mandalay Bay Level 1 Lower Level") within 5.00 seconds	214	on_maps	Maps.script
+2016-07-27 12:36:16.888 +0530	LogError		Mandalay Bay Level 1 Lower Level map is not displayed	219	on_maps	Maps.script
+2016-07-27 12:36:18.168 +0530	capturescreen	Screen_Capture_0001.png		220	on_maps	Maps.script
+2016-07-27 12:36:19.870 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(556,186), ImageRectangle:(513,175,599,197), Language:"English", Text:"Select", TextPlatform:"Generic OCR")	at (556, 186)	225	on_maps	Maps.script
+2016-07-27 12:36:21.354 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(197,705), ImageRectangle:(32,690,363,721), Language:"English", Text:"Mandalay Bay Level 1", TextPlatform:"Generic OCR")	at (197, 705)	226	on_maps	Maps.script
+2016-07-27 12:36:22.438 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(210,153), ImageRectangle:(64,140,356,167), Language:"English", text:"Mandalay Bay Level 1", TextPlatform:"Generic OCR")	found at (210, 153)	228	on_maps	Maps.script
+2016-07-27 12:36:22.439 +0530	LogSuccess		Mandalay Bay Level 1 map is displayed	229	on_maps	Maps.script
+2016-07-27 12:36:22.679 +0530	capturescreen	Screen_Capture_0002.png		230	on_maps	Maps.script
+2016-07-27 12:36:24.351 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(556,186), ImageRectangle:(513,175,599,197), Language:"English", Text:"Select", TextPlatform:"Generic OCR")	at (556, 186)	239	on_maps	Maps.script
+2016-07-27 12:36:25.860 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(200,881), ImageRectangle:(32,866,368,897), Language:"English", Text:"Mandalay Bay Level 2", TextPlatform:"Generic OCR")	at (200, 881)	240	on_maps	Maps.script
+2016-07-27 12:36:26.644 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(200,881), ImageRectangle:(32,866,368,897), Language:"English", text:"Mandalay Bay Level 2", TextPlatform:"Generic OCR")	found at (200, 881)	242	on_maps	Maps.script
+2016-07-27 12:36:26.646 +0530	LogSuccess		Mandalay Bay Level 2 map is displayed	243	on_maps	Maps.script
+2016-07-27 12:36:26.847 +0530	capturescreen	Screen_Capture_0003.png		244	on_maps	Maps.script
+2016-07-27 12:36:28.351 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(486,172), ImageRectangle:(443,161,529,183), Language:"English", Text:"Select", TextPlatform:"Generic OCR")	at (486, 172)	254	on_maps	Maps.script
+2016-07-27 12:36:29.871 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(200,969), ImageRectangle:(32,954,368,985), Language:"English", Text:"Mandalay Bay Level 3", TextPlatform:"Generic OCR")	at (200, 969)	255	on_maps	Maps.script
+2016-07-27 12:36:30.998 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(282,173), ImageRectangle:(134,160,430,187), Language:"English", text:"Mandalay Bay Level 3", TextPlatform:"Generic OCR")	found at (282, 173)	257	on_maps	Maps.script
+2016-07-27 12:36:30.999 +0530	LogSuccess		Mandalay Bay Level 3 map is displayed	258	on_maps	Maps.script
+2016-07-27 12:36:31.247 +0530	capturescreen	Screen_Capture_0004.png		259	on_maps	Maps.script
+2016-07-27 12:36:32.293 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(486,172), ImageRectangle:(443,161,529,183), Language:"English", Text:"Select", TextPlatform:"Generic OCR")	at (486, 172)	269	on_maps	Maps.script
+2016-07-27 12:36:33.916 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(238,1057), ImageRectangle:(32,1042,444,1073), Language:"English", Text:"Mandalay Bay Lower Level", TextPlatform:"Generic OCR")	at (238, 1057)	270	on_maps	Maps.script
+2016-07-27 12:36:34.969 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(282,173), ImageRectangle:(100,160,464,187), Language:"English", text:"Mandalay Bay Lower Level", TextPlatform:"Generic OCR")	found at (282, 173)	272	on_maps	Maps.script
+2016-07-27 12:36:34.971 +0530	LogSuccess		Mandalay Bay Lower Level map is displayed	273	on_maps	Maps.script
+2016-07-27 12:36:36.162 +0530	capturescreen	Screen_Capture_0005.png		274	on_maps	Maps.script
+2016-07-27 12:36:36.575 +0530	EndTestCase		(Duration:"123.280115", Errors:"2", Exceptions:"0", StartTime:"2016-07-27 12:34:33 +0530", Successes:"9", TestCase:"Maps.script", Warnings:"0")
+2016-07-27 12:36:37.849 +0530	FAILURE	Screen_Error.png	Script Error Number of Errors logged: 2 -- Execution Time 0:02:03 Maps.script

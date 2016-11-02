@@ -1,0 +1,17 @@
+﻿2016-07-27 12:12:29.515 +0530	START		Running Speakers.script
+2016-07-27 12:12:29.576 +0530	connect		iPhone:(null)	1	on_speakers	Speakers.script
+2016-07-27 12:12:29.578 +0530	presshomebutton			5	on_speakers	Speakers.script
+2016-07-27 12:12:35.137 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	12	on_speakers	Speakers.script
+2016-07-27 12:12:35.297 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	13	on_speakers	Speakers.script
+2016-07-27 12:12:41.486 +0530	imagefound	GSXAPP	found at (244, 467)	15	on_speakers	Speakers.script
+2016-07-27 12:12:47.800 +0530	click	GSXAPP	at (244, 467)	19	on_speakers	Speakers.script
+2016-07-27 12:12:51.986 +0530	waitfor	Menu	found at (55, 83)	24	on_speakers	Speakers.script
+2016-07-27 12:12:53.298 +0530	click	Menu	at (55, 83)	27	on_speakers	Speakers.script
+2016-07-27 12:13:00.127 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,309), ImageRectangle:(117,295,240,323), Language:"English", text:"Speakers", TextPlatform:"Generic OCR")	found at (178, 309)	32	on_speakers	Speakers.script
+2016-07-27 12:13:06.908 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,309), ImageRectangle:(117,295,240,323), Language:"English", Text:"Speakers", TextPlatform:"Generic OCR")	at (178, 309)	42	on_speakers	Speakers.script
+2016-07-27 12:13:07.890 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,309), ImageRectangle:(117,295,240,323), Language:"English", Text:"Speakers", TextPlatform:"Generic OCR")	found at (178, 309)	45	on_speakers	Speakers.script
+2016-07-27 12:13:09.599 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,85), ImageRectangle:(252,71,387,100), Language:"English", text:"Speakers", TextPlatform:"Generic OCR")	found at (319, 85)	48	on_speakers	Speakers.script
+2016-07-27 12:13:09.601 +0530	LogSuccess		Speakers is displayed	49	on_speakers	Speakers.script
+2016-07-27 12:13:10.871 +0530	capturescreen	Speakers_Pass_iOS.png		55	on_speakers	Speakers.script
+2016-07-27 12:13:11.219 +0530	EndTestCase		(Duration:"41.70296", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 12:12:29 +0530", Successes:"1", TestCase:"Speakers.script", Warnings:"0")
+2016-07-27 12:13:11.236 +0530	SUCCESS		Execution Time 0:00:41 Speakers.script

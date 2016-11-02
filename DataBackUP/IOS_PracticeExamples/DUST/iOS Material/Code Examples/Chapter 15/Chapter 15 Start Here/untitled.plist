@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>New item - 6</key>
+	<dict>
+		<key>Type</key>
+		<string>Type of sel</string>
+		<key>Data</key>
+		<array/>
+	</dict>
+	<key>TableSel</key>
+	<dict>
+		<key>Entry Text</key>
+		<array>
+			<string>Text for each entry</string>
+		</array>
+		<key>Entry Selectors</key>
+		<array>
+			<string>not of strings but of selectors</string>
+		</array>
+	</dict>
+	<key>TabWithIntroSel</key>
+	<dict>
+		<key>Entry Text</key>
+		<array>
+			<string>Text for each tab</string>
+		</array>
+		<key>Intro text</key>
+		<string>file = id+level+tab</string>
+		<key>Entry Selectors</key>
+		<array>
+			<string>not of strings but of selectors</string>
+		</array>
+	</dict>
+	<key>TabWithTab0Sel</key>
+	<dict>
+		<key>Entry Text</key>
+		<array>
+			<string>Text for each entry</string>
+		</array>
+		<key>Entry Selectors</key>
+		<array>
+			<string>not of strings but of selectors 1st one must be HTMLSel, AudionSel, or VideoSel</string>
+		</array>
+	</dict>
+	<key>HTMLSel</key>
+	<string>file = id+level+tab</string>
+	<key>AudioSel</key>
+	<string>file = id+level+tab</string>
+	<key>VideoSel</key>
+	<string>file = id+level+tab</string>
+</dict>
+</plist>

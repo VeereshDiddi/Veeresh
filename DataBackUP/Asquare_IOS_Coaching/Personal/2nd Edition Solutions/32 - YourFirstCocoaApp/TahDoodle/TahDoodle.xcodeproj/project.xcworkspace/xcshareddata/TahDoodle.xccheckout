@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1BD60052-7041-44A7-8D21-FD5F021EE1AA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TahDoodle</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>81E5F1C0-9BA5-4D1B-A5C8-8CA68A7909E3</key>
+		<string>ssh://github.com/bignerdranch/Objective-C-Book.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Solutions/2nd Edition Solutions/32 - YourFirstCocoaApp/TahDoodle/TahDoodle.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>81E5F1C0-9BA5-4D1B-A5C8-8CA68A7909E3</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/bignerdranch/Objective-C-Book.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>81E5F1C0-9BA5-4D1B-A5C8-8CA68A7909E3</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>81E5F1C0-9BA5-4D1B-A5C8-8CA68A7909E3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TahDoodle</string>
+		</dict>
+	</array>
+</dict>
+</plist>

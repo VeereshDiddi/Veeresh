@@ -1,0 +1,18 @@
+﻿2016-07-27 12:50:21.266 +0530	START		Running Conversations.script
+2016-07-27 12:50:21.330 +0530	connect		iPhone:(null)	2	on_conversations	Conversations.script
+2016-07-27 12:50:21.332 +0530	presshomebutton			6	on_conversations	Conversations.script
+2016-07-27 12:50:21.621 +0530	imagefound	GSXAPP	found at (244, 467)	13	on_conversations	Conversations.script
+2016-07-27 12:50:39.092 +0530	click	GSXAPP	at (244, 467)	20	on_conversations	Conversations.script
+2016-07-27 12:50:41.733 +0530	waitfor	Menu	found at (55, 83)	25	on_conversations	Conversations.script
+2016-07-27 12:50:43.026 +0530	click	Menu	at (55, 83)	28	on_conversations	Conversations.script
+2016-07-27 12:50:56.051 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Conversations", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Conversations") within 5.00 seconds	33	on_conversations	Conversations.script
+2016-07-27 12:50:56.053 +0530	set		SWIPESPEED = 8	35	on_conversations	Conversations.script
+2016-07-27 12:50:57.019 +0530	swipeup		Swiped up from (86, 991) to (86, 341)	36	on_conversations	Conversations.script
+2016-07-27 12:51:02.717 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(211,388), ImageRectangle:(117,377,306,400), Language:"English", text:"Conversations", TextPlatform:"Generic OCR")	found at (211, 388)	40	on_conversations	Conversations.script
+2016-07-27 12:51:10.264 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(211,388), ImageRectangle:(117,377,306,400), Language:"English", Text:"Conversations", TextPlatform:"Generic OCR")	at (211, 388)	44	on_conversations	Conversations.script
+2016-07-27 12:51:11.623 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(211,388), ImageRectangle:(117,377,306,400), Language:"English", Text:"Conversations", TextPlatform:"Generic OCR")	found at (211, 388)	47	on_conversations	Conversations.script
+2016-07-27 12:51:13.013 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,83), ImageRectangle:(215,71,423,95), Language:"English", text:"Conversations", TextPlatform:"Generic OCR")	found at (319, 83)	49	on_conversations	Conversations.script
+2016-07-27 12:51:13.014 +0530	LogSuccess		Conversations is displayed	50	on_conversations	Conversations.script
+2016-07-27 12:51:14.268 +0530	capturescreen	Conversations_Pass_iOS.png		56	on_conversations	Conversations.script
+2016-07-27 12:51:14.711 +0530	EndTestCase		(Duration:"53.442637", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 12:50:21 +0530", Successes:"1", TestCase:"Conversations.script", Warnings:"0")
+2016-07-27 12:51:14.727 +0530	SUCCESS		Execution Time 0:00:53 Conversations.script

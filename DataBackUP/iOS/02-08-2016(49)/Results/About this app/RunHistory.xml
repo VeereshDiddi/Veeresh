@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<runHistory script="About this app">
+ <run>
+  <RunDate>2016-08-02 11:33:11.138 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>70.848249</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20160802_113311.138/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+</runHistory>

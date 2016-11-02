@@ -1,0 +1,15 @@
+﻿2016-07-27 11:28:10.235 +0530	START		Running Activities List.script
+2016-07-27 11:28:10.296 +0530	connect		iPhone:(null)	2	on_activities_list	Activities List.script
+2016-07-27 11:28:10.298 +0530	presshomebutton			6	on_activities_list	Activities List.script
+2016-07-27 11:28:11.226 +0530	imagefound	GSXAPP	found at (564, 467)	13	on_activities_list	Activities List.script
+2016-07-27 11:28:20.061 +0530	click	GSXAPP	at (265, 467)	20	on_activities_list	Activities List.script
+2016-07-27 11:28:24.463 +0530	waitfor	Menu	found at (55, 83)	25	on_activities_list	Activities List.script
+2016-07-27 11:28:25.881 +0530	click	Menu	at (55, 83)	28	on_activities_list	Activities List.script
+2016-07-27 11:28:33.874 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(203,1067), ImageRectangle:(116,1056,290,1078), Language:"English", text:"Activities List", TextPlatform:"Generic OCR")	found at (203, 1067)	33	on_activities_list	Activities List.script
+2016-07-27 11:28:41.965 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(203,1067), ImageRectangle:(116,1056,290,1078), Language:"English", Text:"Activities List", TextPlatform:"Generic OCR")	at (203, 1067)	45	on_activities_list	Activities List.script
+2016-07-27 11:28:43.193 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(203,1067), ImageRectangle:(116,1056,290,1078), Language:"English", Text:"Activities List", TextPlatform:"Generic OCR")	found at (203, 1067)	48	on_activities_list	Activities List.script
+2016-07-27 11:28:44.672 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,83), ImageRectangle:(222,71,417,95), Language:"English", text:"Activities List", TextPlatform:"Generic OCR")	found at (319, 83)	50	on_activities_list	Activities List.script
+2016-07-27 11:28:44.674 +0530	LogSuccess		Activities List is displayed	51	on_activities_list	Activities List.script
+2016-07-27 11:28:46.006 +0530	capturescreen	Activities_List_Pass_iOS.png		57	on_activities_list	Activities List.script
+2016-07-27 11:28:46.279 +0530	EndTestCase		(Duration:"36.042099", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 11:28:10 +0530", Successes:"1", TestCase:"Activities List.script", Warnings:"0")
+2016-07-27 11:28:46.294 +0530	SUCCESS		Execution Time 0:00:36 Activities List.script

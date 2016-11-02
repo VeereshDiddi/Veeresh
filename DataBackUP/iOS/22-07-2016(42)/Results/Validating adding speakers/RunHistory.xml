@@ -1,0 +1,27 @@
+﻿<?xml version="1.0"?>
+<runHistory script="Validating adding speakers">
+ <run>
+  <RunDate>2016-07-27 17:48:01.937 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>56.940623</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20160727_174801.937/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Image Not Found -- click Error - No Image Found On Screen: &quot;Add Button&quot;</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2016-07-27 17:49:14.291 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>66.873703</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20160727_174914.291/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+</runHistory>

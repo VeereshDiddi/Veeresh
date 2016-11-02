@@ -1,0 +1,15 @@
+﻿2016-07-27 17:48:01.938 +0530	START		Running Validating adding speakers.script
+2016-07-27 17:48:02.004 +0530	connect		Android:(null)	2	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:48:02.006 +0530	presshomebutton			3	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:48:05.083 +0530	click	Home Menu	at (534, 1651)	6	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:48:11.146 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	10	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:48:11.273 +0530	swipeleft		Swiped left from (547, 370) to (108, 370)	11	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:48:17.347 +0530	imagefound	GSXAPP	found at (413, 927)	13	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:48:23.482 +0530	click	GSXAPP	at (413, 927)	18	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:48:26.474 +0530	waitfor	Menu	found at (82, 160)	21	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:48:27.609 +0530	click	Menu	at (82, 160)	24	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:48:35.885 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(230,558), ImageRectangle:(151,541,310,575), Language:"English", text:"Speakers", TextPlatform:"Generic OCR")	found at (230, 558)	27	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:48:44.220 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(230,558), ImageRectangle:(151,541,310,576), Language:"English", Text:"Speakers", TextPlatform:"Generic OCR")	at (230, 558)	35	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:48:58.273 +0530	Exception	Add Button	No Image Found On Screen: "Add Button"	37	on_validating_adding_speakers	Validating adding speakers.script
+2016-07-27 17:48:58.878 +0530	EndTestCase		(Duration:"56.938599", Errors:"1", Exceptions:"1", StartTime:"2016-07-27 17:48:01 +0530", Successes:"0", TestCase:"Validating adding speakers.script", Warnings:"0")
+2016-07-27 17:48:59.039 +0530	FAILURE	Screen_Error.png	Image Not Found click Error - No Image Found On Screen: "Add Button" -- Execution Time 0:00:56 Validating adding speakers.script

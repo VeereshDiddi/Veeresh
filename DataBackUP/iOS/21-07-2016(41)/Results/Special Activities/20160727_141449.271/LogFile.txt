@@ -1,0 +1,20 @@
+﻿2016-07-27 14:14:49.272 +0530	START		Running Special Activities.script
+2016-07-27 14:14:49.336 +0530	connect		iPhone:(null)	2	on_special_activities	Special Activities.script
+2016-07-27 14:14:49.338 +0530	presshomebutton			6	on_special_activities	Special Activities.script
+2016-07-27 14:14:55.477 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	13	on_special_activities	Special Activities.script
+2016-07-27 14:14:55.642 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	14	on_special_activities	Special Activities.script
+2016-07-27 14:15:01.779 +0530	imagefound	GSXAPP	found at (244, 467)	16	on_special_activities	Special Activities.script
+2016-07-27 14:15:08.015 +0530	click	GSXAPP	at (244, 467)	20	on_special_activities	Special Activities.script
+2016-07-27 14:15:11.958 +0530	waitfor	Menu	found at (55, 83)	25	on_special_activities	Special Activities.script
+2016-07-27 14:15:13.208 +0530	click	Menu	at (55, 83)	28	on_special_activities	Special Activities.script
+2016-07-27 14:15:25.930 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Special Activities", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Special Activities") within 5.00 seconds	33	on_special_activities	Special Activities.script
+2016-07-27 14:15:25.932 +0530	set		SWIPESPEED = 8	35	on_special_activities	Special Activities.script
+2016-07-27 14:15:26.939 +0530	swipeup		Swiped up from (86, 991) to (86, 341)	36	on_special_activities	Special Activities.script
+2016-07-27 14:15:31.479 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(229,1030), ImageRectangle:(117,1016,341,1044), Language:"English", text:"Special Activities", TextPlatform:"Generic OCR")	found at (229, 1030)	40	on_special_activities	Special Activities.script
+2016-07-27 14:15:38.983 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(229,1030), ImageRectangle:(117,1016,341,1044), Language:"English", Text:"Special Activities", TextPlatform:"Generic OCR")	at (229, 1030)	44	on_special_activities	Special Activities.script
+2016-07-27 14:15:40.533 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(229,1030), ImageRectangle:(117,1016,341,1044), Language:"English", Text:"Special Activities", TextPlatform:"Generic OCR")	found at (229, 1030)	47	on_special_activities	Special Activities.script
+2016-07-27 14:15:40.763 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,85), ImageRectangle:(194,71,444,100), Language:"English", text:"Special Activities", TextPlatform:"Generic OCR")	found at (319, 85)	49	on_special_activities	Special Activities.script
+2016-07-27 14:15:40.764 +0530	LogSuccess		Special Activities is displayed	50	on_special_activities	Special Activities.script
+2016-07-27 14:15:41.127 +0530	capturescreen	Special Activities_Pass_iOS.png		56	on_special_activities	Special Activities.script
+2016-07-27 14:15:41.584 +0530	EndTestCase		(Duration:"52.310111", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 14:14:49 +0530", Successes:"1", TestCase:"Special Activities.script", Warnings:"0")
+2016-07-27 14:15:41.600 +0530	SUCCESS		Execution Time 0:00:52 Special Activities.script

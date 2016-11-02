@@ -1,0 +1,15 @@
+﻿2016-07-27 12:22:18.953 +0530	START		Running Week at-a-Glance.script
+2016-07-27 12:22:19.017 +0530	connect		iPhone:(null)	1	on_week_at_a_glance	Week at-a-Glance.script
+2016-07-27 12:22:19.019 +0530	presshomebutton			5	on_week_at_a_glance	Week at-a-Glance.script
+2016-07-27 12:22:20.054 +0530	imagefound	GSXAPP	found at (536, 467)	12	on_week_at_a_glance	Week at-a-Glance.script
+2016-07-27 12:22:30.060 +0530	click	GSXAPP	at (244, 467)	18	on_week_at_a_glance	Week at-a-Glance.script
+2016-07-27 12:22:34.409 +0530	waitfor	Menu	found at (55, 83)	23	on_week_at_a_glance	Week at-a-Glance.script
+2016-07-27 12:22:35.739 +0530	click	Menu	at (55, 83)	26	on_week_at_a_glance	Week at-a-Glance.script
+2016-07-27 12:22:42.998 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(240,226), ImageRectangle:(116,215,365,238), Language:"English", text:"Week at-a-Glance", TextPlatform:"Generic OCR")	found at (240, 226)	31	on_week_at_a_glance	Week at-a-Glance.script
+2016-07-27 12:22:50.349 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(240,226), ImageRectangle:(116,215,365,238), Language:"English", Text:"Week at-a-Glance", TextPlatform:"Generic OCR")	at (240, 226)	43	on_week_at_a_glance	Week at-a-Glance.script
+2016-07-27 12:22:52.147 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(240,226), ImageRectangle:(116,215,365,238), Language:"English", Text:"Week at-a-Glance", TextPlatform:"Generic OCR")	found at (240, 226)	46	on_week_at_a_glance	Week at-a-Glance.script
+2016-07-27 12:22:52.436 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(318,83), ImageRectangle:(182,71,455,95), Language:"English", text:"Week at-a-Glance", TextPlatform:"Generic OCR")	found at (318, 83)	48	on_week_at_a_glance	Week at-a-Glance.script
+2016-07-27 12:22:52.438 +0530	LogSuccess		Week at-a-Glance is displayed	49	on_week_at_a_glance	Week at-a-Glance.script
+2016-07-27 12:22:52.764 +0530	capturescreen	Week at-a-Glance_Pass_iOS.png		55	on_week_at_a_glance	Week at-a-Glance.script
+2016-07-27 12:22:53.157 +0530	EndTestCase		(Duration:"34.202406", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 12:22:18 +0530", Successes:"1", TestCase:"Week at-a-Glance.script", Warnings:"0")
+2016-07-27 12:22:53.174 +0530	SUCCESS		Execution Time 0:00:34 Week at-a-Glance.script

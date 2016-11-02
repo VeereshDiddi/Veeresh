@@ -1,0 +1,18 @@
+﻿2016-08-02 11:54:54.562 +0530	START		Running FAQ.script
+2016-08-02 11:54:54.629 +0530	connect		iPhone:(null)	2	on_faq	FAQ.script
+2016-08-02 11:54:54.631 +0530	presshomebutton			3	on_faq	FAQ.script
+2016-08-02 11:54:55.509 +0530	imagefound	GSXAPP	found at (244, 467)	10	on_faq	FAQ.script
+2016-08-02 11:55:01.485 +0530	click	GSXAPP	at (244, 467)	18	on_faq	FAQ.script
+2016-08-02 11:55:04.935 +0530	waitfor	Menu	found at (55, 83)	23	on_faq	FAQ.script
+2016-08-02 11:55:05.173 +0530	click	Menu	at (55, 83)	26	on_faq	FAQ.script
+2016-08-02 11:55:21.340 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"FAQ", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"FAQ") within 5.00 seconds	31	on_faq	FAQ.script
+2016-08-02 11:55:21.343 +0530	set		SWIPESPEED = 8	33	on_faq	FAQ.script
+2016-08-02 11:55:22.343 +0530	swipeup		Swiped up from (86, 991) to (86, 341)	34	on_faq	FAQ.script
+2016-08-02 11:55:28.868 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(144,1100), ImageRectangle:(118,1087,171,1113), Language:"English", text:"FAQ", TextPlatform:"Generic OCR")	found at (144, 1100)	38	on_faq	FAQ.script
+2016-08-02 11:55:36.149 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(144,1100), ImageRectangle:(118,1087,171,1113), Language:"English", Text:"FAQ", TextPlatform:"Generic OCR")	at (144, 1100)	42	on_faq	FAQ.script
+2016-08-02 11:55:37.930 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(144,1100), ImageRectangle:(118,1088,171,1113), Language:"English", Text:"FAQ", TextPlatform:"Generic OCR")	found at (144, 1100)	45	on_faq	FAQ.script
+2016-08-02 11:55:45.042 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(320,84), ImageRectangle:(291,71,349,98), Language:"English", text:"FAQ", TextPlatform:"Generic OCR")	found at (320, 84)	49	on_faq	FAQ.script
+2016-08-02 11:55:45.044 +0530	LogSuccess		FAQ is displayed	50	on_faq	FAQ.script
+2016-08-02 11:55:46.047 +0530	capturescreen	FAQ_Pass_iOS.png		56	on_faq	FAQ.script
+2016-08-02 11:55:46.267 +0530	EndTestCase		(Duration:"51.703164", Errors:"0", Exceptions:"0", StartTime:"2016-08-02 11:54:54 +0530", Successes:"1", TestCase:"FAQ.script", Warnings:"0")
+2016-08-02 11:55:46.283 +0530	SUCCESS		Execution Time 0:00:51 FAQ.script

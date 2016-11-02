@@ -1,0 +1,36 @@
+
+DATABSE CREATION
+
+DDL Commands
+
+CREATE DATABASE acquire.db;
+
+CREATE  TABLE "users" ("id" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "name" VARCHAR,”email” varchar)
+
+ALTER TABLE"users" ADD COLUMN "email" VARCHAR
+
+ALTER TABLE "users" ADD COLUMN “mobile” INTEGER
+
+TRUNCATE TABLE "users"
+
+DROP TABLE users
+
+ALTER TABLE "users" DROP "email"
+
+DML Commands
+
+INSERT INTO users (name)VALUES('testuser4')
+
+INSERT INTO users (email,mobile,name)VALUES('info@asquareit.com',12345667890,'asquare mobile technologies')
+
+SELECT * FROM users
+
+SELECT id,name,email FROM users
+
+SELECT name,email FROM users WHERE id = 4
+
+UPDATE users SET name='testuser5' WHERE id=5
+
+UPDATE users SET name='testuser5',email='testuser5@gmail.com',mobile=0987654321 WHERE id=5
+
+DELETE FROM users WHERE id=6

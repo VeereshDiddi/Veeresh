@@ -1,0 +1,20 @@
+﻿2016-07-27 12:10:16.781 +0530	START		Running Social.script
+2016-07-27 12:10:16.847 +0530	connect		iPhone:(null)	2	on_social	Social.script
+2016-07-27 12:10:16.849 +0530	presshomebutton			6	on_social	Social.script
+2016-07-27 12:10:22.145 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	13	on_social	Social.script
+2016-07-27 12:10:22.303 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	14	on_social	Social.script
+2016-07-27 12:10:28.491 +0530	imagefound	GSXAPP	found at (244, 467)	16	on_social	Social.script
+2016-07-27 12:10:34.758 +0530	click	GSXAPP	at (244, 467)	20	on_social	Social.script
+2016-07-27 12:10:37.267 +0530	waitfor	Menu	found at (55, 83)	25	on_social	Social.script
+2016-07-27 12:10:37.580 +0530	click	Menu	at (55, 83)	28	on_social	Social.script
+2016-07-27 12:10:50.005 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Social", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Social") within 5.00 seconds	33	on_social	Social.script
+2016-07-27 12:10:50.008 +0530	set		SWIPESPEED = 8	35	on_social	Social.script
+2016-07-27 12:10:50.945 +0530	swipeup		Swiped up from (86, 991) to (86, 341)	36	on_social	Social.script
+2016-07-27 12:10:55.395 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(155,456), ImageRectangle:(117,445,194,468), Language:"English", text:"Social", TextPlatform:"Generic OCR")	found at (155, 456)	40	on_social	Social.script
+2016-07-27 12:11:03.071 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(155,456), ImageRectangle:(117,445,194,468), Language:"English", Text:"Social", TextPlatform:"Generic OCR")	at (155, 456)	44	on_social	Social.script
+2016-07-27 12:11:04.925 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(155,456), ImageRectangle:(117,445,194,468), Language:"English", Text:"Social", TextPlatform:"Generic OCR")	found at (155, 456)	47	on_social	Social.script
+2016-07-27 12:11:05.178 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,83), ImageRectangle:(276,71,362,95), Language:"English", text:"Social", TextPlatform:"Generic OCR")	found at (319, 83)	50	on_social	Social.script
+2016-07-27 12:11:05.180 +0530	LogSuccess		Social is displayed	51	on_social	Social.script
+2016-07-27 12:11:05.596 +0530	capturescreen	Social_Pass_iOS.png		57	on_social	Social.script
+2016-07-27 12:11:05.972 +0530	EndTestCase		(Duration:"49.189995", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 12:10:16 +0530", Successes:"1", TestCase:"Social.script", Warnings:"0")
+2016-07-27 12:11:05.989 +0530	SUCCESS		Execution Time 0:00:49 Social.script

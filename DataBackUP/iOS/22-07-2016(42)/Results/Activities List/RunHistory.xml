@@ -1,0 +1,27 @@
+﻿<?xml version="1.0"?>
+<runHistory script="Activities List">
+ <run>
+  <RunDate>2016-07-27 16:36:48.038 +0530</RunDate>
+  <Status>Failure</Status>
+  <Duration>45.131036</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20160727_163648.038/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Image Not Found -- waitfor Error - Unable To Find Any Image On Screen &quot;Menu&quot; within 5.00 seconds</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2016-07-27 16:52:35.439 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>130.991000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>2</Successes>
+  <LogFile>20160727_165235.439/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+</runHistory>

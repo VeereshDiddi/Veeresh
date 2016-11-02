@@ -1,0 +1,12 @@
+//
+//  Debug.xcconfig
+//  
+
+// if you don't have this file, run ./configure.sh
+#include "Release.xcconfig"
+
+INFOPLIST_FILE = CiscoCore/Info.plist
+PRODUCT_NAME = $(TARGET_NAME)
+
+
+

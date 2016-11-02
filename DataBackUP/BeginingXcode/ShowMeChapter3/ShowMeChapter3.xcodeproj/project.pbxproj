@@ -1,0 +1,80 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		52AD80901CE079FB00AB3D3D /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		52AD80911CE079FB00AB3D3D /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		52AD80921CE079FB00AB3D3D /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		52AD80931CE0960600AB3D3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		52AD80941CE0960600AB3D3D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		52AD80891CE065B800AB3D3D = {
+			isa = PBXGroup;
+			children = (
+				52AD80901CE079FB00AB3D3D /* MainViewController.h */,
+				52AD80911CE079FB00AB3D3D /* MainViewController.m */,
+				52AD80921CE079FB00AB3D3D /* MainViewController.xib */,
+				52AD80931CE0960600AB3D3D /* AppDelegate.h */,
+				52AD80941CE0960600AB3D3D /* AppDelegate.m */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		52AD808A1CE065B800AB3D3D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+			};
+			buildConfigurationList = 52AD808D1CE065B800AB3D3D /* Build configuration list for PBXProject "ShowMeChapter3" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 52AD80891CE065B800AB3D3D;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		52AD808E1CE065B800AB3D3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		52AD808F1CE065B800AB3D3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52AD808D1CE065B800AB3D3D /* Build configuration list for PBXProject "ShowMeChapter3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52AD808E1CE065B800AB3D3D /* Debug */,
+				52AD808F1CE065B800AB3D3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52AD808A1CE065B800AB3D3D /* Project object */;
+}

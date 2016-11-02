@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2B9A376F-5F17-4D3A-8A40-3C32A672507F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ClassAct</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C7DADCCB-C7D0-4BEC-BA8C-856BCD2E77DB</key>
+		<string>ssh://github.com/bignerdranch/Objective-C-Book.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Runtime/ClassAct/ClassAct.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C7DADCCB-C7D0-4BEC-BA8C-856BCD2E77DB</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/bignerdranch/Objective-C-Book.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C7DADCCB-C7D0-4BEC-BA8C-856BCD2E77DB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C7DADCCB-C7D0-4BEC-BA8C-856BCD2E77DB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Obj-C Book</string>
+		</dict>
+	</array>
+</dict>
+</plist>

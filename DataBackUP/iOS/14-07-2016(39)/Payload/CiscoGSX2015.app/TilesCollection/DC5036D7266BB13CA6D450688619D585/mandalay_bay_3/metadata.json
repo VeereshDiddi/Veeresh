@@ -1,0 +1,12 @@
+{
+  "name": "mandalay_bay_3",
+  "version": "1.0.0",
+  "description": "",
+  "type": "overlay",
+  "format": "png",
+  "minzoom": "5",
+  "maxzoom": "9",
+  "bounds": "74.69000000,-80.76004554,82.49985865,-79.43000000",
+  "scale": "1",
+  "profile": "mercator"
+}

@@ -1,0 +1,305 @@
+// !$*UTF8*$!
+{
+	0802DA5E0FF0031B00C2AAEA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0880EB320F94CCB000D09762 /* Transaction.h */;
+		name = "Transaction.h: 11";
+		rLen = 0;
+		rLoc = 286;
+		rType = 0;
+		vrLen = 440;
+		vrLoc = 0;
+	};
+	0802DBA20FF0FFAE00C2AAEA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 085C5B0E0F854871001B6B63 /* Budget.m */;
+		name = "Budget.m: 26";
+		rLen = 0;
+		rLoc = 587;
+		rType = 0;
+		vrLen = 754;
+		vrLoc = 0;
+	};
+	08042F0F0FA73AFF002ADCF5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32A70AAB03705E1F00C91783 /* Budget Object_Prefix.pch */;
+		name = "Budget Object_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 168;
+		vrLoc = 0;
+	};
+	085C5B0D0F854871001B6B63 /* Budget.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {668, 628}}";
+			sepNavSelRange = "{213, 0}";
+			sepNavVisRange = "{0, 492}";
+			sepNavWindowFrame = "{{514, 243}, {745, 613}}";
+		};
+	};
+	085C5B0E0F854871001B6B63 /* Budget.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {744, 544}}";
+			sepNavSelRange = "{587, 0}";
+			sepNavVisRange = "{0, 754}";
+			sepNavWindowFrame = "{{356, 323}, {745, 613}}";
+		};
+	};
+	0866F6920F84374500DD900C /* Budget Object */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Budget Object";
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	0866F6950F84376400DD900C /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	0866F6960F84376400DD900C /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	0880EB320F94CCB000D09762 /* Transaction.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {744, 544}}";
+			sepNavSelRange = "{286, 0}";
+			sepNavVisRange = "{0, 440}";
+			sepNavWindowFrame = "{{1329, 292}, {762, 742}}";
+		};
+	};
+	0880EB330F94CCB000D09762 /* Transaction.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {668, 536}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 553}";
+		};
+	};
+	0880EB6D0F94E44500D09762 /* CashTransaction.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {740, 820}}";
+			sepNavSelRange = "{276, 0}";
+			sepNavVisRange = "{0, 284}";
+			sepNavWindowFrame = "{{816, 255}, {762, 742}}";
+		};
+	};
+	0880EB6E0F94E44500D09762 /* CashTransaction.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {740, 820}}";
+			sepNavSelRange = "{330, 0}";
+			sepNavVisRange = "{0, 347}";
+		};
+	};
+	0880EB740F94E48300D09762 /* CreditCardTransaction.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {740, 820}}";
+			sepNavSelRange = "{281, 0}";
+			sepNavVisRange = "{0, 287}";
+		};
+	};
+	0880EB750F94E48300D09762 /* CreditCardTransaction.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {740, 820}}";
+			sepNavSelRange = "{354, 0}";
+			sepNavVisRange = "{0, 371}";
+			sepNavWindowFrame = "{{84, 368}, {762, 742}}";
+		};
+	};
+	088D6540100016F400CFAEDA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 085C5B0D0F854871001B6B63 /* Budget.h */;
+		name = "Budget.h: 7";
+		rLen = 0;
+		rLoc = 213;
+		rType = 0;
+		vrLen = 492;
+		vrLoc = 0;
+	};
+	088E5F3E101B47E80035AFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0880EB330F94CCB000D09762 /* Transaction.m */;
+		name = "Transaction.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 553;
+		vrLoc = 0;
+	};
+	088E5F3F101B47E80035AFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* Budget Object.m */;
+		name = "Budget Object.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1480;
+		vrLoc = 0;
+	};
+	088E5F57101B480A0035AFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* Budget Object.m */;
+		name = "Budget Object.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1480;
+		vrLoc = 0;
+	};
+	08E075F80FC45B3B0012B896 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0880EB6D0F94E44500D09762 /* CashTransaction.h */;
+		name = "CashTransaction.h: 11";
+		rLen = 0;
+		rLoc = 276;
+		rType = 0;
+		vrLen = 284;
+		vrLoc = 0;
+	};
+	08E075F90FC45B3B0012B896 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0880EB6E0F94E44500D09762 /* CashTransaction.m */;
+		name = "CashTransaction.m: 13";
+		rLen = 0;
+		rLoc = 330;
+		rType = 0;
+		vrLen = 347;
+		vrLoc = 0;
+	};
+	08E075FA0FC45B3B0012B896 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0880EB750F94E48300D09762 /* CreditCardTransaction.m */;
+		name = "CreditCardTransaction.m: 13";
+		rLen = 0;
+		rLoc = 354;
+		rType = 0;
+		vrLen = 371;
+		vrLoc = 0;
+	};
+	08E075FC0FC45B3B0012B896 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0880EB740F94E48300D09762 /* CreditCardTransaction.h */;
+		name = "CreditCardTransaction.h: 10";
+		rLen = 0;
+		rLoc = 281;
+		rType = 0;
+		vrLen = 287;
+		vrLoc = 0;
+	};
+	08FB7793FE84155DC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 0866F6920F84374500DD900C /* Budget Object */;
+		activeSDKPreference = macosx10.6;
+		activeTarget = 8DD76F960486AA7600D96B5E /* Budget Object */;
+		addToTargets = (
+			8DD76F960486AA7600D96B5E /* Budget Object */,
+		);
+		breakpoints = (
+		);
+		codeSenseManager = 0866F6960F84376400DD900C /* Code sense */;
+		executables = (
+			0866F6920F84374500DD900C /* Budget Object */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					490,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 270223308;
+			PBXWorkspaceStateSaveDate = 270223308;
+		};
+		perUserProjectItems = {
+			0802DA5E0FF0031B00C2AAEA /* PBXTextBookmark */ = 0802DA5E0FF0031B00C2AAEA /* PBXTextBookmark */;
+			0802DBA20FF0FFAE00C2AAEA /* PBXTextBookmark */ = 0802DBA20FF0FFAE00C2AAEA /* PBXTextBookmark */;
+			08042F0F0FA73AFF002ADCF5 /* PBXTextBookmark */ = 08042F0F0FA73AFF002ADCF5 /* PBXTextBookmark */;
+			088D6540100016F400CFAEDA /* PBXTextBookmark */ = 088D6540100016F400CFAEDA /* PBXTextBookmark */;
+			088E5F3E101B47E80035AFDF /* PBXTextBookmark */ = 088E5F3E101B47E80035AFDF /* PBXTextBookmark */;
+			088E5F3F101B47E80035AFDF /* PBXTextBookmark */ = 088E5F3F101B47E80035AFDF /* PBXTextBookmark */;
+			088E5F57101B480A0035AFDF /* PBXTextBookmark */ = 088E5F57101B480A0035AFDF /* PBXTextBookmark */;
+			08E075F80FC45B3B0012B896 /* PBXTextBookmark */ = 08E075F80FC45B3B0012B896 /* PBXTextBookmark */;
+			08E075F90FC45B3B0012B896 /* PBXTextBookmark */ = 08E075F90FC45B3B0012B896 /* PBXTextBookmark */;
+			08E075FA0FC45B3B0012B896 /* PBXTextBookmark */ = 08E075FA0FC45B3B0012B896 /* PBXTextBookmark */;
+			08E075FC0FC45B3B0012B896 /* PBXTextBookmark */ = 08E075FC0FC45B3B0012B896 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 0866F6950F84376400DD900C /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	08FB7796FE84155DC02AAC07 /* Budget Object.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {668, 598}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1480}";
+			sepNavWindowFrame = "{{935, 319}, {745, 613}}";
+		};
+	};
+	32A70AAB03705E1F00C91783 /* Budget Object_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {674, 464}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 168}";
+		};
+	};
+	8DD76F960486AA7600D96B5E /* Budget Object */ = {
+		activeExec = 0;
+		executables = (
+			0866F6920F84374500DD900C /* Budget Object */,
+		);
+	};
+	C6859EA3029092ED04C91782 /* Budget Object.1 */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {698, 1050}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 815}";
+		};
+	};
+}

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<runHistory script="Conversations">
+ <run>
+  <RunDate>2016-07-27 12:50:21.265 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>53.445180</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20160727_125021.265/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+</runHistory>

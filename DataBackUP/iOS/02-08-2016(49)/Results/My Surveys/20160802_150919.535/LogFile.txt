@@ -1,0 +1,17 @@
+﻿2016-08-02 15:09:19.536 +0530	START		Running My Surveys.script
+2016-08-02 15:09:19.601 +0530	connect		iPhone:(null)	2	on_my_surveys	My Surveys.script
+2016-08-02 15:09:19.603 +0530	presshomebutton			3	on_my_surveys	My Surveys.script
+2016-08-02 15:09:30.230 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	10	on_my_surveys	My Surveys.script
+2016-08-02 15:09:30.393 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	11	on_my_surveys	My Surveys.script
+2016-08-02 15:09:36.561 +0530	imagefound	GSXAPP	found at (244, 467)	13	on_my_surveys	My Surveys.script
+2016-08-02 15:09:42.804 +0530	click	GSXAPP	at (244, 467)	17	on_my_surveys	My Surveys.script
+2016-08-02 15:09:45.255 +0530	waitfor	Menu	found at (55, 83)	22	on_my_surveys	My Surveys.script
+2016-08-02 15:09:46.622 +0530	click	Menu	at (55, 83)	25	on_my_surveys	My Surveys.script
+2016-08-02 15:09:54.113 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(194,689), ImageRectangle:(118,675,270,704), Language:"English", text:"My Surveys", TextPlatform:"Generic OCR")	found at (194, 689)	30	on_my_surveys	My Surveys.script
+2016-08-02 15:10:01.374 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(194,689), ImageRectangle:(118,675,270,704), Language:"English", Text:"My Surveys", TextPlatform:"Generic OCR")	at (194, 689)	41	on_my_surveys	My Surveys.script
+2016-08-02 15:10:02.379 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(194,689), ImageRectangle:(118,675,270,703), Language:"English", Text:"My Surveys", TextPlatform:"Generic OCR")	found at (194, 689)	44	on_my_surveys	My Surveys.script
+2016-08-02 15:10:03.817 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(320,85), ImageRectangle:(237,71,404,100), Language:"English", text:"My Surveys", TextPlatform:"Generic OCR")	found at (320, 85)	46	on_my_surveys	My Surveys.script
+2016-08-02 15:10:03.819 +0530	LogSuccess		My Surveys is displayed	47	on_my_surveys	My Surveys.script
+2016-08-02 15:10:05.196 +0530	capturescreen	My Surveys_Pass_iOS.png		53	on_my_surveys	My Surveys.script
+2016-08-02 15:10:05.459 +0530	EndTestCase		(Duration:"45.92162", Errors:"0", Exceptions:"0", StartTime:"2016-08-02 15:09:19 +0530", Successes:"1", TestCase:"My Surveys.script", Warnings:"0")
+2016-08-02 15:10:05.479 +0530	SUCCESS		Execution Time 0:00:45 My Surveys.script

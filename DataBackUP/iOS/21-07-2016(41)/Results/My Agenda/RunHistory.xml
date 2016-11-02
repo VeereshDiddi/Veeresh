@@ -1,0 +1,39 @@
+﻿<?xml version="1.0"?>
+<runHistory script="My Agenda">
+ <run>
+  <RunDate>2016-07-27 11:50:59.426 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>40.843448</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20160727_115059.426/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2016-07-27 12:46:13.777 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>42.313135</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>2</Successes>
+  <LogFile>20160727_124613.777/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2016-07-27 13:04:49.172 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>44.046706</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>2</Successes>
+  <LogFile>20160727_130449.172/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+</runHistory>

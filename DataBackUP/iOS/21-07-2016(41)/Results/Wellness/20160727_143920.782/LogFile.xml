@@ -1,0 +1,13 @@
+﻿<?xml version="1.0"?>
+<testsuites>
+ <testsuite name="Wellness.script" package="iOS.suite" timestamp="2016-07-27 14:39:20.782 +0530"
+ tests="1" successes="0" errors="1" time="72.677382">
+  <properties>
+   <property name="RunDate" value="2016-07-27 14:39:20.782 +0530"/>
+   <property name="Status" value="Failure"/>
+  </properties>
+  <testcase name="Wellness.script" assertions="1" successes="0" errors="1" time="72.675367">
+    <failure type="LogError">Wellness is not displayed</failure>
+  </testcase>
+ </testsuite>
+</testsuites>

@@ -1,0 +1,15 @@
+﻿2016-07-27 12:16:29.810 +0530	START		Running Validating adding Sessions.script
+2016-07-27 12:16:29.879 +0530	connect		iPhone:(null)	1	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 12:16:29.881 +0530	presshomebutton			5	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 12:16:36.036 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	12	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 12:16:36.199 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	13	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 12:16:42.365 +0530	imagefound	GSXAPP	found at (244, 467)	15	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 12:16:48.608 +0530	click	GSXAPP	at (244, 467)	18	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 12:16:51.469 +0530	waitfor	Menu	found at (55, 83)	23	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 12:16:51.711 +0530	click	Menu	at (55, 83)	26	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 12:16:58.400 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,386), ImageRectangle:(117,375,240,398), Language:"English", text:"Schedule", TextPlatform:"Generic OCR")	found at (178, 386)	29	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 12:17:05.719 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,386), ImageRectangle:(117,375,240,398), Language:"English", Text:"Schedule", TextPlatform:"Generic OCR")	at (178, 386)	39	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 12:17:07.033 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,386), ImageRectangle:(117,375,240,398), Language:"English", Text:"Schedule", TextPlatform:"Generic OCR")	found at (178, 386)	41	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 12:17:35.366 +0530	Exception	Add Button	No Image Found On Screen: "Add Button"	44	on_validating_adding_sessions	Validating adding Sessions.script
+2016-07-27 12:17:35.743 +0530	EndTestCase		(Duration:"65.931849", Errors:"1", Exceptions:"1", StartTime:"2016-07-27 12:16:29 +0530", Successes:"0", TestCase:"Validating adding Sessions.script", Warnings:"0")
+2016-07-27 12:17:35.813 +0530	FAILURE	Screen_Error.png	Image Not Found click Error - No Image Found On Screen: "Add Button" -- Execution Time 0:01:05 Validating adding Sessions.script

@@ -1,0 +1,21 @@
+﻿2016-07-27 12:23:54.402 +0530	START		Running Wellness.script
+2016-07-27 12:23:54.463 +0530	connect		iPhone:(null)	2	on_wellness	Wellness.script
+2016-07-27 12:23:54.465 +0530	presshomebutton			6	on_wellness	Wellness.script
+2016-07-27 12:23:55.653 +0530	imagefound	GSXAPP	found at (244, 467)	13	on_wellness	Wellness.script
+2016-07-27 12:24:11.733 +0530	click	GSXAPP	at (244, 467)	21	on_wellness	Wellness.script
+2016-07-27 12:24:14.870 +0530	waitfor	Menu	found at (55, 83)	26	on_wellness	Wellness.script
+2016-07-27 12:24:15.172 +0530	click	Menu	at (55, 83)	29	on_wellness	Wellness.script
+2016-07-27 12:24:29.596 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Wellness", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Wellness") within 5.00 seconds	34	on_wellness	Wellness.script
+2016-07-27 12:24:29.598 +0530	set		SWIPESPEED = 8	36	on_wellness	Wellness.script
+2016-07-27 12:24:30.566 +0530	swipeup		Swiped up from (86, 991) to (86, 341)	37	on_wellness	Wellness.script
+2016-07-27 12:24:41.301 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Wellness", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Wellness") within 5.00 seconds	41	on_wellness	Wellness.script
+2016-07-27 12:24:41.303 +0530	set		SWIPESPEED = 8	36	on_wellness	Wellness.script
+2016-07-27 12:24:42.245 +0530	swipeup		Swiped up from (86, 991) to (86, 341)	37	on_wellness	Wellness.script
+2016-07-27 12:24:49.189 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(175,1015), ImageRectangle:(116,1004,235,1026), Language:"English", text:"Wellness", TextPlatform:"Generic OCR")	found at (175, 1015)	41	on_wellness	Wellness.script
+2016-07-27 12:24:55.979 +0530	click	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(175,1015), ImageRectangle:(116,1004,235,1026), Language:"English", Text:"Wellness", TextPlatform:"Generic OCR")	at (175, 1015)	45	on_wellness	Wellness.script
+2016-07-27 12:24:57.939 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(175,1015), ImageRectangle:(116,1004,235,1026), Language:"English", Text:"Wellness", TextPlatform:"Generic OCR")	found at (175, 1015)	48	on_wellness	Wellness.script
+2016-07-27 12:25:09.072 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Wellness", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Wellness") within 5.00 seconds	50	on_wellness	Wellness.script
+2016-07-27 12:25:09.073 +0530	LogSuccess		Wellness is not displayed	62	on_wellness	Wellness.script
+2016-07-27 12:25:10.345 +0530	capturescreen	Wellness_Failed_iOS.png		68	on_wellness	Wellness.script
+2016-07-27 12:25:10.738 +0530	EndTestCase		(Duration:"76.334448", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 12:23:54 +0530", Successes:"1", TestCase:"Wellness.script", Warnings:"0")
+2016-07-27 12:25:10.754 +0530	SUCCESS		Execution Time 0:01:16 Wellness.script

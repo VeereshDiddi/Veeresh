@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<runHistory script="Special Activities">
+ <run>
+  <RunDate>2016-07-27 12:13:43.391 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>51.303751</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20160727_121343.391/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+</runHistory>

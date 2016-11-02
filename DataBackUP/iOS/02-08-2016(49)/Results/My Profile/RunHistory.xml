@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<runHistory script="My Profile">
+ <run>
+  <RunDate>2016-08-02 15:16:26.538 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>58.140214</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>2</Successes>
+  <LogFile>20160802_151626.538/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+</runHistory>

@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Budget Object' target in the 'Budget Object' project.
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

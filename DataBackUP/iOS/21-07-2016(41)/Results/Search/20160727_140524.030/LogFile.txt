@@ -1,0 +1,19 @@
+﻿2016-07-27 14:05:24.031 +0530	START		Running Search.script
+2016-07-27 14:05:24.091 +0530	connect		iPhone:(null)	1	on_search	Search.script
+2016-07-27 14:05:24.093 +0530	presshomebutton			6	on_search	Search.script
+2016-07-27 14:05:30.179 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	13	on_search	Search.script
+2016-07-27 14:05:30.336 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	14	on_search	Search.script
+2016-07-27 14:05:36.466 +0530	imagefound	GSXAPP	found at (244, 467)	16	on_search	Search.script
+2016-07-27 14:05:42.680 +0530	click	GSXAPP	at (244, 467)	20	on_search	Search.script
+2016-07-27 14:05:45.088 +0530	waitfor	Menu	found at (55, 83)	23	on_search	Search.script
+2016-07-27 14:05:45.398 +0530	click	Menu	at (55, 83)	26	on_search	Search.script
+2016-07-27 14:05:52.930 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,309), ImageRectangle:(117,295,240,323), Language:"English", text:"Speakers", TextPlatform:"Generic OCR")	found at (178, 309)	29	on_search	Search.script
+2016-07-27 14:06:00.581 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(178,309), ImageRectangle:(117,295,240,323), Language:"English", Text:"Speakers", TextPlatform:"Generic OCR")	at (178, 309)	37	on_search	Search.script
+2016-07-27 14:06:02.497 +0530	click	SearchButton	at (588, 84)	39	on_search	Search.script
+2016-07-27 14:06:03.354 +0530	typetext		Niki Acosta[return]	41	on_search	Search.script
+2016-07-27 14:06:04.474 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(144,169), ImageRectangle:(76,159,212,180), Language:"English", Text:"Niki Acosta", TextPlatform:"Generic OCR")	found at (144, 169)	42	on_search	Search.script
+2016-07-27 14:06:04.828 +0530	imagefound	(CaseSensitive:"Yes", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(144,169), ImageRectangle:(76,159,212,180), Language:"English", text:"Niki Acosta", TextPlatform:"Generic OCR")	found at (144, 169)	45	on_search	Search.script
+2016-07-27 14:06:04.830 +0530	LogSuccess		Niki Acosta speaker is displayed	46	on_search	Search.script
+2016-07-27 14:06:05.213 +0530	capturescreen	Niki Acosta speaker_Pass_iOS.png		52	on_search	Search.script
+2016-07-27 14:06:05.693 +0530	EndTestCase		(Duration:"41.660551", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 14:05:24 +0530", Successes:"1", TestCase:"Search.script", Warnings:"0")
+2016-07-27 14:06:05.710 +0530	SUCCESS		Execution Time 0:00:41 Search.script

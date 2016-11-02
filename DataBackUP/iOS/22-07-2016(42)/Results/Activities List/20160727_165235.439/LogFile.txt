@@ -1,0 +1,35 @@
+﻿2016-07-27 16:52:35.440 +0530	START		Running Activities List.script
+2016-07-27 16:52:35.505 +0530	connect		Android:(null)	2	on_activities_list	Activities List.script
+2016-07-27 16:52:35.507 +0530	presshomebutton			3	on_activities_list	Activities List.script
+2016-07-27 16:52:36.568 +0530	click	Home Menu	at (534, 1651)	6	on_activities_list	Activities List.script
+2016-07-27 16:52:42.331 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	10	on_activities_list	Activities List.script
+2016-07-27 16:52:42.458 +0530	swipeleft		Swiped left from (547, 370) to (108, 370)	11	on_activities_list	Activities List.script
+2016-07-27 16:52:48.750 +0530	imagefound	GSXAPP	found at (413, 927)	13	on_activities_list	Activities List.script
+2016-07-27 16:52:54.937 +0530	click	GSXAPP	at (413, 927)	17	on_activities_list	Activities List.script
+2016-07-27 16:52:58.369 +0530	waitfor	Menu	found at (82, 160)	22	on_activities_list	Activities List.script
+2016-07-27 16:52:59.755 +0530	click	Menu	at (82, 160)	25	on_activities_list	Activities List.script
+2016-07-27 16:53:21.675 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:"", ImageRectangle:"", Language:"English", text:"Activities List", TextPlatform:"Generic OCR")	Unable to Find Image (TEXT:"Activities List") within 5.00 seconds	30	on_activities_list	Activities List.script
+2016-07-27 16:53:21.677 +0530	set		SWIPESPEED = 8	32	on_activities_list	Activities List.script
+2016-07-27 16:53:22.290 +0530	swipeup		Swiped up from (86, 991) to (86, 576)	33	on_activities_list	Activities List.script
+2016-07-27 16:53:37.314 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(260,1676), ImageRectangle:(150,1662,371,1690), Language:"English", text:"Activities List", TextPlatform:"Generic OCR")	found at (260, 1676)	38	on_activities_list	Activities List.script
+2016-07-27 16:53:48.644 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(260,1569), ImageRectangle:(150,1555,371,1583), Language:"English", Text:"Activities List", TextPlatform:"Generic OCR")	at (260, 1569)	42	on_activities_list	Activities List.script
+2016-07-27 16:53:51.881 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(260,1569), ImageRectangle:(150,1555,371,1583), Language:"English", Text:"Activities List", TextPlatform:"Generic OCR")	found at (260, 1569)	45	on_activities_list	Activities List.script
+2016-07-27 16:54:05.085 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(363,159), ImageRectangle:(180,137,546,181), Language:"English", text:"Activities List", TextPlatform:"Generic OCR")	found at (363, 159)	47	on_activities_list	Activities List.script
+2016-07-27 16:54:05.087 +0530	LogSuccess		Activities List is displayed	48	on_activities_list	Activities List.script
+2016-07-27 16:54:05.877 +0530	capturescreen	Activities_List_Pass_Android.png		50	on_activities_list	Activities List.script
+2016-07-27 16:54:05.885 +0530	connect		iPhone:(null)	2	on_activities_list	Activities List.script
+2016-07-27 16:54:05.886 +0530	presshomebutton			3	on_activities_list	Activities List.script
+2016-07-27 16:54:11.221 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	10	on_activities_list	Activities List.script
+2016-07-27 16:54:11.951 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	11	on_activities_list	Activities List.script
+2016-07-27 16:54:18.148 +0530	imagefound	GSXAPP	found at (244, 467)	13	on_activities_list	Activities List.script
+2016-07-27 16:54:24.366 +0530	click	GSXAPP	at (244, 467)	17	on_activities_list	Activities List.script
+2016-07-27 16:54:27.002 +0530	waitfor	Menu	found at (55, 83)	22	on_activities_list	Activities List.script
+2016-07-27 16:54:27.328 +0530	click	Menu	at (55, 83)	25	on_activities_list	Activities List.script
+2016-07-27 16:54:34.721 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(203,1067), ImageRectangle:(116,1056,290,1078), Language:"English", text:"Activities List", TextPlatform:"Generic OCR")	found at (203, 1067)	30	on_activities_list	Activities List.script
+2016-07-27 16:54:42.201 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(203,1067), ImageRectangle:(116,1056,290,1078), Language:"English", Text:"Activities List", TextPlatform:"Generic OCR")	at (203, 1067)	42	on_activities_list	Activities List.script
+2016-07-27 16:54:43.379 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(203,1067), ImageRectangle:(116,1056,290,1078), Language:"English", Text:"Activities List", TextPlatform:"Generic OCR")	found at (203, 1067)	45	on_activities_list	Activities List.script
+2016-07-27 16:54:44.702 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(319,83), ImageRectangle:(222,71,417,95), Language:"English", text:"Activities List", TextPlatform:"Generic OCR")	found at (319, 83)	47	on_activities_list	Activities List.script
+2016-07-27 16:54:44.704 +0530	LogSuccess		Activities List is displayed	48	on_activities_list	Activities List.script
+2016-07-27 16:54:45.923 +0530	capturescreen	Activities_List_Pass_iOS.png		54	on_activities_list	Activities List.script
+2016-07-27 16:54:46.431 +0530	EndTestCase		(Duration:"130.988713", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 16:52:35 +0530", Successes:"2", TestCase:"Activities List.script", Warnings:"0")
+2016-07-27 16:54:46.454 +0530	SUCCESS		Execution Time 0:02:10 Activities List.script

@@ -1,0 +1,17 @@
+﻿2016-07-27 11:58:00.694 +0530	START		Running My Recommendations.script
+2016-07-27 11:58:00.755 +0530	connect		iPhone:(null)	1	on_my_recommendations	My Recommendations.script
+2016-07-27 11:58:00.757 +0530	presshomebutton			5	on_my_recommendations	My Recommendations.script
+2016-07-27 11:58:06.180 +0530	imagefound	GSXAPP	Unable to Find Image GSXAPP within 5.00 seconds	12	on_my_recommendations	My Recommendations.script
+2016-07-27 11:58:06.350 +0530	swipeleft		Swiped left from (547, 370) to (64, 370)	13	on_my_recommendations	My Recommendations.script
+2016-07-27 11:58:12.530 +0530	imagefound	GSXAPP	found at (244, 467)	15	on_my_recommendations	My Recommendations.script
+2016-07-27 11:58:18.793 +0530	click	GSXAPP	at (244, 467)	19	on_my_recommendations	My Recommendations.script
+2016-07-27 11:58:22.694 +0530	waitfor	Menu	found at (55, 83)	24	on_my_recommendations	My Recommendations.script
+2016-07-27 11:58:24.004 +0530	click	Menu	at (55, 83)	27	on_my_recommendations	My Recommendations.script
+2016-07-27 11:58:30.099 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(266,609), ImageRectangle:(118,596,414,623), Language:"English", text:"My Recommendations", TextPlatform:"Generic OCR")	found at (266, 609)	32	on_my_recommendations	My Recommendations.script
+2016-07-27 11:58:36.330 +0530	click	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(266,609), ImageRectangle:(118,596,414,623), Language:"English", Text:"My Recommendations", TextPlatform:"Generic OCR")	at (266, 609)	43	on_my_recommendations	My Recommendations.script
+2016-07-27 11:58:37.704 +0530	waitfor	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(266,609), ImageRectangle:(118,596,414,623), Language:"English", Text:"My Recommendations", TextPlatform:"Generic OCR")	found at (266, 609)	46	on_my_recommendations	My Recommendations.script
+2016-07-27 11:58:39.065 +0530	imagefound	(CaseSensitive:"No", Contrast:"Off", IgnoreSpaces:"No", ImageLocation:(320,86), ImageRectangle:(157,72,483,100), Language:"English", text:"My Recommendations", TextPlatform:"Generic OCR")	found at (320, 86)	48	on_my_recommendations	My Recommendations.script
+2016-07-27 11:58:39.067 +0530	LogSuccess		My Recommendations is displayed	49	on_my_recommendations	My Recommendations.script
+2016-07-27 11:58:40.320 +0530	capturescreen	My Recommendations_Pass_iOS.png		55	on_my_recommendations	My Recommendations.script
+2016-07-27 11:58:40.644 +0530	EndTestCase		(Duration:"39.948839", Errors:"0", Exceptions:"0", StartTime:"2016-07-27 11:58:00 +0530", Successes:"1", TestCase:"My Recommendations.script", Warnings:"0")
+2016-07-27 11:58:40.657 +0530	SUCCESS		Execution Time 0:00:39 My Recommendations.script

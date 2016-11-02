@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<runHistory script="Dev Net">
+ <run>
+  <RunDate>2016-08-02 11:53:39.182 +0530</RunDate>
+  <Status>Success</Status>
+  <Duration>58.234822</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20160802_115339.182/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+</runHistory>
