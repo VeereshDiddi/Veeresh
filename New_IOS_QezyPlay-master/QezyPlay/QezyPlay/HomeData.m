@@ -12,3 +12,6 @@
 
 NSMutableArray * packageList;
 NSMutableArray * channelList;
+NSMutableArray *channelsInfo;
+NSMutableArray *bouquetChannelsInfo;
+NSMutableArray *versioningInfo;

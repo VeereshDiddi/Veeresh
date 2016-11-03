@@ -11,6 +11,7 @@
 
 extern NSMutableArray * packageList;
 extern NSMutableArray * channelList;
-
-
+extern NSMutableArray *channelsInfo;
+extern NSMutableArray *bouquetChannelsInfo;
+extern NSMutableArray *versioningInfo;
 #endif /* HomeData_h */

@@ -23,6 +23,9 @@
 
 extern NSMutableArray *defaulBouquets;
 extern NSMutableArray *channelsInDefaultBouquets;
+extern NSMutableArray *channels;
+extern NSMutableArray *bouquetChannels;
+extern NSMutableArray *versioning;
 
 extern NSString *bouquetsSC;
 extern NSString *channelBouquetsSC;

@@ -20,3 +20,6 @@ NSString *privacyPolicySC = @"http://104.196.99.177:6363/Privacy_Policy.htm";
 
 NSMutableArray *defaulBouquets;
 NSMutableArray *channelsInDefaultBouquets;
+NSMutableArray *channels;
+NSMutableArray *bouquetChannels;
+NSMutableArray *versioning;

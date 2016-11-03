@@ -59,6 +59,7 @@
     
     self.btnFacebook.delegate = self;
     self.btnFacebook.readPermissions = @[@"public_profile", @"email"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,7 +75,7 @@
     
     favoriteList = [deviceDB getFavoritesChannelList];
     NSInteger numObj = favoriteList.count;
-    NSLog(@"query result for favorites: %@ %d", favoriteList, numObj);
+    NSLog(@"query result for favorites: %@ %ld", favoriteList, (long)numObj);
     
     
     allFavoriteImages = [[NSMutableArray alloc] init];
@@ -295,9 +296,12 @@
                        
                         [self configureDatabase];
                         [self setupPackageInfo];
+                        [self setupChannelsInfo];
+                        [self setupBouquet_vs_ChannelsInfo];
+                        [self setupVersioningInfo];
                         [self setupFavorites];
                         [self initProfile];
-                        [self setupVersioningInfo];
+                        
                         [self performSegueWithIdentifier:@"login_success" sender:self];
                     self.txtUsername.text = @"";
                     self.txtPassword.text = @"";
@@ -332,8 +336,12 @@
 
 -(void) setupPackageInfo {
 
-    defaulBouquets = [NSMutableArray arrayWithObjects:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"Bangla_Bouquet", @"name", @"580799152c369526081c43b3", @"bouquetID", @"Bangla.png", @"imageName", @"http://104.196.99.177:6363/api/FileStorageMongos/bouquets/download/", @"downloadUrl", nil], [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Decan free channel", @"name", @"5808afd55ff0be17f64f2083", @"bouquetID", @"free-new.png", @"imageName", @"http://104.196.99.177:6363/api/FileStorageMongos/bouquets/download/", @"downloadUrl", nil],nil];
+    NSLog(@"setupPackageInfo");
+    defaulBouquets = [NSMutableArray arrayWithObjects:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"Bangla_Bouquet", @"name", @"580799152c369526081c43b3", @"bouquetID", @"Bangla.png", @"imageName",@"Bangla@2x.png",@"image2xUrl", @"Bangla@3x.png", @"image3xUrl" ,@"bangla_bouquet", @"meta_data", @"All Bangla channels from both WestBengal and Bangladesh", @"meta_description", @"2016-09-30 02:48:32", @"create_datetime", @"0000-00-00 00:00:00", @"updated_datetime", @"http://104.196.99.177:6363/api/FileStorageMongos/bouquets/download/", @"downloadUrl",@"0", @"is_free", @"1", @"status", nil], [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Decan free channel", @"name", @"5808afd55ff0be17f64f2083", @"bouquetID", @"free-new.png", @"imageName", @"free-new@2x.png", @"image2xUrl", @"free-new@3x.png", @"image3xUrl",@"decan-free-channels", @"meta_data", @"All south-Indian Free channels", @"meta_description", @"2016-10-19 07:00:00'", @"create_datetime", @"0000-00-00 00:00:00", @"updated_datetime", @"http://104.196.99.177:6363/api/FileStorageMongos/bouquets/download/", @"downloadUrl", @"1", @"is_free", @"1", @"status", nil],nil];    
+
+    NSLog(@"defaulBouquets:%@", defaulBouquets);
     
+    NSLog(@"defaulBouquets");
     channelsInDefaultBouquets = [NSMutableArray arrayWithObjects:
         [NSMutableArray arrayWithObjects:
             [NSMutableDictionary dictionaryWithObjectsAndKeys:@"High News", @"name", @"5800b642d2610420d86286c1", @"id", @"octoshape://streams.octoshape.net/ideabytes/live/ib-ch27/auto", @"url", @"high-news.png", @"image", @"http://104.196.99.177:6363/api/FileStorageMongos/channels/download/", @"imageUrl", @"high news", @"description", @"news", @"category", nil],
@@ -362,8 +370,14 @@
         nil];
     
     
+
+    
+    
     packageList = [[NSMutableArray alloc] init];
+    NSLog(@"Before connect with DB");
     packageList = [deviceDB getBouquets];
+    NSLog(@"getBouquets");
+
     
     if(packageList.count){
         NSLog(@"ViewController setupBouquetInfo() - load bouquets from local db%@", packageList);
@@ -377,13 +391,21 @@
             [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"name"]];
             [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"bouquetID"]];
             [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"imageName"]];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"image2xUrl"]];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"image3xUrl"]];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"meta_data"]];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"meta_description"]];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"create_datetime"]];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"updated_datetime"]];
             [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"downloadUrl"]];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"is_free"]];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"status"]];
             
             //NSLog(@"bouquet info %@", bouquet);
             if(![deviceDB isTableExist:@"Bouquets"]){
                 NSLog(@"Bouquets table not exit, create a one");
                 
-                [deviceDB createTable:@"Bouquets" :@"CREATE TABLE IF NOT EXISTS %@ (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, bouquetID TEXT, imageName TEXT, downloadUrl TEXT)"];
+                [deviceDB createTable:@"Bouquets" :@"CREATE TABLE IF NOT EXISTS %@ (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, bouquetID TEXT, imageName TEXT, image2xUrl TEXT, image3xUrl TEXT, meta_data TEXT, meta_description TEXT, create_datetime TEXT, updated_datetime TEXT,  downloadUrl TEXT, is_free TEXT, status TEXT)"];
                 
             } else {
                 NSLog(@"Bouquets table already created");
@@ -397,6 +419,149 @@
     channelList = [[NSMutableArray alloc] init];
     
     
+}
+
+-(void)setupChannelsInfo
+{
+    NSLog(@"setupChannelsInfo");
+    channels =[NSMutableArray arrayWithObjects:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"High News",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch27/auto",@"Url" ,@"high news",@"description", @"high-news.png",@"imageUrl", @"5800b642d2610420d86286c1",@"id" ,@"var _0x17b5=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x32\\\\x37\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x17b5[0]",@"octo_js" ,@"high-news",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-09-30 03:58:51",@"created_datetime" ,@"2016-09-30 06:03:57",@"updated_datetime" ,@"http://104.196.99.177:6363/api/FileStorageMongos/channels/download/",@"downloadUrl" ,@"high-news@2x.png",@"image2xUrl" ,@"high-news@3x.png",@"image3xUrl" ,@"news",@"category", @"octoshape://streams.octoshape.net/ideabytes/vod/QP/ch27-vod6.flv",@"vodUrl" ,@"",@"vod_octo_js" ,nil],nil];
+    
+    channelsInfo = [[NSMutableArray alloc] init];
+    NSLog(@"Before connect with DB");
+    channelsInfo = [deviceDB getChannels];
+    NSLog(@"getChannels");
+    
+    
+    if(channelsInfo.count){
+        NSLog(@"ViewController setupChannelsInfo() - load Channels from local db%@", channelsInfo);
+    }
+    else{
+        channelsInfo = channels;
+        NSLog(@"ViewController setupChannelsInfo() - load default Channels %@", channelsInfo);
+        
+        for(int index = 0; index < channelsInfo.count; index ++){
+            NSMutableArray *channel = [[NSMutableArray alloc] init];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"id"]];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"name"]];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"Url"]];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"octo_js"]];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"imageUrl"]];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"meta_data"]];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"meta_description"]];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"status"]];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"created_datetime"]];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"updated_datetime"]];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"image2xUrl"]];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"image3xUrl"]];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"downloadUrl"]];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"category"]];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"vodUrl"]];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"vod_octo_js"]];
+            
+            //NSLog(@"bouquet info %@", bouquet);
+            if(![deviceDB isTableExist:@"channels"]){
+                NSLog(@"Channels table not exit, create a one");
+                
+                [deviceDB createTable:@"channels" :@""];
+                
+            } else {
+                NSLog(@"Channels table already created");
+            }
+            [deviceDB insertRecordIntoChannels:channel];
+            
+        }
+        
+    }
+//    channelList = [[NSMutableArray alloc] init];
+
+}
+
+-(void)setupBouquet_vs_ChannelsInfo
+{
+    bouquetChannels =[NSMutableArray arrayWithObjects:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"4", @"bouquet_id" ,@"26",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,nil],
+                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"8", @"bouquet_id" ,@"26",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,nil] ,
+                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"10", @"bouquet_id" ,@"26",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,nil] ,
+                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"4", @"bouquet_id" ,@"31",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,nil],nil];
+    
+    NSLog(@"setupBouquet_vs_ChannelsInfo");
+    
+    bouquetChannelsInfo = [[NSMutableArray alloc] init];
+    NSLog(@"Before connect with DB");
+    bouquetChannelsInfo = [deviceDB getBouquetChannels];
+    NSLog(@"getBouquetChannels");
+    
+    
+    if(bouquetChannelsInfo.count){
+        NSLog(@"if:ViewController setupChannelsInfo() - load Channels from local db%@", bouquetChannelsInfo);
+    }
+    else{
+        bouquetChannelsInfo = bouquetChannels;
+        NSLog(@"else:ViewController setupChannelsInfo() - load default Channels %@", bouquetChannelsInfo);
+        
+        for(int index = 0; index < bouquetChannelsInfo.count; index ++){
+            NSMutableArray *bouquetChannel = [[NSMutableArray alloc] init];
+            [bouquetChannel addObject:[[bouquetChannelsInfo objectAtIndex:index] valueForKey:@"bouquet_id"]];
+            [bouquetChannel addObject:[[bouquetChannelsInfo objectAtIndex:index] valueForKey:@"channel_id"]];
+            [bouquetChannel addObject:[[bouquetChannelsInfo objectAtIndex:index] valueForKey:@"created_datetime"]];
+            
+            
+            
+            //NSLog(@"bouquet info %@", bouquet);
+            if(![deviceDB isTableExist:@"bouquet_vs_channels"]){
+                NSLog(@"bouquet_vs_channels table not exit, create a one");
+                
+                [deviceDB createTable:@"bouquet_vs_channels" :@"CREATE TABLE IF NOT EXISTS %@ (id INTEGER PRIMARY KEY AUTOINCREMENT, bouquet_id INTEGER NOT NULL, channel_id INTEGER NOT NULL, created_datetime TEXT)"];
+                
+            } else {
+                NSLog(@"bouquet_vs_channels table already created");
+            }
+            [deviceDB insertRecordIntoBouquet_vs_Channels:bouquetChannel];
+            
+        }
+        
+    }
+}
+
+-(void) setupVersioningInfo
+{
+    versioning = [NSMutableArray arrayWithObjects:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"channel", @"tablename", @"1987-09-10 00:00:00",@"version" ,nil], [NSMutableDictionary dictionaryWithObjectsAndKeys:@"bouquet", @"tablename", @"1987-09-10 00:00:00",@"version" ,nil], [NSMutableDictionary dictionaryWithObjectsAndKeys:@"bouquet_vs_channels", @"tablename", @"1987-09-10 00:00:00",@"version" ,nil], [NSMutableDictionary dictionaryWithObjectsAndKeys:@"profile", @"tablename", @"1987-09-10 00:00:00",@"version" ,nil],nil];
+       
+    NSLog(@"setupVersioningInfo");
+    
+    versioningInfo = [[NSMutableArray alloc] init];
+    NSLog(@"Before connect with DB");
+    versioningInfo = [deviceDB getVersioningInfo];
+    NSLog(@"getVersioningInfo");
+    
+    
+    if(versioningInfo.count){
+        NSLog(@"if:ViewController setupVersioningInfo() - load Channels from local db%@", versioningInfo);
+    }
+    else{
+        versioningInfo = versioning;
+        NSLog(@"else:ViewController setupVersioningInfo() - load default Channels %@", versioningInfo);
+        
+        for(int index = 0; index < versioningInfo.count; index ++){
+            NSMutableArray *versioningData = [[NSMutableArray alloc] init];
+            [versioningData addObject:[[versioningInfo objectAtIndex:index] valueForKey:@"tablename"]];
+            [versioningData addObject:[[versioningInfo objectAtIndex:index] valueForKey:@"version"]];
+            
+            
+            //NSLog(@"bouquet info %@", bouquet);
+            if(![deviceDB isTableExist:@"versioning"]){
+                NSLog(@"versioning table not exit, create a one");
+                
+                [deviceDB createTable:@"versioning" :@"CREATE TABLE IF NOT EXISTS %@ (id INTEGER PRIMARY KEY AUTOINCREMENT, tablename TEXT,   version TEXT)"];
+                
+            } else {
+                NSLog(@"versioning table already created");
+            }
+            [deviceDB insertRecordIntoVersioning:versioningData];
+            
+        }
+        
+    }
+
 }
 
 -(void) getPackage {
@@ -460,11 +625,6 @@
         
         [self alertStatus:@"Can not connect to server" :@"Server Error!" :0];
     }
-    
-}
-
--(void) setupVersioningInfo
-{
     
 }
 
