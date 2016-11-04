@@ -14,7 +14,11 @@
 #import "UserData.h"
 #import "Constant.h"
 
+#define documentDirectory [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
+
 @interface HomeViewController ()
+
 
 @end
 
@@ -22,6 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    documentImagePath = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view.
     
     //goto_package
@@ -37,6 +43,9 @@
     packageGroupsSelected = [[NSMutableArray alloc] init];
     packageDiscriptionSelected = [[NSMutableArray alloc] init];
     
+    for (int i =0; i<bouquetImages.count; i++) {
+        NSLog(@"Index value:%d", i);
+    }
     
     self.collectionView.alwaysBounceVertical = YES;
 }
@@ -228,7 +237,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return packageList.count;
+    return bouquetImages.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -237,8 +246,20 @@
     PackageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
     //NSString *imageName = [packageImages objectAtIndex:indexPath.row];
-    NSString *imageName = [[packageList objectAtIndex:indexPath.row] valueForKey:@"imageName"];
-    cell.imgCell.image = [UIImage imageNamed:imageName];
+//    NSString *imageName = [[packageList objectAtIndex:indexPath.row] valueForKey:@"imageName"];
+//    cell.imgCell.image = [UIImage imageNamed:imageName];
+    
+    NSString *imagePath = [documentDirectory stringByAppendingPathComponent:[bouquetImages objectAtIndex:indexPath.row]];
+    NSLog(@"cell:imagePath:%@", imagePath);
+    int index = (int) [bouquetImages objectAtIndex:indexPath.row];
+    NSLog(@"imagePath:index:%i", index);
+    [documentImagePath addObject:imagePath];
+//    [documentImagePath addObject:imagePath];
+    
+//    NSLog(@"bouquetImages Index Position:%i", (int)[bouquetImages objectAtIndex:indexPath.row]);
+//    NSLog(@"Image:%@ ",imagePath);
+    
+    cell.imgCell.image = [UIImage imageWithContentsOfFile:imagePath];
     
     NSString *packageNameTmp= [[packageList objectAtIndex:indexPath.row] valueForKey:@"name"];
     cell.lblCell.text = packageNameTmp;
@@ -252,11 +273,14 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    selectedImage = [documentDirectory stringByAppendingPathComponent:[bouquetImages objectAtIndex:indexPath.row]];
+    NSLog(@"Selected Image:%@", selectedImage);
+    
     NSLog(@"HomeViewController -- didSelectItemAtIndexPath:");
     //packageSelected = [packageName objectAtIndex:[indexPath row]];
     NSString* bouquetID = [[packageList objectAtIndex:indexPath.row] valueForKey:@"bouquetID"];
     [self getChannelInBouquet:bouquetID:indexPath.row];
-    NSLog(@"channels %d", channelList.count);
+    NSLog(@"channels %lu", (unsigned long)channelList.count);
     
     packageSelected = [[packageList objectAtIndex:[indexPath row]] valueForKey:@"name"];
     
@@ -271,6 +295,8 @@
         [packageDiscriptionSelected addObject:[[channelList objectAtIndex:index] valueForKey:@"channelDescription"]];
     }
     NSLog(@"Selected Package Name: %@ channels %@", packageSelected, packageDiscriptionSelected);
+    
+    
 /*
     allChanneInBouquet = [[NSMutableArray alloc] init];
     allChanneInBouquet = [deviceDB getChannelInBouquet:bouquetID];
@@ -297,12 +323,45 @@
     if ([[segue identifier]isEqualToString:@"goto_package"]) {
         
         PackageChannelController *packageObj = [segue destinationViewController];
-        packageObj.allImages =packageImagesSelected;
+        
+/*        packageObj.allImages =packageImagesSelected;
+        NSLog(@"packageImagesSelected:%@", packageImagesSelected);
+        NSLog(@"packageObj.allImages:%@", packageObj.allImages);   */
         packageObj.allLinks = packageLinksSelected;
         packageObj.allGroups = packageGroupsSelected;
         packageObj.allDescriptions = packageDiscriptionSelected;
         packageObj.navigationTitle = packageSelected;
+        NSString *name1;
+        NSString *name2;
+        for (int i=0; i<[documentImagePath count]; i++)
+        {
+            if ([selectedImage isEqualToString:[documentImagePath objectAtIndex:i]]) {
+                name1 = selectedImage;
+            }
+        }
         
+        
+        if ([selectedImage isEqualToString:[documentImagePath objectAtIndex:0]]) {
+            packageObj.allImages =banglaChannelImages;
+            NSLog(@"packageObj.allImages:%@", banglaChannelImages);
+        }
+        else if ([selectedImage isEqualToString:[documentImagePath objectAtIndex:1]])
+        {
+            packageObj.allImages =freeChannelImages;
+            NSLog(@"packageObj.allImages:%@", freeChannelImages);
+        }
+        
+/*        if (selectedBouquet == 0) {
+            packageObj.allImages =banglaChannelImages;
+         //    packageObj.allImages = [NSMutableArray arrayWithArray:banglaChannelImages];
+            NSLog(@"packageObj.allImages:%@", banglaChannelImages);
+        }
+        else if(selectedBouquet == 1)
+        {
+            packageObj.allImages =freeChannelImages;
+         //   packageObj.allImages = [NSMutableArray arrayWithArray:freeChannelImages];
+            NSLog(@"packageObj.allImages:%@", freeChannelImages);
+        }  */
     }
 }
 

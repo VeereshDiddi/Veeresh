@@ -10,6 +10,8 @@
 
 @interface HomeViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
     
+    
+    NSString *selectedImage;
     //NSMutableArray * aChannel;
     NSMutableArray *allChanneInBouquet;
     

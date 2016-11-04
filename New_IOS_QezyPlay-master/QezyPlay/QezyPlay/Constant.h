@@ -35,5 +35,6 @@ extern NSString *loginSC;
 extern NSString *customersSC;
 extern NSString *resetSC;
 extern NSString *privacyPolicySC;
+extern NSString *versioningSC;
 
 #endif /* Constant_h */

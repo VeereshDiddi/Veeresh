@@ -17,6 +17,7 @@ NSString *loginSC = @"http://104.196.99.177:6363/api/Customers/login";
 NSString *customersSC = @"http://104.196.99.177:6363/api/Customers";
 NSString *resetSC = @"http://104.196.99.177:6363/api/Customers/reset";
 NSString *privacyPolicySC = @"http://104.196.99.177:6363/Privacy_Policy.htm";
+NSString *versioningSC = @"http://104.196.99.177:6363/api/DataSyncs/";
 
 NSMutableArray *defaulBouquets;
 NSMutableArray *channelsInDefaultBouquets;

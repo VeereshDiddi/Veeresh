@@ -229,9 +229,6 @@
         NSLog(@"Exception: %@", e);
         [self alertStatus:@"Sign in Failed." :@"Error!" :0];
     }
-
-    
-    
 }
 /*
 - (IBAction)backLogin:(id)sender {

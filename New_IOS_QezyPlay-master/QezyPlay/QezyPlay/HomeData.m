@@ -15,3 +15,10 @@ NSMutableArray * channelList;
 NSMutableArray *channelsInfo;
 NSMutableArray *bouquetChannelsInfo;
 NSMutableArray *versioningInfo;
+
+NSMutableArray *bouquetImages;
+NSMutableArray *banglaChannelImages;
+NSMutableArray *freeChannelImages;
+NSMutableArray *bothImages;
+NSMutableArray *documentImagePath;
+

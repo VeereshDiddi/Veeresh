@@ -14,4 +14,11 @@ extern NSMutableArray * channelList;
 extern NSMutableArray *channelsInfo;
 extern NSMutableArray *bouquetChannelsInfo;
 extern NSMutableArray *versioningInfo;
+
+extern NSMutableArray *bouquetImages;
+extern NSMutableArray *banglaChannelImages;
+extern NSMutableArray *freeChannelImages;
+extern NSMutableArray *bothImages;
+extern NSMutableArray *documentImagePath;
+
 #endif /* HomeData_h */

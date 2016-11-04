@@ -59,8 +59,106 @@
     
     self.btnFacebook.delegate = self;
     self.btnFacebook.readPermissions = @[@"public_profile", @"email"];
+    [self saveImageInDocumentDirectory];
     
 }
+
+-(void)saveImageInDocumentDirectory
+{
+    bouquetImages = [NSMutableArray arrayWithObjects:@"Bangla.png", @"free-new.png", nil];
+    for (int i =0; i<bouquetImages.count; i++) {
+        NSLog(@"Index value:%d, %@", i, [bouquetImages objectAtIndex:i]);
+       
+    }
+    banglaChannelImages = [NSMutableArray arrayWithObjects:@"high-news.png", @"ctvn.png", @"taratv.png", @"channel-10.png", @"jamuna.png", @"channel-i.png", @"satv.png", @"zeal-news.png", @"boishakhi-tv.png", nil];
+    freeChannelImages = [NSMutableArray arrayWithObjects:@"deccan-tv.png", @"Life-Changing.png", @"mana-telugu.png", @"metro.png", @"n24.png", @"news1.png", @"ptv.png", @"sai-tv.png", @"stv.png", @"vtv.png", @"ytv.png", nil];
+    bothImages = [NSMutableArray arrayWithObjects:@"high-news.png", @"ctvn.png", @"taratv.png", @"channel-10.png", @"jamuna.png", @"channel-i.png", @"satv.png", @"zeal-news.png", @"boishakhi-tv.png",@"deccan-tv.png", @"Life-Changing.png", @"mana-telugu.png", @"metro.png", @"n24.png", @"news1.png", @"ptv.png", @"sai-tv.png", @"stv.png", @"vtv.png", @"ytv.png", nil];
+
+    
+    for (int i=0; i<bouquetImages.count; i++) {
+        NSArray *pathsArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        
+        NSLog(@" %@ ",pathsArray);
+        
+        NSString *imageName = [bouquetImages objectAtIndex:i];
+        
+        NSString *path =[pathsArray objectAtIndex:0];
+        
+        path = [path stringByAppendingPathComponent:imageName];
+        
+        NSLog(@" %@ ",path);
+        
+        NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:imageName]);
+        
+        NSLog(@" %@ imag",imageData);
+        
+        [imageData writeToFile:path atomically:YES];
+    }
+
+    for (int i=0; i<banglaChannelImages.count; i++) {
+        NSArray *pathsArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        
+        NSLog(@" %@ ",pathsArray);
+        
+        NSString *imageName = [banglaChannelImages objectAtIndex:i];
+        
+        NSString *path =[pathsArray objectAtIndex:0];
+        
+        path = [path stringByAppendingPathComponent:imageName];
+        
+        NSLog(@" %@ ",path);
+        
+        NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:imageName]);
+        
+        NSLog(@" %@ imag",imageData);
+        
+        [imageData writeToFile:path atomically:YES];
+    }
+    
+    for (int i=0; i<freeChannelImages.count; i++) {
+        NSArray *pathsArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        
+        NSLog(@" %@ ",pathsArray);
+        
+        NSString *imageName = [freeChannelImages objectAtIndex:i];
+        
+        NSString *path =[pathsArray objectAtIndex:0];
+        
+        path = [path stringByAppendingPathComponent:imageName];
+        
+        NSLog(@" %@ ",path);
+        
+        NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:imageName]);
+        
+        NSLog(@" %@ imag",imageData);
+        
+        [imageData writeToFile:path atomically:YES];
+    }
+
+ /*
+    for (int i=0; i<bothImages.count; i++) {
+        NSArray *pathsArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        
+        NSLog(@" %@ ",pathsArray);
+        
+        NSString *imageName = [bothImages objectAtIndex:i];
+        
+        NSString *path =[pathsArray objectAtIndex:0];
+        
+        path = [path stringByAppendingPathComponent:imageName];
+        
+        NSLog(@" %@ ",path);
+        
+        NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:imageName]);
+        
+        NSLog(@" %@ imag",imageData);
+        
+        [imageData writeToFile:path atomically:YES];
+    }
+*/
+
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -136,7 +234,7 @@
     
     profileList = [deviceDB getAllProfiles];
     NSInteger numObj = profileList.count;
-    NSLog(@"query result for profile: %@ %d", profileList, numObj);
+    NSLog(@"query result for profile: %@ %ld", profileList, (long)numObj);
     
     profileName = [[NSMutableArray alloc] init];
     profileImage = [[NSMutableArray alloc] init];
@@ -531,7 +629,7 @@
     versioningInfo = [[NSMutableArray alloc] init];
     NSLog(@"Before connect with DB");
     versioningInfo = [deviceDB getVersioningInfo];
-    NSLog(@"getVersioningInfo");
+    NSLog(@"getVersioningInfo:%@", versioningInfo);
     
     
     if(versioningInfo.count){
@@ -563,6 +661,7 @@
     }
 
 }
+
 
 -(void) getPackage {
     
