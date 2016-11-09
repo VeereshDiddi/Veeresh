@@ -32,6 +32,12 @@
     profileImagesSelected = [[NSMutableArray alloc] init];
     profileLinksSelected = [[NSMutableArray alloc] init];
     
+    UIImage *leftbuttonImage = [UIImage imageNamed:@"qezy-logo-.png"];
+    UIButton *leftbutton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftbutton setImage:leftbuttonImage forState:UIControlStateNormal];
+    leftbutton.frame = CGRectMake(0, 0, 65, 65);
+    UIBarButtonItem *customBarleftItem = [[UIBarButtonItem alloc] initWithCustomView:leftbutton];
+    self.navigationItem.leftBarButtonItem = customBarleftItem;
 }
 
 -(void) viewWillAppear:(BOOL)animated{

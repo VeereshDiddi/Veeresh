@@ -93,6 +93,14 @@
     self.collectionView.alwaysBounceVertical = YES;
     
     self.collectionView.backgroundColor = [UIColor colorWithRed:(33/255.0) green:(39/255.0) blue:(73/255.0) alpha:1];
+    
+    UIImage *leftbuttonImage = [UIImage imageNamed:@"qezy-logo-.png"];
+    UIButton *leftbutton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftbutton setImage:leftbuttonImage forState:UIControlStateNormal];
+    leftbutton.frame = CGRectMake(0, 0, 65, 65);
+    UIBarButtonItem *customBarleftItem = [[UIBarButtonItem alloc] initWithCustomView:leftbutton];
+    self.navigationItem.leftBarButtonItem = customBarleftItem;
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -120,7 +128,13 @@
     
     ChannelCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     NSString *imageName = [currentImages objectAtIndex:indexPath.row];
-    cell.imgCell.image = [UIImage imageNamed:imageName];
+   
+    NSArray *pathsArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *path =[pathsArray objectAtIndex:0];
+    NSString *imagePath = [path stringByAppendingPathComponent:imageName];
+    
+    cell.imgCell.image = [UIImage imageWithContentsOfFile:imagePath];
+    //cell.imgCell.image = [UIImage imageNamed:imageName];
 //    [cell.imgCell.layer setBorderWidth:1.0];
     
     return cell;

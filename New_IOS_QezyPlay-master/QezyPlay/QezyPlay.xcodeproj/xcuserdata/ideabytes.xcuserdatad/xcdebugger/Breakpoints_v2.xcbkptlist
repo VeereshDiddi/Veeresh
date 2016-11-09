@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QezyPlay/PackageChannelController.m"
-            timestampString = "495842424.606763"
+            timestampString = "500146379.943934"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "-addToFavoritesFromIndexPath:"
             landmarkType = "5">
          </BreakpointContent>

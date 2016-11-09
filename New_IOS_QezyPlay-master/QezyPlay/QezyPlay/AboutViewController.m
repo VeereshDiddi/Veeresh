@@ -26,6 +26,13 @@
     
     //remove seperator line between cells
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    UIImage *leftbuttonImage = [UIImage imageNamed:@"qezy-logo-.png"];
+    UIButton *leftbutton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftbutton setImage:leftbuttonImage forState:UIControlStateNormal];
+    leftbutton.frame = CGRectMake(0, 0, 65, 65);
+    UIBarButtonItem *customBarleftItem = [[UIBarButtonItem alloc] initWithCustomView:leftbutton];
+    self.navigationItem.leftBarButtonItem = customBarleftItem;
 }
 
 - (void)didReceiveMemoryWarning {

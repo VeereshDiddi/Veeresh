@@ -21,11 +21,16 @@
 //   to the database.
 #define USE_DATABASE_FOR_CHANLIST
 
+#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
+
+#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+
 extern NSMutableArray *defaulBouquets;
 extern NSMutableArray *channelsInDefaultBouquets;
 extern NSMutableArray *channels;
-extern NSMutableArray *bouquetChannels;
 extern NSMutableArray *versioning;
+extern NSMutableArray *bouquetChannels;
+
 
 extern NSString *bouquetsSC;
 extern NSString *channelBouquetsSC;
@@ -38,3 +43,7 @@ extern NSString *privacyPolicySC;
 extern NSString *versioningSC;
 
 #endif /* Constant_h */
+
+
+
+

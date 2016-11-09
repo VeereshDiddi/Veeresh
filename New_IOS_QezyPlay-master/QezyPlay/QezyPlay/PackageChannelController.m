@@ -15,12 +15,8 @@
 #import "FavoriteData.h"
 #import "UserData.h"
 #import "ProfileData.h"
-#import "HomeData.h"
+
 #import "MLTableAlert.h"
-
-#define documentDirectory [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
-
-
 
 @interface PackageChannelController ()
 
@@ -98,6 +94,7 @@
     self.packageLabel.backgroundColor = [UIColor colorWithRed:(209/255.0) green:(63/255.0) blue:(24/255.0) alpha:1];
     self.packageCollectionView.backgroundColor = [UIColor colorWithRed:(33/255.0) green:(39/255.0) blue:(73/255.0) alpha:1];
     
+
 }
 
 
@@ -170,19 +167,17 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"packageChannelCell";
     
-    
     PackageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-//    NSString *imageName = [currentImages objectAtIndex:indexPath.row];
-//    NSLog(@"imageName:%@", imageName);
-//
-//    cell.channelCell.image = [UIImage imageNamed:imageName];
+    NSString *imageName = [currentImages objectAtIndex:indexPath.row];
     
-    NSString *imagePath = [documentDirectory stringByAppendingPathComponent:[currentImages objectAtIndex:indexPath.row]];
-    
-    NSLog(@"bouquetChannelImages:%@ ",imagePath);
+    NSArray *pathsArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *path =[pathsArray objectAtIndex:0];
+    NSString *imagePath = [path stringByAppendingPathComponent:imageName];
     
     cell.channelCell.image = [UIImage imageWithContentsOfFile:imagePath];
+    
+    //cell.channelCell.image = [UIImage imageNamed:imageName];
     
     return cell;
 }

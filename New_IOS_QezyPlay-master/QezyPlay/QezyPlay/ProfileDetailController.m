@@ -109,7 +109,13 @@
     cell.textLabel.lineBreakMode=NSLineBreakByWordWrapping;
     
     //cell.imageView.image = [UIImage imageNamed:self.allImages[indexPath.row]];
-    UIImage *thumbnail = [UIImage imageNamed:self.allImages[indexPath.row]];
+    NSString *imageName = self.allImages[indexPath.row];
+    NSArray *pathsArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *path =[pathsArray objectAtIndex:0];
+    NSString *imagePath = [path stringByAppendingPathComponent:imageName];
+    
+    //UIImage *thumbnail = [UIImage imageNamed:self.allImages[indexPath.row]];
+    UIImage *thumbnail = [UIImage imageWithContentsOfFile:imagePath];
     CGSize itemSize = CGSizeMake(50, 50);
     UIGraphicsBeginImageContext(itemSize);
     CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);

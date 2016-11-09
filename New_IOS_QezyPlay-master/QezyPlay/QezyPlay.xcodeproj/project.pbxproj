@@ -190,33 +190,35 @@
 		AEF502561D8305D8003A417A /* theme-hdpi.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF502551D8305D8003A417A /* theme-hdpi.png */; };
 		AEF502581D8305E9003A417A /* my-account-hdpi.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF502571D8305E9003A417A /* my-account-hdpi.png */; };
 		AEF5025A1D83062A003A417A /* logout-hdpi.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF502591D83062A003A417A /* logout-hdpi.png */; };
-		AEF6777C1DC9BC76008BCC8F /* Uttarbangla.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677791DC9BC76008BCC8F /* Uttarbangla.png */; };
-		AEF6777D1DC9BC76008BCC8F /* Uttarbangla@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF6777A1DC9BC76008BCC8F /* Uttarbangla@2x.png */; };
-		AEF6777E1DC9BC76008BCC8F /* Uttarbangla@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF6777B1DC9BC76008BCC8F /* Uttarbangla@3x.png */; };
-		AEF677821DC9BCF4008BCC8F /* metro.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF6777F1DC9BCF4008BCC8F /* metro.png */; };
-		AEF677831DC9BCF4008BCC8F /* metro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677801DC9BCF4008BCC8F /* metro@2x.png */; };
-		AEF677841DC9BCF4008BCC8F /* metro@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677811DC9BCF4008BCC8F /* metro@3x.png */; };
-		AEF677881DC9BD15008BCC8F /* n24.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677851DC9BD15008BCC8F /* n24.png */; };
-		AEF677891DC9BD15008BCC8F /* n24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677861DC9BD15008BCC8F /* n24@2x.png */; };
-		AEF6778A1DC9BD15008BCC8F /* n24@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677871DC9BD15008BCC8F /* n24@3x.png */; };
-		AEF6778E1DC9BD71008BCC8F /* ptv.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF6778B1DC9BD71008BCC8F /* ptv.png */; };
-		AEF6778F1DC9BD71008BCC8F /* ptv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF6778C1DC9BD71008BCC8F /* ptv@2x.png */; };
-		AEF677901DC9BD71008BCC8F /* ptv@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF6778D1DC9BD71008BCC8F /* ptv@3x.png */; };
-		AEF677941DC9BD8F008BCC8F /* sai-tv.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677911DC9BD8F008BCC8F /* sai-tv.png */; };
-		AEF677951DC9BD8F008BCC8F /* sai-tv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677921DC9BD8F008BCC8F /* sai-tv@2x.png */; };
-		AEF677961DC9BD8F008BCC8F /* sai-tv@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677931DC9BD8F008BCC8F /* sai-tv@3x.png */; };
-		AEF6779A1DC9BDAB008BCC8F /* stv.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677971DC9BDAB008BCC8F /* stv.png */; };
-		AEF6779B1DC9BDAB008BCC8F /* stv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677981DC9BDAB008BCC8F /* stv@2x.png */; };
-		AEF6779C1DC9BDAB008BCC8F /* stv@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677991DC9BDAB008BCC8F /* stv@3x.png */; };
-		AEF677A01DC9BDC7008BCC8F /* vtv.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF6779D1DC9BDC7008BCC8F /* vtv.png */; };
-		AEF677A11DC9BDC7008BCC8F /* vtv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF6779E1DC9BDC7008BCC8F /* vtv@2x.png */; };
-		AEF677A21DC9BDC7008BCC8F /* vtv@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF6779F1DC9BDC7008BCC8F /* vtv@3x.png */; };
-		AEF677A61DC9BE24008BCC8F /* ytv.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677A31DC9BE24008BCC8F /* ytv.png */; };
-		AEF677A71DC9BE24008BCC8F /* ytv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677A41DC9BE24008BCC8F /* ytv@2x.png */; };
-		AEF677A81DC9BE24008BCC8F /* ytv@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677A51DC9BE24008BCC8F /* ytv@3x.png */; };
-		AEF677AC1DC9BFB7008BCC8F /* news1.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677A91DC9BFB7008BCC8F /* news1.png */; };
-		AEF677AD1DC9BFB7008BCC8F /* news1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677AA1DC9BFB7008BCC8F /* news1@2x.png */; };
-		AEF677AE1DC9BFB7008BCC8F /* news1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF677AB1DC9BFB7008BCC8F /* news1@3x.png */; };
+		AEF678161DD2056C008BCC8F /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = AEF678151DD2056C008BCC8F /* countries.json */; };
+		AEF678911DD35CDE008BCC8F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF678901DD35CDE008BCC8F /* MBProgressHUD.m */; };
+		AEF883231DCF950E00E2D8EC /* metro.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF883081DCF950E00E2D8EC /* metro.png */; };
+		AEF883241DCF950E00E2D8EC /* metro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF883091DCF950E00E2D8EC /* metro@2x.png */; };
+		AEF883251DCF950E00E2D8EC /* metro@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF8830A1DCF950E00E2D8EC /* metro@3x.png */; };
+		AEF883261DCF950E00E2D8EC /* n24.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF8830B1DCF950E00E2D8EC /* n24.png */; };
+		AEF883271DCF950E00E2D8EC /* n24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF8830C1DCF950E00E2D8EC /* n24@2x.png */; };
+		AEF883281DCF950E00E2D8EC /* n24@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF8830D1DCF950E00E2D8EC /* n24@3x.png */; };
+		AEF883291DCF950E00E2D8EC /* news1.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF8830E1DCF950E00E2D8EC /* news1.png */; };
+		AEF8832A1DCF950E00E2D8EC /* news1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF8830F1DCF950E00E2D8EC /* news1@2x.png */; };
+		AEF8832B1DCF950E00E2D8EC /* news1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF883101DCF950E00E2D8EC /* news1@3x.png */; };
+		AEF8832C1DCF950E00E2D8EC /* ptv.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF883111DCF950E00E2D8EC /* ptv.png */; };
+		AEF8832D1DCF950E00E2D8EC /* ptv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF883121DCF950E00E2D8EC /* ptv@2x.png */; };
+		AEF8832E1DCF950E00E2D8EC /* ptv@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF883131DCF950E00E2D8EC /* ptv@3x.png */; };
+		AEF8832F1DCF950E00E2D8EC /* sai-tv.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF883141DCF950E00E2D8EC /* sai-tv.png */; };
+		AEF883301DCF950E00E2D8EC /* sai-tv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF883151DCF950E00E2D8EC /* sai-tv@2x.png */; };
+		AEF883311DCF950E00E2D8EC /* sai-tv@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF883161DCF950E00E2D8EC /* sai-tv@3x.png */; };
+		AEF883321DCF950E00E2D8EC /* stv.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF883171DCF950E00E2D8EC /* stv.png */; };
+		AEF883331DCF950E00E2D8EC /* stv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF883181DCF950E00E2D8EC /* stv@2x.png */; };
+		AEF883341DCF950E00E2D8EC /* stv@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF883191DCF950E00E2D8EC /* stv@3x.png */; };
+		AEF883351DCF950E00E2D8EC /* Uttarbangla.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF8831A1DCF950E00E2D8EC /* Uttarbangla.png */; };
+		AEF883361DCF950E00E2D8EC /* Uttarbangla@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF8831B1DCF950E00E2D8EC /* Uttarbangla@2x.png */; };
+		AEF883371DCF950E00E2D8EC /* Uttarbangla@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF8831C1DCF950E00E2D8EC /* Uttarbangla@3x.png */; };
+		AEF883381DCF950E00E2D8EC /* vtv.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF8831D1DCF950E00E2D8EC /* vtv.png */; };
+		AEF883391DCF950E00E2D8EC /* vtv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF8831E1DCF950E00E2D8EC /* vtv@2x.png */; };
+		AEF8833A1DCF950E00E2D8EC /* vtv@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF8831F1DCF950E00E2D8EC /* vtv@3x.png */; };
+		AEF8833B1DCF950E00E2D8EC /* ytv.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF883201DCF950E00E2D8EC /* ytv.png */; };
+		AEF8833C1DCF950E00E2D8EC /* ytv@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF883211DCF950E00E2D8EC /* ytv@2x.png */; };
+		AEF8833D1DCF950E00E2D8EC /* ytv@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF883221DCF950E00E2D8EC /* ytv@3x.png */; };
 		AEF8B1301D73FB53008C0120 /* qezy-logo-.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF8B12F1D73FB53008C0120 /* qezy-logo-.png */; };
 		AEF8B1441D7477B3008C0120 /* SearchFavoritesController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF8B1431D7477B3008C0120 /* SearchFavoritesController.m */; };
 		AEF8B1471D74D4E1008C0120 /* PackageChannelController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF8B1461D74D4E1008C0120 /* PackageChannelController.m */; };
@@ -459,33 +461,36 @@
 		AEF502551D8305D8003A417A /* theme-hdpi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theme-hdpi.png"; sourceTree = "<group>"; };
 		AEF502571D8305E9003A417A /* my-account-hdpi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my-account-hdpi.png"; sourceTree = "<group>"; };
 		AEF502591D83062A003A417A /* logout-hdpi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-hdpi.png"; sourceTree = "<group>"; };
-		AEF677791DC9BC76008BCC8F /* Uttarbangla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Uttarbangla.png; sourceTree = "<group>"; };
-		AEF6777A1DC9BC76008BCC8F /* Uttarbangla@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Uttarbangla@2x.png"; sourceTree = "<group>"; };
-		AEF6777B1DC9BC76008BCC8F /* Uttarbangla@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Uttarbangla@3x.png"; sourceTree = "<group>"; };
-		AEF6777F1DC9BCF4008BCC8F /* metro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metro.png; sourceTree = "<group>"; };
-		AEF677801DC9BCF4008BCC8F /* metro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "metro@2x.png"; sourceTree = "<group>"; };
-		AEF677811DC9BCF4008BCC8F /* metro@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "metro@3x.png"; sourceTree = "<group>"; };
-		AEF677851DC9BD15008BCC8F /* n24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n24.png; sourceTree = "<group>"; };
-		AEF677861DC9BD15008BCC8F /* n24@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "n24@2x.png"; sourceTree = "<group>"; };
-		AEF677871DC9BD15008BCC8F /* n24@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "n24@3x.png"; sourceTree = "<group>"; };
-		AEF6778B1DC9BD71008BCC8F /* ptv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ptv.png; sourceTree = "<group>"; };
-		AEF6778C1DC9BD71008BCC8F /* ptv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ptv@2x.png"; sourceTree = "<group>"; };
-		AEF6778D1DC9BD71008BCC8F /* ptv@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ptv@3x.png"; sourceTree = "<group>"; };
-		AEF677911DC9BD8F008BCC8F /* sai-tv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sai-tv.png"; sourceTree = "<group>"; };
-		AEF677921DC9BD8F008BCC8F /* sai-tv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sai-tv@2x.png"; sourceTree = "<group>"; };
-		AEF677931DC9BD8F008BCC8F /* sai-tv@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sai-tv@3x.png"; sourceTree = "<group>"; };
-		AEF677971DC9BDAB008BCC8F /* stv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stv.png; sourceTree = "<group>"; };
-		AEF677981DC9BDAB008BCC8F /* stv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stv@2x.png"; sourceTree = "<group>"; };
-		AEF677991DC9BDAB008BCC8F /* stv@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stv@3x.png"; sourceTree = "<group>"; };
-		AEF6779D1DC9BDC7008BCC8F /* vtv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vtv.png; sourceTree = "<group>"; };
-		AEF6779E1DC9BDC7008BCC8F /* vtv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vtv@2x.png"; sourceTree = "<group>"; };
-		AEF6779F1DC9BDC7008BCC8F /* vtv@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vtv@3x.png"; sourceTree = "<group>"; };
-		AEF677A31DC9BE24008BCC8F /* ytv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ytv.png; sourceTree = "<group>"; };
-		AEF677A41DC9BE24008BCC8F /* ytv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ytv@2x.png"; sourceTree = "<group>"; };
-		AEF677A51DC9BE24008BCC8F /* ytv@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ytv@3x.png"; sourceTree = "<group>"; };
-		AEF677A91DC9BFB7008BCC8F /* news1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news1.png; sourceTree = "<group>"; };
-		AEF677AA1DC9BFB7008BCC8F /* news1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news1@2x.png"; sourceTree = "<group>"; };
-		AEF677AB1DC9BFB7008BCC8F /* news1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news1@3x.png"; sourceTree = "<group>"; };
+		AEF678151DD2056C008BCC8F /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		AEF6788F1DD35CDE008BCC8F /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		AEF678901DD35CDE008BCC8F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		AEF883081DCF950E00E2D8EC /* metro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = metro.png; path = QezyPlay/channelLogoImage/metro.png; sourceTree = "<group>"; };
+		AEF883091DCF950E00E2D8EC /* metro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "metro@2x.png"; path = "QezyPlay/channelLogoImage/metro@2x.png"; sourceTree = "<group>"; };
+		AEF8830A1DCF950E00E2D8EC /* metro@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "metro@3x.png"; path = "QezyPlay/channelLogoImage/metro@3x.png"; sourceTree = "<group>"; };
+		AEF8830B1DCF950E00E2D8EC /* n24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = n24.png; path = QezyPlay/channelLogoImage/n24.png; sourceTree = "<group>"; };
+		AEF8830C1DCF950E00E2D8EC /* n24@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "n24@2x.png"; path = "QezyPlay/channelLogoImage/n24@2x.png"; sourceTree = "<group>"; };
+		AEF8830D1DCF950E00E2D8EC /* n24@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "n24@3x.png"; path = "QezyPlay/channelLogoImage/n24@3x.png"; sourceTree = "<group>"; };
+		AEF8830E1DCF950E00E2D8EC /* news1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = news1.png; path = QezyPlay/channelLogoImage/news1.png; sourceTree = "<group>"; };
+		AEF8830F1DCF950E00E2D8EC /* news1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "news1@2x.png"; path = "QezyPlay/channelLogoImage/news1@2x.png"; sourceTree = "<group>"; };
+		AEF883101DCF950E00E2D8EC /* news1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "news1@3x.png"; path = "QezyPlay/channelLogoImage/news1@3x.png"; sourceTree = "<group>"; };
+		AEF883111DCF950E00E2D8EC /* ptv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ptv.png; path = QezyPlay/channelLogoImage/ptv.png; sourceTree = "<group>"; };
+		AEF883121DCF950E00E2D8EC /* ptv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ptv@2x.png"; path = "QezyPlay/channelLogoImage/ptv@2x.png"; sourceTree = "<group>"; };
+		AEF883131DCF950E00E2D8EC /* ptv@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ptv@3x.png"; path = "QezyPlay/channelLogoImage/ptv@3x.png"; sourceTree = "<group>"; };
+		AEF883141DCF950E00E2D8EC /* sai-tv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sai-tv.png"; path = "QezyPlay/channelLogoImage/sai-tv.png"; sourceTree = "<group>"; };
+		AEF883151DCF950E00E2D8EC /* sai-tv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sai-tv@2x.png"; path = "QezyPlay/channelLogoImage/sai-tv@2x.png"; sourceTree = "<group>"; };
+		AEF883161DCF950E00E2D8EC /* sai-tv@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sai-tv@3x.png"; path = "QezyPlay/channelLogoImage/sai-tv@3x.png"; sourceTree = "<group>"; };
+		AEF883171DCF950E00E2D8EC /* stv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stv.png; path = QezyPlay/channelLogoImage/stv.png; sourceTree = "<group>"; };
+		AEF883181DCF950E00E2D8EC /* stv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stv@2x.png"; path = "QezyPlay/channelLogoImage/stv@2x.png"; sourceTree = "<group>"; };
+		AEF883191DCF950E00E2D8EC /* stv@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stv@3x.png"; path = "QezyPlay/channelLogoImage/stv@3x.png"; sourceTree = "<group>"; };
+		AEF8831A1DCF950E00E2D8EC /* Uttarbangla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Uttarbangla.png; path = QezyPlay/channelLogoImage/Uttarbangla.png; sourceTree = "<group>"; };
+		AEF8831B1DCF950E00E2D8EC /* Uttarbangla@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Uttarbangla@2x.png"; path = "QezyPlay/channelLogoImage/Uttarbangla@2x.png"; sourceTree = "<group>"; };
+		AEF8831C1DCF950E00E2D8EC /* Uttarbangla@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Uttarbangla@3x.png"; path = "QezyPlay/channelLogoImage/Uttarbangla@3x.png"; sourceTree = "<group>"; };
+		AEF8831D1DCF950E00E2D8EC /* vtv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vtv.png; path = QezyPlay/channelLogoImage/vtv.png; sourceTree = "<group>"; };
+		AEF8831E1DCF950E00E2D8EC /* vtv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "vtv@2x.png"; path = "QezyPlay/channelLogoImage/vtv@2x.png"; sourceTree = "<group>"; };
+		AEF8831F1DCF950E00E2D8EC /* vtv@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "vtv@3x.png"; path = "QezyPlay/channelLogoImage/vtv@3x.png"; sourceTree = "<group>"; };
+		AEF883201DCF950E00E2D8EC /* ytv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ytv.png; path = QezyPlay/channelLogoImage/ytv.png; sourceTree = "<group>"; };
+		AEF883211DCF950E00E2D8EC /* ytv@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ytv@2x.png"; path = "QezyPlay/channelLogoImage/ytv@2x.png"; sourceTree = "<group>"; };
+		AEF883221DCF950E00E2D8EC /* ytv@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ytv@3x.png"; path = "QezyPlay/channelLogoImage/ytv@3x.png"; sourceTree = "<group>"; };
 		AEF8B12F1D73FB53008C0120 /* qezy-logo-.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qezy-logo-.png"; sourceTree = "<group>"; };
 		AEF8B1421D7477B3008C0120 /* SearchFavoritesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFavoritesController.h; sourceTree = "<group>"; };
 		AEF8B1431D7477B3008C0120 /* SearchFavoritesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFavoritesController.m; sourceTree = "<group>"; };
@@ -558,13 +563,13 @@
 		AE2048E01D63A102004678E0 /* QezyPlay */ = {
 			isa = PBXGroup;
 			children = (
+				AEF6788E1DD35CDE008BCC8F /* Progress */,
 				AE87CF321D8DE99F006A1037 /* MLTableAlert */,
 				AEF5024E1D82FDC8003A417A /* Settings */,
 				AEEC85DD1D805EE200E93D55 /* DataManagement */,
 				AEA9BA021D7DC73800D6D5A8 /* Profile */,
 				AE66C9C41D6E6D0D00C47094 /* Video */,
 				AE66C9AD1D6E613E00C47094 /* include */,
-				AE66C9A61D6E58CF00C47094 /* Favorites */,
 				AE66C94E1D6E264C00C47094 /* Home */,
 				AE20491B1D63AF0A004678E0 /* userManagement */,
 				AE2048E41D63A102004678E0 /* AppDelegate.h */,
@@ -611,8 +616,9 @@
 		AE20491B1D63AF0A004678E0 /* userManagement */ = {
 			isa = PBXGroup;
 			children = (
-				AE2049191D63AEFD004678E0 /* SignUp.m */,
+				AEF678151DD2056C008BCC8F /* countries.json */,
 				AE2049181D63AEE7004678E0 /* SignUp.h */,
+				AE2049191D63AEFD004678E0 /* SignUp.m */,
 				AE20491C1D63B27D004678E0 /* ForgetPassword.h */,
 				AE20491D1D63B291004678E0 /* ForgetPassword.m */,
 				AE78065B1D8A04F600B21C1B /* UserData.h */,
@@ -724,6 +730,7 @@
 		AE66C94E1D6E264C00C47094 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				AE66C9A61D6E58CF00C47094 /* Favorites */,
 				AE1881611DBD70A800803CD3 /* HomeData.h */,
 				AE18815F1DBD706B00803CD3 /* HomeData.m */,
 				AE66C99D1D6E530D00C47094 /* HomeViewController.h */,
@@ -865,6 +872,15 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		AEF6788E1DD35CDE008BCC8F /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				AEF6788F1DD35CDE008BCC8F /* MBProgressHUD.h */,
+				AEF678901DD35CDE008BCC8F /* MBProgressHUD.m */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
 		AEF8B1311D7415A0008C0120 /* ChannelLogos */ = {
 			isa = PBXGroup;
 			children = (
@@ -876,8 +892,8 @@
 				AE18816A1DBD866400803CD3 /* ctvn@3x.png */,
 				AE1881621DBD864E00803CD3 /* jamuna.png */,
 				AE1881631DBD864E00803CD3 /* jamuna@2x.png */,
-				AE9C427F1DBAE8B100C9FE48 /* bharatiya.png */,
 				AE1881641DBD864E00803CD3 /* jamuna@3x.png */,
+				AE9C427F1DBAE8B100C9FE48 /* bharatiya.png */,
 				AE9C42801DBAE8B100C9FE48 /* bharatiya@2x.png */,
 				AE9C42811DBAE8B100C9FE48 /* bharatiya@3x.png */,
 				AE9C42851DBAE8B100C9FE48 /* Life-Changing.png */,
@@ -913,37 +929,37 @@
 				AE9C425B1DBAE87A00C9FE48 /* music-bangla.png */,
 				AE9C425C1DBAE87A00C9FE48 /* music-bangla@2x.png */,
 				AE9C425D1DBAE87A00C9FE48 /* music-bangla@3x.png */,
-				AEF677791DC9BC76008BCC8F /* Uttarbangla.png */,
-				AEF6777A1DC9BC76008BCC8F /* Uttarbangla@2x.png */,
-				AEF6777B1DC9BC76008BCC8F /* Uttarbangla@3x.png */,
-				AEF6777F1DC9BCF4008BCC8F /* metro.png */,
-				AEF677801DC9BCF4008BCC8F /* metro@2x.png */,
-				AEF677811DC9BCF4008BCC8F /* metro@3x.png */,
-				AEF677851DC9BD15008BCC8F /* n24.png */,
-				AEF677861DC9BD15008BCC8F /* n24@2x.png */,
-				AEF677871DC9BD15008BCC8F /* n24@3x.png */,
-				AEF677A91DC9BFB7008BCC8F /* news1.png */,
-				AEF677AA1DC9BFB7008BCC8F /* news1@2x.png */,
-				AEF677AB1DC9BFB7008BCC8F /* news1@3x.png */,
-				AEF6778B1DC9BD71008BCC8F /* ptv.png */,
-				AEF6778C1DC9BD71008BCC8F /* ptv@2x.png */,
-				AEF6778D1DC9BD71008BCC8F /* ptv@3x.png */,
-				AEF677911DC9BD8F008BCC8F /* sai-tv.png */,
-				AEF677921DC9BD8F008BCC8F /* sai-tv@2x.png */,
-				AEF677931DC9BD8F008BCC8F /* sai-tv@3x.png */,
-				AEF677971DC9BDAB008BCC8F /* stv.png */,
-				AEF677981DC9BDAB008BCC8F /* stv@2x.png */,
-				AEF677991DC9BDAB008BCC8F /* stv@3x.png */,
-				AEF6779D1DC9BDC7008BCC8F /* vtv.png */,
-				AEF6779E1DC9BDC7008BCC8F /* vtv@2x.png */,
-				AEF6779F1DC9BDC7008BCC8F /* vtv@3x.png */,
-				AEF677A31DC9BE24008BCC8F /* ytv.png */,
-				AEF677A41DC9BE24008BCC8F /* ytv@2x.png */,
-				AEF677A51DC9BE24008BCC8F /* ytv@3x.png */,
 				AE7806351D89FB0700B21C1B /* live24.png */,
 				AE7806371D89FB1C00B21C1B /* music-bangla.png */,
 				AE78063D1D89FB5100B21C1B /* zeal-news.png */,
 				AEF8B12F1D73FB53008C0120 /* qezy-logo-.png */,
+				AEF883081DCF950E00E2D8EC /* metro.png */,
+				AEF883091DCF950E00E2D8EC /* metro@2x.png */,
+				AEF8830A1DCF950E00E2D8EC /* metro@3x.png */,
+				AEF8830B1DCF950E00E2D8EC /* n24.png */,
+				AEF8830C1DCF950E00E2D8EC /* n24@2x.png */,
+				AEF8830D1DCF950E00E2D8EC /* n24@3x.png */,
+				AEF8830E1DCF950E00E2D8EC /* news1.png */,
+				AEF8830F1DCF950E00E2D8EC /* news1@2x.png */,
+				AEF883101DCF950E00E2D8EC /* news1@3x.png */,
+				AEF883111DCF950E00E2D8EC /* ptv.png */,
+				AEF883121DCF950E00E2D8EC /* ptv@2x.png */,
+				AEF883131DCF950E00E2D8EC /* ptv@3x.png */,
+				AEF883141DCF950E00E2D8EC /* sai-tv.png */,
+				AEF883151DCF950E00E2D8EC /* sai-tv@2x.png */,
+				AEF883161DCF950E00E2D8EC /* sai-tv@3x.png */,
+				AEF883171DCF950E00E2D8EC /* stv.png */,
+				AEF883181DCF950E00E2D8EC /* stv@2x.png */,
+				AEF883191DCF950E00E2D8EC /* stv@3x.png */,
+				AEF8831A1DCF950E00E2D8EC /* Uttarbangla.png */,
+				AEF8831B1DCF950E00E2D8EC /* Uttarbangla@2x.png */,
+				AEF8831C1DCF950E00E2D8EC /* Uttarbangla@3x.png */,
+				AEF8831D1DCF950E00E2D8EC /* vtv.png */,
+				AEF8831E1DCF950E00E2D8EC /* vtv@2x.png */,
+				AEF8831F1DCF950E00E2D8EC /* vtv@3x.png */,
+				AEF883201DCF950E00E2D8EC /* ytv.png */,
+				AEF883211DCF950E00E2D8EC /* ytv@2x.png */,
+				AEF883221DCF950E00E2D8EC /* ytv@3x.png */,
 			);
 			name = ChannelLogos;
 			sourceTree = "<group>";
@@ -1055,7 +1071,8 @@
 				AE3B51B01DB62FEE00D5DC3F /* menu-privacy.png in Resources */,
 				AE87CF401D8DEBDE006A1037 /* MLTableAlertBackground@2x.png in Resources */,
 				AE3B51AB1DB62FD300D5DC3F /* menu-feedback@2x.png in Resources */,
-				AEF6777D1DC9BC76008BCC8F /* Uttarbangla@2x.png in Resources */,
+				AEF8832B1DCF950E00E2D8EC /* news1@3x.png in Resources */,
+				AEF883231DCF950E00E2D8EC /* metro.png in Resources */,
 				AECCEF8A1DB9D9D000066231 /* Register@3x.png in Resources */,
 				AE64E36B1DA975F300193DA1 /* profile-unlock@2x.png in Resources */,
 				AE9C424C1DBAE86200C9FE48 /* channel-10.png in Resources */,
@@ -1064,9 +1081,8 @@
 				AE64E35A1DA975D400193DA1 /* profile-rename@3x.png in Resources */,
 				AE18816C1DBD866400803CD3 /* ctvn@2x.png in Resources */,
 				AE64E35F1DA975E000193DA1 /* profile-lock@2x.png in Resources */,
-				AEF677A61DC9BE24008BCC8F /* ytv.png in Resources */,
-				AEF677891DC9BD15008BCC8F /* n24@2x.png in Resources */,
 				AE9C42771DBAE88C00C9FE48 /* satv@2x.png in Resources */,
+				AEF883291DCF950E00E2D8EC /* news1.png in Resources */,
 				AE9C42371DBAE3D200C9FE48 /* profile-men2.png in Resources */,
 				AE9C42621DBAE87A00C9FE48 /* live24@2x.png in Resources */,
 				AE9C42501DBAE86200C9FE48 /* channel-i@2x.png in Resources */,
@@ -1077,6 +1093,7 @@
 				AE7806361D89FB0700B21C1B /* live24.png in Resources */,
 				AE3B519F1DB62FB800D5DC3F /* menu-aboutus@2x.png in Resources */,
 				AE9C427C1DBAE88C00C9FE48 /* zeal-news.png in Resources */,
+				AEF8833C1DCF950E00E2D8EC /* ytv@2x.png in Resources */,
 				AE64E3641DA975EA00193DA1 /* profile-add.png in Resources */,
 				AE9C42961DBAE8B100C9FE48 /* mana-telugu@3x.png in Resources */,
 				AECCEF8E1DB9E7F500066231 /* free-new.png in Resources */,
@@ -1085,43 +1102,42 @@
 				AE3B51B81DB6300400D5DC3F /* menu-terms@3x.png in Resources */,
 				AE9C42361DBAE3D200C9FE48 /* profile-men1@3x.png in Resources */,
 				AE3B51A51DB62FC600D5DC3F /* menu-contactus@2x.png in Resources */,
+				AEF883381DCF950E00E2D8EC /* vtv.png in Resources */,
 				AE9C423A1DBAE3D200C9FE48 /* profile-women2.png in Resources */,
-				AEF677A21DC9BDC7008BCC8F /* vtv@3x.png in Resources */,
 				AE3B51AA1DB62FD300D5DC3F /* menu-feedback.png in Resources */,
+				AEF883271DCF950E00E2D8EC /* n24@2x.png in Resources */,
 				AE9C424D1DBAE86200C9FE48 /* channel-10@2x.png in Resources */,
 				AE64E3651DA975EA00193DA1 /* profile-add@2x.png in Resources */,
 				AE9C425E1DBAE87A00C9FE48 /* high-news.png in Resources */,
 				AE17CA181D885A2500DDDAE9 /* Delete.jpg in Resources */,
+				AEF883321DCF950E00E2D8EC /* stv.png in Resources */,
 				AE87CF431D8DEBDE006A1037 /* MLTableAlertButtonPressed.png in Resources */,
 				AE9C423B1DBAE3D200C9FE48 /* profile-women2@2x.png in Resources */,
-				AEF6779A1DC9BDAB008BCC8F /* stv.png in Resources */,
 				AE17CA161D885A1600DDDAE9 /* Add.jpeg in Resources */,
 				AE440A0B1D848F71006CBB32 /* alarm-hdpi.png in Resources */,
 				AE440A091D848F60006CBB32 /* subtitleshdpi.png in Resources */,
 				AE440A071D848F48006CBB32 /* language-hdpi.png in Resources */,
 				AE1AD2BC1DB8DF9C00DA7B91 /* Bangla.png in Resources */,
+				AEF8832E1DCF950E00E2D8EC /* ptv@3x.png in Resources */,
 				AE9C42341DBAE3D200C9FE48 /* profile-men1.png in Resources */,
 				AE9C424B1DBAE86200C9FE48 /* boishakhi-tv@3x.png in Resources */,
-				AEF677901DC9BD71008BCC8F /* ptv@3x.png in Resources */,
 				AEF5025A1D83062A003A417A /* logout-hdpi.png in Resources */,
 				AE1AD2BD1DB8DF9C00DA7B91 /* Bangla@2x.png in Resources */,
 				AEF502581D8305E9003A417A /* my-account-hdpi.png in Resources */,
+				AEF883251DCF950E00E2D8EC /* metro@3x.png in Resources */,
 				AE1881661DBD864E00803CD3 /* jamuna@2x.png in Resources */,
-				AEF6777E1DC9BC76008BCC8F /* Uttarbangla@3x.png in Resources */,
 				AE64E3581DA975D400193DA1 /* profile-rename.png in Resources */,
 				AE9C42731DBAE88C00C9FE48 /* deccan-tv.png in Resources */,
 				AE9C42921DBAE8B100C9FE48 /* Life-Changing@2x.png in Resources */,
 				AEF502561D8305D8003A417A /* theme-hdpi.png in Resources */,
 				AE9C42511DBAE86200C9FE48 /* channel-i@3x.png in Resources */,
-				AEF677881DC9BD15008BCC8F /* n24.png in Resources */,
-				AEF677AE1DC9BFB7008BCC8F /* news1@3x.png in Resources */,
 				AEF502541D8305C4003A417A /* about-hdpi.png in Resources */,
+				AEF883371DCF950E00E2D8EC /* Uttarbangla@3x.png in Resources */,
 				AE9C42331DBAE3D200C9FE48 /* profile-kid2@3x.png in Resources */,
-				AEF677821DC9BCF4008BCC8F /* metro.png in Resources */,
 				AE31F6EA1D6F3C54006055D4 /* settings-active-hdpi.png in Resources */,
+				AEF678161DD2056C008BCC8F /* countries.json in Resources */,
 				AE3B51A41DB62FC600D5DC3F /* menu-contactus.png in Resources */,
 				AE3B519E1DB62FB800D5DC3F /* menu-aboutus.png in Resources */,
-				AEF677831DC9BCF4008BCC8F /* metro@2x.png in Resources */,
 				AE87CF411D8DEBDE006A1037 /* MLTableAlertButton.png in Resources */,
 				AE64E36C1DA975F300193DA1 /* profile-unlock@3x.png in Resources */,
 				AEF8B1301D73FB53008C0120 /* qezy-logo-.png in Resources */,
@@ -1131,6 +1147,7 @@
 				AE18816B1DBD866400803CD3 /* ctvn.png in Resources */,
 				AE31F6E61D6F2CB8006055D4 /* Launch_1024@2x.png in Resources */,
 				AE9C425F1DBAE87A00C9FE48 /* high-news@2x.png in Resources */,
+				AEF8832A1DCF950E00E2D8EC /* news1@2x.png in Resources */,
 				AE64E3661DA975EA00193DA1 /* profile-add@3x.png in Resources */,
 				AE31F6E41D6F2CA4006055D4 /* Launch_1024@1x.png in Resources */,
 				AE9C422E1DBAE3D200C9FE48 /* profile-kid1.png in Resources */,
@@ -1140,79 +1157,79 @@
 				AE1881671DBD864E00803CD3 /* jamuna@3x.png in Resources */,
 				AE9C42761DBAE88C00C9FE48 /* satv.png in Resources */,
 				AE31F6E21D6F2C8D006055D4 /* Launch_736@3x.png in Resources */,
-				AEF677961DC9BD8F008BCC8F /* sai-tv@3x.png in Resources */,
-				AEF677941DC9BD8F008BCC8F /* sai-tv.png in Resources */,
+				AEF883311DCF950E00E2D8EC /* sai-tv@3x.png in Resources */,
+				AEF8833D1DCF950E00E2D8EC /* ytv@3x.png in Resources */,
+				AEF8832F1DCF950E00E2D8EC /* sai-tv.png in Resources */,
 				AEE91EC51DA4CEF100094C46 /* Checkbox1.png in Resources */,
 				AE1881711DBD867700803CD3 /* taratv.png in Resources */,
 				AE64E3601DA975E000193DA1 /* profile-lock@3x.png in Resources */,
 				AE9C42611DBAE87A00C9FE48 /* live24.png in Resources */,
 				AE3B51A61DB62FC600D5DC3F /* menu-contactus@3x.png in Resources */,
 				AECCEF891DB9D9D000066231 /* Register@2x.png in Resources */,
+				AEF883361DCF950E00E2D8EC /* Uttarbangla@2x.png in Resources */,
 				AE9C42491DBAE86200C9FE48 /* boishakhi-tv.png in Resources */,
 				AE3B51B61DB6300400D5DC3F /* menu-terms.png in Resources */,
 				AE1881721DBD867700803CD3 /* taratv@2x.png in Resources */,
 				AE64E36A1DA975F300193DA1 /* profile-unlock.png in Resources */,
 				AEF0BE331DB72B4B0045CB1F /* Main.storyboard in Resources */,
 				AE87CF441D8DEBDE006A1037 /* MLTableAlertButtonPressed@2x.png in Resources */,
+				AEF883261DCF950E00E2D8EC /* n24.png in Resources */,
 				AE1AD2BE1DB8DF9C00DA7B91 /* Bangla@3x.png in Resources */,
+				AEF8833B1DCF950E00E2D8EC /* ytv.png in Resources */,
 				AE1881731DBD867700803CD3 /* taratv@3x.png in Resources */,
 				AE31F6E01D6F2C7C006055D4 /* Launch_736@2x.png in Resources */,
-				AEF6778A1DC9BD15008BCC8F /* n24@3x.png in Resources */,
 				AE31F6DD1D6F2C51006055D4 /* Launch_736@1x.png in Resources */,
+				AEF8833A1DCF950E00E2D8EC /* vtv@3x.png in Resources */,
 				AE9C42631DBAE87A00C9FE48 /* live24@3x.png in Resources */,
+				AEF883241DCF950E00E2D8EC /* metro@2x.png in Resources */,
 				AE9C42641DBAE87A00C9FE48 /* music-bangla.png in Resources */,
 				AE9C424F1DBAE86200C9FE48 /* channel-i.png in Resources */,
+				AEF883331DCF950E00E2D8EC /* stv@2x.png in Resources */,
 				AE349E271D90A02C006660CB /* pwdImage.jpeg in Resources */,
-				AEF6779B1DC9BDAB008BCC8F /* stv@2x.png in Resources */,
 				AE87CF421D8DEBDE006A1037 /* MLTableAlertButton@2x.png in Resources */,
 				AE31F6DA1D6F2C2A006055D4 /* Launch_667@2x.png in Resources */,
 				AE18816D1DBD866400803CD3 /* ctvn@3x.png in Resources */,
 				AE31F6D81D6F2C14006055D4 /* Launch_667@1x.png in Resources */,
 				AE9C427E1DBAE88C00C9FE48 /* zeal-news@3x.png in Resources */,
+				AEF883351DCF950E00E2D8EC /* Uttarbangla.png in Resources */,
 				AE9C42911DBAE8B100C9FE48 /* Life-Changing.png in Resources */,
 				AE9C42661DBAE87A00C9FE48 /* music-bangla@3x.png in Resources */,
 				AE31F6D61D6F2BFC006055D4 /* Launch_568@2x.png in Resources */,
 				AE31F6D41D6F2BDB006055D4 /* Launch_568@1x.png in Resources */,
 				AE9C42311DBAE3D200C9FE48 /* profile-kid2.png in Resources */,
-				AEF6777C1DC9BC76008BCC8F /* Uttarbangla.png in Resources */,
-				AEF677841DC9BCF4008BCC8F /* metro@3x.png in Resources */,
 				AECCEF8F1DB9E7F500066231 /* free-new@2x.png in Resources */,
 				AE64E35E1DA975E000193DA1 /* profile-lock.png in Resources */,
-				AEF6778F1DC9BD71008BCC8F /* ptv@2x.png in Resources */,
-				AEF677AD1DC9BFB7008BCC8F /* news1@2x.png in Resources */,
 				AECCEF881DB9D9D000066231 /* Register.png in Resources */,
-				AEF677A01DC9BDC7008BCC8F /* vtv.png in Resources */,
+				AEF8832D1DCF950E00E2D8EC /* ptv@2x.png in Resources */,
 				AE9C42351DBAE3D200C9FE48 /* profile-men1@2x.png in Resources */,
 				AE31F6D21D6F2BC4006055D4 /* Launch_480@2x.png in Resources */,
-				AEF677A71DC9BE24008BCC8F /* ytv@2x.png in Resources */,
-				AEF677A11DC9BDC7008BCC8F /* vtv@2x.png in Resources */,
 				AE9C424E1DBAE86200C9FE48 /* channel-10@3x.png in Resources */,
+				AEF883391DCF950E00E2D8EC /* vtv@2x.png in Resources */,
 				AE31F6D01D6F2B84006055D4 /* Launch_480@1x.png in Resources */,
-				AEF677A81DC9BE24008BCC8F /* ytv@3x.png in Resources */,
 				AE3B51AC1DB62FD300D5DC3F /* menu-feedback@3x.png in Resources */,
 				AE9C428B1DBAE8B100C9FE48 /* bharatiya.png in Resources */,
 				AE9C428D1DBAE8B100C9FE48 /* bharatiya@3x.png in Resources */,
-				AEF6779C1DC9BDAB008BCC8F /* stv@3x.png in Resources */,
 				AE9C42391DBAE3D200C9FE48 /* profile-men2@3x.png in Resources */,
+				AEF883341DCF950E00E2D8EC /* stv@3x.png in Resources */,
 				AE87CF3F1D8DEBDE006A1037 /* MLTableAlertBackground.png in Resources */,
 				AE9C42321DBAE3D200C9FE48 /* profile-kid2@2x.png in Resources */,
 				AE9C422F1DBAE3D200C9FE48 /* profile-kid1@2x.png in Resources */,
 				AE9C42941DBAE8B100C9FE48 /* mana-telugu.png in Resources */,
-				AEF6778E1DC9BD71008BCC8F /* ptv.png in Resources */,
 				AE9C424A1DBAE86200C9FE48 /* boishakhi-tv@2x.png in Resources */,
+				AEF8832C1DCF950E00E2D8EC /* ptv.png in Resources */,
 				AE9C42741DBAE88C00C9FE48 /* deccan-tv@2x.png in Resources */,
 				AE2049171D63A957004678E0 /* backnv.png in Resources */,
-				AEF677AC1DC9BFB7008BCC8F /* news1.png in Resources */,
 				AE66C9AE1D6E613E00C47094 /* include in Resources */,
 				AE9C42381DBAE3D200C9FE48 /* profile-men2@2x.png in Resources */,
 				AEE91EC81DA4ED0600094C46 /* Facebook.png in Resources */,
-				AEF677951DC9BD8F008BCC8F /* sai-tv@2x.png in Resources */,
 				AE723F431D6CBC6200A6797C /* home-active-hdpi.png in Resources */,
+				AEF883301DCF950E00E2D8EC /* sai-tv@2x.png in Resources */,
 				AE3B51A01DB62FB800D5DC3F /* menu-aboutus@3x.png in Resources */,
 				AE9C42931DBAE8B100C9FE48 /* Life-Changing@3x.png in Resources */,
 				AE2049151D63A230004678E0 /* Splashscreen.png in Resources */,
 				AE2048F11D63A102004678E0 /* LaunchScreen.storyboard in Resources */,
 				AE9C42301DBAE3D200C9FE48 /* profile-kid1@3x.png in Resources */,
+				AEF883281DCF950E00E2D8EC /* n24@3x.png in Resources */,
 				AE3B51B11DB62FEE00D5DC3F /* menu-privacy@2x.png in Resources */,
 				AE2048EE1D63A102004678E0 /* Assets.xcassets in Resources */,
 				AE723F451D6CBCBD00A6797C /* favourites-active-hdpi.png in Resources */,
@@ -1251,6 +1268,7 @@
 				AE440A051D845B1E006CBB32 /* ProfileCell.m in Sources */,
 				AEF502511D82FEA5003A417A /* SettingsViewController.m in Sources */,
 				AE66C9AC1D6E5B7A00C47094 /* ChannelCell.m in Sources */,
+				AEF678911DD35CDE008BCC8F /* MBProgressHUD.m in Sources */,
 				AE20491A1D63AEFD004678E0 /* SignUp.m in Sources */,
 				AEA9BA051D7DC7C800D6D5A8 /* ProfileViewController.m in Sources */,
 				AE66C9CC1D6E721A00C47094 /* Reachability.m in Sources */,

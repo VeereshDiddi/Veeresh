@@ -10,8 +10,6 @@
 
 @interface HomeViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
     
-    
-    NSString *selectedImage;
     //NSMutableArray * aChannel;
     NSMutableArray *allChanneInBouquet;
     
@@ -23,10 +21,12 @@
    // NSDictionary *packageDicDiscriptions;
     
     NSString *packageSelected;
-    NSMutableArray *packageImagesSelected;
+    NSMutableArray *packageSelectedChannelsArray;
     NSMutableArray *packageLinksSelected;
     NSMutableArray *packageGroupsSelected;
     NSMutableArray *packageDiscriptionSelected;
+    NSMutableArray *bouquetChannelsArray;
+    NSMutableArray *bouquetArray;
 }
 
 

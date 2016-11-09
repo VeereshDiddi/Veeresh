@@ -12,15 +12,22 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <QuartzCore/QuartzCore.h>
+#import "Constant.h"
 
-@interface SignUp : UIViewController <UITextFieldDelegate, FBLoginViewDelegate>
 
+@interface SignUp : UIViewController <UITextFieldDelegate, FBLoginViewDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
+{
+    NSMutableArray *countriesListArray;
+}
 
 @property (strong, nonatomic) IBOutlet UITextField *txtUserName;
 
 @property (strong, nonatomic) IBOutlet UITextField *txtEmailAddress;
 
 @property (strong, nonatomic) IBOutlet UITextField *txtPhoneNumber;
+
+@property (weak, nonatomic) IBOutlet UITextField *countryCodeTF;
+
 
 @property (strong, nonatomic) IBOutlet UITextField *txtPassword;
 

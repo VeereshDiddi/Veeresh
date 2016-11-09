@@ -18,11 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    countriesListArray = [NSMutableArray new];
+    
     // Do any additional setup after loading the view, typically from a nib.
-    [self.txtEmailAddress setDelegate:self];
-    [self.txtUserName setDelegate:self];
-    [self.txtPhoneNumber setDelegate:self];
-    [self.txtConfirmPassword setDelegate:self];
+
+    
 //    self.btnRegister.backgroundColor = [UIColor redColor];
 //    self.btnRegisterFacebook.backgroundColor = [UIColor blueColor];
 //    self.signUpView.layer.borderColor = [[UIColor colorWithRed:33.0f/255.0f green:39.0f/255.0f blue:73.0f/255.0f alpha:1.0] CGColor];    self.signUpView.layer.masksToBounds = true;
@@ -45,6 +46,15 @@
     self.btnCheckbox.layer.borderColor=[[UIColor colorWithRed:119.0f/255.0f green:144.0f/255.0f blue:159.0f/255.0f alpha:1.0] CGColor];
     self.btnRegisterFacebook.delegate = self;
     self.btnRegisterFacebook.readPermissions = @[@"public_profile", @"email"];
+    
+    UIImage *leftbuttonImage = [UIImage imageNamed:@"qezy-logo-.png"];
+    UIButton *leftbutton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftbutton setImage:leftbuttonImage forState:UIControlStateNormal];
+    leftbutton.frame = CGRectMake(0, 0, 75, 75);
+    UIBarButtonItem *customBarleftItem = [[UIBarButtonItem alloc] initWithCustomView:leftbutton];
+    self.navigationItem.leftBarButtonItem = customBarleftItem;
+    
+    [self pickerDropDown];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,23 +101,39 @@
         NSString *password = [NSString stringWithFormat:@"%@", self.txtPassword.text];
         NSString *confirmPassword = [NSString stringWithFormat:@"%@", self.txtConfirmPassword.text];
         //[self.txtUserName.text rangeOfCharacterFromSet:specialCharacterStringSet].length !=0 &&
-        if ([[self.txtUserName text] isEqualToString:@""] &&
-            ![self validateUserName:userName]){
+        if ([[self.txtUserName text] isEqualToString:@""]){
             
             [self alertStatus:@"Please enter User Name" :@"Sign up Failed!" :0];
             //[self.txtEmailAddress.text rangeOfCharacterFromSet:specialCharacterSet].length == 0 &&
-        }else if ([[self.txtEmailAddress text] isEqualToString:@""]  &&  ![self validateEmail:email]){
+        }
+        else if (self.txtUserName.text.length<4)
+        {
+            [self alertStatus:@"Username must be minimum 4-15 characters" :@"Sign up Failed!" :0];
+        }
+        else if ([[self.txtEmailAddress text] isEqualToString:@""]){
             
             [self alertStatus:@"Please enter email" :@"Sign up Failed!" :0];
             
-        }else if([[self.txtPhoneNumber text] isEqualToString:@""] && ![self validatePhoneNumber:phoneNumber]){
+        }
+        else if (![self validateEmail:email]) {
+            [self alertStatus:@"Please enter valid email" :@"Sign up Failed!" :0];
+        }
+        else if([self.countryCodeTF text].length==0){
+            
+            [self alertStatus:@"Please choose Country Code" :@"Sign up Failed!" :0];
+        }
+        else if([[self.txtPhoneNumber text] isEqualToString:@""]){
             
             [self alertStatus:@"Please enter phone number" :@"Sign up Failed!" :0];
-            
-        }else if([[self.txtPassword text] isEqualToString:@""] && ![self validatePassword:password]) {
+        }
+        else if([[self.txtPassword text] isEqualToString:@""]) {
             
             [self alertStatus:@"Please enter password" :@"Sign up Failed!" :0];
             
+        }
+        else if (self.txtPassword.text.length<8)
+        {
+            [self alertStatus:@"Password must be minimum 8-16 characters" :@"Sign up Failed!" :0];
         }
         /*       else if ([invalidNumber length]){
          
@@ -115,68 +141,51 @@
          
          } */
         
-        else if([[self.txtConfirmPassword text] isEqualToString:@""] && ![self validateConfirmPassword:confirmPassword])
+        else if([[self.txtConfirmPassword text] isEqualToString:@""])
         {
             [self alertStatus:@"Please enter confirm password" :@"Sign up Failed!" :0];
         }
+        else if (self.txtConfirmPassword.text.length<8)
+        {
+            [self alertStatus:@"Confirm Password must be minimum 8-16 characters" :@"Sign up Failed!" :0];
+        }
+        else if (![self.txtPassword.text isEqualToString:self.txtConfirmPassword.text]) {
+            [self alertStatus:@"Passwords don't match. Try again?" :@"Password is Wrong!" :0];
+        }
+        else if(self.isChecked == NO){
+            [self alertStatus:@"Terms of Service and Privacy Policy" :@"Please check Terms of Service and Privacy Policy!" :0];
+        }
         else {
-            if ([self.txtPassword.text isEqualToString:self.txtConfirmPassword.text]) {
-                if(self.isChecked ==YES){
-                
+            
                 NSLog(@"account infor  %@ %@ %@ %@",   self.txtUserName.text, self.txtEmailAddress.text, self.txtPhoneNumber.text, self.txtPassword.text);
                 
- //               NSString *post =[[NSString alloc] initWithFormat:@"username=%@&phone=%@&email=%@&password=%@",[self.txtUserName text],[self.txtPhoneNumber text],[self.txtEmailAddress text],[self.txtPassword text]];
-                    NSString *username = [self.txtUserName text];
-                    NSString *phone = [self.txtPhoneNumber text];
-                    NSString *email = [self.txtEmailAddress text];
-                    NSString *password = [self.txtPassword text];
-                    
-                    NSDictionary *post = [NSDictionary dictionaryWithObjectsAndKeys:username, @"username",phone,@"phone", email, @"email",password, @"password", nil];
-                //NSLog(@"PostData: %@",post);
-                
-                //NSURL *url=[NSURL URLWithString:@"http://ideabytestraining.com/newqezyplay/webservices/api.php?request=register"];
-                    
-                
+                NSString *phone = [NSString stringWithFormat:@"%@%@",self.countryCodeTF.text,[self.txtPhoneNumber text]];
+
+                NSDictionary *post = [NSDictionary dictionaryWithObjectsAndKeys:[self.txtUserName text], @"username",phone,@"phone", [self.txtEmailAddress text], @"email",[self.txtPassword text], @"password", nil];
+            
                 NSURL *url=[NSURL URLWithString:@"http://104.196.99.177:6363/api/Customers"];
                 
- //               NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-                     NSError *error;
-                     NSData* postData = [NSJSONSerialization dataWithJSONObject:post options:kNilOptions error:&error];
-                   // NSLog(@"postData:%@", postData);
-//               NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
-  
- /*               NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+                //               NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+                NSError *error;
+                NSData* postData = [NSJSONSerialization dataWithJSONObject:post options:kNilOptions error:&error];
+                
+                NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
                 [request setURL:url];
                 [request setHTTPMethod:@"POST"];
-                [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+                [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
                 [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-                [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
                 [request setHTTPBody:postData];
-         */
-                    
-                    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-                    [request setURL:url];
-                    [request setHTTPMethod:@"POST"];
-                    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-                    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-                    [request setHTTPBody:postData];
-                    
-                    // print json:
-                    NSLog(@"JSON summary: %@", [[NSString alloc] initWithData:postData
-                                                                     encoding:NSUTF8StringEncoding]);
-
- //                   NSLog(@"account infor1  %@ %@ %@ %@",   self.txtUserName.text, self.txtEmailAddress.text, self.txtPhoneNumber.text, self.txtPassword.text);
                 
-//                NSError *error = nil;
+                // print json:
+                NSLog(@"JSON summary: %@", [[NSString alloc] initWithData:postData
+                                                                 encoding:NSUTF8StringEncoding]);
+            
                 NSHTTPURLResponse *response = nil;
                 NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-                
-                //NSDictionary *headerInfo = [response allHeaderFields];
-                //NSString* errorMsg = headerInfo[@"error"];
-                
-                //NSLog(@"Response code and error message: %ld, %@", (long)[response statusCode], errorMsg);
-                
-                if ([response statusCode] >= 200 && [response statusCode] < 300)
+            
+                NSLog(@" %ld ",(long)[response statusCode]);
+            
+                if ([response statusCode] == 200 && [response statusCode] != 0)
                 {
                     NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
                     NSLog(@"Response ==> %@", responseData);
@@ -196,9 +205,7 @@
                         
                         [self alertStatus:@"Successfully Registration completed." :@"New Account Created!" :0];
                         
-                        
-                        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main"
-                                                                             bundle:nil];
+                        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                         ViewController *controller = (ViewController *)
                         [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
                         [self presentViewController:controller animated:YES completion:nil];
@@ -213,16 +220,6 @@
                     
                     [self alertStatus:@"Connection Failed" :@"Sign up Failed!" :0];
                 }
-            }
-            else
-            {
-                    [self alertStatus:@"Terms of Service and Privacy Policy" :@"Please check Terms of Service and Privacy Policy!" :0];
-            }
-            }
-            else
-            {
-                [self alertStatus:@"Passwords don't match. Try again?" :@"Password is Wrong!" :0];
-            }
         }
     }
     @catch (NSException * e) {
@@ -300,21 +297,6 @@
 }
 
 
-// press return to hide keyboard
--(BOOL) textFieldShouldReturn:(UITextField *)textField {
-    if(textField==self.txtUserName){
-        [self.txtEmailAddress becomeFirstResponder];
-    }else if(textField==self.txtEmailAddress){
-        [self.txtPhoneNumber becomeFirstResponder];
-    }else if(textField==self.txtPhoneNumber){
-        [self.txtPassword becomeFirstResponder];
-    }else{
-        [textField resignFirstResponder];
-    }
-    
-    return YES;
-}
-
 - (void) alertStatus:(NSString *)msg :(NSString *)title :(int) tag
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
@@ -327,10 +309,7 @@
 }
 - (IBAction)backToLogin:(id)sender {
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ViewController *controller = (ViewController *) [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
-    [self presentViewController:controller animated:YES completion:nil];
-
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView{
@@ -355,6 +334,9 @@
 -(void)loginView:(FBLoginView *)loginView handleError:(NSError *)error{
     NSLog(@"%@", [error localizedDescription]);
 }
+
+
+#pragma mark - TEXTFIELD DELEGATE METHODS
 - (BOOL)textFieldShouldClear:(UITextField *)textField{
     
     return YES;
@@ -364,5 +346,130 @@
     return YES;
 }
 
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    
+    if (textField==self.txtUserName){
+        
+        NSCharacterSet *myCharSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"];
+        for (int i = 0; i < [string length]; i++)
+        {
+            unichar c = [string characterAtIndex:i];
+            if (![myCharSet characterIsMember:c])
+            {
+                [self alertStatus:@"Username allows only letters and numbers" :@"Sign up Failed!" :0];
+                return NO;
+            }
+        }
+        
+        if (newString.length>15) {
+            [self alertStatus:@"Username not exceed 15 digits" :@"Sign up Failed!" :0];
+            return NO;
+        }
+    }
+    
+    if (textField==self.txtEmailAddress){
+        if (newString.length>75) {
+            return NO;
+        }
+    }
+    
+    if (textField==self.txtPassword||textField==self.txtConfirmPassword) {
+        if (newString.length>16) {
+            [self alertStatus:@"Password not exceed 16 digits" :@"Sign up Failed!" :0];
+            return NO;
+        }
+    }
+    
+    if (textField==self.txtPhoneNumber) {
+        if (newString.length>10) {
+            [self alertStatus:@"Mobile number not exceed 10 digits" :@"Sign up Failed!" :0];
+            return NO;
+        }
+        
+        if ([string rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet].invertedSet].location != NSNotFound)
+        {
+            // BasicAlert(@"", @"This field accepts only numeric entries.");
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
+
+
+// press return to hide keyboard
+-(BOOL) textFieldShouldReturn:(UITextField *)textField {
+    if(textField==self.txtUserName){
+        [self.txtEmailAddress becomeFirstResponder];
+    }else if(textField==self.txtEmailAddress){
+        [self.countryCodeTF becomeFirstResponder];
+    }else if(textField==self.countryCodeTF){
+        [self.txtPhoneNumber becomeFirstResponder];
+    }
+    else if(textField==self.txtPhoneNumber){
+        [self.txtPassword becomeFirstResponder];
+    }else{
+        [textField resignFirstResponder];
+    }
+    
+    return YES;
+}
+
+-(void)pickerDropDown
+{
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"countries" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    
+    countriesListArray = [array mutableCopy];
+    
+    UIView *dropDownView = [[UIView alloc] initWithFrame:CGRectMake(0, SCREENHEIGHT-260, SCREENWIDTH, 260)];
+    
+    UIButton *doneButtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    doneButtn.frame=CGRectMake(SCREENWIDTH-100, 5, 80, 35);
+    [doneButtn setTitle:@"Done" forState:UIControlStateNormal];
+    doneButtn.backgroundColor=[UIColor lightGrayColor];
+    [doneButtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [doneButtn addTarget:self action:@selector(doneTapped:) forControlEvents:UIControlEventTouchDown];
+    doneButtn.layer.cornerRadius=5.0f;
+    [dropDownView addSubview:doneButtn];
+    
+    UIPickerView *dropDownPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 44, SCREENWIDTH, 216)];
+    dropDownPickerView.dataSource=self;
+    dropDownPickerView.delegate=self;
+    dropDownPickerView.backgroundColor=[UIColor whiteColor];
+    [dropDownView addSubview:dropDownPickerView];
+    
+    self.countryCodeTF.inputView = dropDownView;
+}
+
+-(IBAction)doneTapped:(id)sender
+{
+    [self.countryCodeTF resignFirstResponder];
+}
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return  countriesListArray.count;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [[countriesListArray objectAtIndex:row] valueForKey:@"name"];
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    self.countryCodeTF.text = [[countriesListArray objectAtIndex:row] valueForKey:@"dial_code"];
+}
 
 @end

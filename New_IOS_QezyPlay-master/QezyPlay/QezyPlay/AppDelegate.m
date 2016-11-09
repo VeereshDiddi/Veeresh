@@ -42,6 +42,8 @@ NSTimer *playTimer;
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     // change title color
     
+
+    
     
     player = malloc(sizeof(struct Player));
     memset(player, 0, sizeof(struct Player));

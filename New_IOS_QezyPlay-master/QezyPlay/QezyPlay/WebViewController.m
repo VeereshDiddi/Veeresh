@@ -32,12 +32,11 @@
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         html = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-//        NSLog(@"html: %@", html);
+        NSLog(@"html: %@", html);
     }] resume];
     
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    NSLog(@"html:%@", html);
 //    html = @"<p>Users may contact Qezy&reg;Play with any questions or comments about this Privacy Policy using the contact form or may address such queries and / or comments to info@QezyPlay.com</p>";
 /*
     NSScanner *myScanner;

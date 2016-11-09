@@ -20,8 +20,9 @@
     NSMutableArray *bouquets;
     NSMutableArray *channels;
     NSMutableArray *bouquetChannels;
-    NSMutableArray *versionArray;
 
+    
+    NSMutableArray *versionArray;
 }
 
 - (id)init {
@@ -75,10 +76,14 @@
 - (void)createTable: (NSString*) tableName : (NSString*) tableDef {
     NSLog (@"DataBase: enter createTable");
     
-    if ([tableName isEqualToString:@"channels"]) {
-        tableDef = @"CREATE TABLE IF NOT EXISTS %@ (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, Url TEXT, octo_js TEXT, imageUrl TEXT, meta_data TEXT, meta_description TEXT, status TEXT, created_datetime TEXT, updated_datetime TEXT,  image2xUrl TEXT, image3xUrl TEXT, downloadUrl TEXT, category TEXT, vodUrl TEXT, vod_octo_js TEXT)";
+    if ([tableName isEqualToString:@"bouquets"]) {
+        tableDef = @"CREATE TABLE IF NOT EXISTS %@ (id INTEGER, name TEXT, imageUrl TEXT, image2xUrl TEXT, image3xUrl TEXT, meta_data TEXT, meta_description TEXT, create_datetime TEXT, updated_datetime TEXT, downloadUrl TEXT, is_free TEXT, status INTEGER, imagehdpiUrl TEXT, imageldpiUrl TEXT, imagemdpiUrl TEXT, imagexhdpiUrl TEXT, imagexxhdpiUrl TEXT, imagexxxhdpiUrl TEXT)";
     }
     
+    if ([tableName isEqualToString:@"channels"]) {
+        tableDef = @"CREATE TABLE IF NOT EXISTS %@ (id INTEGER, name TEXT, Url TEXT, octo_js TEXT, vodUrl TEXT, vod_octo_js TEXT, imageUrl TEXT, meta_data TEXT, meta_description TEXT, status INTEGER, created_datetime TEXT, updated_datetime TEXT,  image2xUrl TEXT, image3xUrl TEXT, imagehdpiUrl TEXT, imageldpiUrl TEXT, imagemdpiUrl TEXT, imagexhdpiUrl TEXT, imagexxhdpiUrl TEXT, imagexxxhdpiUrl TEXT, downloadUrl TEXT, category TEXT)";
+    }
+ 
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
@@ -648,10 +653,11 @@
     
     if (sqlite3_open([dataBasepath UTF8String], &sqliteDB) == SQLITE_OK) {
         
-        NSString *insertDetailTable = @"INSERT INTO Bouquets (name, bouquetID, imageName, image2xUrl, image3xUrl, meta_data, meta_description, create_datetime, updated_datetime, downloadUrl, is_free, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" ;
+        NSString *insertDetailTable = @"INSERT INTO bouquets (id, name, imageUrl, image2xUrl, image3xUrl, meta_data, meta_description, create_datetime, updated_datetime, downloadUrl, is_free, status, imagehdpiUrl, imageldpiUrl, imagemdpiUrl, imagexhdpiUrl, imagexxhdpiUrl, imagexxxhdpiUrl) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" ;
         
-   //     NSString *insertDetailTable = @"INSERT INTO Bouquets (name, bouquetID, imageName, image2xUrl, image3xUrl, meta_data, meta_description, create_datetime, updated_datetime, downloadUrl, is_free, status) VALUES (@"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"")" ;
-
+        
+        NSLog(@" %@ ",insertDetailTable);
+        
         sqlite3_stmt *statement;
         
         if (sqlite3_prepare_v2(
@@ -659,7 +665,7 @@
                                [insertDetailTable cStringUsingEncoding:NSUTF8StringEncoding], -1,
                                &statement, NULL) == SQLITE_OK) {
             
-            sqlite3_bind_text(statement, 1, [[array objectAtIndex:0] UTF8String], -1, NULL);
+            sqlite3_bind_int(statement, 1, (int)[[array objectAtIndex:0] integerValue]);
             
             sqlite3_bind_text(statement, 2, [[array objectAtIndex:1] UTF8String], -1, NULL);
             
@@ -681,7 +687,27 @@
             
             sqlite3_bind_text(statement, 11, [[array objectAtIndex:10] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 12, [[array objectAtIndex:11] UTF8String], -1, NULL);
+            sqlite3_bind_int(statement, 12, (int)[[array objectAtIndex:11] integerValue]);
+            
+            sqlite3_bind_text(statement, 13, [[array objectAtIndex:12] UTF8String], -1, NULL);
+            
+/*            sqlite3_bind_text(statement, 14, [[array objectAtIndex:13] UTF8String], -1, NULL);
+            
+            sqlite3_bind_text(statement, 15, [[array objectAtIndex:14] UTF8String], -1, NULL);
+            
+            sqlite3_bind_text(statement, 16, [[array objectAtIndex:15] UTF8String], -1, NULL);
+            
+            sqlite3_bind_text(statement, 17, [[array objectAtIndex:16] UTF8String], -1, NULL);
+            
+            sqlite3_bind_text(statement, 18, [[array objectAtIndex:17] UTF8String], -1, NULL);*/
+            
+            
+            sqlite3_bind_int(statement, 14, (int)[[array objectAtIndex:13] integerValue]);
+            sqlite3_bind_int(statement, 15, (int)[[array objectAtIndex:14] integerValue]);
+            sqlite3_bind_int(statement, 16, (int)[[array objectAtIndex:15] integerValue]);
+            sqlite3_bind_int(statement, 17, (int)[[array objectAtIndex:16] integerValue]);
+            sqlite3_bind_int(statement, 18, (int)[[array objectAtIndex:17] integerValue]);
+            
             
             if (sqlite3_step(statement) == SQLITE_DONE) {
                 NSLog(@"inserted into Bouquets table");
@@ -703,77 +729,109 @@
     
 }
 - (NSMutableArray *)getBouquets{
+    NSLog(@"getBouquets:DB");
     bouquets = [[NSMutableArray alloc] init];
-    
+    int count = 0;
     sqlite3_stmt *statement;
     
     if (sqlite3_open([dataBasepath UTF8String], &sqliteDB) == SQLITE_OK) {
-        NSString *selectSql = @"SELECT * FROM Bouquets";
+        NSLog(@"dataBasepath:");
+        NSString *selectSql = @"SELECT * FROM bouquets";
         
         if (sqlite3_prepare_v2(
                                sqliteDB, [selectSql cStringUsingEncoding:NSUTF8StringEncoding], -1,
                                &statement, NULL) == SQLITE_OK) {
+            NSLog(@"sqlite3_prepare_v2");
             while (sqlite3_step(statement) == SQLITE_ROW) {
                 
+                count = sqlite3_column_int(statement, 0);
+               // NSLog(@"count:%i", count);
+                NSString *id = [[NSString alloc]
+                                  initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                        0))];
+               // NSLog(@"id:%@", id);
                 NSString *name = [[NSString alloc]
-                                  initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                        1))];
-                NSString *bouquetID = [[NSString alloc]
-                                  initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                        2))];
-                NSString *imageName = [[NSString alloc]
-                                  initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                        3))];
-                
+                                       initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                             1))];
+               // NSLog(@"name:%@", name);
+                NSString *imageUrl = [[NSString alloc]
+                                       initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                             2))];
+               // NSLog(@"imageUrl:%@", imageUrl);
                 NSString *image2xUrl = [[NSString alloc]
-                                       initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                             4))];
-                
+                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                              3))];
+                //NSLog(@"image2xUrl:%@", image2xUrl);
                 NSString *image3xUrl = [[NSString alloc]
-                                       initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                             5))];
-                
+                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                              4))];
+               // NSLog(@"image3xUrl:%@", image3xUrl);
                 NSString *meta_data = [[NSString alloc]
                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                             6))];
-                
+                                                                                             5))];
+               // NSLog(@"meta_data:%@", meta_data);
                 NSString *meta_description = [[NSString alloc]
-                                       initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                             7))];
-                
+                                              initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                                    6))];
+               // NSLog(@"meta_description:%@", meta_description);
                 NSString *create_datetime = [[NSString alloc]
-                                       initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                             8))];
-                
+                                             initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                                   7))];
+               // NSLog(@"create_datetime:%@", create_datetime);
                 NSString *updated_datetime = [[NSString alloc]
-                                       initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                             9))];
+                                              initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                                    8))];
                 
-                
+                //NSLog(@"updated_datetime:%@", updated_datetime);
                 NSString *downloadUrl = [[NSString alloc]
-                                   initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                         10))];
-                
+                                         initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                               9))];
+               // NSLog(@"downloadUrl:%@", downloadUrl);
                 NSString *is_free = [[NSString alloc]
-                                       initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                             11))];
-                
+                                     initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                           10))];
+               // NSLog(@"is_free:%@", is_free);
                 NSString *status = [[NSString alloc]
-                                       initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                             12))];
+                                    initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                          11))];
+                //NSLog(@"status:%@", status);
+ /*              NSString *imagehdpiUrl = [[NSString alloc]
+                                    initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                          12))];
+                NSLog(@"imagehdpiUrl:%@", imagehdpiUrl);
+                NSString *imageldpiUrl = [[NSString alloc]
+                                    initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                          14))];
+                NSLog(@"imageldpiUrl:%@", imageldpiUrl);
+                NSString *imagemdpiUrl = [[NSString alloc]
+                                          initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                                15))];
+                NSLog(@"imagemdpiUrl:%@", imagemdpiUrl);
+                NSString *imagexhdpiUrl = [[NSString alloc]
+                                          initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                                16))];
+            NSLog(@"imagexhdpiUrl:%@", imagexhdpiUrl);
+            NSString *imagexxhdpiUrl = [[NSString alloc]
+                                           initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                                 17))];
+            NSLog(@"imagexxhdpiUrl:%@", imagexxhdpiUrl);
+            NSString *imagexxxhdpiUrl = [[NSString alloc]
+                                           initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                                 18))];
+                NSLog(@"imagexxxhdpiUrl:%@", imagexxxhdpiUrl);  */
                 
-            NSLog (@"query result: %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@", name, bouquetID, imageName, image2xUrl, image3xUrl, meta_data, meta_description, create_datetime, updated_datetime, downloadUrl, is_free, status);
+             //   NSLog (@"query result: %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@", id, name, imageUrl, image2xUrl, image3xUrl, meta_data, meta_description, create_datetime, updated_datetime, downloadUrl, is_free, status, imagehdpiUrl, imageldpiUrl, imagemdpiUrl, imagexhdpiUrl, imagexxhdpiUrl, imagexxxhdpiUrl );
+                NSLog (@"query result: %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ ", id, name, imageUrl, image2xUrl, image3xUrl, meta_data, meta_description, create_datetime, updated_datetime, downloadUrl, is_free, status);
                 
-            NSDictionary *bouquetInfo =[NSDictionary dictionaryWithObjectsAndKeys:name,@"name",
-                                            bouquetID,@"bouquetID", imageName,@"imageName",image2xUrl,@"image2xUrl",
-                                        image3xUrl,@"image3xUrl",
-                                        meta_data,@"meta_data",
-                            meta_description,@"meta_description",
-                            create_datetime,@"create_datetime",
-                            updated_datetime,@"updated_datetime",
-                                    downloadUrl, @"downloadUrl",
-                                        is_free,@"is_free",
-                                        status,@"status",nil];
+                NSDictionary *bouquetInfo =[NSDictionary dictionaryWithObjectsAndKeys:id, @"id",name,@"name",
+                imageUrl,@"imageUrl",image2xUrl,@"image2xUrl",image3xUrl,@"image3xUrl",
+                    meta_data,@"meta_data",
+                    meta_description,@"meta_description",
+                    create_datetime,@"create_datetime",
+                    updated_datetime,@"updated_datetime",
+                    downloadUrl,@"downloadUrl",
+                    is_free, @"is_free",
+                    status,@"status", nil];
                 
                 [bouquets addObject: bouquetInfo];
                 
@@ -783,8 +841,8 @@
             sqlite3_close(sqliteDB);
         }
     }
+    //NSLog(@"bouquets:DB:%@", bouquets);
     return bouquets;
-    
 }
 
 -(void)insertRecordIntoChannels:(NSMutableArray *)array{
@@ -792,16 +850,16 @@
     
     if (sqlite3_open([dataBasepath UTF8String], &sqliteDB) == SQLITE_OK) {
         
-        NSString *insertDetailTable = @"INSERT INTO channels (name, Url, octo_js, imageUrl, meta_data, meta_description, status, created_datetime, updated_datetime, image2xUrl, image3xUrl, downloadUrl, category, vodUrl, vod_octo_js) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" ;
+        
+        
+        NSString *insertDetailTable = @"INSERT INTO channels (id, name, Url, octo_js, vodUrl, vod_octo_js, imageUrl, meta_data, meta_description, status, created_datetime, updated_datetime, image2xUrl, image3xUrl, imagehdpiUrl, imageldpiUrl, imagemdpiUrl, imagexhdpiUrl, imagexxhdpiUrl, imagexxxhdpiUrl,downloadUrl, category) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" ;
         
         sqlite3_stmt *statement;
         
-        if (sqlite3_prepare_v2(
-                               sqliteDB,
-                               [insertDetailTable cStringUsingEncoding:NSUTF8StringEncoding], -1,
+        if (sqlite3_prepare_v2(sqliteDB,[insertDetailTable cStringUsingEncoding:NSUTF8StringEncoding], -1,
                                &statement, NULL) == SQLITE_OK) {
             
-            sqlite3_bind_text(statement, 1, [[array objectAtIndex:0] UTF8String], -1, NULL);
+            sqlite3_bind_int(statement, 1, (int)[[array objectAtIndex:0] integerValue]);
             
             sqlite3_bind_text(statement, 2, [[array objectAtIndex:1] UTF8String], -1, NULL);
             
@@ -819,20 +877,56 @@
             
             sqlite3_bind_text(statement, 9, [[array objectAtIndex:8] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 10, [[array objectAtIndex:9] UTF8String], -1, NULL);
+            sqlite3_bind_int(statement, 10, (int)[[array objectAtIndex:9] integerValue]);
             
             sqlite3_bind_text(statement, 11, [[array objectAtIndex:10] UTF8String], -1, NULL);
             
             sqlite3_bind_text(statement, 12, [[array objectAtIndex:11] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 13, [[array objectAtIndex:12] UTF8String], -1, NULL);
-
+            sqlite3_bind_int(statement, 13, (int)[[array objectAtIndex:12] integerValue]);
+            
+            sqlite3_bind_int(statement, 14, (int)[[array objectAtIndex:13] integerValue]);
+            
+            sqlite3_bind_int(statement, 15, (int)[[array objectAtIndex:14] integerValue]);
+            
+            sqlite3_bind_int(statement, 16, (int)[[array objectAtIndex:15] integerValue]);
+            
+            sqlite3_bind_int(statement, 17, (int)[[array objectAtIndex:16] integerValue]);
+            
+            sqlite3_bind_int(statement, 18, (int)[[array objectAtIndex:17] integerValue]);
+            
+            sqlite3_bind_int(statement, 19, (int)[[array objectAtIndex:18] integerValue]);
+            
+            sqlite3_bind_int(statement, 20, (int)[[array objectAtIndex:19] integerValue]);
+            
+            sqlite3_bind_text(statement, 21, [[array objectAtIndex:20] UTF8String], -1, NULL);
+            
+            sqlite3_bind_int(statement, 22, (int)[[array objectAtIndex:21] integerValue]);
+            
+            
+  /*          sqlite3_bind_text(statement, 13, [[array objectAtIndex:12] UTF8String], -1, NULL);
             
             sqlite3_bind_text(statement, 14, [[array objectAtIndex:13] UTF8String], -1, NULL);
-
+            
             
             sqlite3_bind_text(statement, 15, [[array objectAtIndex:14] UTF8String], -1, NULL);
-
+            
+            
+            sqlite3_bind_text(statement, 16, [[array objectAtIndex:15] UTF8String], -1, NULL);
+            
+            sqlite3_bind_text(statement, 17, [[array objectAtIndex:16] UTF8String], -1, NULL);
+            
+            sqlite3_bind_text(statement, 18, [[array objectAtIndex:17] UTF8String], -1, NULL);
+            
+            sqlite3_bind_text(statement, 19, [[array objectAtIndex:18] UTF8String], -1, NULL);
+            
+            sqlite3_bind_text(statement, 20, [[array objectAtIndex:19] UTF8String], -1, NULL);
+            
+            sqlite3_bind_text(statement, 21, [[array objectAtIndex:20] UTF8String], -1, NULL);
+            
+            sqlite3_bind_text(statement, 22, [[array objectAtIndex:21] UTF8String], -1, NULL);
+            */
+            
             
             if (sqlite3_step(statement) == SQLITE_DONE) {
                 NSLog(@"inserted into Channels table");
@@ -842,9 +936,10 @@
                 NSLog(@"failed to insert Channels table");
             }
             
-            // sqlite3_finalize(statement);
             
             sqlite3_step(statement);
+            sqlite3_finalize(statement);
+
             sqlite3_close(sqliteDB);
         }else {
             NSLog(@"prepare failed");
@@ -853,6 +948,7 @@
     }
     
 }
+
 
 
 - (NSMutableArray *)getChannels
@@ -869,82 +965,107 @@
                                &statement, NULL) == SQLITE_OK) {
             while (sqlite3_step(statement) == SQLITE_ROW) {
                 
-                NSString *name = [[NSString alloc]
+                NSString *id = [[NSString alloc]
                                   initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                        1))];
+                                                                                        0))];
+                NSLog(@"id:%@", id);
+                NSString *name = [[NSString alloc]
+                                 initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                       1))];
+                NSLog(@"name:%@", name);
                 NSString *Url = [[NSString alloc]
-                                       initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                             2))];
+                                     initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                           2))];
+                NSLog(@"Url:%@", Url);
                 NSString *octo_js = [[NSString alloc]
+                                      initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                            3))];
+                NSLog(@"octo_js:%@", octo_js);
+                NSString *vodUrl = [[NSString alloc]
                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                             3))];
-                
+                                                                                             4))];
+                NSLog(@"vodUrl:%@", vodUrl);
+                NSString *vod_octo_js = [[NSString alloc]
+                                              initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                                    5))];
+                NSLog(@"vod_octo_js:%@", vod_octo_js);
                 NSString *imageUrl = [[NSString alloc]
-                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                              4))];
-                
+                                    initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                          6))];
+                NSLog(@"imageUrl:%@", imageUrl);
                 NSString *meta_data = [[NSString alloc]
-                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                              5))];
-                
-                NSString *meta_description = [[NSString alloc]
-                                       initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                             6))];
-                
-                NSString *status = [[NSString alloc]
                                               initWithUTF8String:(const char *)(sqlite3_column_text(statement,
                                                                                                     7))];
-                
-                NSString *created_datetime = [[NSString alloc]
-                                             initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                                   8))];
-                
-                NSString *updated_datetime = [[NSString alloc]
+                NSLog(@"meta_data:%@", meta_data);
+                NSString *meta_description = [[NSString alloc]
                                               initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                                    9))];
+                                                                                                    8))];
                 
-                
+                NSLog(@"meta_description:%@", meta_description);
+                NSString *status = [[NSString alloc]
+                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                              9))];
+                NSLog(@"status:%@", status);
+            NSString *created_datetime = [[NSString alloc]
+                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                              10))];
+            NSLog(@"created_datetime:%@", created_datetime);
+            NSString *updated_datetime = [[NSString alloc]
+                                         initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                               11))];
+                NSLog(@"updated_datetime:%@", updated_datetime);
                 NSString *image2xUrl = [[NSString alloc]
-                                         initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                               10))];
+                                      initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                            12))];
                 
-                NSString *image3xUrl = [[NSString alloc]
-                                     initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                           11))];
-                
-                NSString *downloadUrl = [[NSString alloc]
+               NSString *image3xUrl = [[NSString alloc]
                                     initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                          12))];
-                
-                NSString *category = [[NSString alloc]
-                                         initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                               13))];
-                
-                NSString *vodUrl = [[NSString alloc]
+                                                                                          13))];
+                NSString *imagehdpiUrl = [[NSString alloc]
                                          initWithUTF8String:(const char *)(sqlite3_column_text(statement,
                                                                                                14))];
+                NSString *imageldpiUrl = [[NSString alloc]
+                                          initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                                15))];
+                NSString *imagemdpiUrl = [[NSString alloc]
+                                          initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                                16))];
+                NSString *imagexhdpiUrl = [[NSString alloc]
+                                          initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                                17))];
+            NSString *imagexxhdpiUrl = [[NSString alloc]
+                                          initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                                18))];
+            NSString *imagexxxhdpiUrl = [[NSString alloc]
+                                          initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                                19))];
+                NSString *downloadUrl = [[NSString alloc]
+                                            initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                                  20))];
+                NSString *category = [[NSString alloc]
+                                             initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                                   21))];
+                NSLog (@"channel:query result: %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@",id, name, Url, octo_js, vodUrl, vod_octo_js, imageUrl, meta_data, meta_description, status, created_datetime, updated_datetime, image2xUrl, image3xUrl,imagehdpiUrl ,imageldpiUrl, imagemdpiUrl, imagexhdpiUrl, imagexxhdpiUrl, imagexxxhdpiUrl, downloadUrl, category);
                 
-                NSString *vod_octo_js = [[NSString alloc]
-                                         initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                               15))];
-                
-                //    CREATE TABLE IF NOT EXISTS %@ (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, Url TEXT, octo_js TEXT, imageUrl TEXT, meta_data TEXT, meta_description TEXT, status TEXT, created_datetime TEXT, updated_datetime TEXT,  image2xUrl TEXT, image3xUrl TEXT, downloadUrl TEXT, category TEXT, vodUrl TEXT, vod_octo_js TEXT)
-                
-                NSLog (@"query result: %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@", name, Url, octo_js, imageUrl, meta_data, meta_description, status, created_datetime, updated_datetime, image2xUrl, image3xUrl, downloadUrl, category,vodUrl ,vod_octo_js);
-                
-                NSDictionary *channelInfo =[NSDictionary dictionaryWithObjectsAndKeys:name,@"name",
-                                            Url,@"Url", octo_js,@"octo_js",imageUrl,@"imageUrl",
-                                          meta_data,@"meta_data",
-                            meta_description,@"meta_description",
-                                            status,@"status",
-                            created_datetime,@"created_datetime",
-                            updated_datetime,@"updated_datetime",
-                                       image2xUrl, @"image2xUrl",
-                                        image3xUrl,@"image3xUrl",
-                                      downloadUrl,@"downloadUrl",
-                                            category,@"category",
-                                            vodUrl,@"vodUrl",
-                                    vod_octo_js,@"vod_octo_js",nil];
+               // NSLog (@"query result: %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@",id, name, Url, octo_js, vodUrl, vod_octo_js, imageUrl, meta_data, meta_description, status, created_datetime, updated_datetime);
+                NSDictionary *channelInfo =[NSDictionary dictionaryWithObjectsAndKeys:id,@"id",name,@"name",
+                    Url,@"Url",octo_js,@"octo_js",vodUrl,@"vodUrl",
+                        vod_octo_js,@"vod_octo_js",
+                        imageUrl,@"imageUrl",
+                        meta_data,@"meta_data",meta_description,@"meta_description",
+                        status,@"status",
+                    created_datetime,@"created_datetime",
+                    updated_datetime,@"updated_datetime",
+                    image2xUrl, @"image2xUrl",
+                    image3xUrl,@"image3xUrl",
+                    imagehdpiUrl,@"imagehdpiUrl",
+                    imageldpiUrl,@"imageldpiUrl",
+                    imagemdpiUrl,@"imagemdpiUrl",
+                    imagexhdpiUrl,@"imagexhdpiUrl",
+                    imagexxhdpiUrl,@"imagexxhdpiUrl",
+                    imagexxxhdpiUrl,@"imagexxxhdpiUrl",
+                    downloadUrl,@"downloadUrl",
+                    category,@"category", nil];
                 
                 [channels addObject: channelInfo];
                 
@@ -954,8 +1075,9 @@
             sqlite3_close(sqliteDB);
         }
     }
+//    NSLog(@"channels:%@", channels);
     return channels;
-
+    
 }
 
 -(void)insertRecordIntoBouquet_vs_Channels:(NSMutableArray *)array
@@ -964,7 +1086,7 @@
     
     if (sqlite3_open([dataBasepath UTF8String], &sqliteDB) == SQLITE_OK) {
         
-        NSString *insertDetailTable = @"INSERT INTO bouquet_vs_channels (bouquet_id, channel_id, created_datetime) VALUES (?, ?, ?)" ;
+        NSString *insertDetailTable = @"INSERT INTO bouquet_vs_channels (id, bouquet_id, channel_id, created_datetime, updated_datetime) VALUES (?, ?, ?, ?, ?)" ;
         
         sqlite3_stmt *statement;
         
@@ -973,11 +1095,15 @@
                                [insertDetailTable cStringUsingEncoding:NSUTF8StringEncoding], -1,
                                &statement, NULL) == SQLITE_OK) {
             
-            sqlite3_bind_text(statement, 1, [[array objectAtIndex:0] UTF8String], -1, NULL);
+            sqlite3_bind_int(statement, 1, (int)[[array objectAtIndex:0] integerValue]);
             
-            sqlite3_bind_text(statement, 2, [[array objectAtIndex:1] UTF8String], -1, NULL);
+            sqlite3_bind_int(statement, 2, (int)[[array objectAtIndex:1] integerValue]);
             
-            sqlite3_bind_text(statement, 3, [[array objectAtIndex:2] UTF8String], -1, NULL);
+            sqlite3_bind_int(statement, 3, (int)[[array objectAtIndex:2] integerValue]);
+            
+            sqlite3_bind_text(statement, 4, [[array objectAtIndex:3] UTF8String], -1, NULL);
+            
+            sqlite3_bind_text(statement, 5, [[array objectAtIndex:4] UTF8String], -1, NULL);
             
             if (sqlite3_step(statement) == SQLITE_DONE) {
                 NSLog(@"inserted into bouquet_vs_channels table");
@@ -998,6 +1124,7 @@
     }
 }
 
+
 - (NSMutableArray *)getBouquetChannels
 {
     bouquetChannels = [[NSMutableArray alloc] init];
@@ -1012,25 +1139,30 @@
                                &statement, NULL) == SQLITE_OK) {
             while (sqlite3_step(statement) == SQLITE_ROW) {
                 
+                
+                NSString *id = [[NSString alloc]
+                                initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                      1))];
                 NSString *bouquet_id = [[NSString alloc]
-                                  initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                        1))];
+                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                              2))];
                 NSString *channel_id = [[NSString alloc]
-                                 initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                       2))];
+                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                              3))];
                 NSString *created_datetime = [[NSString alloc]
-                                     initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                           3))];
+                                              initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                                    4))];
                 
-                
-                
-                
-            NSLog (@"bouquet_vs_channels:query result: %@ %@ %@", bouquet_id, channel_id, created_datetime);
+                NSString *updated_datetime = [[NSString alloc]
+                                              initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                                    5))];
+                //CREATE TABLE IF NOT EXISTS %@ (id INTEGER, bouquet_id INTEGER NOT NULL, channel_id INTEGER NOT NULL, created_datetime TEXT, updated_datetime TEXT)"];
+                NSLog (@"bouquet_vs_channels:query result: %@ %@ %@ %@ %@", id, bouquet_id, channel_id, created_datetime, updated_datetime);
                 
                 NSDictionary *channelInfo =[NSDictionary dictionaryWithObjectsAndKeys:
-                                       bouquet_id,@"bouquet_id",
-                                        channel_id,@"channel_id",created_datetime,@"created_datetime"
-                                            ,nil];
+                                            id, @"id", bouquet_id,@"bouquet_id",
+                                            channel_id,@"channel_id",created_datetime,@"created_datetime"
+                                            , updated_datetime, @"updated_datetime", nil];
                 
                 [bouquetChannels addObject: channelInfo];
                 
@@ -1042,6 +1174,96 @@
     }
     return bouquetChannels;
 }
+
+- (NSMutableArray *)getBouquet_vs_Channels
+{
+    NSMutableArray *bouquetChannelsArray = [[NSMutableArray alloc] init];
+    
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_open([dataBasepath UTF8String], &sqliteDB) == SQLITE_OK) {
+        NSString *selectSql = @"SELECT * FROM bouquet_vs_channels";
+        
+        if (sqlite3_prepare_v2(
+                               sqliteDB, [selectSql cStringUsingEncoding:NSUTF8StringEncoding], -1,
+                               &statement, NULL) == SQLITE_OK) {
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                
+                
+
+                NSString *bouquet_id = [[NSString alloc]
+                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                              1))];
+                NSString *channel_id = [[NSString alloc]
+                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                              2))];
+                
+                //CREATE TABLE IF NOT EXISTS %@ (id INTEGER, bouquet_id INTEGER NOT NULL, channel_id INTEGER NOT NULL, created_datetime TEXT, updated_datetime TEXT)"];
+               // NSLog (@"bouquet_vs_channels:query result: %@ %@ ", bouquet_id, channel_id);
+                
+                NSDictionary *channelInfo =[NSDictionary dictionaryWithObjectsAndKeys:
+                                             bouquet_id,@"bouquet_id",
+                                            channel_id,@"channel_id", nil];
+                
+                [bouquetChannelsArray addObject: channelInfo];
+                
+            }
+            
+            sqlite3_finalize(statement);
+            sqlite3_close(sqliteDB);
+        }
+    }
+    return bouquetChannelsArray;
+
+}
+
+- (NSMutableArray *)getBouquetDetails:(NSMutableArray *)array
+{
+    NSMutableArray *bouquetsArray = [[NSMutableArray alloc] init];
+    
+    sqlite3_stmt *statement;
+    for (int index=0; index<array.count; index++) {
+    
+    if (sqlite3_open([dataBasepath UTF8String], &sqliteDB) == SQLITE_OK) {
+        NSString *selectSql = [NSString stringWithFormat:@"SELECT name, imageUrl, downloadUrl FROM bouquets where id = '%@' ", [array objectAtIndex:index]];
+//        NSString *selectSql = @"SELECT name, imageUrl, downloadUrl FROM bouquets where id = 4 ";
+        
+        if (sqlite3_prepare_v2(
+                               sqliteDB, [selectSql cStringUsingEncoding:NSUTF8StringEncoding], -1,
+                               &statement, NULL) == SQLITE_OK) {
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                
+                
+                
+                NSString *name = [[NSString alloc]
+                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                              0))];
+                NSString *imageUrl = [[NSString alloc]
+                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                              1))];
+                NSString *downloadUrl = [[NSString alloc]
+                                      initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                            2))];
+                
+                NSLog (@"bouquets:query result: %@ %@ %@", name, imageUrl, downloadUrl);
+                
+                NSDictionary *channelInfo =[NSDictionary dictionaryWithObjectsAndKeys:
+                                            name,@"name",
+                                            imageUrl,@"imageUrl", downloadUrl,@"downloadUrl", nil];
+                
+                [bouquetsArray addObject: channelInfo];
+                
+            }
+            }
+            sqlite3_finalize(statement);
+            sqlite3_close(sqliteDB);
+        }
+    }
+    return bouquetsArray;
+
+}
+
+
 
 -(void)insertRecordIntoVersioning:(NSMutableArray *)array
 {
@@ -1080,7 +1302,7 @@
         }
         
     }
-
+    
 }
 
 - (NSMutableArray *)getVersioningInfo
@@ -1099,18 +1321,18 @@
                 
                 //  (id INTEGER PRIMARY KEY AUTOINCREMENT, tablename TEXT,   version TEXT)
                 NSString *tablename = [[NSString alloc]
-                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                              1))];
+                                       initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                             1))];
                 NSString *version = [[NSString alloc]
-                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                              2))];
+                                     initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                           2))];
                 
                 
-                NSLog (@"versioning result: %@ %@", tablename, version);
+ //               NSLog (@"versioning result: %@ %@", tablename, version);
                 
                 NSDictionary *channelInfo =[NSDictionary dictionaryWithObjectsAndKeys:
-                                        tablename,@"tablename",
-                                        version,@"version",nil];
+                                            tablename,@"tablename",
+                                            version,@"version",nil];
                 
                 [versionArray addObject: channelInfo];
                 
@@ -1121,7 +1343,39 @@
         }
     }
     return versionArray;
+}
 
+
+-(NSMutableArray *)getChannelIdBasedonBouquetId:(NSString *)bouquet_Id
+{
+   NSMutableArray *chaneelIDListArray = [[NSMutableArray alloc] init];
+    
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_open([dataBasepath UTF8String], &sqliteDB) == SQLITE_OK)
+    {
+        NSString *selectSql = [NSString stringWithFormat:@"SELECT * FROM bouquet_vs_channels where bouquet_id = '%d'",[bouquet_Id intValue]];
+        
+        if (sqlite3_prepare_v2(sqliteDB, [selectSql UTF8String], -1, &statement, NULL) == SQLITE_OK) {
+            
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                
+                NSString *channelID = [[NSString alloc]
+                                       initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                             2))];
+                
+                NSLog(@" %@ ",channelID);
+                
+                [chaneelIDListArray addObject:channelID];
+                
+            }
+            
+            sqlite3_finalize(statement);
+            sqlite3_close(sqliteDB);
+        }
+    }
+    
+    return chaneelIDListArray;
 }
 
 @end

@@ -10,10 +10,15 @@
 #import "Database.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import <QuartzCore/QuartzCore.h>
+#import "MBProgressHUD.h"
 
 @interface ViewController : UIViewController <UITextFieldDelegate, FBLoginViewDelegate>{
     NSMutableArray *favoriteList;
     NSMutableArray *profileList;
+    
+    IBOutlet UIView *firstTimeView;
+    
+    NSMutableArray *staticBouquetImages;
 }
 
 @property (strong, nonatomic) IBOutlet UITextField *txtUsername;

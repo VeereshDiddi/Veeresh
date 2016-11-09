@@ -38,12 +38,20 @@
 
 -(void)insertRecordIntoBouquets:(NSMutableArray *)array;
 - (NSMutableArray *)getBouquets;
+
 -(void)insertRecordIntoChannels:(NSMutableArray *)array;
 - (NSMutableArray *)getChannels;
+
 -(void)insertRecordIntoBouquet_vs_Channels:(NSMutableArray *)array;
 - (NSMutableArray *)getBouquetChannels;
+
 -(void)insertRecordIntoVersioning:(NSMutableArray *)array;
 - (NSMutableArray *)getVersioningInfo;
+- (NSMutableArray *)getBouquet_vs_Channels;
+- (NSMutableArray *)getBouquetDetails:(NSMutableArray *)array;
+//- (NSMutableArray *)getBouquetDetails;
+
+-(NSMutableArray *)getChannelIdBasedonBouquetId:(NSString *)bouquet_Id;
 
 @end
 

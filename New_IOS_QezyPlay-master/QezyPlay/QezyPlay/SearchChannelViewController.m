@@ -43,6 +43,14 @@ int channelsNotFound = 0;
         [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
     }
     
+    UIImage *leftbuttonImage = [UIImage imageNamed:@"qezy-logo-.png"];
+    UIButton *leftbutton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftbutton setImage:leftbuttonImage forState:UIControlStateNormal];
+    leftbutton.frame = CGRectMake(0, 0, 75, 75);
+    UIBarButtonItem *customBarleftItem = [[UIBarButtonItem alloc] initWithCustomView:leftbutton];
+    self.navigationItem.leftBarButtonItem = customBarleftItem;
+
+    
 }
 
 // Add this Method
