@@ -18,7 +18,7 @@
     
     settingsData = [[NSArray alloc] initWithObjects:@"About", @"MyAccount", @"Theme", @"Language", @"Subtitle", @"Alarm", @"Logout",nil];
     
-    settingsImage = [[NSArray alloc] initWithObjects:@"about-hdpi.png", @"my-account-hdpi.png", @"theme-hdpi.png", @"language-hdpi.png", @"subtitleshdpi.png", @"alarm-hdpi.png", @"logout-hdpi.png",nil];
+    settingsImage = [[NSArray alloc] initWithObjects:@"About.png", @"MyAccount.png", @"Theme.png", @"Language.png", @"Subtitles.png", @"Alarm.png", @"Logout.png",nil];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -47,6 +47,12 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [settingsData count];
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
+}
+
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *cellIdentifier = @"settingsCell";

@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    aboutImage = [[NSArray alloc] initWithObjects:@"menu-aboutus.png", @"menu-contactus.png", @"menu-privacy.png", @"menu-terms.png", @"menu-feedback.png",nil];
+    aboutImage = [[NSArray alloc] initWithObjects:@"aboutus.png", @"contactus.png", @"Privacy-Policy.png", @"terms.png", @"feedback.png",nil];
     aboutData = [[NSArray alloc] initWithObjects:@"About Us", @"Contact Us", @"Privacy Policy", @"Terms of Service", @"Feedback Form",nil];
     
     
@@ -27,12 +27,6 @@
     //remove seperator line between cells
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    UIImage *leftbuttonImage = [UIImage imageNamed:@"qezy-logo-.png"];
-    UIButton *leftbutton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [leftbutton setImage:leftbuttonImage forState:UIControlStateNormal];
-    leftbutton.frame = CGRectMake(0, 0, 65, 65);
-    UIBarButtonItem *customBarleftItem = [[UIBarButtonItem alloc] initWithCustomView:leftbutton];
-    self.navigationItem.leftBarButtonItem = customBarleftItem;
 }
 
 - (void)didReceiveMemoryWarning {

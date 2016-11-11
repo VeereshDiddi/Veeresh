@@ -31,6 +31,19 @@ NSTimer *playTimer;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"lastOpenTime"]==nil) {
+        
+        [[NSUserDefaults standardUserDefaults] setObject:[[NSDate date] dateByAddingTimeInterval:-(24*60*60)] forKey:@"lastOpenTime"];
+    }
+    else
+    {
+        NSDate *savedDate = [[NSUserDefaults standardUserDefaults] valueForKey:@"lastOpenTime"];
+        
+        NSLog(@"lastOpenTime: %@ ",savedDate);
+    }
+
+    
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:33.0f/255.0f
                                                                   green:39.0f/255.0f
                                                                    blue:73.0f/255.0f

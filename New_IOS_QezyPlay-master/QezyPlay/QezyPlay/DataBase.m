@@ -849,9 +849,7 @@
     NSLog(@"Database: enter insertRecordIntoChannels");
     
     if (sqlite3_open([dataBasepath UTF8String], &sqliteDB) == SQLITE_OK) {
-        
-        
-        
+                
         NSString *insertDetailTable = @"INSERT INTO channels (id, name, Url, octo_js, vodUrl, vod_octo_js, imageUrl, meta_data, meta_description, status, created_datetime, updated_datetime, image2xUrl, image3xUrl, imagehdpiUrl, imageldpiUrl, imagemdpiUrl, imagexhdpiUrl, imagexxhdpiUrl, imagexxxhdpiUrl,downloadUrl, category) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" ;
         
         sqlite3_stmt *statement;
@@ -861,47 +859,49 @@
             
             sqlite3_bind_int(statement, 1, (int)[[array objectAtIndex:0] integerValue]);
             
-            sqlite3_bind_text(statement, 2, [[array objectAtIndex:1] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 2, [[self checkNull:[array objectAtIndex:1]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 3, [[array objectAtIndex:2] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 3, [[self checkNull:[array objectAtIndex:2]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 4, [[array objectAtIndex:3] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 4, [[self checkNull:[array objectAtIndex:3]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 5, [[array objectAtIndex:4] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 5, [[self checkNull:[array objectAtIndex:4]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 6, [[array objectAtIndex:5] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 6, [[self checkNull:[array objectAtIndex:5]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 7, [[array objectAtIndex:6] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 7, [[self checkNull:[array objectAtIndex:6]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 8, [[array objectAtIndex:7] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 8, [[self checkNull:[array objectAtIndex:7]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 9, [[array objectAtIndex:8] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 9, [[self checkNull:[array objectAtIndex:8]] UTF8String], -1, NULL);
             
             sqlite3_bind_int(statement, 10, (int)[[array objectAtIndex:9] integerValue]);
             
-            sqlite3_bind_text(statement, 11, [[array objectAtIndex:10] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 11, [[self checkNull:[array objectAtIndex:10]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 12, [[array objectAtIndex:11] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 12, [[self checkNull:[array objectAtIndex:11]] UTF8String], -1, NULL);
             
-            sqlite3_bind_int(statement, 13, (int)[[array objectAtIndex:12] integerValue]);
+            NSLog(@" %@ ",[array objectAtIndex:12]);
             
-            sqlite3_bind_int(statement, 14, (int)[[array objectAtIndex:13] integerValue]);
+            sqlite3_bind_text(statement, 13, [[self checkNull:[array objectAtIndex:12]] UTF8String], -1, NULL);
+
+            sqlite3_bind_text(statement, 14, [[self checkNull:[array objectAtIndex:13]] UTF8String], -1, NULL);
             
-            sqlite3_bind_int(statement, 15, (int)[[array objectAtIndex:14] integerValue]);
+            sqlite3_bind_text(statement, 15, [[self checkNull:[array objectAtIndex:14]] UTF8String], -1, NULL);
             
-            sqlite3_bind_int(statement, 16, (int)[[array objectAtIndex:15] integerValue]);
+            sqlite3_bind_text(statement, 16, [[self checkNull:[array objectAtIndex:15]] UTF8String], -1, NULL);
             
-            sqlite3_bind_int(statement, 17, (int)[[array objectAtIndex:16] integerValue]);
+            sqlite3_bind_text(statement, 17, [[self checkNull:[array objectAtIndex:16]] UTF8String], -1, NULL);
             
-            sqlite3_bind_int(statement, 18, (int)[[array objectAtIndex:17] integerValue]);
+            sqlite3_bind_text(statement, 18, [[self checkNull:[array objectAtIndex:17]] UTF8String], -1, NULL);
             
-            sqlite3_bind_int(statement, 19, (int)[[array objectAtIndex:18] integerValue]);
+            sqlite3_bind_text(statement, 19, [[self checkNull:[array objectAtIndex:18]] UTF8String], -1, NULL);
             
-            sqlite3_bind_int(statement, 20, (int)[[array objectAtIndex:19] integerValue]);
+            sqlite3_bind_text(statement, 20, [[self checkNull:[array objectAtIndex:19]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 21, [[array objectAtIndex:20] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 21, [[self checkNull:[array objectAtIndex:20]] UTF8String], -1, NULL);
             
-            sqlite3_bind_int(statement, 22, (int)[[array objectAtIndex:21] integerValue]);
+            sqlite3_bind_text(statement, 22, [[self checkNull:[array objectAtIndex:21]] UTF8String], -1, NULL);
             
             
   /*          sqlite3_bind_text(statement, 13, [[array objectAtIndex:12] UTF8String], -1, NULL);
@@ -1140,27 +1140,27 @@
             while (sqlite3_step(statement) == SQLITE_ROW) {
                 
                 
-                NSString *id = [[NSString alloc]
+                NSString *bc_id = [[NSString alloc]
                                 initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                      1))];
+                                                                                      0))];
                 NSString *bouquet_id = [[NSString alloc]
                                         initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                              2))];
+                                                                                              1))];
                 NSString *channel_id = [[NSString alloc]
                                         initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                              3))];
+                                                                                              2))];
                 NSString *created_datetime = [[NSString alloc]
                                               initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                                    4))];
+                                                                                                    3))];
                 
                 NSString *updated_datetime = [[NSString alloc]
                                               initWithUTF8String:(const char *)(sqlite3_column_text(statement,
-                                                                                                    5))];
+                                                                                                    4))];
                 //CREATE TABLE IF NOT EXISTS %@ (id INTEGER, bouquet_id INTEGER NOT NULL, channel_id INTEGER NOT NULL, created_datetime TEXT, updated_datetime TEXT)"];
-                NSLog (@"bouquet_vs_channels:query result: %@ %@ %@ %@ %@", id, bouquet_id, channel_id, created_datetime, updated_datetime);
+                NSLog (@"bouquet_vs_channels:query result: %@ %@ %@ %@ %@", bc_id, bouquet_id, channel_id, created_datetime, updated_datetime);
                 
                 NSDictionary *channelInfo =[NSDictionary dictionaryWithObjectsAndKeys:
-                                            id, @"id", bouquet_id,@"bouquet_id",
+                                            bc_id, @"id", bouquet_id,@"bouquet_id",
                                             channel_id,@"channel_id",created_datetime,@"created_datetime"
                                             , updated_datetime, @"updated_datetime", nil];
                 
@@ -1263,6 +1263,175 @@
 
 }
 
+-(void)insertRecordIntoProfiles:(NSMutableArray *)array
+{
+    NSLog(@"Database: enter insertRecordIntoProfiles");
+    
+    if (sqlite3_open([dataBasepath UTF8String], &sqliteDB) == SQLITE_OK) {
+        
+        NSString *insertDetailTable = @"INSERT INTO profiles (id, name) VALUES (?, ?)" ;
+        
+        sqlite3_stmt *statement;
+        
+        if (sqlite3_prepare_v2(
+                               sqliteDB,
+                               [insertDetailTable cStringUsingEncoding:NSUTF8StringEncoding], -1,
+                               &statement, NULL) == SQLITE_OK) {
+            
+            sqlite3_bind_int(statement, 1, (int)[[array objectAtIndex:0] integerValue]);
+
+            
+            sqlite3_bind_text(statement, 2, [[array objectAtIndex:1] UTF8String], -1, NULL);
+            
+            
+            if (sqlite3_step(statement) == SQLITE_DONE) {
+                NSLog(@"inserted into versioning table");
+            }
+            
+            else {
+                NSLog(@"failed to insert versioning table");
+            }
+            
+            // sqlite3_finalize(statement);
+            
+            sqlite3_step(statement);
+            sqlite3_close(sqliteDB);
+        }else {
+            NSLog(@"prepare failed");
+        }
+        
+    }
+    
+}
+
+
+- (NSMutableArray *)getProfilesInfo
+{
+   NSMutableArray *profilesArray = [[NSMutableArray alloc] init];
+    
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_open([dataBasepath UTF8String], &sqliteDB) == SQLITE_OK) {
+        NSString *selectSql = @"SELECT * FROM profiles";
+        
+        if (sqlite3_prepare_v2(
+                               sqliteDB, [selectSql cStringUsingEncoding:NSUTF8StringEncoding], -1,
+                               &statement, NULL) == SQLITE_OK) {
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                
+                //  (id INTEGER PRIMARY KEY AUTOINCREMENT, tablename TEXT,   version TEXT)
+                NSString *id = [[NSString alloc]
+                                       initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                             0))];
+                NSString *name = [[NSString alloc]
+                                     initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                           1))];
+                
+                
+                //               NSLog (@"versioning result: %@ %@", tablename, version);
+                
+                NSDictionary *channelInfo =[NSDictionary dictionaryWithObjectsAndKeys:
+                                            id,@"id",
+                                            name,@"name",nil];
+                
+                [profilesArray addObject: channelInfo];
+                
+            }
+            
+            sqlite3_finalize(statement);
+            sqlite3_close(sqliteDB);
+        }
+    }
+    NSLog(@"getProfilesInfo:profilesArray:%@",profilesArray);
+    return profilesArray;
+}
+
+-(void)insertRecordIntoProfile_vs_Channel:(NSMutableArray *)array
+{
+    NSLog(@"Database: enter insertRecordIntoProfile_vs_Channel");
+    
+    if (sqlite3_open([dataBasepath UTF8String], &sqliteDB) == SQLITE_OK) {
+        
+        NSString *insertDetailTable = @"INSERT INTO profile_vs_channel (id, profile_id, channel_id) VALUES (?, ?, ?)" ;
+        
+        sqlite3_stmt *statement;
+        
+        if (sqlite3_prepare_v2(
+                               sqliteDB,
+                               [insertDetailTable cStringUsingEncoding:NSUTF8StringEncoding], -1,
+                               &statement, NULL) == SQLITE_OK) {
+            
+            sqlite3_bind_int(statement, 1, (int)[[array objectAtIndex:0] integerValue]);
+            
+            
+            sqlite3_bind_text(statement, 2, [[array objectAtIndex:1] UTF8String], -1, NULL);
+            
+            sqlite3_bind_text(statement, 3, [[array objectAtIndex:2] UTF8String], -1, NULL);
+            
+            if (sqlite3_step(statement) == SQLITE_DONE) {
+                NSLog(@"inserted into Profile_vs_Channel table");
+            }
+            
+            else {
+                NSLog(@"failed to insert versioning table");
+            }
+            
+            // sqlite3_finalize(statement);
+            
+            sqlite3_step(statement);
+            sqlite3_close(sqliteDB);
+        }else {
+            NSLog(@"prepare failed");
+        }
+        
+    }
+    
+}
+
+
+- (NSMutableArray *)getProfile_vs_Channel
+{
+    NSMutableArray *profileChannelsArray = [[NSMutableArray alloc] init];
+    
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_open([dataBasepath UTF8String], &sqliteDB) == SQLITE_OK) {
+        NSString *selectSql = @"SELECT * FROM profile_vs_channel";
+        
+        if (sqlite3_prepare_v2(
+                               sqliteDB, [selectSql cStringUsingEncoding:NSUTF8StringEncoding], -1,
+                               &statement, NULL) == SQLITE_OK) {
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                
+                //  (id INTEGER PRIMARY KEY AUTOINCREMENT, tablename TEXT,   version TEXT)
+                NSString *id = [[NSString alloc]
+                                initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                      0))];
+                NSString *profile_id = [[NSString alloc]
+                                  initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                        1))];
+                NSString *channel_id = [[NSString alloc]
+                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
+                                                                                              2))];
+                
+                //               NSLog (@"versioning result: %@ %@", tablename, version);
+                
+                NSDictionary *channelInfo =[NSDictionary dictionaryWithObjectsAndKeys:
+                                            id,@"id",
+                                profile_id,@"profile_id",
+                        channel_id,@"channel_id",nil];
+                
+                [profileChannelsArray addObject: channelInfo];
+                
+            }
+            
+            sqlite3_finalize(statement);
+            sqlite3_close(sqliteDB);
+        }
+    }
+    NSLog(@"getProfile_vs_Channel:profileChannelsArray:%@", profileChannelsArray);
+    return profileChannelsArray;
+}
 
 
 -(void)insertRecordIntoVersioning:(NSMutableArray *)array
@@ -1364,7 +1533,7 @@
                                        initWithUTF8String:(const char *)(sqlite3_column_text(statement,
                                                                                              2))];
                 
-                NSLog(@" %@ ",channelID);
+                NSLog(@"channelID:%@",channelID);
                 
                 [chaneelIDListArray addObject:channelID];
                 
@@ -1374,8 +1543,39 @@
             sqlite3_close(sqliteDB);
         }
     }
-    
+    NSLog(@"chaneelIDListArray:%@", chaneelIDListArray);
     return chaneelIDListArray;
+}
+
+
+-(void)deleteTheWholeDataFromTable:(NSString *)_tableName
+{
+    if (sqlite3_open([dataBasepath UTF8String], &sqliteDB) == SQLITE_OK)
+    {
+        NSString *query = [NSString stringWithFormat:@"DELETE from %@",_tableName];
+        
+        const char *sql = [query cStringUsingEncoding:NSUTF8StringEncoding];
+        sqlite3_stmt *statement = nil;
+        
+        if(sqlite3_prepare_v2(sqliteDB,sql, -1, &statement, NULL)!= SQLITE_OK)
+        {
+            NSAssert1(0,@"error preparing statement",sqlite3_errmsg(sqliteDB));
+        }
+        else
+        {
+            sqlite3_step(statement);
+        }
+        sqlite3_finalize(statement);
+    }
+}
+
+-(NSString *)checkNull:(NSString *)_value
+{
+    if ([_value isEqual:[NSNull null]]||_value==nil) {
+        _value=@"";
+    }
+    
+    return _value;
 }
 
 @end

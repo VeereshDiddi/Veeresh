@@ -52,6 +52,12 @@
 //- (NSMutableArray *)getBouquetDetails;
 
 -(NSMutableArray *)getChannelIdBasedonBouquetId:(NSString *)bouquet_Id;
+- (NSMutableArray *)getProfilesInfo;
+-(void)insertRecordIntoProfiles:(NSMutableArray *)array;
+- (NSMutableArray *)getProfile_vs_Channel;
+-(void)insertRecordIntoProfile_vs_Channel:(NSMutableArray *)array;
+
+-(void)deleteTheWholeDataFromTable:(NSString *)_tableName;
 
 @end
 

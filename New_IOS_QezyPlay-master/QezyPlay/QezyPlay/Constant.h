@@ -25,14 +25,22 @@
 
 #define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
 
+#define BASEURL @"http://104.196.99.177:6363/api/"
+
+#define bouquetsSC [NSString stringWithFormat:@"Bouquets",BASEURL]
+
+#define versioningSC [NSString stringWithFormat:@"%@DataSyncs/checkUpdates",BASEURL]
+
 extern NSMutableArray *defaulBouquets;
 extern NSMutableArray *channelsInDefaultBouquets;
 extern NSMutableArray *channels;
 extern NSMutableArray *versioning;
 extern NSMutableArray *bouquetChannels;
+extern NSMutableArray *profiles;
+extern NSMutableArray *channelsInProfiles;
+extern NSMutableArray *subscriptionPlans;
+extern NSMutableArray *subscriptionPlansBouquet;
 
-
-extern NSString *bouquetsSC;
 extern NSString *channelBouquetsSC;
 extern NSString *channelsSC;
 extern NSString *profilesSC;
@@ -40,7 +48,6 @@ extern NSString *loginSC;
 extern NSString *customersSC;
 extern NSString *resetSC;
 extern NSString *privacyPolicySC;
-extern NSString *versioningSC;
 
 #endif /* Constant_h */
 

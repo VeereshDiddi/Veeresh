@@ -10,6 +10,7 @@
 
 @interface WebViewController : UIViewController
 {
-    NSString *html;
+    IBOutlet UIWebView *webViewObj;
 }
+
 @end

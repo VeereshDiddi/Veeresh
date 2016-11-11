@@ -12,7 +12,6 @@
 #import "Player.h"
 #import "VarGlobal.h"
 #import "SearchChannelViewController.h"
-#import "FavoriteData.h"
 #import "UserData.h"
 #import "ProfileData.h"
 
@@ -34,6 +33,12 @@
     NSLog(@"Package Channel Images:%@", self.allImages);
     NSLog(@"Package Group: %@", self.allGroups);
     NSLog(@"Package Link: %@", self.allLinks);
+    
+    
+    temproryChannelsArray = [NSMutableArray new];
+    
+    temproryChannelsArray = [allChannelsArray mutableCopy];
+    
     
     // Configure gesture recognizers
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
@@ -161,7 +166,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return [currentImages count];
+    return [temproryChannelsArray count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -169,13 +174,35 @@
     
     PackageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    NSString *imageName = [currentImages objectAtIndex:indexPath.row];
+    NSString *imageName = [[temproryChannelsArray objectAtIndex:indexPath.row] valueForKey:@"imageUrl"];
     
     NSArray *pathsArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *path =[pathsArray objectAtIndex:0];
+    
+    if ([imageName rangeOfString:@"/"].location == NSNotFound) {
+        NSLog(@"string does not contain bla");
+        
+    } else {
+        NSLog(@"string contains bla!");
+        
+        NSArray *array = [imageName componentsSeparatedByString:@"/"];
+        
+        imageName = [array lastObject];
+    }
+    
     NSString *imagePath = [path stringByAppendingPathComponent:imageName];
     
-    cell.channelCell.image = [UIImage imageWithContentsOfFile:imagePath];
+    NSLog(@" %@ ",imageName);
+
+    if ([[NSFileManager defaultManager] fileExistsAtPath:imagePath]) {
+        
+        cell.channelCell.image=[UIImage imageWithContentsOfFile:imagePath];
+    }
+    else
+    {
+        cell.channelCell.image = [UIImage imageNamed:@"taratv.png"];
+    }
+    
     
     //cell.channelCell.image = [UIImage imageNamed:imageName];
     
@@ -184,10 +211,9 @@
 
 - (void)streamItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main"
-                                                         bundle:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    NSString *link = [self.allLinks objectAtIndex:indexPath.row];
+    NSString *link = [[temproryChannelsArray objectAtIndex:indexPath.row] valueForKey:@"Url"];
     
     NSLog(@"selected channel %@", link);
     
@@ -205,7 +231,6 @@
     [self presentViewController:videoPlayer animated:YES completion:nil];
     
     //    NSLog(@"Selected Channel Link:%@", [self.packageChannelLinks objectAtIndex:indexPath.row]);
-    
 }
 
 -(void)addToFavoritesFromIndexPath:(NSIndexPath *)indexPath
@@ -216,41 +241,7 @@
     
     NSLog(@"%@", image);
     
-    if([allFavoriteImages indexOfObject:image] != NSNotFound)
-    {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Cannot Add"
-                                                                       message:@"Selection is already in favorites"
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        
-        [alert addAction:[UIAlertAction actionWithTitle:@"OK"
-                                                  style:UIAlertActionStyleDefault
-                                                handler:^(UIAlertAction *action){}]];
-        
-        [self presentViewController:alert animated:YES completion:nil];
-        
-        return;
-    }
     
-    [allFavoriteImages  addObject:image];
-    [allFavoriteLinks   addObject:link];
-    [allFavoriteGroups  addObject:group];
-    
-    if([group caseInsensitiveCompare:@"news"] == NSOrderedSame){
-        [newsFavoriteImages addObject:image];
-        [newsFavoriteLinks addObject:link];
-    }
-    else if([group caseInsensitiveCompare:@"music"] == NSOrderedSame){
-        [musicFavoriteImages addObject:image];
-        [musicFavoriteLinks addObject:link];
-    }
-    else if([group caseInsensitiveCompare:@"entertainment"] == NSOrderedSame){
-        [entertainFavoriteImages addObject:image];
-        [entertainFavoriteLinks addObject:link];
-    }
-    else if([group caseInsensitiveCompare:@"sports"] == NSOrderedSame){
-        [sportsFavoriteImages addObject:image];
-        [sportsFavoriteLinks addObject:link];
-    }
     
     NSMutableArray * channelInfo = [[NSMutableArray alloc] init];
     
@@ -374,7 +365,7 @@
 
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
-    return CGSizeMake(150.0, 150.0);
+    return CGSizeMake(150.0, 80.0);
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{

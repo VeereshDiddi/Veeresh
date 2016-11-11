@@ -15,6 +15,8 @@ extern NSMutableArray *channelsInfo;
 extern NSMutableArray *bouquetChannelsInfo;
 extern NSMutableArray *versioningInfo;
 extern NSMutableArray *bouquetImages;
+extern NSMutableArray *profilesInfo;
+extern NSMutableArray *channelsInProfilesInfo;
 
 
 

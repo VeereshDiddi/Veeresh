@@ -16,3 +16,6 @@ NSMutableArray *channelsInfo;
 NSMutableArray *bouquetChannelsInfo;
 NSMutableArray *versioningInfo;
 NSMutableArray *bouquetImages;
+NSMutableArray *profilesInfo;
+NSMutableArray *channelsInProfilesInfo;
+

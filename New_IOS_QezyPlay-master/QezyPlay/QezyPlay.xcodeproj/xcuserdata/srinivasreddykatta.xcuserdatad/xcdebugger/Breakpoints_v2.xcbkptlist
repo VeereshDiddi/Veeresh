@@ -14,54 +14,18 @@
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            scope = "0"
-            stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            scope = "0"
-            stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QezyPlay/SignUp.m"
-            timestampString = "500395375.717167"
+            filePath = "QezyPlay/FavoritesViewController.m"
+            timestampString = "500556864.185223"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "-createAccount:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QezyPlay/SignUp.m"
-            timestampString = "500395376.549212"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "-createAccount:"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "-webView:shouldStartLoadWithRequest:navigationType:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -72,12 +36,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QezyPlay/HomeViewController.m"
-            timestampString = "500402539.863121"
+            timestampString = "500573705.204751"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "389"
-            endingLineNumber = "389"
-            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -88,12 +52,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QezyPlay/HomeViewController.m"
-            timestampString = "500402539.863121"
+            timestampString = "500573818.329369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "385"
-            endingLineNumber = "385"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
             landmarkName = "-collectionView:didSelectItemAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QezyPlay/ViewController.m"
+            timestampString = "500573962.397568"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "-saveImageInDocumentDirectory"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

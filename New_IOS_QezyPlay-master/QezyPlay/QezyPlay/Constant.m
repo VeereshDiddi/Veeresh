@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Constant.h"
 
-NSString *bouquetsSC = @"http://104.196.99.177:6363/api/Bouquets";
+
 NSString *channelBouquetsSC = @"http://104.196.99.177:6363/api/Bouquets";
 NSString *channelsSC = @":http://104.196.99.177:6363/api/Channels";
 NSString *profilesSC = @"http://104.196.99.177:6363/api/Profiles";
@@ -24,3 +24,7 @@ NSMutableArray *channelsInDefaultBouquets;
 NSMutableArray *bouquetChannels;
 NSMutableArray *channels;
 NSMutableArray *versioning;
+NSMutableArray *profiles;
+NSMutableArray *channelsInProfiles;
+NSMutableArray *subscriptionPlans;
+NSMutableArray *subscriptionPlansBouquet;

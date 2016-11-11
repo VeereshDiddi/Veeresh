@@ -31,6 +31,8 @@
     NSString *selectedProfile;
     NSMutableArray *profileChannel;
     
+@public NSMutableArray *temproryChannelsArray, *allChannelsArray;
+    
 }
 
 @property (strong, nonatomic) NSString *navigationTitle;

@@ -6,11 +6,14 @@
 //  Copyright © 2016 ideabytes. All rights reserved.
 //
 
+
 #import "SignUp.h"
 #import "ViewController.h"
 
 @interface SignUp ()
-
+{
+    IBOutlet UIScrollView *scrollViewObj;
+}
 @end
 
 
@@ -53,6 +56,8 @@
     leftbutton.frame = CGRectMake(0, 0, 75, 75);
     UIBarButtonItem *customBarleftItem = [[UIBarButtonItem alloc] initWithCustomView:leftbutton];
     self.navigationItem.leftBarButtonItem = customBarleftItem;
+    
+    scrollViewObj.contentSize=CGSizeMake(0, self.btnRegister.frame.origin.y+self.btnRegister.frame.size.height+80);
     
     [self pickerDropDown];
 }
@@ -150,10 +155,10 @@
             [self alertStatus:@"Confirm Password must be minimum 8-16 characters" :@"Sign up Failed!" :0];
         }
         else if (![self.txtPassword.text isEqualToString:self.txtConfirmPassword.text]) {
-            [self alertStatus:@"Passwords don't match. Try again?" :@"Password is Wrong!" :0];
+            [self alertStatus:@"Passwords don't match. Try again?" :@"Sign Up Failed!" :0];
         }
         else if(self.isChecked == NO){
-            [self alertStatus:@"Terms of Service and Privacy Policy" :@"Please check Terms of Service and Privacy Policy!" :0];
+            [self alertStatus:@"Please check the Terms-and-service check box" :@"Sign Up Failed!" :0];
         }
         else {
             
@@ -203,7 +208,7 @@
                     {
                         NSLog(@"Sign up success, go to login page");
                         
-                        [self alertStatus:@"Successfully Registration completed." :@"New Account Created!" :0];
+                        [self alertStatus:@"To Activate Your Account ,Please click on activation link which is sent your Email Id." :@"Registration Success!" :0];
                         
                         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                         ViewController *controller = (ViewController *)
@@ -281,7 +286,7 @@
 
 - (IBAction)termsOfServiceForRegister:(id)sender {
     
-    [self performSegueWithIdentifier:@"goto_webView" sender:self];
+    [self performSegueWithIdentifier:@"goto_termsOfSErvice" sender:self];
 }
 
 - (IBAction)privacyPolicyForRegister:(id)sender {
@@ -289,7 +294,7 @@
 }
 
 - (IBAction)termsOfServiceForFacebook:(id)sender {
-    [self performSegueWithIdentifier:@"goto_webView" sender:self];
+    [self performSegueWithIdentifier:@"goto_termsOfSErvice" sender:self];
 }
 
 - (IBAction)privacyPolicyForFacebook:(id)sender {
@@ -420,7 +425,6 @@
 
 -(void)pickerDropDown
 {
-    
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"countries" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
@@ -438,7 +442,7 @@
     doneButtn.layer.cornerRadius=5.0f;
     [dropDownView addSubview:doneButtn];
     
-    UIPickerView *dropDownPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 44, SCREENWIDTH, 216)];
+    UIPickerView *dropDownPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 44, dropDownView.frame.size.width, 216)];
     dropDownPickerView.dataSource=self;
     dropDownPickerView.delegate=self;
     dropDownPickerView.backgroundColor=[UIColor whiteColor];

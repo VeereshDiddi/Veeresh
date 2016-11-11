@@ -53,7 +53,6 @@
     
     packageList = [deviceDB getBouquets];
     
-    NSLog(@" %@ ",packageList);
     
     channelList = [[NSMutableArray alloc] init];
     channelList = [deviceDB getChannels];
@@ -61,10 +60,6 @@
 //    channelsInDefaultBouquets=[deviceDB getChannels];
     
 //    [self getBouquet_vs_ChannelsFromDB];
-    
-    NSMutableArray *channelIDsArray = [deviceDB getChannelIdBasedonBouquetId:@"12"];
-    
-    NSLog(@" %@ ",channelIDsArray);
 }
 
 -(void)getBouquet_vs_ChannelsFromDB
@@ -83,7 +78,7 @@
     
     NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:withDuplicateBouquets];
     NSMutableArray *withOutDuplicateBouquets = (NSMutableArray *) [orderedSet array];
-    NSLog(@"withOutDuplicateBouquets:%@", withOutDuplicateBouquets);
+//    NSLog(@"withOutDuplicateBouquets:%@", withOutDuplicateBouquets);
     
     bouquetArray = [[NSMutableArray alloc] init];
     bouquetArray = [deviceDB getBouquetDetails:withOutDuplicateBouquets];
@@ -229,7 +224,7 @@
      
      //NSDictionary *headerInfo = [response allHeaderFields];
      
-     NSLog(@"Response code: %ld %@",(long)[response statusCode],  response);
+//     NSLog(@"Response code: %ld %@",(long)[response statusCode],  response);
      
      // NSString* errorMsg = headerInfo[@"error"];
      
@@ -354,11 +349,12 @@
     NSString *imagePath = [path stringByAppendingPathComponent:imageName];
     //cell.imgCell.image = [UIImage imageNamed:imageName];
     
-    NSLog(@" %@ ",imagePath);
+//    NSLog(@" %@ ",imagePath);
     
     cell.imgCell.image = [UIImage imageWithContentsOfFile:imagePath];
     
     NSString *packageNameTmp= [[packageList objectAtIndex:indexPath.row] valueForKey:@"name"];
+    NSLog(@"packageNameTmp:ImageName:%@",packageNameTmp);
     cell.lblCell.text = packageNameTmp;
     
     //get localized string from appropriate strings file
@@ -374,42 +370,59 @@
     //packageSelected = [packageName objectAtIndex:[indexPath row]];
     NSString* bouquetID = [[packageList objectAtIndex:indexPath.row] valueForKey:@"id"];
     
-    NSLog(@" %@ ",bouquetID);
+//    NSLog(@" %@ ",bouquetID);
     
+    // ******* GETTING CHANNELS ID BASED ON BOUQUET ID "FROM" BOUQUET_VS_CHANNELS "TABLE" ******** //
     NSMutableArray *channelIDsArray = [deviceDB getChannelIdBasedonBouquetId:bouquetID];
     
-    NSLog(@" %@ ",channelIDsArray);
+//    NSLog(@" %@ ",channelIDsArray);
+    
+//    NSLog(@" %@",channelList);
+    
+    // *********** GET CHANNELS LIST BASED ON BOUQUET ID ******* //
+    NSMutableArray *channelsBasedOnBouquetsArray = [NSMutableArray new];
+    
+    for (int i=0; i<channelIDsArray.count; i++) {
+        
+        for (int j=0; j<channelList.count; j++) {
+            
+            if ([[channelIDsArray objectAtIndex:i] isEqualToString:[[channelList objectAtIndex:j] valueForKey:@"id"]]) {
+                [channelsBasedOnBouquetsArray addObject:[channelList objectAtIndex:j]];
+            }
+        }
+    }
+    
+//    NSLog(@" %@ ",channelsBasedOnBouquetsArray);
     
 //    [self getChannelInBouquet:bouquetID:indexPath.row];
 //    NSLog(@"channels %d", channelList.count);
     
-    return;
-    packageSelected = [[packageList objectAtIndex:[indexPath row]] valueForKey:@"name"];
-    
-    NSLog(@" %@ ",packageSelected);
-    
-    NSLog(@" %@ ",channelList);
-    
-    packageSelectedChannelsArray = [[NSMutableArray alloc] init];
+//    packageSelected = [[packageList objectAtIndex:[indexPath row]] valueForKey:@"name"];
+//    
+//    NSLog(@" %@ ",packageSelected);
+//    
+//    NSLog(@" %@ ",channelList);
+//    
+//    packageSelectedChannelsArray = [[NSMutableArray alloc] init];
 //    packageLinksSelected = [[NSMutableArray alloc] init];
 //    packageGroupsSelected = [[NSMutableArray alloc] init];
 //    packageDiscriptionSelected = [[NSMutableArray alloc] init];
     
-    for (int index = 0; index < channelList.count; index++){
-        
-//        if (channelList) {
-//            <#statements#>
-//        }
-        
-        
-        
-//        [packageImagesSelected addObject:[[channelList objectAtIndex:index] valueForKey:@"imageName"]];
-//        [packageLinksSelected addObject:[[channelList objectAtIndex:index] valueForKey:@"channelUrl"]];
-//        [packageGroupsSelected addObject:[[channelList objectAtIndex:index] valueForKey:@"channelGroup"]];
-//        [packageDiscriptionSelected addObject:[[channelList objectAtIndex:index] valueForKey:@"channelDescription"]];
-        
-        
-    }
+//    for (int index = 0; index < channelList.count; index++){
+//        
+////        if (channelList) {
+////            <#statements#>
+////        }
+//        
+//        
+//        
+////        [packageImagesSelected addObject:[[channelList objectAtIndex:index] valueForKey:@"imageName"]];
+////        [packageLinksSelected addObject:[[channelList objectAtIndex:index] valueForKey:@"channelUrl"]];
+////        [packageGroupsSelected addObject:[[channelList objectAtIndex:index] valueForKey:@"channelGroup"]];
+////        [packageDiscriptionSelected addObject:[[channelList objectAtIndex:index] valueForKey:@"channelDescription"]];
+//        
+//        
+//    }
 //    NSLog(@"Selected Package Name: %@ channels %@", packageSelected, packageDiscriptionSelected);
 /*
     allChanneInBouquet = [[NSMutableArray alloc] init];
@@ -428,7 +441,7 @@
     //NSLog(@"Selected Package Name: %@ channels %@", packageSelected, packageDiscriptionSelected);
 */
 
-    [self performSegueWithIdentifier:@"goto_package" sender:self];
+    [self performSegueWithIdentifier:@"goto_package" sender:channelsBasedOnBouquetsArray];
 }
 
 
@@ -437,6 +450,7 @@
     if ([[segue identifier]isEqualToString:@"goto_package"]) {
         
         PackageChannelController *packageObj = [segue destinationViewController];
+        packageObj->allChannelsArray = sender;
 //        packageObj.allImages =packageImagesSelected;
 //        packageObj.allLinks = packageLinksSelected;
 //        packageObj.allGroups = packageGroupsSelected;

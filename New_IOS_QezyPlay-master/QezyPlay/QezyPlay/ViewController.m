@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "FavoriteData.h"
 #import "UserData.h"
 #import "ProfileData.h"
 #import "HomeData.h"
@@ -99,10 +98,11 @@
     self.navigationController.navigationBarHidden=NO;
     
     if ([sender tag]==1) {
-        
+        [firstTimeView removeFromSuperview];
     }
     else if ([sender tag]==2) {
-        
+        [firstTimeView removeFromSuperview];
+        [self signUp:sender];
     }
     else if ([sender tag]==3) {
         [firstTimeView removeFromSuperview];
@@ -125,6 +125,11 @@
 {
     staticBouquetImages = [NSMutableArray arrayWithObjects:@"Bangla.png", @"free-new.png", nil];
     
+    NSArray *channelsImagesArray = [NSArray arrayWithObjects:@"high-news.png",@"ctvn.png",@"taratv.png",@"channel-10.png",@"jamuna.png",@"channel-i.png",@"satv.png",@"Uttarbangla.png",@"boishakhi-tv.png",@"deccan-tv.png",@"Life-Changing.png",@"news1.png",@"metro.png",@"sai-tv.png",@"stv.png",@"vtv.png",@"mana-telugu.png",@"n24.png",@"ptv.png",@"ytv.png", nil];
+    
+    
+    [staticBouquetImages addObjectsFromArray:channelsImagesArray];
+    
     for (int i=0; i<staticBouquetImages.count; i++) {
         NSArray *pathsArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         
@@ -132,11 +137,11 @@
         
         NSString *path = [[pathsArray objectAtIndex:0] stringByAppendingPathComponent:imageName];
         
-        NSLog(@" %@ ",path);
+//        NSLog(@" %@ ",path);
         
         NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:imageName]);
         
-        NSLog(@" %@ imag",imageData);
+//        NSLog(@" %@ imag",imageData);
         
         [imageData writeToFile:path atomically:YES];
     }
@@ -155,52 +160,12 @@
     NSInteger numObj = favoriteList.count;
  //   NSLog(@"query result for favorites: %@ %d", favoriteList, numObj);
     
-    
-    allFavoriteImages = [[NSMutableArray alloc] init];
-    allFavoriteLinks = [[NSMutableArray alloc] init];
-    allFavoriteGroups = [[NSMutableArray alloc] init];
-    
-    newsFavoriteImages = [[NSMutableArray alloc] init];
-    newsFavoriteLinks = [[NSMutableArray alloc] init];
-    
-    musicFavoriteImages = [[NSMutableArray alloc] init];
-    musicFavoriteLinks = [[NSMutableArray alloc] init];
-    
-    entertainFavoriteImages = [[NSMutableArray alloc] init];
-    entertainFavoriteLinks = [[NSMutableArray alloc] init];
-    
-    sportsFavoriteImages = [[NSMutableArray alloc] init];
-    sportsFavoriteLinks = [[NSMutableArray alloc] init];
-    
-    
     for (int index = 0; index < numObj; index++){
         
         NSString * group = [[favoriteList objectAtIndex:index] valueForKey:@"group"];
         NSString *imageName = [[favoriteList objectAtIndex:index] valueForKey:@"name"];
         NSString *link = [[favoriteList objectAtIndex:index] valueForKey:@"link"];
         //NSLog (@"add channel info into favorite list %@ %@ %@", imageName, link, group);
-        
-        [allFavoriteImages addObject:imageName];
-        [allFavoriteLinks addObject:link];
-        [allFavoriteGroups addObject:group];
-
-        if([group caseInsensitiveCompare:@"news"] == NSOrderedSame){
-            [newsFavoriteImages addObject:imageName];
-            [newsFavoriteLinks addObject:link];
-        }
-        else if([group caseInsensitiveCompare:@"music"] == NSOrderedSame){
-            [musicFavoriteImages addObject:imageName];
-            [musicFavoriteLinks addObject:link];
-        }
-        else if([group caseInsensitiveCompare:@"entertainment"] == NSOrderedSame){
-            [entertainFavoriteImages addObject:imageName];
-            [entertainFavoriteLinks addObject:link];
-        }
-        else if([group caseInsensitiveCompare:@"sports"] == NSOrderedSame){
-            [sportsFavoriteImages addObject:imageName];
-            [sportsFavoriteLinks addObject:link];
-        }
- 
 
     }
     
@@ -215,7 +180,7 @@
     
     profileList = [deviceDB getAllProfiles];
     NSInteger numObj = profileList.count;
-    NSLog(@"query result for profile: %@ %ld", profileList, (long)numObj);
+//    NSLog(@"query result for profile: %@ %ld", profileList, (long)numObj);
     
     profileName = [[NSMutableArray alloc] init];
     profileImage = [[NSMutableArray alloc] init];
@@ -237,7 +202,7 @@
         
     }
     
-    NSLog(@"ViewController -- Profile list from database: %@", profileName);
+//    NSLog(@"ViewController -- Profile list from database: %@", profileName);
 }
 
 -(void) configureDatabase{
@@ -282,6 +247,7 @@
 }
 
 - (IBAction)logIn:(id)sender {
+    
     NSLog(@"ViewController: Enter logIn");
     
     self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -303,7 +269,7 @@
     }
     else if (self.txtPassword.text.length<8)
     {
-        [self alertStatus:@"Password must be minimum 8-16 characters" :@"Login Failed!" :0];
+        [self alertStatus:@"Please enter valid password" :@"Login Failed!" :0];
         return;
     }
     
@@ -359,7 +325,16 @@
                     
                     if(success == 1)
                     {
+                        
+                        
                         NSMutableArray *data = [jsonData valueForKey:@"data"];
+                        NSLog(@"OLD_ID:%@", data);
+                        [[NSUserDefaults standardUserDefaults] setObject:[data valueForKey:@"oldId"] forKey:@"OLD_ID"];
+                        
+                        [[NSUserDefaults standardUserDefaults] setObject:@"madhu" forKey:@"USER_NAME"];
+                        
+                        
+
                         
                         if (tokenID == nil){
                             tokenID = [[NSString alloc] init];
@@ -373,14 +348,52 @@
                         
                         NSLog(@"Login SUCCESS, enter home page with user id %@ and token id %@", userID, tokenID);
                         
+                        [self getUserIDUserName];
+                        
                         [self configureDatabase];
-                        [self setupPackageInfo];
-                        [self setupChannelsInfo];
-//                        [self setupBouquet_vs_ChannelsInfo];
-//                        
-//                        [self setupFavorites];
-//                        [self initProfile];
-//                        [self setupVersioningInfo];
+
+                        if ([[NSUserDefaults standardUserDefaults] valueForKey:@"FIRST_TIME_DB"]==nil) {
+                            
+                            [self setupPackageInfo];
+                            [self setupChannelsInfo:@"Static" channelsList:nil];
+                            [self setupBouquet_vs_ChannelsInfo];
+                            
+                            //                        [self setupProfilesInfo];
+                            //                        [self setupProfile_vs_Channel];
+                            //                        [self setupSubscription_Plans];
+                            [self setupSubscriptionplans_vs_Bouquet];
+                            //
+                            //                        [self setupFavorites];
+                            //                        [self initProfile];
+                            [self setupVersioningInfo];
+                            
+                            [[NSUserDefaults standardUserDefaults] setObject:@"created" forKey:@"FIRST_TIME_DB"];
+                        }
+                        
+                        
+                        // SavedTime
+                        NSDate *savedDate = [[NSUserDefaults standardUserDefaults] valueForKey:@"lastOpenTime"];
+                        
+                        NSLog(@" %@ ",savedDate);
+                        
+                        // Current Time
+                        
+                        NSDate *currentTime = [NSDate date];
+                        
+                        NSTimeInterval secondsBetween = [currentTime timeIntervalSinceDate:savedDate];
+                        
+                        int numberOfDays = secondsBetween / 86400;
+                        
+                        NSLog(@"There are %d days in between the two dates.", numberOfDays);
+                        
+                        if (numberOfDays>0) {
+                            
+                            [self setupVersioningInfo];
+
+                            [self dataSyncsLocalDataBaseWithServer];
+                        }
+                        
+                        
                         [self performSegueWithIdentifier:@"login_success" sender:self];
                         
                         self.txtUsername.text = @"";
@@ -410,6 +423,115 @@
             [self alertStatus:@"Login Failed." :@"Error!" :0];
         }
     });
+
+}
+
+-(void)dataSyncsLocalDataBaseWithServer
+{
+    NSDictionary *post;
+    
+    NSMutableDictionary *tablesString = [[NSMutableDictionary alloc] init];
+    
+    for(int index = 0; index < versioningInfo.count; index ++){
+        
+        [tablesString setObject:@"1" forKey:[[versioningInfo objectAtIndex:index] valueForKey:@"tablename"]];
+    }
+    
+    NSLog(@"tablesString: %@ ",tablesString);
+    
+    post = [NSMutableDictionary dictionaryWithObjectsAndKeys:tablesString,@"inputVersion", nil];
+    
+    NSURL *url=[NSURL URLWithString:versioningSC];
+    
+    NSError *error;
+    NSData* postData = [NSJSONSerialization dataWithJSONObject:post options:kNilOptions error:&error];
+    
+    NSLog(@"postData: %@ ",[[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding]);
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:url];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setHTTPBody:postData];
+    
+    // print json:
+    NSLog(@"dataSyncsLocalDataBa :JSON summary: %@", [[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding]);
+    
+    NSHTTPURLResponse *response = nil;
+    NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    if ([response statusCode] == 200)
+    {
+        NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+        NSLog(@"dataSyncsLocalDataBase:Response ==> %@", responseData);
+        
+        NSError *error = nil;
+        NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:&error];
+        
+        if ([jsonData[@"status"] integerValue] == 1) {
+            
+            
+            NSDictionary *data = jsonData[@"data"];
+            NSLog(@"jsonData:%@", data);
+            NSDictionary *versions = data[@"versions"];
+            NSLog(@"jsonVersion:%@", versions);
+            
+            NSArray *channelsArray = [versions objectForKey:@"Channels"];
+            
+            if (channelsArray.count!=0) {
+                
+                [deviceDB deleteTheWholeDataFromTable:@"Channels"];
+                
+                [self setupChannelsInfo:@"Dynamic" channelsList:channelsArray];
+            }    
+        }
+    }
+}
+
+-(void) getUserIDUserName
+{
+    NSLog(@"getUserIDUserName");
+//    http://104.196.99.177:6363/api/Customers/"+id+"?access_token="+token
+    
+    NSString *urlStr = [NSString stringWithFormat: @"http://104.196.99.177:6363/api/Customers/%@?access_token=%@",userID,tokenID];
+//    NSLog(@"URL:%@",urlStr);
+       NSURL *requestURL = [NSURL URLWithString:urlStr];
+    NSMutableURLRequest *request =
+    [NSMutableURLRequest requestWithURL:requestURL
+                            cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                        timeoutInterval:10
+     ];
+    
+    [request setHTTPMethod: @"GET"];
+    
+    NSError *error = nil;
+    NSHTTPURLResponse *response = nil;
+    
+    
+    NSData *urlData =[NSURLConnection sendSynchronousRequest:request
+                                           returningResponse:&response error:&error];
+    
+    NSLog(@"urlData:%@",urlData);
+    //NSDictionary *headerInfo = [response allHeaderFields];
+    
+//    NSLog(@"Response code: %ld %@",(long)[response statusCode],  response);
+    
+    // NSString* errorMsg = headerInfo[@"error"];
+    
+    //NSLog(@"Response code and error code: %ld %@", (long)[response statusCode], errorMsg);
+    
+    // The condition of >= 200 and < 300 is defined by HTTP protocol, meaning a success.
+    if ([response statusCode] >= 200 && [response statusCode] < 300){
+        //NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+        //NSLog(@"Response ==> %@", responseData);
+        
+        NSError *error = nil;
+        NSDictionary *jsonData = [NSJSONSerialization
+                                  JSONObjectWithData:urlData
+                                  options:NSJSONReadingMutableContainers
+                                  error:&error];
+    }
     
 }
 
@@ -418,9 +540,7 @@
     //    tableDef = @"CREATE TABLE IF NOT EXISTS %@ (id INTEGER, name TEXT, imageUrl TEXT, image2xUrl TEXT, image3xUrl TEXT, meta_data TEXT, meta_description TEXT, create_datetime TEXT, updated_datetime TEXT, downloadUrl TEXT, is_free TEXT, status INTEGER, imagehdpiUrl TEXT, imageldpiUrl TEXT, imagemdpiUrl TEXT, imagexhdpiUrl TEXT, imagexxhdpiUrl TEXT, imagexxxhdpiUrl TEXT)";
     
     NSLog(@"setupPackageInfo");
-    defaulBouquets = [NSMutableArray arrayWithObjects:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"4",@"id",@"Bangla_Bouquet", @"name", @"Bangla.png", @"imageUrl",@"Bangla@2x.png",@"image2xUrl", @"Bangla@3x.png", @"image3xUrl" ,@"bangla_bouquet", @"meta_data", @"All Bangla channels from both WestBengal and Bangladesh", @"meta_description", @"2016-09-30 02:48:32", @"create_datetime", @"0000-00-00 00:00:00", @"updated_datetime", @"http://104.196.99.177:6363/api/FileStorageMongos/bouquets/download/", @"downloadUrl",@"0", @"is_free", @"1", @"status", @"",@"imagehdpiUrl", @"", @"imageldpiUrl", @"",@"imagemdpiUrl", @"",@"imagexhdpiUrl", @"",@"imagexxhdpiUrl",@"",@"imagexxxhdpiUrl", nil],
-        [NSMutableDictionary dictionaryWithObjectsAndKeys:@"12",@"id",@"Decan free channel", @"name", @"free-new.png", @"imageUrl", @"free-new@2x.png", @"image2xUrl", @"free-new@3x.png", @"image3xUrl",@"decan-free-channels", @"meta_data", @"All south-Indian Free channels", @"meta_description", @"2016-10-19 07:00:00'", @"create_datetime", @"0000-00-00 00:00:00", @"updated_datetime", @"http://104.196.99.177:6363/api/FileStorageMongos/bouquets/download/", @"downloadUrl", @"1", @"is_free", @"1", @"status", @"",@"imagehdpiUrl", @"", @"imageldpiUrl", @"",@"imagemdpiUrl", @"",@"imagexhdpiUrl", @"",@"imagexxhdpiUrl",@"",@"imagexxxhdpiUrl", nil],
-        nil];
+    defaulBouquets = [NSMutableArray arrayWithObjects:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"12",@"id",@"Decan free channel", @"name", @"free-new.png", @"imageUrl", @"free-new@2x.png", @"image2xUrl", @"free-new@3x.png", @"image3xUrl",@"decan-free-channels", @"meta_data", @"All south-Indian Free channels", @"meta_description", @"2016-10-19 07:00:00'", @"create_datetime", @"0000-00-00 00:00:00", @"updated_datetime", @"http://104.196.99.177:6363/api/FileStorageMongos/bouquets/download/", @"downloadUrl", @"1", @"is_free", @"1", @"status", @"",@"imagehdpiUrl", @"", @"imageldpiUrl", @"",@"imagemdpiUrl", @"",@"imagexhdpiUrl", @"",@"imagexxhdpiUrl",@"",@"imagexxxhdpiUrl", nil],[NSMutableDictionary dictionaryWithObjectsAndKeys:@"4",@"id",@"Bangla_Bouquet", @"name", @"Bangla.png", @"imageUrl",@"Bangla@2x.png",@"image2xUrl", @"Bangla@3x.png", @"image3xUrl" ,@"bangla_bouquet", @"meta_data", @"All Bangla channels from both WestBengal and Bangladesh", @"meta_description", @"2016-09-30 02:48:32", @"create_datetime", @"0000-00-00 00:00:00", @"updated_datetime", @"http://104.196.99.177:6363/api/FileStorageMongos/bouquets/download/", @"downloadUrl",@"0", @"is_free", @"1", @"status", @"",@"imagehdpiUrl", @"", @"imageldpiUrl", @"",@"imagemdpiUrl", @"",@"imagexhdpiUrl", @"",@"imagexxhdpiUrl",@"",@"imagexxxhdpiUrl", nil], nil];
 
     //    NSLog(@"defaulBouquets:%@", defaulBouquets);
     
@@ -457,7 +577,7 @@
     
  //   NSLog(@"PackageList");
     packageList = [[NSMutableArray alloc] init];
-    NSLog(@"Before connect with DB");
+    NSLog(@"ViewController: setUpPackageInfo: Before connect with DB");
     packageList = [deviceDB getBouquets];
     NSLog(@"getBouquets");
     
@@ -508,195 +628,172 @@
             }
             
             [deviceDB insertRecordIntoBouquets:bouquet];
-            
         }
-        
-    }    
-    
-//    channelList = [[NSMutableArray alloc] init];
-    
-    
+    }
 }
 
--(void)setupChannelsInfo
+-(void)setupChannelsInfo:(NSString *)typeString channelsList:(NSArray *)_array
 {
-    NSLog(@"setupChannelsInfo");
-    channels =[NSMutableArray arrayWithObjects:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"26",@"id", @"High News",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch27/auto",@"Url" ,@"var _0x17b5=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x32\\\\x37\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x17b5[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/ch27-vod6.flv",@"vodUrl" , @"var _0x3290=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x63\\\\x68\\\\x32\\\\x37\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x36\\\\x2E\\\\x66\\\\x6C\\\\x76\\\\x20\\\"];var streamURL=_0x3290[0]",@"vod_octo_js" , @"high-news.png",@"imageUrl", @"high-news",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:53",@"created_datetime" ,@"2016-09-30 06:03:57",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-        @"", @"imagehdpiUrl",
-        @"",@"imageldpiUrl",
-        @"",@"imagemdpiUrl",
-        @"",@"imagexhdpiUrl",
-        @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-               
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"31",@"id", @"Zeal Sports and News",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch45/auto",@"Url" ,@"var _0xb7f0=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x34\\\\x35\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xb7f0[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"zeal-news.png",@"imageUrl", @"zeal-sports-and-news__trashed",@"meta_data" ,@"",@"meta_description" ,@"0",@"status" ,@"2016-11-02 11:36:54",@"created_datetime" ,@"2016-09-27 09:16:39",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"82",@"id", @"CTVN PLUS",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch29/auto",@"Url" ,@"var _0x87b9=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x32\\\\x39\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x87b9[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/ch29-vod.flv",@"vodUrl" , @"var _0x78e3=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x63\\\\x68\\\\x32\\\\x39\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x2E\\\\x66\\\\x6C\\\\x76\\\\x20\\\"];var streamURL=_0x78e3[0]",@"vod_octo_js" , @"ctvn.png",@"imageUrl", @"ctvn-plus",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:54",@"created_datetime" ,@"2016-09-30 06:04:51",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-               
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"89",@"id", @"Live 24",@"name" ,@"",@"Url" ,@"var _0x962c=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x6F\\\\x70\\\\x73\\\\x2F\\\\x73\\\\x61\\\\x6A\\\\x61\\\\x69\\\\x6E\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x68\\\\x6C\\\\x73\\\\x2F\\\\x32\\\\x30\\\\x30\\\\x30\\\\x6B\\\"];var streamURL=_0x962c[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"live24.png",@"imageUrl", @"live-24",@"meta_data" ,@"",@"meta_description" ,@"0",@"status" ,@"2016-09-30 10:58:53",@"created_datetime" ,@"2016-08-03 11:54:20",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
- 
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"129",@"id", @"Tara TV",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch51/auto",@"Url" ,@"var _0x340c=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x35\\\\x31\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x340c[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/ch51-vod.mp4",@"vodUrl" , @"var _0x8787=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x63\\\\x68\\\\x35\\\\x31\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x2E\\\\x6D\\\\x70\\\\x34\\\"];var streamURL=_0x8787[0]",@"vod_octo_js" , @"taratv.png",@"imageUrl", @"tara-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:55",@"created_datetime" ,@"2016-07-27 11:43:10",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"132",@"id", @"Channel 10",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch12/auto",@"Url" ,@"var _0xea65=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x31\\\\x32\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xea65[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/ch12-vod.mp4",@"vodUrl" , @"var _0x8ca9=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x63\\\\x68\\\\x31\\\\x32\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x2E\\\\x6D\\\\x70\\\\x34\\\"];var streamURL=_0x8ca9[0]",@"vod_octo_js" , @"channel-10.png",@"imageUrl", @"channel-10",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:55",@"created_datetime" ,@"2016-07-27 11:42:41",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+    if ([typeString isEqualToString:@"Static"]) {
+        
+        channels =[NSMutableArray arrayWithObjects:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"26",@"id", @"High News",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch27/auto",@"Url" ,@"var _0x17b5=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x32\\\\x37\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x17b5[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/ch27-vod6.flv",@"vodUrl" , @"var _0x3290=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x63\\\\x68\\\\x32\\\\x37\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x36\\\\x2E\\\\x66\\\\x6C\\\\x76\\\\x20\\\"];var streamURL=_0x3290[0]",@"vod_octo_js" , @"high-news.png",@"imageUrl", @"high-news",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:53",@"created_datetime" ,@"2016-09-30 06:03:57",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                                                    @"", @"imagehdpiUrl",
+                                                    @"",@"imageldpiUrl",
+                                                    @"",@"imagemdpiUrl",
+                                                    @"",@"imagexhdpiUrl",
+                                                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"82",@"id", @"CTVN PLUS",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch29/auto",@"Url" ,@"var _0x87b9=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x32\\\\x39\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x87b9[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/ch29-vod.flv",@"vodUrl" , @"var _0x78e3=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x63\\\\x68\\\\x32\\\\x39\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x2E\\\\x66\\\\x6C\\\\x76\\\\x20\\\"];var streamURL=_0x78e3[0]",@"vod_octo_js" , @"ctvn.png",@"imageUrl", @"ctvn-plus",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:54",@"created_datetime" ,@"2016-09-30 06:04:51",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"129",@"id", @"Tara TV",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch51/auto",@"Url" ,@"var _0x340c=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x35\\\\x31\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x340c[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/ch51-vod.mp4",@"vodUrl" , @"var _0x8787=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x63\\\\x68\\\\x35\\\\x31\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x2E\\\\x6D\\\\x70\\\\x34\\\"];var streamURL=_0x8787[0]",@"vod_octo_js" , @"taratv.png",@"imageUrl", @"tara-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:55",@"created_datetime" ,@"2016-07-27 11:43:10",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"132",@"id", @"Channel 10",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch12/auto",@"Url" ,@"var _0xea65=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x31\\\\x32\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xea65[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/ch12-vod.mp4",@"vodUrl" , @"var _0x8ca9=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x63\\\\x68\\\\x31\\\\x32\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x2E\\\\x6D\\\\x70\\\\x34\\\"];var streamURL=_0x8ca9[0]",@"vod_octo_js" , @"channel-10.png",@"imageUrl", @"channel-10",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:55",@"created_datetime" ,@"2016-07-27 11:42:41",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"135",@"id", @"Jamuna TV",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch37/auto",@"Url" ,@"var _0x1958=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x33\\\\x37\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x1958[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/Ch37-vod.mp4",@"vodUrl" , @"var _0x930a=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x43\\\\x68\\\\x33\\\\x37\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x2E\\\\x6D\\\\x70\\\\x34\\\"];var streamURL=_0x930a[0]",@"vod_octo_js" , @"jamuna.png",@"imageUrl", @"jamuna-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:56",@"created_datetime" ,@"2016-07-27 11:42:04",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"138",@"id", @"Channel I",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch46/auto",@"Url" ,@"var _0xe9d1=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x34\\\\x36\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xe9d1[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/Ch46-vod.mp4",@"vodUrl" , @"var _0x417d=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x43\\\\x68\\\\x34\\\\x36\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x2E\\\\x6D\\\\x70\\\\x34\\\"];var streamURL=_0x417d[0]",@"vod_octo_js" , @"channel-i.png",@"imageUrl", @"channel-i",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:56",@"created_datetime" ,@"2016-07-27 11:41:40",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"185",@"id", @"SA TV",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch47/auto",@"Url" ,@"var _0xa6d5=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x34\\\\x37\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xa6d5[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/ch47-vod.mp4",@"vodUrl" , @"var _0xb666=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x63\\\\x68\\\\x34\\\\x37\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x2E\\\\x6D\\\\x70\\\\x34\\\"];var streamURL=_0xb666[0]",@"vod_octo_js" , @"satv.png",@"imageUrl", @"sa-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:57",@"created_datetime" ,@"2016-08-04 09:01:37",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"514",@"id", @"Uttar Bangla",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch52/auto",@"Url" ,@"var _0xcbdf=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x35\\\\x32\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xcbdf[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/ch52-vod.flv",@"vodUrl" , @"var _0xd2fc=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x63\\\\x68\\\\x35\\\\x32\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x2E\\\\x66\\\\x6C\\\\x76\\\"];var streamURL=_0xd2fc[0]",@"vod_octo_js" , @"Uttarbangla.png",@"imageUrl", @"uttar-bangla",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:57",@"created_datetime" ,@"2016-07-27 11:38:08",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"586",@"id", @"Boishakhi TV",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch54/auto",@"Url" ,@"var _0x49c9=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x35\\\\x34\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x49c9[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/Ch54-vod.mp4",@"vodUrl" , @"var _0xcf50=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x43\\\\x68\\\\x35\\\\x34\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x2E\\\\x6D\\\\x70\\\\x34\\\"];var streamURL=_0xcf50[0]",@"vod_octo_js" , @"boishakhi-tv.png",@"imageUrl", @"boishakhi-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:58",@"created_datetime" ,@"2016-09-30 06:01:32",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"756",@"id", @"Deccan TV",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch5/auto",@"Url" ,@"var _0xab09=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x35\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xab09[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"deccan-tv.png",@"imageUrl", @"deccan-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:09",@"created_datetime" ,@"2016-10-21 07:18:14",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"758",@"id", @"Life Changing TV",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch22/auto",@"Url" ,@"var _0x51df=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x32\\\\x32\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x51df[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"Life-Changing.png",@"imageUrl", @"life-changing-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:08",@"created_datetime" ,@"2016-10-21 07:18:39",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"760",@"id", @"News One",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch34/auto",@"Url" ,@"var _0xe7b2=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x33\\\\x34\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xe7b2[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"news1.png",@"imageUrl", @"news-one",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:08",@"created_datetime" ,@"2016-10-21 09:24:14",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"762",@"id", @"Metro TV",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch4/auto",@"Url" ,@"var _0x5fb8=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x34\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x5fb8[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"metro.png",@"imageUrl", @"metro-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:07",@"created_datetime" ,@"2016-10-21 09:24:23",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"764",@"id", @"Sai TV",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch10/auto",@"Url" ,@"var _0x238c=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x31\\\\x30\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x238c[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"sai-tv.png",@"imageUrl", @"sai-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:07",@"created_datetime" ,@"2016-10-21 09:24:41",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"766",@"id", @"S TV",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch18-1/auto",@"Url" ,@"var _0x9752=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x31\\\\x38\\\\x2D\\\\x31\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x9752[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"stv.png",@"imageUrl", @"s-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:06",@"created_datetime" ,@"2016-10-20 14:54:55",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"768",@"id", @"V TV",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch16-1/auto",@"Url" ,@"var _0xbbee=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x31\\\\x36\\\\x2D\\\\x31\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xbbee[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"vtv.png",@"imageUrl", @"v-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:05",@"created_datetime" ,@"2016-10-20 14:52:58",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   
+                   
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"770",@"id", @"Mana Telugu TV",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch36/auto",@"Url" ,@"var _0x1bf8=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x33\\\\x36\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x1bf8[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"mana-telugu.png",@"imageUrl", @"mana-telugu-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:05",@"created_datetime" ,@"2016-10-21 09:25:11",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"772",@"id", @"N24",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch17-1/auto",@"Url" ,@"var _0xf740=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x31\\\\x37\\\\x2D\\\\x31\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xf740[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"n24.png",@"imageUrl", @"n24",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:04",@"created_datetime" ,@"2016-10-22 06:34:28",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"774",@"id", @"P TV",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch8-1/auto",@"Url" ,@"var _0xe776=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x38\\\\x2D\\\\x31\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xe776[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"2016/10/ptv.jpg",@"imageUrl", @"p-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-09-30 03:58:51",@"created_datetime" ,@"2016-10-20 14:54:23",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+                   [NSMutableDictionary dictionaryWithObjectsAndKeys:@"776",@"id", @"Y TV HD",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch30/auto",@"Url" ,@"var _0x1ad4=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x33\\\\x30\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x1ad4[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"2016/10/ytv.jpg",@"imageUrl", @"y-tv-hd",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:03",@"created_datetime" ,@"2016-10-20 14:52:50",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+                    @"", @"imagehdpiUrl",
+                    @"",@"imageldpiUrl",
+                    @"",@"imagemdpiUrl",
+                    @"",@"imagexhdpiUrl",
+                    @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil], nil];
+        /*               [NSMutableDictionary dictionaryWithObjectsAndKeys:@"1062",@"id", @"Big J TV",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch56/auto",@"Url" ,@"var _0x2bb3=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x35\\\\x36\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x2bb3[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"2016/11/bigtv.jpg",@"imageUrl", @"big-j-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-03 11:23:03",@"created_datetime" ,@"2016-11-03 04:23:03",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+         @"", @"imagehdpiUrl",
+         @"",@"imageldpiUrl",
+         @"",@"imagemdpiUrl",
+         @"",@"imagexhdpiUrl",
+         @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+         
+         [NSMutableDictionary dictionaryWithObjectsAndKeys:@"959",@"id", @"Vijaya News",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch9-1/auto",@"Url" ,@"var _0x93d7=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x39\\\\x2D\\\\x31\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x93d7[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"2016/10/vijaya-news.jpg",@"imageUrl", @"vijaya-news",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:03",@"created_datetime" ,@"2016-11-01 07:23:50",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+         @"", @"imagehdpiUrl",
+         @"",@"imageldpiUrl",
+         @"",@"imagemdpiUrl",
+         @"",@"imagexhdpiUrl",
+         @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
+         
+         [NSMutableDictionary dictionaryWithObjectsAndKeys:@"1104",@"id", @"BN TV",@"name" ,@"streams.octoshape.net/ideabytes/live/ib-ch32/auto",@"Url" ,@"var _0xea2d=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x33\\\\x32\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xea2d[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"2016/11/bntv.jpg",@"imageUrl", @"bn-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-09-30 03:58:51",@"created_datetime" ,@"0000-00-00 00:00:00",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
+         @"", @"imagehdpiUrl",
+         @"",@"imageldpiUrl",
+         @"",@"imagemdpiUrl",
+         @"",@"imagexhdpiUrl",
+         @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil], */
+    }
+    else
+    {
+        channels = [NSMutableArray new];
+        
+        channels = [_array mutableCopy];
+    }
 
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"135",@"id", @"Jamuna TV",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch37/auto",@"Url" ,@"var _0x1958=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x33\\\\x37\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x1958[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/Ch37-vod.mp4",@"vodUrl" , @"var _0x930a=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x43\\\\x68\\\\x33\\\\x37\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x2E\\\\x6D\\\\x70\\\\x34\\\"];var streamURL=_0x930a[0]",@"vod_octo_js" , @"jamuna.png",@"imageUrl", @"jamuna-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:56",@"created_datetime" ,@"2016-07-27 11:42:04",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"138",@"id", @"Channel I",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch46/auto",@"Url" ,@"var _0xe9d1=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x34\\\\x36\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xe9d1[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/Ch46-vod.mp4",@"vodUrl" , @"var _0x417d=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x43\\\\x68\\\\x34\\\\x36\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x2E\\\\x6D\\\\x70\\\\x34\\\"];var streamURL=_0x417d[0]",@"vod_octo_js" , @"channel-i.png",@"imageUrl", @"channel-i",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:56",@"created_datetime" ,@"2016-07-27 11:41:40",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
- 
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"185",@"id", @"SA TV",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch47/auto",@"Url" ,@"var _0xa6d5=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x34\\\\x37\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xa6d5[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/ch47-vod.mp4",@"vodUrl" , @"var _0xb666=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x63\\\\x68\\\\x34\\\\x37\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x2E\\\\x6D\\\\x70\\\\x34\\\"];var streamURL=_0xb666[0]",@"vod_octo_js" , @"satv.png",@"imageUrl", @"sa-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:57",@"created_datetime" ,@"2016-08-04 09:01:37",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
- 
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"247",@"id", @"Music Bangla",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch35/1600k",@"Url" ,@"var _0x1c8b=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x33\\\\x35\\\\x2F\\\\x31\\\\x36\\\\x30\\\\x30\\\\x6B\\\"];var streamURL=_0x1c8b[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"music-bangla.png",@"imageUrl", @"music-bangla__trashed",@"meta_data" ,@"",@"meta_description" ,@"0",@"status" ,@"2016-11-02 11:09:42",@"created_datetime" ,@"2016-09-27 09:16:45",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"514",@"id", @"Uttar Bangla",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch52/auto",@"Url" ,@"var _0xcbdf=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x35\\\\x32\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xcbdf[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/ch52-vod.flv",@"vodUrl" , @"var _0xd2fc=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x63\\\\x68\\\\x35\\\\x32\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x2E\\\\x66\\\\x6C\\\\x76\\\"];var streamURL=_0xd2fc[0]",@"vod_octo_js" , @"Uttarbangla.png",@"imageUrl", @"uttar-bangla",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:57",@"created_datetime" ,@"2016-07-27 11:38:08",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"586",@"id", @"Boishakhi TV",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch54/auto",@"Url" ,@"var _0x49c9=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x35\\\\x34\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x49c9[0]",@"octo_js" , @"octoshape://streams.octoshape.net/ideabytes/vod/QP/Ch54-vod.mp4",@"vodUrl" , @"var _0xcf50=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x76\\\\x6F\\\\x64\\\\x2F\\\\x51\\\\x50\\\\x2F\\\\x43\\\\x68\\\\x35\\\\x34\\\\x2D\\\\x76\\\\x6F\\\\x64\\\\x2E\\\\x6D\\\\x70\\\\x34\\\"];var streamURL=_0xcf50[0]",@"vod_octo_js" , @"boishakhi-tv.png",@"imageUrl", @"boishakhi-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:36:58",@"created_datetime" ,@"2016-09-30 06:01:32",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-               
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"756",@"id", @"Deccan TV",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch5/auto",@"Url" ,@"var _0xab09=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x35\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xab09[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"deccan-tv.png",@"imageUrl", @"deccan-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:09",@"created_datetime" ,@"2016-10-21 07:18:14",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-               
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"758",@"id", @"Life Changing TV",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch22/auto",@"Url" ,@"var _0x51df=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x32\\\\x32\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x51df[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"Life-Changing.png",@"imageUrl", @"life-changing-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:08",@"created_datetime" ,@"2016-10-21 07:18:39",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"760",@"id", @"News One",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch34/auto",@"Url" ,@"var _0xe7b2=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x33\\\\x34\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xe7b2[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"news1.png",@"imageUrl", @"news-one",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:08",@"created_datetime" ,@"2016-10-21 09:24:14",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"762",@"id", @"Metro TV",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch4/auto",@"Url" ,@"var _0x5fb8=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x34\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x5fb8[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"metro.png",@"imageUrl", @"metro-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:07",@"created_datetime" ,@"2016-10-21 09:24:23",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"764",@"id", @"Sai TV",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch10/auto",@"Url" ,@"var _0x238c=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x31\\\\x30\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x238c[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"sai-tv.png",@"imageUrl", @"sai-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:07",@"created_datetime" ,@"2016-10-21 09:24:41",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"766",@"id", @"S TV",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch18-1/auto",@"Url" ,@"var _0x9752=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x31\\\\x38\\\\x2D\\\\x31\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x9752[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"stv.png",@"imageUrl", @"s-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:06",@"created_datetime" ,@"2016-10-20 14:54:55",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"768",@"id", @"V TV",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch16-1/auto",@"Url" ,@"var _0xbbee=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x31\\\\x36\\\\x2D\\\\x31\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xbbee[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"vtv.png",@"imageUrl", @"v-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:05",@"created_datetime" ,@"2016-10-20 14:52:58",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-               
- 
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"770",@"id", @"Mana Telugu TV",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch36/auto",@"Url" ,@"var _0x1bf8=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x33\\\\x36\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x1bf8[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"mana-telugu.png",@"imageUrl", @"mana-telugu-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:05",@"created_datetime" ,@"2016-10-21 09:25:11",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"772",@"id", @"N24",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch17-1/auto",@"Url" ,@"var _0xf740=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x31\\\\x37\\\\x2D\\\\x31\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xf740[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"n24.png",@"imageUrl", @"n24",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:04",@"created_datetime" ,@"2016-10-22 06:34:28",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-/*    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"774",@"id", @"P TV",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch8-1/auto",@"Url" ,@"var _0xe776=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x38\\\\x2D\\\\x31\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xe776[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"2016/10/ptv.jpg",@"imageUrl", @"p-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-09-30 03:58:51",@"created_datetime" ,@"2016-10-20 14:54:23",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"776",@"id", @"Y TV HD",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch30/auto",@"Url" ,@"var _0x1ad4=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x33\\\\x30\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x1ad4[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"2016/10/ytv.jpg",@"imageUrl", @"y-tv-hd",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:03",@"created_datetime" ,@"2016-10-20 14:52:50",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"959",@"id", @"Vijaya News",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch9-1/auto",@"Url" ,@"var _0x93d7=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x39\\\\x2D\\\\x31\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x93d7[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"2016/10/vijaya-news.jpg",@"imageUrl", @"vijaya-news",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-02 11:23:03",@"created_datetime" ,@"2016-11-01 07:23:50",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
-               
- 
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"1062",@"id", @"Big J TV",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch56/auto",@"Url" ,@"var _0x2bb3=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x35\\\\x36\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0x2bb3[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"2016/11/bigtv.jpg",@"imageUrl", @"big-j-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-11-03 11:23:03",@"created_datetime" ,@"2016-11-03 04:23:03",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil],
- 
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"1104",@"id", @"BN TV",@"name" ,@"octoshape://streams.octoshape.net/ideabytes/live/ib-ch32/auto",@"Url" ,@"var _0xea2d=[\\\"\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x3A\\\\x2F\\\\x2F\\\\x73\\\\x74\\\\x72\\\\x65\\\\x61\\\\x6D\\\\x73\\\\x2E\\\\x6F\\\\x63\\\\x74\\\\x6F\\\\x73\\\\x68\\\\x61\\\\x70\\\\x65\\\\x2E\\\\x6E\\\\x65\\\\x74\\\\x2F\\\\x69\\\\x64\\\\x65\\\\x61\\\\x62\\\\x79\\\\x74\\\\x65\\\\x73\\\\x2F\\\\x6C\\\\x69\\\\x76\\\\x65\\\\x2F\\\\x69\\\\x62\\\\x2D\\\\x63\\\\x68\\\\x33\\\\x32\\\\x2F\\\\x61\\\\x75\\\\x74\\\\x6F\\\"];var streamURL=_0xea2d[0]",@"octo_js" , @"",@"vodUrl" , @"",@"vod_octo_js" , @"2016/11/bntv.jpg",@"imageUrl", @"bn-tv",@"meta_data" ,@"",@"meta_description" ,@"1",@"status" ,@"2016-09-30 03:58:51",@"created_datetime" ,@"0000-00-00 00:00:00",@"updated_datetime" ,@"",@"image2xUrl" ,@"",@"image3xUrl" ,
-                @"", @"imagehdpiUrl",
-                @"",@"imageldpiUrl",
-                @"",@"imagemdpiUrl",
-                @"",@"imagexhdpiUrl",
-                @"",@"imagexxhdpiUrl", @"",@"imagexxxhdpiUrl",  @"http://ideabytestraining.com/newqezyplay/wp-content/uploads/",@"downloadUrl" ,@"",@"category" ,nil], */
-               
-nil];
-    
     channelsInfo = [[NSMutableArray alloc] init];
     NSLog(@"channelsInfo:Before connect with DB");
     channelsInfo = [deviceDB getChannels];
@@ -704,54 +801,86 @@ nil];
     
     
     if(channelsInfo.count){
-        //        NSLog(@"ViewController setupChannelsInfo() - load Channels from local db%@", channelsInfo);
     }
     else{
+        
+        
         channelsInfo = channels;
-        //        NSLog(@"ViewController setupChannelsInfo() - load default Channels %@", channelsInfo);
         
         for(int index = 0; index < channelsInfo.count; index ++){
             NSMutableArray *channel = [[NSMutableArray alloc] init];
             [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"id"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"name"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"Url"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"octo_js"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"vodUrl"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"vod_octo_js"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"imageUrl"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"meta_data"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"meta_description"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"status"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"created_datetime"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"updated_datetime"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"image2xUrl"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"image3xUrl"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"imagehdpiUrl"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"imageldpiUrl"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"imagemdpiUrl"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"imagexhdpiUrl"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"imagexxhdpiUrl"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"imagexxxhdpiUrl"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"downloadUrl"]];
-            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"category"]];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"name"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"Url"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"url"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"octo_js"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"octoJs"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"vodUrl"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"vodurl"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"vod_octo_js"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"vodOctoJs"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"imageUrl"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"imageurl"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"meta_data"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"metaData"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"meta_description"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"metaDescription"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"status"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"created_datetime"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"createdDatetime"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"updated_datetime"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"updatedDatetime"]];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"image2xUrl"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"image2xurl"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"image3xUrl"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"image3xurl"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"imagehdpiUrl"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"imagehdpiurl"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"imageldpiUrl"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"imageldpiurl"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"imagemdpiUrl"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"imagemdpiurl"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"imagexhdpiUrl"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"imagexhdpiurl"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"imagexxhdpiUrl"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"imagexxhdpiurl"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"imagexxxhdpiUrl"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"imagexxxhdpiurl"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"downloadUrl"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"downloadurl"]?:@""];
+            [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"category"]?:@""];
     
             
-            //NSLog(@"bouquet info %@", bouquet);
-            if(![deviceDB isTableExist:@"channels"]){
-                NSLog(@"Channels table not exit, create a one");
-                
-                [deviceDB createTable:@"channels" :@""];
-                
-            } else {
-                NSLog(@"Channels table already created");
+            if ([typeString isEqualToString:@"Static"]) {
+                //NSLog(@"bouquet info %@", bouquet);
+                if(![deviceDB isTableExist:@"channels"]){
+                    NSLog(@"Channels table not exit, create a one");
+                    
+                    [deviceDB createTable:@"channels" :@""];
+                } else {
+                    NSLog(@"Channels table already created");
+                }
+                [deviceDB insertRecordIntoChannels:channel];
             }
-            [deviceDB insertRecordIntoChannels:channel];
-            
+            else
+            {
+                [self saveImageEachImageInDocumentDirectory:[[channelsInfo objectAtIndex:index] valueForKey:@"imageurl"]];
+                
+                [deviceDB insertRecordIntoChannels:channel];
+            }            
         }
         
     }
     //    channelList = [[NSMutableArray alloc] init];
     
+}
+
+-(void)saveImageEachImageInDocumentDirectory:(NSString *)_imageName
+{
+    NSArray *pathsArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+//    NSLog(@" %@ ",[NSString stringWithFormat:@"http://ideabytestraining.com/newqezyplay/wp-content/uploads/%@",_imageName]);
+    
+    dispatch_async(dispatch_get_global_queue(0,0), ^{
+        NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: [NSString stringWithFormat:@"http://ideabytestraining.com/newqezyplay/wp-content/uploads/%@",_imageName]]];
+        if ( data == nil )
+            return;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // WARNING: is the cell still using the same data by this point??
+            
+            NSArray *array = [_imageName componentsSeparatedByString:@"/"];
+            
+            NSString *path = [[pathsArray objectAtIndex:0] stringByAppendingPathComponent:[array lastObject]];
+            
+            NSLog(@" %@ ",path);
+            
+            NSData *imageData = UIImagePNGRepresentation([UIImage imageWithData:data]);
+            
+            [imageData writeToFile:path atomically:YES];
+        });
+    });
 }
 
 -(void)setupBouquet_vs_ChannelsInfo
@@ -769,14 +898,14 @@ nil];
                       [NSMutableDictionary dictionaryWithObjectsAndKeys:@"26",@"id",@"4", @"bouquet_id" ,@"586",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] , [NSMutableDictionary dictionaryWithObjectsAndKeys:@"42",@"id",@"12", @"bouquet_id" ,@"1104",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,
                       [NSMutableDictionary dictionaryWithObjectsAndKeys:@"29",@"id",@"12", @"bouquet_id" ,@"760",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil], [NSMutableDictionary dictionaryWithObjectsAndKeys:@"30",@"id",@"12", @"bouquet_id" ,@"758",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil],
                       
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"31",@"id",@"12", @"bouquet_id" ,@"959",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil], [NSMutableDictionary dictionaryWithObjectsAndKeys:@"32",@"id",@"12", @"bouquet_id" ,@"762",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil],
+                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"31",@"id",@"12", @"bouquet_id" ,@"959",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil], [NSMutableDictionary dictionaryWithObjectsAndKeys:@"32",@"id",@"12", @"bouquet_id" ,@"762",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime",@" ",@"updated_datetime" ,nil],
  
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"33",@"id",@"12", @"bouquet_id" ,@"756",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil], [NSMutableDictionary dictionaryWithObjectsAndKeys:@"34",@"id",@"12", @"bouquet_id" ,@"764",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"35",@"id",@"12", @"bouquet_id" ,@"766",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] , [NSMutableDictionary dictionaryWithObjectsAndKeys:@"36",@"id",@"12", @"bouquet_id" ,@"768",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,
+                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"33",@"id",@"12", @"bouquet_id" ,@"756",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil], [NSMutableDictionary dictionaryWithObjectsAndKeys:@"34",@"id",@"12", @"bouquet_id" ,@"764",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] ,
+                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"35",@"id",@"12", @"bouquet_id" ,@"766",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] , [NSMutableDictionary dictionaryWithObjectsAndKeys:@"36",@"id",@"12", @"bouquet_id" ,@"768",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] ,
 
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"37",@"id",@"12", @"bouquet_id" ,@"770",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,[NSMutableDictionary dictionaryWithObjectsAndKeys:@"38",@"id",@"12", @"bouquet_id" ,@"772",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] , [NSMutableDictionary dictionaryWithObjectsAndKeys:@"39",@"id",@"12", @"bouquet_id" ,@"774",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,
+                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"37",@"id",@"12", @"bouquet_id" ,@"770",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] ,[NSMutableDictionary dictionaryWithObjectsAndKeys:@"38",@"id",@"12", @"bouquet_id" ,@"772",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] , [NSMutableDictionary dictionaryWithObjectsAndKeys:@"39",@"id",@"12", @"bouquet_id" ,@"774",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,
 
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"40",@"id",@"12", @"bouquet_id" ,@"776",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,[NSMutableDictionary dictionaryWithObjectsAndKeys:@"41",@"id",@"12", @"bouquet_id" ,@"1062",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,nil];
+                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"40",@"id",@"12", @"bouquet_id" ,@"776",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] ,[NSMutableDictionary dictionaryWithObjectsAndKeys:@"41",@"id",@"12", @"bouquet_id" ,@"1062",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] ,nil];
     
     NSLog(@"setupBouquet_vs_ChannelsInfo");
     
@@ -812,10 +941,103 @@ nil];
                 NSLog(@"bouquet_vs_channels table already created");
             }
             [deviceDB insertRecordIntoBouquet_vs_Channels:bouquetChannel];
+        }
+    }
+}
+
+
+-(void) setupProfilesInfo
+{
+    profiles = [NSMutableArray arrayWithObjects:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"",@"id", @"",@"name",  nil], nil];
+    
+    NSLog(@"setupProfilesInfo");
+    
+    profilesInfo = [[NSMutableArray alloc] init];
+    NSLog(@"Before connect with DB");
+    bouquetChannelsInfo = [deviceDB getProfilesInfo];
+    NSLog(@"getBouquetChannels");
+    
+    
+    if(profilesInfo.count){
+        //        NSLog(@"if:ViewController setupChannelsInfo() - load Channels from local db%@", bouquetChannelsInfo);
+    }
+    else{
+        profilesInfo = profiles;
+        //        NSLog(@"else:ViewController setupChannelsInfo() - load default Channels %@", bouquetChannelsInfo);
+        
+        for(int index = 0; index < profilesInfo.count; index ++){
+            NSMutableArray *profilesArray = [[NSMutableArray alloc] init];
+            [profilesArray addObject:[[profilesInfo objectAtIndex:index] valueForKey:@"id"]];
+            [profilesArray addObject:[[profilesInfo objectAtIndex:index] valueForKey:@"name"]];
+            
+            if(![deviceDB isTableExist:@"profiles"]){
+                NSLog(@"profiles table not exit, create a one");
+                
+                [deviceDB createTable:@"profiles" :@"CREATE TABLE IF NOT EXISTS %@ (id INTEGER, name TEXT)"];
+                
+            } else {
+                NSLog(@"profiles table already created");
+            }
+            [deviceDB insertRecordIntoProfiles:profilesArray];
             
         }
         
     }
+
+    
+    
+}
+
+-(void) setupProfile_vs_Channel
+{
+    channelsInProfiles = [NSMutableArray arrayWithObjects:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"", @"id", @"", @"profile_id", @"",@"channel_id", nil], nil];
+    
+    NSLog(@"setupProfile_vs_Channel");
+    
+    channelsInProfilesInfo = [[NSMutableArray alloc] init];
+    NSLog(@"Before connect with DB");
+    channelsInProfilesInfo = [deviceDB getProfile_vs_Channel];
+    NSLog(@"getProfile_vs_Channel");
+    
+    
+    if(channelsInProfilesInfo.count){
+        //        NSLog(@"if:ViewController setupChannelsInfo() - load Channels from local db%@", bouquetChannelsInfo);
+    }
+    else{
+        channelsInProfilesInfo = channelsInProfiles;
+        //        NSLog(@"else:ViewController setupChannelsInfo() - load default Channels %@", bouquetChannelsInfo);
+        
+        for(int index = 0; index < channelsInProfilesInfo.count; index ++){
+            NSMutableArray *profileChannelsArray = [[NSMutableArray alloc] init];
+            [profileChannelsArray addObject:[[channelsInProfilesInfo objectAtIndex:index] valueForKey:@"id"]];
+            [profileChannelsArray addObject:[[channelsInProfilesInfo objectAtIndex:index] valueForKey:@"profile_id"]];
+            [profileChannelsArray addObject:[[channelsInProfilesInfo objectAtIndex:index] valueForKey:@"channel_id"]];
+            
+            if(![deviceDB isTableExist:@"profile_vs_channel"]){
+                NSLog(@"profile_vs_channel table not exit, create a one");
+                
+                [deviceDB createTable:@"profile_vs_channel" :@"CREATE TABLE IF NOT EXISTS %@ (id INTEGER, profile_id TEXT, channel_id TEXT)"];
+                
+            } else {
+                NSLog(@"profiles table already created");
+            }
+            [deviceDB insertRecordIntoProfile_vs_Channel:profileChannelsArray];
+            
+        }
+        
+    }
+    
+
+}
+
+-(void) setupSubscriptionplans_vs_Bouquet
+{
+    subscriptionPlansBouquet = [NSMutableArray arrayWithObjects:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"",@"id", @"",@"subsplan_id", @"",@"bouquet_id", @"",@"price", @"",@"is_freetrial", @"",@"freetrial_days", @"",@"plan_duration_days", @"",@"status", @"",@"created_datetime", @"",@"updated_datetime", nil], nil];
+}
+
+-(void) setupSubscription_Plans
+{
+    subscriptionPlans = [NSMutableArray arrayWithObjects:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"", @"id", @"",@"name", @"",@"description", @"",@"status", @"",@"created_datetime", @"",@"updated_datetime", nil], nil];
 }
 
 
@@ -857,9 +1079,7 @@ nil];
                 NSLog(@"versioning table already created");
             }
             [deviceDB insertRecordIntoVersioning:versioningData];
-            
         }
-        
     }
     
 }
@@ -934,7 +1154,7 @@ nil];
 }
 
 - (IBAction)termsOfServiceForSignIn:(id)sender {
-    [self performSegueWithIdentifier:@"goto_webView" sender:self];
+    [self performSegueWithIdentifier:@"goto_termsOfSErvice" sender:self];
 }
 
 - (IBAction)privacyPolicyForSignIn:(id)sender {
@@ -942,7 +1162,7 @@ nil];
 }
 
 - (IBAction)termsOfServiceForFacebook:(id)sender {
-//    [self performSegueWithIdentifier:@"goto_webView" sender:self];
+   [self performSegueWithIdentifier:@"goto_termsOfSErvice" sender:self];
 }
 
 - (IBAction)privacyPolicyForFacebook:(id)sender {
