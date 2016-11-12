@@ -13,9 +13,9 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *imgCell;
 
-
 @property (strong, nonatomic) IBOutlet UILabel *lblCell;
 
+@property (strong, nonatomic) IBOutlet UITextView *descriptionLabel;
 
 @property (strong, nonatomic) IBOutlet UIImageView *channelCell;
 

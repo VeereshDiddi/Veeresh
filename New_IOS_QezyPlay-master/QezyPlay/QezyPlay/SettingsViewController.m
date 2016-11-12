@@ -16,7 +16,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    settingsData = [[NSArray alloc] initWithObjects:@"About", @"MyAccount", @"Theme", @"Language", @"Subtitle", @"Alarm", @"Logout",nil];
+    settingsData = [[NSArray alloc] initWithObjects:@"About", @"My Profile", @"Theme", @"Language", @"Subtitle", @"Alarm", @"Logout",nil];
     
     settingsImage = [[NSArray alloc] initWithObjects:@"About.png", @"MyAccount.png", @"Theme.png", @"Language.png", @"Subtitles.png", @"Alarm.png", @"Logout.png",nil];
     
@@ -81,6 +81,11 @@
     if ([about isEqualToString:@"About"]) {
         [self performSegueWithIdentifier:@"goto_aboutMenu" sender:self];
     }
+    NSString *myProfile = [settingsData objectAtIndex:indexPath.row];
+    if ([myProfile isEqualToString:@"My Profile"]) {
+        [self performSegueWithIdentifier:@"goto_MyProfile" sender:self];
+    }
+
     NSString *name = [settingsData objectAtIndex:indexPath.row];
     if ([name isEqualToString:@"Language"]) {
         [self performSegueWithIdentifier:@"goto_languageView" sender:self];

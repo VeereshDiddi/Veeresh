@@ -13,6 +13,7 @@
 #import "MBProgressHUD.h"
 
 @interface ViewController : UIViewController <UITextFieldDelegate, FBLoginViewDelegate>{
+    
     NSMutableArray *favoriteList;
     NSMutableArray *profileList;
     
@@ -26,6 +27,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtPassword;
 @property (strong, nonatomic) IBOutlet UIButton *btnSignIn;
 @property (weak, nonatomic) IBOutlet FBLoginView *btnFacebook;
+
+@property (weak, nonatomic) IBOutlet FBLoginView *btnMainFacebook;
 
 
 @property (strong, nonatomic) IBOutlet UIButton *btnCheckbox;
@@ -48,6 +51,7 @@
 - (IBAction)termsOfServiceForFacebook:(id)sender;
 
 - (IBAction)privacyPolicyForFacebook:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UIView *loginView;
 
 @end

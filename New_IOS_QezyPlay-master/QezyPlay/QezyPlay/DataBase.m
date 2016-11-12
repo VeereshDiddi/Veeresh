@@ -667,29 +667,29 @@
             
             sqlite3_bind_int(statement, 1, (int)[[array objectAtIndex:0] integerValue]);
             
-            sqlite3_bind_text(statement, 2, [[array objectAtIndex:1] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 2, [[self checkNull:[array objectAtIndex:1]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 3, [[array objectAtIndex:2] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 3, [[self checkNull:[array objectAtIndex:2]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 4, [[array objectAtIndex:3] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 4, [[self checkNull:[array objectAtIndex:3]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 5, [[array objectAtIndex:4] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 5, [[self checkNull:[array objectAtIndex:4]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 6, [[array objectAtIndex:5] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 6, [[self checkNull:[array objectAtIndex:5]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 7, [[array objectAtIndex:6] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 7, [[self checkNull:[array objectAtIndex:6]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 8, [[array objectAtIndex:7] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 8, [[self checkNull:[array objectAtIndex:7]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 9, [[array objectAtIndex:8] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 9, [[self checkNull:[array objectAtIndex:8]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 10, [[array objectAtIndex:9] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 10, [[self checkNull:[array objectAtIndex:9]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 11, [[array objectAtIndex:10] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 11, [[self checkNull:[array objectAtIndex:10]] UTF8String], -1, NULL);
             
             sqlite3_bind_int(statement, 12, (int)[[array objectAtIndex:11] integerValue]);
             
-            sqlite3_bind_text(statement, 13, [[array objectAtIndex:12] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 13, [[self checkNull:[array objectAtIndex:12]] UTF8String], -1, NULL);
             
 /*            sqlite3_bind_text(statement, 14, [[array objectAtIndex:13] UTF8String], -1, NULL);
             
@@ -1101,9 +1101,9 @@
             
             sqlite3_bind_int(statement, 3, (int)[[array objectAtIndex:2] integerValue]);
             
-            sqlite3_bind_text(statement, 4, [[array objectAtIndex:3] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 4, [[self checkNull:[array objectAtIndex:3]] UTF8String], -1, NULL);
             
-            sqlite3_bind_text(statement, 5, [[array objectAtIndex:4] UTF8String], -1, NULL);
+            sqlite3_bind_text(statement, 5, [[self checkNull:[array objectAtIndex:4]] UTF8String], -1, NULL);
             
             if (sqlite3_step(statement) == SQLITE_DONE) {
                 NSLog(@"inserted into bouquet_vs_channels table");

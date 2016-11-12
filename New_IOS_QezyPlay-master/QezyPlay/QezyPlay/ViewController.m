@@ -32,11 +32,27 @@
         firstTimeView.hidden=YES;
     }
     
-    self.txtUsername.text=@"";
-    self.txtPassword.text=@"";
     
-    self.txtUsername.text=@"madhu123@gmail.com";
-    self.txtPassword.text=@"12341234";
+    NSString *checkUserName = [[NSUserDefaults standardUserDefaults] valueForKey:@"REMEMBER_EMAIL"];
+    
+    if (checkUserName==nil||checkUserName.length==0) {
+        self.txtUsername.text=@"";
+        self.txtPassword.text=@"";
+        
+        self.isChecked =NO;
+        [self.btnCheckbox setImage:[UIImage imageNamed:@"UnCheckbox.png"]
+                          forState:UIControlStateNormal];
+    }
+    else
+    {
+        self.txtUsername.text=[[NSUserDefaults standardUserDefaults] valueForKey:@"REMEMBER_EMAIL"];
+        self.txtPassword.text=[[NSUserDefaults standardUserDefaults] valueForKey:@"REMEMBER_PASSWORD"];
+        
+        self.isChecked =YES;
+        [self.btnCheckbox setImage:[UIImage imageNamed:@"Checkbox1.png"]
+                          forState:UIControlStateNormal];
+    }
+    
     
     //self.txtUsername.text = @"Qezymedia5";
     //self.txtPassword.text = @"Qezymedia@5";
@@ -276,147 +292,150 @@
     dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),^{
         NSInteger success = 0;
         @try {
-            //NSString *post =[[NSString alloc] initWithFormat:@"username=%@&password=%@",[self.txtUsername text],[self.txtPassword text]];
-            if(self.isChecked ==YES || self.isChecked ==NO){
-                
-                
-                NSString *post =[[NSString alloc] initWithFormat:@"email=%@&password=%@",[self.txtUsername text],[self.txtPassword text]];
-                NSLog(@"PostData: %@",post);
-                
-                
-                //NSURL *url = [NSURL URLWithString:@"http://104.196.99.177:6363/api/Customers/login"];
-                NSURL *url = [NSURL URLWithString:loginSC];
-                NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-                
-                NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
-                
-                NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-                [request setURL:url];
-                [request setHTTPMethod:@"POST"];
-                [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-                [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-                [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-                [request setHTTPBody:postData];
-                
-                //[NSURLRequest setAllowsAnyHTTPSCertificate:YES forHost:[url host]];
+            
+            
+            NSString *post =[[NSString alloc] initWithFormat:@"email=%@&password=%@",[self.txtUsername text],[self.txtPassword text]];
+            NSLog(@"PostData: %@",post);
+            
+            
+            //NSURL *url = [NSURL URLWithString:@"http://104.196.99.177:6363/api/Customers/login"];
+            NSURL *url = [NSURL URLWithString:loginSC];
+            NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+            
+            NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+            
+            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+            [request setURL:url];
+            [request setHTTPMethod:@"POST"];
+            [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+            [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+            [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+            [request setHTTPBody:postData];
+            
+            //[NSURLRequest setAllowsAnyHTTPSCertificate:YES forHost:[url host]];
+            
+            NSError *error = nil;
+            NSHTTPURLResponse *response = nil;
+            NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+            
+            //NSDictionary *headerInfo = [response allHeaderFields];
+            
+            NSLog(@"Response code: %ld %@", (long)[response statusCode], response);
+            
+            
+            if ([response statusCode] == 200)
+            {
+                NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+                NSLog(@"Response ==> %@", responseData);
                 
                 NSError *error = nil;
-                NSHTTPURLResponse *response = nil;
-                NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+                NSDictionary *jsonData = [NSJSONSerialization
+                                          JSONObjectWithData:urlData
+                                          options:NSJSONReadingMutableContainers
+                                          error:&error];
                 
-                //NSDictionary *headerInfo = [response allHeaderFields];
+                success = [jsonData[@"status"] integerValue];
+                NSLog(@"Success: %ld",(long)success);
                 
-                NSLog(@"Response code: %ld %@", (long)[response statusCode], response);
-            
-                
-                if ([response statusCode] == 200)
+                if(success == 1)
                 {
-                    NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
-                    NSLog(@"Response ==> %@", responseData);
                     
-                    NSError *error = nil;
-                    NSDictionary *jsonData = [NSJSONSerialization
-                                              JSONObjectWithData:urlData
-                                              options:NSJSONReadingMutableContainers
-                                              error:&error];
                     
-                    success = [jsonData[@"status"] integerValue];
-                    NSLog(@"Success: %ld",(long)success);
+                    NSMutableArray *data = [jsonData valueForKey:@"data"];
+                    NSLog(@"OLD_ID:%@", data);
+                    [[NSUserDefaults standardUserDefaults] setObject:[data valueForKey:@"oldId"] forKey:@"OLD_ID"];
                     
-                    if(success == 1)
-                    {
-                        
-                        
-                        NSMutableArray *data = [jsonData valueForKey:@"data"];
-                        NSLog(@"OLD_ID:%@", data);
-                        [[NSUserDefaults standardUserDefaults] setObject:[data valueForKey:@"oldId"] forKey:@"OLD_ID"];
-                        
-                        [[NSUserDefaults standardUserDefaults] setObject:@"madhu" forKey:@"USER_NAME"];
-                        
-                        
-
-                        
-                        if (tokenID == nil){
-                            tokenID = [[NSString alloc] init];
-                        }
-                        tokenID = [data valueForKey:@"id"];
-                        
-                        if (userID == nil){
-                            userID = [[NSString alloc] init];
-                        }
-                        userID = [data valueForKey:@"userId"];
-                        
-                        NSLog(@"Login SUCCESS, enter home page with user id %@ and token id %@", userID, tokenID);
-                        
-                        [self getUserIDUserName];
-                        
-                        [self configureDatabase];
-
-                        if ([[NSUserDefaults standardUserDefaults] valueForKey:@"FIRST_TIME_DB"]==nil) {
-                            
-                            [self setupPackageInfo];
-                            [self setupChannelsInfo:@"Static" channelsList:nil];
-                            [self setupBouquet_vs_ChannelsInfo];
-                            
-                            //                        [self setupProfilesInfo];
-                            //                        [self setupProfile_vs_Channel];
-                            //                        [self setupSubscription_Plans];
-                            [self setupSubscriptionplans_vs_Bouquet];
-                            //
-                            //                        [self setupFavorites];
-                            //                        [self initProfile];
-                            [self setupVersioningInfo];
-                            
-                            [[NSUserDefaults standardUserDefaults] setObject:@"created" forKey:@"FIRST_TIME_DB"];
-                        }
-                        
-                        
-                        // SavedTime
-                        NSDate *savedDate = [[NSUserDefaults standardUserDefaults] valueForKey:@"lastOpenTime"];
-                        
-                        NSLog(@" %@ ",savedDate);
-                        
-                        // Current Time
-                        
-                        NSDate *currentTime = [NSDate date];
-                        
-                        NSTimeInterval secondsBetween = [currentTime timeIntervalSinceDate:savedDate];
-                        
-                        int numberOfDays = secondsBetween / 86400;
-                        
-                        NSLog(@"There are %d days in between the two dates.", numberOfDays);
-                        
-                        if (numberOfDays>0) {
-                            
-                            [self setupVersioningInfo];
-
-                            [self dataSyncsLocalDataBaseWithServer];
-                        }
-                        
-                        
-                        [self performSegueWithIdentifier:@"login_success" sender:self];
-                        
-                        self.txtUsername.text = @"";
-                        self.txtPassword.text = @"";
-                        [self.spinner stopAnimating];
-                        [self.spinner removeFromSuperview];
-                        
-                    } else {
-                        
-                        NSString* errorMsg = [jsonData valueForKey:@"message"];
-                        [self alertStatus:errorMsg: @"Login Failed" :0];
+                    [[NSUserDefaults standardUserDefaults] setObject:@"madhu" forKey:@"USER_NAME"];
+                    
+                    
+                    
+                    
+                    if (tokenID == nil){
+                        tokenID = [[NSString alloc] init];
                     }
+                    tokenID = [data valueForKey:@"id"];
+                    
+                    if (userID == nil){
+                        userID = [[NSString alloc] init];
+                    }
+                    userID = [data valueForKey:@"userId"];
+                    
+                    NSLog(@"Login SUCCESS, enter home page with user id %@ and token id %@", userID, tokenID);
+                    
+                    [self getUserIDUserName];
+                    
+                    [self configureDatabase];
+                    
+                    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"FIRST_TIME_DB"]==nil) {
+                        
+                        [self setupPackageInfo:@"Static" packageList:nil];
+                        [self setupChannelsInfo:@"Static" channelsList:nil];
+                        [self setupBouquet_vs_ChannelsInfo:@"Static" bouquetChannels:nil];
+                        
+                        //                        [self setupProfilesInfo];
+                        //                        [self setupProfile_vs_Channel];
+                        //                        [self setupSubscription_Plans];
+                        [self setupSubscriptionplans_vs_Bouquet];
+                        //
+                        //                        [self setupFavorites];
+                        //                        [self initProfile];
+                        [self setupVersioningInfo];
+                        
+                        [[NSUserDefaults standardUserDefaults] setObject:@"created" forKey:@"FIRST_TIME_DB"];
+                    }
+                    
+                    
+                    // SavedTime
+                    NSDate *savedDate = [[NSUserDefaults standardUserDefaults] valueForKey:@"lastOpenTime"];
+                    
+                    NSLog(@" %@ ",savedDate);
+                    
+                    // Current Time
+                    
+                    NSDate *currentTime = [NSDate date];
+                    
+                    NSTimeInterval secondsBetween = [currentTime timeIntervalSinceDate:savedDate];
+                    
+                    int numberOfDays = secondsBetween / 86400;
+                    
+                    NSLog(@"There are %d days in between the two dates.", numberOfDays);
+                    
+                    if (numberOfDays>0) {
+                        
+                        [self setupVersioningInfo];
+                        
+                        [self dataSyncsLocalDataBaseWithServer];
+                    }
+                    
+                    
+                    if (self.isChecked==YES) {
+                        [[NSUserDefaults standardUserDefaults] setObject:self.txtUsername.text forKey:@"REMEMBER_EMAIL"];
+                        [[NSUserDefaults standardUserDefaults] setObject:self.txtPassword.text forKey:@"REMEMBER_PASSWORD"];
+
+                    }
+                    else
+                    {
+                        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"REMEMBER_EMAIL"];
+                        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"REMEMBER_PASSWORD"];
+                    }
+                    
+                    [self performSegueWithIdentifier:@"login_success" sender:self];
+                    
+                    self.txtUsername.text = @"";
+                    self.txtPassword.text = @"";
+                    [self.spinner stopAnimating];
+                    [self.spinner removeFromSuperview];
                     
                 } else {
                     
-                    [self alertStatus:@"Can not connect to server" :@"Login Failed!" :0];
+                    NSString* errorMsg = [jsonData valueForKey:@"message"];
+                    [self alertStatus:errorMsg: @"Login Failed" :0];
                 }
+                
+            } else {
+                
+                [self alertStatus:@"Can not connect to server" :@"Login Failed!" :0];
             }
-            else
-            {
-                [self alertStatus:@"Please Accept Terms of Service and Privacy Policy" :@"Password is Wrong!" :0];
-            }
-            
         }
         @catch (NSException * e) {
             NSLog(@"Exception: %@", e);
@@ -471,11 +490,19 @@
         
         if ([jsonData[@"status"] integerValue] == 1) {
             
-            
             NSDictionary *data = jsonData[@"data"];
             NSLog(@"jsonData:%@", data);
             NSDictionary *versions = data[@"versions"];
             NSLog(@"jsonVersion:%@", versions);
+            
+            NSArray *firstTableArray = [versions objectForKey:@"bouquets"];
+            
+            if (firstTableArray.count!=0) {
+                
+                [deviceDB deleteTheWholeDataFromTable:@"bouquets"];
+                
+                [self setupPackageInfo:@"Dynamic" packageList:firstTableArray];
+            }
             
             NSArray *channelsArray = [versions objectForKey:@"Channels"];
             
@@ -484,7 +511,20 @@
                 [deviceDB deleteTheWholeDataFromTable:@"Channels"];
                 
                 [self setupChannelsInfo:@"Dynamic" channelsList:channelsArray];
-            }    
+            }
+            
+            NSArray *bouquetChannelsArray = [versions objectForKey:@"bouquet_vs_channels"];
+            
+            if (firstTableArray.count!=0) {
+                
+                [deviceDB deleteTheWholeDataFromTable:@"bouquet_vs_channels"];
+                
+                [self setupBouquet_vs_ChannelsInfo:@"Dynamic" bouquetChannels:bouquetChannelsArray];
+            }
+
+            
+            [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"lastOpenTime"];
+
         }
     }
 }
@@ -535,12 +575,15 @@
     
 }
 
--(void) setupPackageInfo {
+-(void) setupPackageInfo:(NSString *)typeString packageList:(NSArray *)_array {
     
     //    tableDef = @"CREATE TABLE IF NOT EXISTS %@ (id INTEGER, name TEXT, imageUrl TEXT, image2xUrl TEXT, image3xUrl TEXT, meta_data TEXT, meta_description TEXT, create_datetime TEXT, updated_datetime TEXT, downloadUrl TEXT, is_free TEXT, status INTEGER, imagehdpiUrl TEXT, imageldpiUrl TEXT, imagemdpiUrl TEXT, imagexhdpiUrl TEXT, imagexxhdpiUrl TEXT, imagexxxhdpiUrl TEXT)";
     
+    if ([typeString isEqualToString:@"Static"]) {
+
+    
     NSLog(@"setupPackageInfo");
-    defaulBouquets = [NSMutableArray arrayWithObjects:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"12",@"id",@"Decan free channel", @"name", @"free-new.png", @"imageUrl", @"free-new@2x.png", @"image2xUrl", @"free-new@3x.png", @"image3xUrl",@"decan-free-channels", @"meta_data", @"All south-Indian Free channels", @"meta_description", @"2016-10-19 07:00:00'", @"create_datetime", @"0000-00-00 00:00:00", @"updated_datetime", @"http://104.196.99.177:6363/api/FileStorageMongos/bouquets/download/", @"downloadUrl", @"1", @"is_free", @"1", @"status", @"",@"imagehdpiUrl", @"", @"imageldpiUrl", @"",@"imagemdpiUrl", @"",@"imagexhdpiUrl", @"",@"imagexxhdpiUrl",@"",@"imagexxxhdpiUrl", nil],[NSMutableDictionary dictionaryWithObjectsAndKeys:@"4",@"id",@"Bangla_Bouquet", @"name", @"Bangla.png", @"imageUrl",@"Bangla@2x.png",@"image2xUrl", @"Bangla@3x.png", @"image3xUrl" ,@"bangla_bouquet", @"meta_data", @"All Bangla channels from both WestBengal and Bangladesh", @"meta_description", @"2016-09-30 02:48:32", @"create_datetime", @"0000-00-00 00:00:00", @"updated_datetime", @"http://104.196.99.177:6363/api/FileStorageMongos/bouquets/download/", @"downloadUrl",@"0", @"is_free", @"1", @"status", @"",@"imagehdpiUrl", @"", @"imageldpiUrl", @"",@"imagemdpiUrl", @"",@"imagexhdpiUrl", @"",@"imagexxhdpiUrl",@"",@"imagexxxhdpiUrl", nil], nil];
+    defaulBouquets = [NSMutableArray arrayWithObjects:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"12",@"id",@"Deccan-free-channels", @"name", @"free-new.png", @"imageUrl", @"free-new@2x.png", @"image2xUrl", @"free-new@3x.png", @"image3xUrl",@"decan-free-channels", @"meta_data", @"This Bouquet contains popular Deccan plateau free live channels like Sai TV,Deccan TV,Metro TV,Life Changing,Mana Telugu TV,Y TV,N TV,VIJAYA News,..etc", @"meta_description", @"2016-10-19 07:00:00'", @"create_datetime", @"0000-00-00 00:00:00", @"updated_datetime", @"http://104.196.99.177:6363/api/FileStorageMongos/bouquets/download/", @"downloadUrl", @"1", @"is_free", @"1", @"status", @"",@"imagehdpiUrl", @"", @"imageldpiUrl", @"",@"imagemdpiUrl", @"",@"imagexhdpiUrl", @"",@"imagexxhdpiUrl",@"",@"imagexxxhdpiUrl", nil],[NSMutableDictionary dictionaryWithObjectsAndKeys:@"4",@"id",@"Bangla_Bouquet", @"name", @"Bangla.png", @"imageUrl",@"Bangla@2x.png",@"image2xUrl", @"Bangla@3x.png", @"image3xUrl" ,@"bangla_bouquet", @"meta_data", @"Shonar Bangla Bouquet contains live Bangla and Bengali channels like Tara TV,Boishakhi TV,Jamuna TV,Channel I,SA TV,Channel10,CTVN PLUS,UttarBangla,..etc", @"meta_description", @"2016-09-30 02:48:32", @"create_datetime", @"0000-00-00 00:00:00", @"updated_datetime", @"http://104.196.99.177:6363/api/FileStorageMongos/bouquets/download/", @"downloadUrl",@"0", @"is_free", @"1", @"status", @"",@"imagehdpiUrl", @"", @"imageldpiUrl", @"",@"imagemdpiUrl", @"",@"imagexhdpiUrl", @"",@"imagexxhdpiUrl",@"",@"imagexxxhdpiUrl", nil], nil];
 
     //    NSLog(@"defaulBouquets:%@", defaulBouquets);
     
@@ -573,7 +616,13 @@
                                  nil];  */
     
     
-    
+    }
+    else
+    {
+        defaulBouquets = [NSMutableArray new];
+        
+        defaulBouquets = [_array mutableCopy];
+    }
     
  //   NSLog(@"PackageList");
     packageList = [[NSMutableArray alloc] init];
@@ -589,45 +638,57 @@
         packageList = defaulBouquets;
         //        NSLog(@"ViewController setupBouquetInfo() - load default bouquets %@", packageList);
         
+        //        [channel addObject:[[channelsInfo objectAtIndex:index] valueForKey:@"imageUrl"]?:[[channelsInfo objectAtIndex:index] valueForKey:@"imageurl"]?:@""];
+        
         for(int index = 0; index < packageList.count; index ++){
             NSMutableArray *bouquet = [[NSMutableArray alloc] init];
             [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"id"]];
             [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"name"]];
-            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"imageUrl"]];
-            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"image2xUrl"]];
-            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"image3xUrl"]];
-            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"meta_data"]];
-            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"meta_description"]];
-            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"create_datetime"]];
-            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"updated_datetime"]];
-            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"downloadUrl"]];
-            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"is_free"]];
-            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"status"]];
-             [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"imagehdpiUrl"]];
-            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"imageldpiUrl"]];
-            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"imagemdpiUrl"]];
-            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"imagexhdpiUrl"]];
-            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"imagexxhdpiUrl"]];
-            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"imagexxxhdpiUrl"]];
- /*           [bouquet addObject:@""];
-            [bouquet addObject:@""];
-            [bouquet addObject:@""];
-            [bouquet addObject:@""];
-            [bouquet addObject:@""];
-            [bouquet addObject:@""]; */
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"imageUrl"]?:[[packageList objectAtIndex:index] valueForKey:@"imageurl"]?:@""];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"image2xUrl"]?:[[packageList objectAtIndex:index] valueForKey:@"image2xurl"]?:@""];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"image3xUrl"]?:[[packageList objectAtIndex:index] valueForKey:@"image3xurl"]?:@""];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"meta_data"]?:[[packageList objectAtIndex:index] valueForKey:@"metadata"]?:@""];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"meta_description"]?:[[packageList objectAtIndex:index] valueForKey:@"metadescription"]?:@""];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"create_datetime"]?:[[packageList objectAtIndex:index] valueForKey:@"createdatetime"]?:@""];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"updated_datetime"]?:[[packageList objectAtIndex:index] valueForKey:@"updateddatetime"]?:@""];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"downloadUrl"]?:[[packageList objectAtIndex:index] valueForKey:@"downloadurl"]?:@""];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"is_free"]?:[[packageList objectAtIndex:index] valueForKey:@"isfree"]?:@""];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"status"]?:[[packageList objectAtIndex:index] valueForKey:@"status"]?:@""];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"imagehdpiUrl"]?:[[packageList objectAtIndex:index] valueForKey:@"imagehdpiurl"]?:@""];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"imageldpiUrl"]?:[[packageList objectAtIndex:index] valueForKey:@"imageldpiurl"]?:@""];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"imagemdpiUrl"]?:[[packageList objectAtIndex:index] valueForKey:@"imagemdpiurl"]?:@""];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"imagexhdpiUrl"]?:[[packageList objectAtIndex:index] valueForKey:@"imagexhdpiurl"]?:@""];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"imagexxhdpiUrl"]?:[[packageList objectAtIndex:index] valueForKey:@"imagexxhdpiurl"]?:@""];
+            [bouquet addObject:[[packageList objectAtIndex:index] valueForKey:@"imagexxxhdpiUrl"]?:[[packageList objectAtIndex:index] valueForKey:@"imagexxxhdpiurl"]?:@""];
+            /*           [bouquet addObject:@""];
+             [bouquet addObject:@""];
+             [bouquet addObject:@""];
+             [bouquet addObject:@""];
+             [bouquet addObject:@""];
+             [bouquet addObject:@""]; */
             
             
             //NSLog(@"bouquet info %@", bouquet);
-            if(![deviceDB isTableExist:@"bouquets"]){
-                NSLog(@"bouquets table not exit, create a one");
-                
-                [deviceDB createTable:@"bouquets" :@""];                
-                
-            } else {
-                NSLog(@"Bouquets table already created");
-            }
             
-            [deviceDB insertRecordIntoBouquets:bouquet];
+            if ([typeString isEqualToString:@"Static"]) {
+                
+                if(![deviceDB isTableExist:@"bouquets"]){
+                    NSLog(@"bouquets table not exit, create a one");
+                    
+                    [deviceDB createTable:@"bouquets" :@""];
+                    
+                } else {
+                    NSLog(@"Bouquets table already created");
+                }
+                
+                [deviceDB insertRecordIntoBouquets:bouquet];
+            }
+            else
+            {
+                [self saveImageEachImageInDocumentDirectory:[[packageList objectAtIndex:index] valueForKey:@"imageUrl"]];
+                
+                [deviceDB insertRecordIntoBouquets:bouquet];
+            }
         }
     }
 }
@@ -883,29 +944,39 @@
     });
 }
 
--(void)setupBouquet_vs_ChannelsInfo
+-(void)setupBouquet_vs_ChannelsInfo:(NSString *)typeString bouquetChannels:(NSArray *)_array
 {
+    if ([typeString isEqualToString:@"Static"]) {
+        
+        
+        bouquetChannels =[NSMutableArray arrayWithObjects:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"1",@"id",@"4", @"bouquet_id" ,@"26",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil],
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"4",@"id",@"4", @"bouquet_id" ,@"31",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime",@"",@"updated_datetime" ,nil] ,
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"7",@"id",@"4", @"bouquet_id" ,@"82",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"10",@"id",@"4", @"bouquet_id" ,@"89",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"12",@"id",@"4", @"bouquet_id" ,@"129",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil]  ,
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"14",@"id",@"4", @"bouquet_id" ,@"132",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil]  , [NSMutableDictionary dictionaryWithObjectsAndKeys:@"16",@"id",@"4", @"bouquet_id" ,@"135",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil]    ,
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"18",@"id",@"4", @"bouquet_id" ,@"138",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] , [NSMutableDictionary dictionaryWithObjectsAndKeys:@"20",@"id",@"4", @"bouquet_id" ,@"185",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"22",@"id",@"4", @"bouquet_id" ,@"247",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] , [NSMutableDictionary dictionaryWithObjectsAndKeys:@"24",@"id",@"4", @"bouquet_id" ,@"514",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,
+                          
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"26",@"id",@"4", @"bouquet_id" ,@"586",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] , [NSMutableDictionary dictionaryWithObjectsAndKeys:@"42",@"id",@"12", @"bouquet_id" ,@"1104",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"29",@"id",@"12", @"bouquet_id" ,@"760",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil], [NSMutableDictionary dictionaryWithObjectsAndKeys:@"30",@"id",@"12", @"bouquet_id" ,@"758",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil],
+                          
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"31",@"id",@"12", @"bouquet_id" ,@"959",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil], [NSMutableDictionary dictionaryWithObjectsAndKeys:@"32",@"id",@"12", @"bouquet_id" ,@"762",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime",@" ",@"updated_datetime" ,nil],
+                          
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"33",@"id",@"12", @"bouquet_id" ,@"756",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil], [NSMutableDictionary dictionaryWithObjectsAndKeys:@"34",@"id",@"12", @"bouquet_id" ,@"764",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] ,
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"35",@"id",@"12", @"bouquet_id" ,@"766",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] , [NSMutableDictionary dictionaryWithObjectsAndKeys:@"36",@"id",@"12", @"bouquet_id" ,@"768",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] ,
+                          
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"37",@"id",@"12", @"bouquet_id" ,@"770",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] ,[NSMutableDictionary dictionaryWithObjectsAndKeys:@"38",@"id",@"12", @"bouquet_id" ,@"772",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] , [NSMutableDictionary dictionaryWithObjectsAndKeys:@"39",@"id",@"12", @"bouquet_id" ,@"774",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,
+                          
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"40",@"id",@"12", @"bouquet_id" ,@"776",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] ,[NSMutableDictionary dictionaryWithObjectsAndKeys:@"41",@"id",@"12", @"bouquet_id" ,@"1062",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] ,nil];
+    }
+    else
+    {
+        bouquetChannels = [NSMutableArray new];
+        
+        bouquetChannels = [_array mutableCopy];
+    }
     
-    bouquetChannels =[NSMutableArray arrayWithObjects:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"1",@"id",@"4", @"bouquet_id" ,@"26",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil],
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"4",@"id",@"4", @"bouquet_id" ,@"31",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime",@"",@"updated_datetime" ,nil] ,
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"7",@"id",@"4", @"bouquet_id" ,@"82",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"10",@"id",@"4", @"bouquet_id" ,@"89",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"12",@"id",@"4", @"bouquet_id" ,@"129",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil]  ,
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"14",@"id",@"4", @"bouquet_id" ,@"132",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil]  , [NSMutableDictionary dictionaryWithObjectsAndKeys:@"16",@"id",@"4", @"bouquet_id" ,@"135",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil]    ,
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"18",@"id",@"4", @"bouquet_id" ,@"138",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] , [NSMutableDictionary dictionaryWithObjectsAndKeys:@"20",@"id",@"4", @"bouquet_id" ,@"185",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"22",@"id",@"4", @"bouquet_id" ,@"247",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] , [NSMutableDictionary dictionaryWithObjectsAndKeys:@"24",@"id",@"4", @"bouquet_id" ,@"514",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,
-                      
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"26",@"id",@"4", @"bouquet_id" ,@"586",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] , [NSMutableDictionary dictionaryWithObjectsAndKeys:@"42",@"id",@"12", @"bouquet_id" ,@"1104",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"29",@"id",@"12", @"bouquet_id" ,@"760",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil], [NSMutableDictionary dictionaryWithObjectsAndKeys:@"30",@"id",@"12", @"bouquet_id" ,@"758",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil],
-                      
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"31",@"id",@"12", @"bouquet_id" ,@"959",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil], [NSMutableDictionary dictionaryWithObjectsAndKeys:@"32",@"id",@"12", @"bouquet_id" ,@"762",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime",@" ",@"updated_datetime" ,nil],
- 
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"33",@"id",@"12", @"bouquet_id" ,@"756",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil], [NSMutableDictionary dictionaryWithObjectsAndKeys:@"34",@"id",@"12", @"bouquet_id" ,@"764",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] ,
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"35",@"id",@"12", @"bouquet_id" ,@"766",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] , [NSMutableDictionary dictionaryWithObjectsAndKeys:@"36",@"id",@"12", @"bouquet_id" ,@"768",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] ,
-
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"37",@"id",@"12", @"bouquet_id" ,@"770",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] ,[NSMutableDictionary dictionaryWithObjectsAndKeys:@"38",@"id",@"12", @"bouquet_id" ,@"772",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] , [NSMutableDictionary dictionaryWithObjectsAndKeys:@"39",@"id",@"12", @"bouquet_id" ,@"774",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@"",@"updated_datetime" ,nil] ,
-
-                      [NSMutableDictionary dictionaryWithObjectsAndKeys:@"40",@"id",@"12", @"bouquet_id" ,@"776",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] ,[NSMutableDictionary dictionaryWithObjectsAndKeys:@"41",@"id",@"12", @"bouquet_id" ,@"1062",@"channel_id", @"2016-09-30 11:03:00",@"created_datetime" ,@" ",@"updated_datetime" ,nil] ,nil];
     
     NSLog(@"setupBouquet_vs_ChannelsInfo");
     
@@ -927,20 +998,27 @@
             [bouquetChannel addObject:[[bouquetChannelsInfo objectAtIndex:index] valueForKey:@"id"]];
             [bouquetChannel addObject:[[bouquetChannelsInfo objectAtIndex:index] valueForKey:@"bouquet_id"]];
             [bouquetChannel addObject:[[bouquetChannelsInfo objectAtIndex:index] valueForKey:@"channel_id"]];
-            [bouquetChannel addObject:[[bouquetChannelsInfo objectAtIndex:index] valueForKey:@"created_datetime"]];
+            [bouquetChannel addObject:[[bouquetChannelsInfo objectAtIndex:index] valueForKey:@"created_datetime"]?:[[bouquetChannelsInfo objectAtIndex:index] valueForKey:@"createddatetime"]?:@""];
             
-            [bouquetChannel addObject:[[bouquetChannelsInfo objectAtIndex:index] valueForKey:@"updated_datetime"]];
+            [bouquetChannel addObject:[[bouquetChannelsInfo objectAtIndex:index] valueForKey:@"updated_datetime"]?:[[bouquetChannelsInfo objectAtIndex:index] valueForKey:@"updateddatetime"]?:@""];
             
             //NSLog(@"bouquet info %@", bouquet);
-            if(![deviceDB isTableExist:@"bouquet_vs_channels"]){
-                NSLog(@"bouquet_vs_channels table not exit, create a one");
-                
-                [deviceDB createTable:@"bouquet_vs_channels" :@"CREATE TABLE IF NOT EXISTS %@ (id INTEGER, bouquet_id INTEGER NOT NULL, channel_id INTEGER NOT NULL, created_datetime TEXT, updated_datetime TEXT)"];
-                
-            } else {
-                NSLog(@"bouquet_vs_channels table already created");
+            
+            if ([typeString isEqualToString:@"Static"]) {
+                if(![deviceDB isTableExist:@"bouquet_vs_channels"]){
+                    NSLog(@"bouquet_vs_channels table not exit, create a one");
+                    
+                    [deviceDB createTable:@"bouquet_vs_channels" :@"CREATE TABLE IF NOT EXISTS %@ (id INTEGER, bouquet_id INTEGER NOT NULL, channel_id INTEGER NOT NULL, created_datetime TEXT, updated_datetime TEXT)"];
+                    
+                } else {
+                    NSLog(@"bouquet_vs_channels table already created");
+                }
+                [deviceDB insertRecordIntoBouquet_vs_Channels:bouquetChannel];
             }
-            [deviceDB insertRecordIntoBouquet_vs_Channels:bouquetChannel];
+            else
+            {
+                [deviceDB insertRecordIntoBouquet_vs_Channels:bouquetChannel];
+            }
         }
     }
 }
@@ -983,9 +1061,6 @@
         }
         
     }
-
-    
-    
 }
 
 -(void) setupProfile_vs_Channel
@@ -998,7 +1073,6 @@
     NSLog(@"Before connect with DB");
     channelsInProfilesInfo = [deviceDB getProfile_vs_Channel];
     NSLog(@"getProfile_vs_Channel");
-    
     
     if(channelsInProfilesInfo.count){
         //        NSLog(@"if:ViewController setupChannelsInfo() - load Channels from local db%@", bouquetChannelsInfo);
@@ -1086,7 +1160,10 @@
 
 -(void) getPackage {
     
-    NSURL *requestURL = [NSURL URLWithString:@"http://104.196.99.177:6363/api/Bouquets"];
+//    NSURL *requestURL = [NSURL URLWithString:@"http://104.196.99.177:6363/api/Bouquets"];
+    NSURL *requestURL = [NSURL URLWithString:requestURLSC];
+
+    
     NSMutableURLRequest *request =
     [NSMutableURLRequest requestWithURL:requestURL
                             cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
@@ -1221,10 +1298,17 @@
     [self.spinner removeFromSuperview];
 }
 
+
+
+
 -(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView{
     //    self.lblLoginStatus.text = @"You are logged in.";
     
     //    [self toggleHiddenState:NO];
+    
+    firstTimeView.hidden=YES;
+    
+    self.navigationController.navigationBarHidden=NO;
 }
 
 -(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user{

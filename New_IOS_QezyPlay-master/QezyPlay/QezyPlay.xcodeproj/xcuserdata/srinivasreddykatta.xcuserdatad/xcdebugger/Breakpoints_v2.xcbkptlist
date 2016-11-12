@@ -35,29 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QezyPlay/HomeViewController.m"
-            timestampString = "500573705.204751"
+            filePath = "QezyPlay/PackageChannelController.m"
+            timestampString = "500637163.331115"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QezyPlay/HomeViewController.m"
-            timestampString = "500573818.329369"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "394"
-            endingLineNumber = "394"
-            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "-collectionView:cellForItemAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -68,12 +52,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QezyPlay/ViewController.m"
-            timestampString = "500573962.397568"
+            timestampString = "500642584.921009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "-saveImageInDocumentDirectory"
+            startingLineNumber = "449"
+            endingLineNumber = "449"
+            landmarkName = "-dataSyncsLocalDataBaseWithServer"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -21,15 +21,43 @@
 //   to the database.
 #define USE_DATABASE_FOR_CHANLIST
 
+
+#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
+
+
 #define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
 
 #define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
 
-#define BASEURL @"http://104.196.99.177:6363/api/"
+#define BASEURL @"http://104.198.91.157:6363/api/"
 
-#define bouquetsSC [NSString stringWithFormat:@"Bouquets",BASEURL]
+//http://104.196.99.177:6363/api/  ==Main URL
+//http://104.198.91.157:6363/api/ == optional URL
+
+#define bouquetsSC [NSString stringWithFormat:@"%@Bouquets",BASEURL]
+
+#define channelBouquetsSC [NSString stringWithFormat:@"%@Bouquets",BASEURL]
 
 #define versioningSC [NSString stringWithFormat:@"%@DataSyncs/checkUpdates",BASEURL]
+
+#define registrationSC [NSString stringWithFormat:@"%@Customers",BASEURL]
+
+#define channelsSC [NSString stringWithFormat:@"%@Channels",BASEURL]
+
+#define profilesSC [NSString stringWithFormat:@"%@Profiles",BASEURL]
+
+#define loginSC [NSString stringWithFormat:@"%@Customers/login",BASEURL]
+
+#define resetSC [NSString stringWithFormat:@"%@Customers/reset",BASEURL]
+
+#define privacyPolicySC [NSString stringWithFormat:@"%@Privacy_Policy.htm",BASEURL]
+
+#define requestURLSC [NSString stringWithFormat:@"%@Bouquets",BASEURL]
+
+
+
+
+
 
 extern NSMutableArray *defaulBouquets;
 extern NSMutableArray *channelsInDefaultBouquets;
@@ -41,13 +69,13 @@ extern NSMutableArray *channelsInProfiles;
 extern NSMutableArray *subscriptionPlans;
 extern NSMutableArray *subscriptionPlansBouquet;
 
-extern NSString *channelBouquetsSC;
-extern NSString *channelsSC;
-extern NSString *profilesSC;
-extern NSString *loginSC;
-extern NSString *customersSC;
-extern NSString *resetSC;
-extern NSString *privacyPolicySC;
+//extern NSString *channelBouquetsSC;
+//extern NSString *channelsSC;
+//extern NSString *profilesSC;
+//extern NSString *loginSC;
+//extern NSString *customersSC;
+//extern NSString *resetSC;
+//extern NSString *privacyPolicySC;
 
 #endif /* Constant_h */
 

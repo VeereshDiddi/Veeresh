@@ -231,9 +231,6 @@
 		AEF679551DD44644008BCC8F /* register.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF679521DD44644008BCC8F /* register.png */; };
 		AEF679561DD44644008BCC8F /* register@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF679531DD44644008BCC8F /* register@2x.png */; };
 		AEF679571DD44644008BCC8F /* register@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF679541DD44644008BCC8F /* register@3x.png */; };
-		AEF6795B1DD448E2008BCC8F /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF679581DD448E2008BCC8F /* facebook.png */; };
-		AEF6795C1DD448E2008BCC8F /* facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF679591DD448E2008BCC8F /* facebook@2x.png */; };
-		AEF6795D1DD448E2008BCC8F /* facebook@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF6795A1DD448E2008BCC8F /* facebook@3x.png */; };
 		AEF679661DD4A413008BCC8F /* TermsOfServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF679651DD4A413008BCC8F /* TermsOfServiceViewController.m */; };
 		AEF6796A1DD4C99E008BCC8F /* vijaya.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF679671DD4C99E008BCC8F /* vijaya.png */; };
 		AEF6796B1DD4C99E008BCC8F /* vijaya@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF679681DD4C99E008BCC8F /* vijaya@2x.png */; };
@@ -244,6 +241,7 @@
 		AEF679781DD5B0EA008BCC8F /* UnCheckbox.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF679721DD5B0EA008BCC8F /* UnCheckbox.png */; };
 		AEF679791DD5B0EA008BCC8F /* UnCheckbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF679731DD5B0EA008BCC8F /* UnCheckbox@2x.png */; };
 		AEF6797A1DD5B0EA008BCC8F /* UnCheckbox@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF679741DD5B0EA008BCC8F /* UnCheckbox@3x.png */; };
+		AEF6797D1DD6E6D6008BCC8F /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF6797C1DD6E6D6008BCC8F /* MyProfileViewController.m */; };
 		AEF883231DCF950E00E2D8EC /* metro.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF883081DCF950E00E2D8EC /* metro.png */; };
 		AEF883241DCF950E00E2D8EC /* metro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF883091DCF950E00E2D8EC /* metro@2x.png */; };
 		AEF883251DCF950E00E2D8EC /* metro@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF8830A1DCF950E00E2D8EC /* metro@3x.png */; };
@@ -549,9 +547,6 @@
 		AEF679521DD44644008BCC8F /* register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = register.png; sourceTree = "<group>"; };
 		AEF679531DD44644008BCC8F /* register@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "register@2x.png"; sourceTree = "<group>"; };
 		AEF679541DD44644008BCC8F /* register@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "register@3x.png"; sourceTree = "<group>"; };
-		AEF679581DD448E2008BCC8F /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
-		AEF679591DD448E2008BCC8F /* facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook@2x.png"; sourceTree = "<group>"; };
-		AEF6795A1DD448E2008BCC8F /* facebook@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook@3x.png"; sourceTree = "<group>"; };
 		AEF679641DD4A413008BCC8F /* TermsOfServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsOfServiceViewController.h; sourceTree = "<group>"; };
 		AEF679651DD4A413008BCC8F /* TermsOfServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsOfServiceViewController.m; sourceTree = "<group>"; };
 		AEF679671DD4C99E008BCC8F /* vijaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vijaya.png; sourceTree = "<group>"; };
@@ -563,6 +558,8 @@
 		AEF679721DD5B0EA008BCC8F /* UnCheckbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UnCheckbox.png; sourceTree = "<group>"; };
 		AEF679731DD5B0EA008BCC8F /* UnCheckbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UnCheckbox@2x.png"; sourceTree = "<group>"; };
 		AEF679741DD5B0EA008BCC8F /* UnCheckbox@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UnCheckbox@3x.png"; sourceTree = "<group>"; };
+		AEF6797B1DD6E6D6008BCC8F /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
+		AEF6797C1DD6E6D6008BCC8F /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
 		AEF883081DCF950E00E2D8EC /* metro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = metro.png; path = QezyPlay/channelLogoImage/metro.png; sourceTree = "<group>"; };
 		AEF883091DCF950E00E2D8EC /* metro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "metro@2x.png"; path = "QezyPlay/channelLogoImage/metro@2x.png"; sourceTree = "<group>"; };
 		AEF8830A1DCF950E00E2D8EC /* metro@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "metro@3x.png"; path = "QezyPlay/channelLogoImage/metro@3x.png"; sourceTree = "<group>"; };
@@ -760,9 +757,6 @@
 				AEF679521DD44644008BCC8F /* register.png */,
 				AEF679531DD44644008BCC8F /* register@2x.png */,
 				AEF679541DD44644008BCC8F /* register@3x.png */,
-				AEF679581DD448E2008BCC8F /* facebook.png */,
-				AEF679591DD448E2008BCC8F /* facebook@2x.png */,
-				AEF6795A1DD448E2008BCC8F /* facebook@3x.png */,
 				AE2049141D63A230004678E0 /* Splashscreen.png */,
 				AE17CA171D885A2500DDDAE9 /* Delete.jpg */,
 				AE17CA151D885A1600DDDAE9 /* Add.jpeg */,
@@ -1007,6 +1001,8 @@
 				AE3B517A1DB5D85000D5DC3F /* AboutViewController.m */,
 				AE3B518D1DB61D8400D5DC3F /* LanguageViewController.h */,
 				AE3B518E1DB61D8400D5DC3F /* LanguageViewController.m */,
+				AEF6797B1DD6E6D6008BCC8F /* MyProfileViewController.h */,
+				AEF6797C1DD6E6D6008BCC8F /* MyProfileViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -1312,7 +1308,6 @@
 				AEF8833D1DCF950E00E2D8EC /* ytv@3x.png in Resources */,
 				AEF8832F1DCF950E00E2D8EC /* sai-tv.png in Resources */,
 				AEE91EC51DA4CEF100094C46 /* Checkbox12.png in Resources */,
-				AEF6795C1DD448E2008BCC8F /* facebook@2x.png in Resources */,
 				AE64E3601DA975E000193DA1 /* profile-lock@3x.png in Resources */,
 				AEF678C71DD3A437008BCC8F /* taratv@3x.png in Resources */,
 				AEF678A81DD3A389008BCC8F /* channel-10@2x.png in Resources */,
@@ -1375,7 +1370,6 @@
 				AEF679461DD444D6008BCC8F /* subscription_active.png in Resources */,
 				AEF679381DD44099008BCC8F /* profile-inactive@2x.png in Resources */,
 				AEF679301DD44062008BCC8F /* settings-active@3x.png in Resources */,
-				AEF6795B1DD448E2008BCC8F /* facebook.png in Resources */,
 				AEF679501DD445B5008BCC8F /* signin@2x.png in Resources */,
 				AEF6793D1DD440AE008BCC8F /* home-inactive.png in Resources */,
 				AEF678DF1DD3B57F008BCC8F /* Privacy-Policy@3x.png in Resources */,
@@ -1403,7 +1397,6 @@
 				AE9C422F1DBAE3D200C9FE48 /* profile-kid1@2x.png in Resources */,
 				AEF678EF1DD42C8F008BCC8F /* free-new.png in Resources */,
 				AE9C42941DBAE8B100C9FE48 /* mana-telugu.png in Resources */,
-				AEF6795D1DD448E2008BCC8F /* facebook@3x.png in Resources */,
 				AEF8832C1DCF950E00E2D8EC /* ptv.png in Resources */,
 				AE9C42741DBAE88C00C9FE48 /* deccan-tv@2x.png in Resources */,
 				AEF678B31DD3A3D4008BCC8F /* high-news.png in Resources */,
@@ -1456,6 +1449,7 @@
 				AE17CA1F1D88686200DDDAE9 /* ProfileDetailController.m in Sources */,
 				AEF679661DD4A413008BCC8F /* TermsOfServiceViewController.m in Sources */,
 				AE0219841D7C75EC00F1A55E /* SearchChannelViewController.m in Sources */,
+				AEF6797D1DD6E6D6008BCC8F /* MyProfileViewController.m in Sources */,
 				AE2048E91D63A102004678E0 /* ViewController.m in Sources */,
 				AE440A051D845B1E006CBB32 /* ProfileCell.m in Sources */,
 				AEF502511D82FEA5003A417A /* SettingsViewController.m in Sources */,

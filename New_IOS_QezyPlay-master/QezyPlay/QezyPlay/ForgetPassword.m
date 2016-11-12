@@ -8,6 +8,7 @@
 
 #import "ForgetPassword.h"
 #import "ViewController.h"
+#import "Constant.h"
 
 @interface ForgetPassword ()
 
@@ -22,8 +23,8 @@
     [self.txtEmailAddress setDelegate:self];
 //    self.view.layer.borderColor = [[UIColor colorWithRed:33.0f/255.0f green:39.0f/255.0f blue:73.0f/255.0f alpha:1.0] CGColor];
 //    self.forgetPasswordView.layer.masksToBounds = true;
-    self.forgetPasswordView.layer.borderWidth = 1.0f;
-    self.forgetPasswordView.layer.cornerRadius = 1.0f;
+//    self.forgetPasswordView.layer.borderWidth = 1.0f;
+//    self.forgetPasswordView.layer.cornerRadius = 1.0f;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,7 +52,7 @@
         }
         else if([self.txtEmailAddress.text rangeOfCharacterFromSet:specialCharacterSet].length == 0) {
             
-            [self alertStatus:@"Invalid email address" :@"Request Password Failed!" :0];
+            [self alertStatus:@"Please enter valid email address" :@"Request Password Failed!" :0];
         }
         
         else {
@@ -62,7 +63,7 @@
             
             //NSURL *url=[NSURL URLWithString:@"http://ideabytestraining.com/newqezyplay/webservices/api.php?request=forgetpassword"];
             
-            NSURL *url=[NSURL URLWithString:@"http://104.196.99.177:6363/api/Customers/reset"];
+            NSURL *url=[NSURL URLWithString:resetSC];
             
             NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
             

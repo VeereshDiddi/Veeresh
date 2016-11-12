@@ -203,6 +203,12 @@
         cell.channelCell.image = [UIImage imageNamed:@"taratv.png"];
     }
     
+    cell.lblCell.text = [[temproryChannelsArray objectAtIndex:indexPath.row] valueForKey:@"name"];
+    
+    cell.descriptionLabel.text = [[temproryChannelsArray objectAtIndex:indexPath.row] valueForKey:@"meta_description"];
+
+
+    
     
     //cell.channelCell.image = [UIImage imageNamed:imageName];
     
@@ -365,11 +371,11 @@
 
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
-    return CGSizeMake(150.0, 80.0);
+    return CGSizeMake(SCREENWIDTH-10, 90.0);
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return UIEdgeInsetsMake(5,5,5,5);
+    return UIEdgeInsetsMake(3,3,3,3);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -502,6 +508,9 @@
     } completion:nil];
 }
 
-
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self.packageCollectionView reloadData];
+}
 
 @end

@@ -79,7 +79,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
         
     }
     
-    
+ /*
     if ([actionType isEqualToString:myActionType2]) {
         //goto_Bouquets
         
@@ -90,7 +90,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
         NSLog(@"Successfully Completed From Webside");
         
     }
-
+*/
     
     // make sure to return NO so that your webview doesn't try to load your made-up URL
     return NO;

@@ -155,10 +155,10 @@
             [self alertStatus:@"Confirm Password must be minimum 8-16 characters" :@"Sign up Failed!" :0];
         }
         else if (![self.txtPassword.text isEqualToString:self.txtConfirmPassword.text]) {
-            [self alertStatus:@"Passwords don't match. Try again?" :@"Sign Up Failed!" :0];
+            [self alertStatus:@"Passwords didn't match" :@"Sign up Failed!" :0];
         }
         else if(self.isChecked == NO){
-            [self alertStatus:@"Please check the Terms-and-service check box" :@"Sign Up Failed!" :0];
+            [self alertStatus:@"Please check the Terms-and-service check box" :@"Sign up Failed!" :0];
         }
         else {
             
@@ -168,7 +168,7 @@
 
                 NSDictionary *post = [NSDictionary dictionaryWithObjectsAndKeys:[self.txtUserName text], @"username",phone,@"phone", [self.txtEmailAddress text], @"email",[self.txtPassword text], @"password", nil];
             
-                NSURL *url=[NSURL URLWithString:@"http://104.196.99.177:6363/api/Customers"];
+                NSURL *url=[NSURL URLWithString:registrationSC];
                 
                 //               NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
                 NSError *error;
@@ -208,7 +208,7 @@
                     {
                         NSLog(@"Sign up success, go to login page");
                         
-                        [self alertStatus:@"To Activate Your Account ,Please click on activation link which is sent your Email Id." :@"Registration Success!" :0];
+                        [self alertStatus:@"To Activate Your Account ,Please click on activation link which is sent to your Email Id." :@"Registration Success!" :0];
                         
                         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                         ViewController *controller = (ViewController *)
@@ -369,7 +369,7 @@
         }
         
         if (newString.length>15) {
-            [self alertStatus:@"Username not exceed 15 digits" :@"Sign up Failed!" :0];
+            [self alertStatus:@"Username must be min 4-15 characters" :@"Sign up Failed!" :0];
             return NO;
         }
     }
